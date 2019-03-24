@@ -63,9 +63,6 @@ int main(int argc, char** argv)
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, (const void*)0);
 	
-	//This is a new edited comment not currently in git.
-	W
-		 raif npif iabwfb a
 	glBindBuffer(GL_ARRAY_BUFFER, buffer);
 
 	//Loop until the user closes the window
