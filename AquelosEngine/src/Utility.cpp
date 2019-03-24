@@ -16,6 +16,13 @@ std::ofstream Utility::s_logFile = std::ofstream();
 std::string Utility::s_workingDir = WORKDIR;
 
 
+void Utility::setWorkingDir(std::string dir)
+{
+	dir = getFilepath(dir);
+	Log("Working directory changed from " + s_workingDir + " to " + dir);
+	s_workingDir = dir;
+}
+
 std::string Utility::Capitalize(std::string text)
 {
 	for (int i = 0; i < text.size(); i++)

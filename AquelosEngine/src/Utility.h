@@ -23,7 +23,7 @@
 class Utility
 {
 public:
-	static void setWorkingDir(std::string dir) { dir = getFilepath(dir); Log("Working directory changed from " + s_workingDir + " to " + dir); s_workingDir = dir; };
+	static void setWorkingDir(std::string dir);
 	static std::string getWorkingDir() { return s_workingDir; };
 	static std::string Capitalize(std::string text);
 
@@ -53,7 +53,7 @@ public:
 	//Will return true if the given path is a file and return false if the given path is a directory
 	static bool IsFile(std::string path);
 	//Will return false if the given path is a file and return true if the given path is a directory
-    static bool IsDir(std::string path) {return !IsFile;};
+    static bool IsDir(std::string path) {return !IsFile(path);};
 
 	static std::vector<std::string> ListAll(std::string directory = WORKDIR);
 
