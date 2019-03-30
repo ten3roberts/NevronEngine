@@ -102,18 +102,18 @@ public:
 
 
 
-	static std::string Error(int code);
+	static void Error(unsigned int code);
 
 	static void LoadErrorDef();
 
 	//Will append a new error definition to the errorDef. Be sure to save it afterwards for permanens. If error code is -1 it will choose a new err code 
-	static int AddError(std::string definition, unsigned int code = APPEND_CODE);
+	static unsigned int AddError(const std::string& definition, unsigned int code = APPEND_CODE);
 
 	static void SaveErrorDef();
 
 
-	//Logging
-	static std::string Log(std::string msg, std::string msgOrigin = "Log");
+	//Will compose a message complete with time message origin and the origianl message and write it both to the console and a instance specific logfile aswell as returning the composed message for later use
+	static std::string Log(const std::string& msg, const std::string& msgOrigin = "Log");
 
 private:
 	static std::vector<std::string> s_errorDef;

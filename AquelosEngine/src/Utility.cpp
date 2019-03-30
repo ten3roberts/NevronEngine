@@ -375,7 +375,7 @@ std::string Utility::getFilepath(std::string path)
 	return path.substr(0, slashIndex + 1);
 }
 
-std::string Utility::Error(int code)
+void Utility::Error(unsigned int code)
 {
 
 	//Load errordef if its not loaded
@@ -398,7 +398,7 @@ std::string Utility::Error(int code)
 	MessageBox(NULL, explanation.c_str(), "Error", MB_ICONWARNING | MB_OK);
 	std::cout << "(Error): " << code << "; " << explanation << std::endl;
 
-	return explanation;
+	return;
 }
 
 void Utility::LoadErrorDef()
@@ -406,13 +406,13 @@ void Utility::LoadErrorDef()
 	s_errorDef = Utility::ReadFile(WORKDIR + "Assets\\Errordef.txt");
 }
 
-int Utility::AddError(std::string definition, unsigned int code)
+unsigned int Utility::AddError(const std::string& definition, unsigned int code)
 {
 	if (s_errorDef.size() == NULL)
 		LoadErrorDef();
 
 	if (code == APPEND_CODE)
-		code = s_errorDef.size();
+		code = (unsigned int)s_errorDef.size();
 
 
 	//Check if proposed error already exists, if so return
@@ -436,7 +436,7 @@ void Utility::SaveErrorDef()
 	Utility::GenerateFile(WORKDIR + "Assets\\Errordef.txt", Utility::ListToString(s_errorDef), false);
 }
 
-std::string Utility::Log(std::string msg, std::string msgOrigin)
+std::string Utility::Log(const std::string& msg, const std::string& msgOrigin)
 {
 	//Make sure the logs folder exists
 	GeneratePath(WORKDIR + "Logs");
@@ -449,5 +449,5 @@ std::string Utility::Log(std::string msg, std::string msgOrigin)
 
 	if (ENABLE_CONSOLE)
 		std::cout << fullMsg << std::endl;
-	return msg;
+	return fullMsg;
 }

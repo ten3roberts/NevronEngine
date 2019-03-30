@@ -130,7 +130,7 @@ int main(int argc, char** argv)
 		"\n"
 		"void main()\n"
 		"{\n"
-		"	color = vec4(1.0, 0.0, 0.0, 1.0);\n"
+		"	color = vec4(0.0, 1.0, 0.0, 1.0);\n"
 		"}\n";
 
 	unsigned int shader = CreateShader(vertexShader, fragmentShader);
