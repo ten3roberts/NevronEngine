@@ -1,0 +1,35 @@
+(Log @ 23.15.22): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Log @ 23.15.22): NevronEngine initializing...
+(OpenGL @ 23.15.23): OpenGl version: 3.3.0 NVIDIA 425.31
+(Timer: Startup @ 23.15.23): Duration: 644.301025ms
+(Log @ 23.15.23): Compiled vertex shader
+(Log @ 23.15.23): Compiled fragment shader
+(Framerate @ 23.15.23): 0.000000
+(Framerate @ 23.15.23): 59.746437
+(Framerate @ 23.15.24): 60.209408
+(Framerate @ 23.15.24): 60.062584
+(Framerate @ 23.15.25): 59.827217
+(Framerate @ 23.15.25): 60.009602
+(Framerate @ 23.15.26): 59.882030
+(Framerate @ 23.15.26): 60.087490
+(Framerate @ 23.15.27): 60.079906
+(Framerate @ 23.15.27): 59.893509
+(Framerate @ 23.15.28): 59.990524
+(Framerate @ 23.15.28): 59.787155
+(Framerate @ 23.15.29): 60.483994
+(Framerate @ 23.15.29): 59.772507
+(Framerate @ 23.15.30): 60.012840
+(Framerate @ 23.15.30): 60.254391
+(Framerate @ 23.15.31): 60.037704
+(Framerate @ 23.15.31): 59.858738
+(Framerate @ 23.15.32): 60.088573
+(Framerate @ 23.15.32): 59.763931
+(Framerate @ 23.15.33): 59.696507
+(Framerate @ 23.15.33): 60.050323
+(Framerate @ 23.15.34): 59.901047
+(Framerate @ 23.15.34): 60.093987
+(Framerate @ 23.15.35): 59.805031
+(Framerate @ 23.15.35): 59.696507
+(Framerate @ 23.15.36): 59.591202
+(Main @ 23.15.36): Closing Window
+(Log @ 23.15.36): Program has terminated correctly

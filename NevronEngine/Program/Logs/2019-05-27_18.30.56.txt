@@ -1,0 +1,92 @@
+(Log @ 18.30.56): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Log @ 18.30.56): NevronEngine initializing...
+(OpenGL @ 18.30.57): OpenGl version: 3.3.0 NVIDIA 425.31
+(Timer: Startup @ 18.30.57): Duration: 607.535400ms
+(OpenGL Callback @ 18.30.57): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 18.30.57): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(Log @ 18.30.57): Compiled vertex shader
+(Log @ 18.30.57): Compiled fragment shader
+(Main @ 18.30.57): ----------Entering game loop----------
+
+(Framerate @ 18.30.57): 0.000000
+(Timer: Matrix multiplications @ 18.30.57): Duration: 102.569504ms
+(Multiplication time @ 18.30.57): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.57): Duration: 119.681595ms
+(Multiplication time @ 18.30.57): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.57): Duration: 108.183907ms
+(Multiplication time @ 18.30.57): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.57): Duration: 101.788307ms
+(Multiplication time @ 18.30.57): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.57): Duration: 100.094704ms
+(Multiplication time @ 18.30.57): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 99.110306ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 98.345802ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 103.245201ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 96.342300ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 104.816093ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 95.795998ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 101.537506ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 95.503395ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.58): Duration: 98.649193ms
+(Multiplication time @ 18.30.58): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 97.942398ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 97.006203ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 94.963295ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 98.747902ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 96.577499ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 98.966492ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 99.612396ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 105.960304ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 99.975105ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.30.59): Duration: 97.394402ms
+(Multiplication time @ 18.30.59): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 98.355003ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 98.621902ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 95.883904ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 98.487396ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 95.868896ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 96.505104ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Framerate @ 18.31.00): 9.591811
+(Timer: Matrix multiplications @ 18.31.00): Duration: 99.560699ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 96.702400ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.00): Duration: 95.849800ms
+(Multiplication time @ 18.31.00): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.01): Duration: 95.521797ms
+(Multiplication time @ 18.31.01): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.01): Duration: 101.565506ms
+(Multiplication time @ 18.31.01): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.01): Duration: 105.721298ms
+(Multiplication time @ 18.31.01): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.01): Duration: 97.750999ms
+(Multiplication time @ 18.31.01): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.01): Duration: 96.969597ms
+(Multiplication time @ 18.31.01): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.01): Duration: 97.242599ms
+(Multiplication time @ 18.31.01): 0.000000Ns
+(Timer: Matrix multiplications @ 18.31.01): Duration: 97.450493ms
+(Multiplication time @ 18.31.01): 0.000000Ns

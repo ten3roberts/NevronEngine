@@ -1,0 +1,29 @@
+(Log @ 21.20.43): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Log @ 21.20.43): NevronEngine initializing...
+(OpenGL @ 21.20.44): OpenGl version: 3.3.0 NVIDIA 425.31
+(Timer: Startup @ 21.20.44): Duration: 698.201721ms
+(Log @ 21.20.44): 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+(OpenGL Callback @ 21.20.44): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 21.20.44): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(Log @ 21.20.44): Compiled vertex shader
+(Log @ 21.20.44): Compiled fragment shader
+(Main @ 21.20.44): ----------Entering game loop----------
+
+(Framerate @ 21.20.44): 0.000000
+(Framerate @ 21.20.45): 59.866974
+(Framerate @ 21.20.45): 59.845837
+(Framerate @ 21.20.46): 60.354401
+(Framerate @ 21.20.47): 60.005642
+(Framerate @ 21.20.47): 59.780727
+(Framerate @ 21.20.48): 60.004562
+(Framerate @ 21.20.48): 59.612514
+(Framerate @ 21.20.49): 59.966778
+(Framerate @ 21.20.49): 59.968578
+(Framerate @ 21.20.50): 59.976852
+(Framerate @ 21.20.50): 59.945210
+(Framerate @ 21.20.51): 59.827579
+(Framerate @ 21.20.51): 60.138802
+(Framerate @ 21.20.52): 59.959591
+(Framerate @ 21.20.52): 59.965343
+(Main @ 21.20.53): Closing Window
+(Log @ 21.20.53): Program has terminated correctly

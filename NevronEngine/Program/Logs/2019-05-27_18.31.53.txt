@@ -1,0 +1,61 @@
+(Log @ 18.31.53): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Log @ 18.31.53): NevronEngine initializing...
+(OpenGL @ 18.31.53): OpenGl version: 3.3.0 NVIDIA 425.31
+(Timer: Startup @ 18.31.53): Duration: 693.732605ms
+(OpenGL Callback @ 18.31.53): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 18.31.53): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(Log @ 18.31.53): Compiled vertex shader
+(Log @ 18.31.53): Compiled fragment shader
+(Main @ 18.31.53): ----------Entering game loop----------
+
+(Framerate @ 18.31.53): 0.000000
+(Multiplication time @ 18.31.54): 91.815501ns
+(Multiplication time @ 18.31.54): 95.267504ns
+(Multiplication time @ 18.31.54): 97.806998ns
+(Multiplication time @ 18.31.54): 95.158197ns
+(Multiplication time @ 18.31.54): 92.566706ns
+(Multiplication time @ 18.31.54): 90.677798ns
+(Multiplication time @ 18.31.54): 92.447802ns
+(Multiplication time @ 18.31.54): 87.789103ns
+(Multiplication time @ 18.31.54): 103.994198ns
+(Multiplication time @ 18.31.54): 89.586399ns
+(Multiplication time @ 18.31.55): 92.254303ns
+(Multiplication time @ 18.31.55): 87.572306ns
+(Multiplication time @ 18.31.55): 90.201601ns
+(Multiplication time @ 18.31.55): 87.388702ns
+(Multiplication time @ 18.31.55): 90.526402ns
+(Multiplication time @ 18.31.55): 87.361999ns
+(Multiplication time @ 18.31.55): 87.302603ns
+(Multiplication time @ 18.31.55): 88.940799ns
+(Multiplication time @ 18.31.55): 87.711506ns
+(Multiplication time @ 18.31.55): 91.545798ns
+(Multiplication time @ 18.31.55): 88.050999ns
+(Multiplication time @ 18.31.56): 89.332707ns
+(Multiplication time @ 18.31.56): 89.224197ns
+(Multiplication time @ 18.31.56): 90.181693ns
+(Multiplication time @ 18.31.56): 87.531202ns
+(Multiplication time @ 18.31.56): 89.831598ns
+(Multiplication time @ 18.31.56): 88.633507ns
+(Multiplication time @ 18.31.56): 88.016599ns
+(Multiplication time @ 18.31.56): 88.648804ns
+(Multiplication time @ 18.31.56): 87.910093ns
+(Framerate @ 18.31.56): 10.759063
+(Multiplication time @ 18.31.56): 89.710802ns
+(Multiplication time @ 18.31.56): 87.142900ns
+(Multiplication time @ 18.31.57): 90.540797ns
+(Multiplication time @ 18.31.57): 87.688804ns
+(Multiplication time @ 18.31.57): 90.164199ns
+(Multiplication time @ 18.31.57): 86.272895ns
+(Multiplication time @ 18.31.57): 88.159204ns
+(Multiplication time @ 18.31.57): 87.030597ns
+(Multiplication time @ 18.31.57): 89.796796ns
+(Multiplication time @ 18.31.57): 93.030401ns
+(Multiplication time @ 18.31.57): 92.354305ns
+(Multiplication time @ 18.31.57): 89.566998ns
+(Multiplication time @ 18.31.57): 88.507801ns
+(Multiplication time @ 18.31.58): 90.599202ns
+(Multiplication time @ 18.31.58): 88.206306ns
+(Multiplication time @ 18.31.58): 89.944094ns
+(Multiplication time @ 18.31.58): 87.654702ns
+(Multiplication time @ 18.31.58): 89.152306ns
+(Multiplication time @ 18.31.58): 87.645292ns

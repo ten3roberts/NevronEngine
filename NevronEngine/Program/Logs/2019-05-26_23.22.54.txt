@@ -1,0 +1,30 @@
+(Log @ 23.22.54): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Log @ 23.22.54): NevronEngine initializing...
+(OpenGL @ 23.22.55): OpenGl version: 3.3.0 NVIDIA 425.31
+(Timer: Startup @ 23.22.55): Duration: 627.128845ms
+(OpenGL Callback @ 23.22.55): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 23.22.55): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(Log @ 23.22.55): Compiled vertex shader
+(Log @ 23.22.55): Compiled fragment shader
+(Framerate @ 23.22.55): 0.000000
+(Framerate @ 23.22.56): 59.979008
+(Framerate @ 23.22.56): 60.004200
+(Framerate @ 23.22.57): 60.053204
+(Framerate @ 23.22.57): 59.926529
+(Framerate @ 23.22.58): 59.822926
+(Framerate @ 23.22.58): 60.121082
+(Framerate @ 23.22.59): 60.090740
+(Framerate @ 23.22.59): 60.074848
+(Framerate @ 23.23.00): 59.641674
+(Framerate @ 23.23.00): 60.017887
+(Framerate @ 23.23.01): 60.473022
+(Framerate @ 23.23.01): 60.061504
+(Framerate @ 23.23.02): 59.924374
+(Framerate @ 23.23.02): 60.043831
+(Framerate @ 23.23.03): 60.474850
+(Framerate @ 23.23.03): 60.183678
+(Framerate @ 23.23.04): 59.832233
+(Framerate @ 23.23.04): 60.088928
+(Framerate @ 23.23.05): 59.923656
+(Framerate @ 23.23.05): 60.446701
+(Framerate @ 23.23.06): 60.075939

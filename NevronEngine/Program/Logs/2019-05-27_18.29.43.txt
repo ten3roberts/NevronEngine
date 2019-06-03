@@ -1,0 +1,66 @@
+(Log @ 18.29.43): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Log @ 18.29.43): NevronEngine initializing...
+(OpenGL @ 18.29.44): OpenGl version: 3.3.0 NVIDIA 425.31
+(Timer: Startup @ 18.29.44): Duration: 657.797119ms
+(OpenGL Callback @ 18.29.44): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 18.29.44): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(Log @ 18.29.44): Compiled vertex shader
+(Log @ 18.29.44): Compiled fragment shader
+(Main @ 18.29.44): ----------Entering game loop----------
+
+(Framerate @ 18.29.44): 0.000000
+(Multiplication time @ 18.29.44): 104.422301Ns
+(Multiplication time @ 18.29.44): 102.020301Ns
+(Multiplication time @ 18.29.44): 104.125693Ns
+(Multiplication time @ 18.29.44): 101.447001Ns
+(Multiplication time @ 18.29.44): 105.634198Ns
+(Multiplication time @ 18.29.45): 96.734494Ns
+(Multiplication time @ 18.29.45): 98.245904Ns
+(Multiplication time @ 18.29.45): 95.667504Ns
+(Multiplication time @ 18.29.45): 99.554002Ns
+(Multiplication time @ 18.29.45): 95.087901Ns
+(Multiplication time @ 18.29.45): 97.901396Ns
+(Multiplication time @ 18.29.45): 101.695597Ns
+(Multiplication time @ 18.29.45): 98.919101Ns
+(Multiplication time @ 18.29.45): 96.950896Ns
+(Multiplication time @ 18.29.45): 97.137101Ns
+(Multiplication time @ 18.29.46): 95.423400Ns
+(Multiplication time @ 18.29.46): 98.024495Ns
+(Multiplication time @ 18.29.46): 96.028499Ns
+(Multiplication time @ 18.29.46): 96.537799Ns
+(Multiplication time @ 18.29.46): 95.971398Ns
+(Multiplication time @ 18.29.46): 97.253397Ns
+(Multiplication time @ 18.29.46): 97.656801Ns
+(Multiplication time @ 18.29.46): 97.694203Ns
+(Multiplication time @ 18.29.46): 98.030306Ns
+(Multiplication time @ 18.29.46): 97.432002Ns
+(Multiplication time @ 18.29.47): 95.494099Ns
+(Multiplication time @ 18.29.47): 97.494707Ns
+(Multiplication time @ 18.29.47): 97.120397Ns
+(Multiplication time @ 18.29.47): 97.053602Ns
+(Multiplication time @ 18.29.47): 98.111905Ns
+(Framerate @ 18.29.47): 9.908848
+(Multiplication time @ 18.29.47): 108.426303Ns
+(Multiplication time @ 18.29.47): 96.277200Ns
+(Multiplication time @ 18.29.47): 97.703695Ns
+(Multiplication time @ 18.29.47): 97.182304Ns
+(Multiplication time @ 18.29.47): 98.168001Ns
+(Multiplication time @ 18.29.48): 96.125506Ns
+(Multiplication time @ 18.29.48): 97.348802Ns
+(Multiplication time @ 18.29.48): 96.416399Ns
+(Multiplication time @ 18.29.48): 97.996399Ns
+(Multiplication time @ 18.29.48): 96.593902Ns
+(Multiplication time @ 18.29.48): 101.681501Ns
+(Multiplication time @ 18.29.48): 95.213801Ns
+(Multiplication time @ 18.29.48): 97.579293Ns
+(Multiplication time @ 18.29.48): 96.550703Ns
+(Multiplication time @ 18.29.48): 96.711397Ns
+(Multiplication time @ 18.29.49): 95.550798Ns
+(Multiplication time @ 18.29.49): 97.002499Ns
+(Multiplication time @ 18.29.49): 97.625695Ns
+(Multiplication time @ 18.29.49): 100.836203Ns
+(Multiplication time @ 18.29.49): 95.315799Ns
+(Multiplication time @ 18.29.49): 105.754092Ns
+(Multiplication time @ 18.29.49): 96.854404Ns
+(Multiplication time @ 18.29.49): 99.379696Ns
+(Multiplication time @ 18.29.49): 97.189106Ns

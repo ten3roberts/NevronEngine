@@ -1,0 +1,3044 @@
+(Log @ 19.49.09): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Log @ 19.49.09): NevronEngine initializing...
+(OpenGL @ 19.49.10): OpenGl version: 3.3.0 NVIDIA 425.31
+(Timer: Startup @ 19.49.10): Duration: 645.448792ms
+(OpenGL Callback @ 19.49.10): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 19.49.10): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(Log @ 19.49.10): Compiled vertex shader
+(Log @ 19.49.10): Compiled fragment shader
+(Main @ 19.49.10): ----------Entering game loop----------
+
+(Framerate @ 19.49.10): 0.000000
+(Timer: Matrix multiplications @ 19.49.10): Duration: 101.584000ms
+(Multiplication time @ 19.49.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.10): Duration: 102.612305ms
+(Multiplication time @ 19.49.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.10): Duration: 108.444092ms
+(Multiplication time @ 19.49.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.10): Duration: 100.265999ms
+(Multiplication time @ 19.49.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.10): Duration: 98.943291ms
+(Multiplication time @ 19.49.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 96.655602ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 104.172707ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 97.657005ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 96.190704ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 98.025200ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 95.613503ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 98.853905ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 96.574203ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.11): Duration: 98.241005ms
+(Multiplication time @ 19.49.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 99.238098ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 96.767403ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 95.957291ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 103.221901ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 97.208099ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 98.360802ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 94.848793ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 98.273598ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 94.778000ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.12): Duration: 104.690002ms
+(Multiplication time @ 19.49.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 97.387596ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 97.827797ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 97.998596ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 97.550301ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 95.762199ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 112.778595ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Framerate @ 19.49.13): 9.618020
+(Timer: Matrix multiplications @ 19.49.13): Duration: 98.607292ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 96.656601ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.13): Duration: 98.603905ms
+(Multiplication time @ 19.49.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 95.610199ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 97.871803ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 95.886200ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 97.224396ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 97.235504ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 96.958900ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 95.393005ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 96.750496ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.14): Duration: 95.866096ms
+(Multiplication time @ 19.49.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 99.703400ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 102.394501ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 97.741203ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 95.182495ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 98.343689ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 98.725197ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 97.576607ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 94.978195ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 96.187111ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.15): Duration: 97.221695ms
+(Multiplication time @ 19.49.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 97.480499ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 95.432198ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 94.823006ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 95.542198ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 98.689293ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 96.859200ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 95.850098ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.16): Duration: 95.768196ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Framerate @ 19.49.16): 9.705779
+(Timer: Matrix multiplications @ 19.49.16): Duration: 94.521797ms
+(Multiplication time @ 19.49.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 98.438103ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 95.315903ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 97.976799ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 95.537994ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 97.937195ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 95.871796ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 97.116898ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 95.867302ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 97.890495ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.17): Duration: 98.010704ms
+(Multiplication time @ 19.49.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 99.312202ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 94.735298ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 97.806198ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 95.658096ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 98.061501ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 95.725296ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 97.008301ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 96.228096ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 96.642097ms
+(Multiplication time @ 19.49.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.18): Duration: 97.607903ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 94.971695ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 96.272705ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 97.999405ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 97.254700ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 96.663994ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 96.104301ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 95.413101ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 97.106598ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.19): Duration: 97.535507ms
+(Multiplication time @ 19.49.19): 0.000000ns
+(Framerate @ 19.49.19): 9.531298
+(Timer: Matrix multiplications @ 19.49.20): Duration: 96.929001ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 94.154099ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 97.400597ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 95.515297ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 99.408699ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 95.109299ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 96.992996ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 95.447906ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 96.736710ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.20): Duration: 98.700394ms
+(Multiplication time @ 19.49.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 98.683601ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 95.727402ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 97.213600ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 95.668091ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 98.182701ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 95.040100ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 99.014496ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 95.668602ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.21): Duration: 97.795502ms
+(Multiplication time @ 19.49.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 95.416397ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 97.141502ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 95.922600ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 99.838303ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 97.393295ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 94.667503ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 97.487000ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 95.951805ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 96.040703ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.22): Duration: 97.613998ms
+(Multiplication time @ 19.49.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 99.660599ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Framerate @ 19.49.23): 9.518452
+(Timer: Matrix multiplications @ 19.49.23): Duration: 96.281601ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 96.697105ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 96.087296ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 97.893898ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 95.097908ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 99.134499ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 94.669800ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.23): Duration: 96.971001ms
+(Multiplication time @ 19.49.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 96.844398ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 99.182999ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 95.839203ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 98.160500ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 98.038803ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 98.507599ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 95.479698ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 96.080498ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.24): Duration: 95.968704ms
+(Multiplication time @ 19.49.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 98.406799ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 96.066200ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 95.931206ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 96.120094ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 98.270805ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 97.568398ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 95.490494ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 96.492699ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 96.460602ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.25): Duration: 100.112801ms
+(Multiplication time @ 19.49.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 97.126602ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 99.306702ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 95.518799ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Framerate @ 19.49.26): 9.284482
+(Timer: Matrix multiplications @ 19.49.26): Duration: 96.451996ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 97.480896ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 103.089806ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 95.688202ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 97.060097ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.26): Duration: 95.521599ms
+(Multiplication time @ 19.49.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 102.672600ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 96.689697ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 95.845901ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 96.469902ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 98.554001ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 96.801506ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 97.514305ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 95.244598ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 96.486595ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.27): Duration: 96.720001ms
+(Multiplication time @ 19.49.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 97.637299ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 97.629700ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 97.360199ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 96.724998ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 99.425797ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 96.977600ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 97.254402ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 97.481506ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.28): Duration: 95.819000ms
+(Multiplication time @ 19.49.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 99.872002ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 96.140701ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 99.278091ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 94.845909ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 98.756500ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Framerate @ 19.49.29): 9.751560
+(Timer: Matrix multiplications @ 19.49.29): Duration: 95.911400ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 97.042397ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 95.455399ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 96.644203ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.29): Duration: 95.880493ms
+(Multiplication time @ 19.49.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 96.591499ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 96.464203ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 98.826996ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 95.556801ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 101.116699ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 95.600998ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 97.642899ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 95.048302ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.30): Duration: 96.928101ms
+(Multiplication time @ 19.49.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 99.810303ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 96.771698ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 96.263298ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 95.727501ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 97.664993ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 95.506599ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 97.007805ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 95.008598ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 97.020897ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.31): Duration: 96.090401ms
+(Multiplication time @ 19.49.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 98.347298ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 94.401108ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 98.297691ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 96.515503ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 99.171799ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 95.825600ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Framerate @ 19.49.32): 9.370964
+(Timer: Matrix multiplications @ 19.49.32): Duration: 97.249405ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 95.230995ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.32): Duration: 96.895798ms
+(Multiplication time @ 19.49.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 98.116302ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 98.143600ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 95.275002ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 96.962799ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 98.280403ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 96.977905ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 97.907700ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 98.210999ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 95.311508ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.33): Duration: 95.400497ms
+(Multiplication time @ 19.49.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 97.403801ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 96.294205ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 97.152702ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 96.746803ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 98.520897ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 96.339104ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 97.985901ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 95.654198ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.34): Duration: 96.891800ms
+(Multiplication time @ 19.49.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 100.123398ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 97.673599ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 97.244896ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 96.186401ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 98.046898ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 97.652397ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 95.778198ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 98.143799ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Framerate @ 19.49.35): 9.669477
+(Timer: Matrix multiplications @ 19.49.35): Duration: 94.513802ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.35): Duration: 96.177696ms
+(Multiplication time @ 19.49.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 94.960197ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 98.911201ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 96.940094ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 97.708305ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 98.185501ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 97.442001ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 97.826401ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 95.921295ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.36): Duration: 97.765503ms
+(Multiplication time @ 19.49.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 98.000198ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 97.157204ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 95.347694ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 96.825401ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 99.529503ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 96.162308ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 95.323906ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 98.104996ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 96.280403ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.37): Duration: 103.489502ms
+(Multiplication time @ 19.49.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 98.550499ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 98.545105ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 95.897598ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 96.751694ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 97.998489ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 96.348602ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 95.040001ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 98.223595ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.38): Duration: 95.062004ms
+(Multiplication time @ 19.49.38): 0.000000ns
+(Framerate @ 19.49.38): 9.430929
+(Timer: Matrix multiplications @ 19.49.39): Duration: 97.716301ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 97.949196ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 96.815201ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 94.729996ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 98.315697ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 97.518303ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 96.891510ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 97.162201ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 97.114403ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.39): Duration: 97.316498ms
+(Multiplication time @ 19.49.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 98.208900ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 99.900093ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 95.663292ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 100.569206ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 97.558502ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 98.216705ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 96.174202ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 99.301292ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.40): Duration: 93.899101ms
+(Multiplication time @ 19.49.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 98.424301ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 97.024490ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 97.422195ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 98.258194ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 96.996796ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 96.763504ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 95.822403ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 98.168800ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.41): Duration: 95.854095ms
+(Multiplication time @ 19.49.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 97.842499ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 96.962303ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Framerate @ 19.49.42): 9.401253
+(Timer: Matrix multiplications @ 19.49.42): Duration: 96.947800ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 98.260406ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 98.550400ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 95.184402ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 98.594002ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 96.582596ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 97.871696ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.42): Duration: 95.267197ms
+(Multiplication time @ 19.49.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 100.537498ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 95.527405ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 97.066605ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 96.848305ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 100.079903ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 94.966797ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 98.334793ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 95.448204ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.43): Duration: 97.867805ms
+(Multiplication time @ 19.49.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 98.150894ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 96.181908ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 95.942993ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 96.834305ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 97.321396ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 94.935898ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 96.473694ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 95.186302ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 96.932495ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.44): Duration: 95.514709ms
+(Multiplication time @ 19.49.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 99.273102ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 96.696396ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 97.660805ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Framerate @ 19.49.45): 9.531826
+(Timer: Matrix multiplications @ 19.49.45): Duration: 95.101196ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 99.516602ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 95.355904ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 98.612198ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 95.917503ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.45): Duration: 97.798599ms
+(Multiplication time @ 19.49.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 95.025597ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 100.848000ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 96.164894ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 97.499199ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 96.878891ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 98.932602ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 96.944092ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 97.348305ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 94.584900ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.46): Duration: 97.025795ms
+(Multiplication time @ 19.49.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 98.308197ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 95.956902ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 97.525505ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 97.058708ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 97.588196ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 94.939301ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 97.405296ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 96.003006ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.47): Duration: 105.856796ms
+(Multiplication time @ 19.49.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 96.154900ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 97.540497ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 97.253693ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 97.935402ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 97.879799ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Framerate @ 19.49.48): 9.445467
+(Timer: Matrix multiplications @ 19.49.48): Duration: 96.949005ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 95.509399ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 96.841904ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 95.295296ms
+(Multiplication time @ 19.49.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.48): Duration: 98.472496ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 98.301506ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 96.561104ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 95.225403ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 97.338997ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 97.862091ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 95.606308ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 96.491203ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 96.109108ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.49): Duration: 96.601692ms
+(Multiplication time @ 19.49.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 96.147797ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 97.922493ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 95.842804ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 98.889404ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 97.741402ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 98.709503ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 95.336197ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 100.060799ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 96.842094ms
+(Multiplication time @ 19.49.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.50): Duration: 97.123604ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 96.669395ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 99.675301ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 96.053604ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 102.221603ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 95.129807ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 97.514801ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Framerate @ 19.49.51): 9.641946
+(Timer: Matrix multiplications @ 19.49.51): Duration: 94.930702ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 96.531296ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.51): Duration: 95.676498ms
+(Multiplication time @ 19.49.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 95.855904ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 98.626495ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 96.488800ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 96.935799ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 97.695198ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 97.559296ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 97.258896ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 98.767105ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.52): Duration: 96.646095ms
+(Multiplication time @ 19.49.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 98.498398ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 98.031898ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 96.515503ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 96.944305ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 97.516891ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 94.428200ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 100.215904ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 96.782997ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 99.604095ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.53): Duration: 95.067001ms
+(Multiplication time @ 19.49.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 96.598709ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 97.535400ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 99.822800ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 95.911697ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 99.136803ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 95.513901ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 98.254799ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.54): Duration: 96.889801ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Framerate @ 19.49.54): 9.399415
+(Timer: Matrix multiplications @ 19.49.54): Duration: 95.587296ms
+(Multiplication time @ 19.49.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 99.206306ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 99.705292ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 98.477905ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 95.462204ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 97.299294ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 97.307297ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 96.962799ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 96.420403ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 96.764404ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.55): Duration: 95.110100ms
+(Multiplication time @ 19.49.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 99.581108ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 98.565102ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 97.510201ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 96.505203ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 97.743507ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 97.416710ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 97.470100ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 95.202095ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.56): Duration: 97.263802ms
+(Multiplication time @ 19.49.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 95.284996ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 97.764702ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 96.574493ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 95.460495ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 96.973000ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 95.909599ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 97.102493ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 96.644997ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 98.794891ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.57): Duration: 96.289902ms
+(Multiplication time @ 19.49.57): 0.000000ns
+(Framerate @ 19.49.57): 9.350531
+(Timer: Matrix multiplications @ 19.49.58): Duration: 96.619293ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 98.769104ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 98.351906ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 95.294304ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 97.982597ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 95.307198ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 98.840805ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 98.133400ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.58): Duration: 98.710304ms
+(Multiplication time @ 19.49.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 96.030708ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 97.818398ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 96.476601ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 99.712502ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 96.418304ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 96.001701ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 95.546402ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 96.445107ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 96.712593ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.49.59): Duration: 98.402000ms
+(Multiplication time @ 19.49.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 95.875000ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 99.104004ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 103.537796ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 94.904198ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 99.491798ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 95.057396ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 104.177101ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 95.385201ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.00): Duration: 98.400398ms
+(Multiplication time @ 19.50.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 96.608704ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 99.563110ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Framerate @ 19.50.01): 9.553407
+(Timer: Matrix multiplications @ 19.50.01): Duration: 96.272400ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 96.792091ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 96.928795ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 97.217102ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 95.671104ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 96.861198ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 95.192307ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.01): Duration: 97.114304ms
+(Multiplication time @ 19.50.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 96.811600ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 100.406807ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 96.443802ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 98.953407ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 96.563103ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 97.384605ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 97.039795ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 94.897903ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.02): Duration: 96.649994ms
+(Multiplication time @ 19.50.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 95.420006ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 100.743500ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 96.587601ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 96.988602ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 97.147194ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 98.364197ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 95.375504ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 99.554298ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 95.474495ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.03): Duration: 96.937904ms
+(Multiplication time @ 19.50.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 94.755203ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 98.765404ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 96.461700ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Framerate @ 19.50.04): 9.404817
+(Timer: Matrix multiplications @ 19.50.04): Duration: 96.185600ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 95.144302ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 97.671394ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 96.199295ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 99.591293ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.04): Duration: 95.852097ms
+(Multiplication time @ 19.50.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 108.028099ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 100.153404ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 95.257294ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 98.820892ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 96.158501ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 97.091400ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 95.639801ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 97.108604ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.05): Duration: 96.970894ms
+(Multiplication time @ 19.50.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 96.249298ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 94.475594ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 99.147606ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 97.114197ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 98.992401ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 94.489899ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 97.523903ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 95.840706ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 96.782303ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.06): Duration: 95.296196ms
+(Multiplication time @ 19.50.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 97.548004ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 98.463898ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 98.042305ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 96.026398ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 99.610100ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Framerate @ 19.50.07): 9.565433
+(Timer: Matrix multiplications @ 19.50.07): Duration: 96.559692ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 97.952896ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 96.692299ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.07): Duration: 94.797600ms
+(Multiplication time @ 19.50.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 97.064095ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 96.918304ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 98.583504ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 97.876198ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 98.274094ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 96.242706ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 98.544899ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 95.258896ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 96.588600ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.08): Duration: 96.541107ms
+(Multiplication time @ 19.50.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 97.098305ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 95.474800ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 105.571907ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 95.392494ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 97.555298ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 94.677002ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 97.904495ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 95.918304ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.09): Duration: 97.554802ms
+(Multiplication time @ 19.50.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 95.086800ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 96.355698ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 98.110802ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 99.672195ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 98.217499ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 96.743797ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 96.347099ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Framerate @ 19.50.10): 9.536189
+(Timer: Matrix multiplications @ 19.50.10): Duration: 94.856003ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 97.994705ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.10): Duration: 95.629295ms
+(Multiplication time @ 19.50.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 97.473602ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 95.625099ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 99.401001ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 95.200096ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 99.536102ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 94.605804ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 98.357994ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 95.230804ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.11): Duration: 95.793900ms
+(Multiplication time @ 19.50.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 95.778900ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 97.996201ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 95.928001ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 100.399109ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 96.444199ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 98.797005ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 94.671501ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 97.449295ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 94.764305ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.12): Duration: 96.762703ms
+(Multiplication time @ 19.50.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 96.399399ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 98.324898ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 97.882706ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 99.640396ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 97.229698ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 98.430000ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 97.391396ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.13): Duration: 96.777603ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Framerate @ 19.50.13): 9.512240
+(Timer: Matrix multiplications @ 19.50.13): Duration: 95.820702ms
+(Multiplication time @ 19.50.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 96.422394ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 96.721596ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 97.866501ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 96.788895ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 97.491295ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 96.450798ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 95.821899ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 96.849907ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 95.285202ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.14): Duration: 98.361801ms
+(Multiplication time @ 19.50.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 95.774200ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 97.407104ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 96.944496ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 97.212601ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 95.735603ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 97.031601ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 95.124603ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 97.958405ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.15): Duration: 95.059799ms
+(Multiplication time @ 19.50.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 97.187904ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 94.960304ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 96.004395ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 99.869598ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 97.972198ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 94.697502ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 97.773697ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 96.183205ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 96.641098ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.16): Duration: 95.713699ms
+(Multiplication time @ 19.50.16): 0.000000ns
+(Framerate @ 19.50.16): 9.519295
+(Timer: Matrix multiplications @ 19.50.17): Duration: 96.491798ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 96.638199ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 97.622795ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 100.074402ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 97.828201ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 97.134895ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 94.198303ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 98.177002ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.17): Duration: 96.129295ms
+(Multiplication time @ 19.50.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 101.447105ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 94.935204ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 96.748199ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 96.593201ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 103.541901ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 96.408310ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 97.028099ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 95.799400ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 97.507301ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.18): Duration: 95.557396ms
+(Multiplication time @ 19.50.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 97.192902ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 95.876595ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 104.772797ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 98.001297ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 96.719398ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 97.361298ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 95.940407ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 97.447899ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.19): Duration: 96.457909ms
+(Multiplication time @ 19.50.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 96.997902ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 95.441696ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Framerate @ 19.50.20): 9.540174
+(Timer: Matrix multiplications @ 19.50.20): Duration: 96.026398ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 97.856400ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 98.704704ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 95.125198ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 100.162704ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 95.635201ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 97.085106ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.20): Duration: 96.801102ms
+(Multiplication time @ 19.50.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 96.624496ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 94.803299ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 99.048897ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 96.891693ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 98.839508ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 94.500801ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 98.716705ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 97.424202ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.21): Duration: 96.546600ms
+(Multiplication time @ 19.50.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 94.961395ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 107.735596ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 95.993904ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 98.828194ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 97.814598ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 95.425797ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 96.662796ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 96.938400ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 97.378891ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.22): Duration: 94.293404ms
+(Multiplication time @ 19.50.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 97.768494ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 95.724800ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 99.302490ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Framerate @ 19.50.23): 9.605613
+(Timer: Matrix multiplications @ 19.50.23): Duration: 96.178802ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 101.346497ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 95.558006ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 97.722595ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 95.435799ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.23): Duration: 97.115692ms
+(Multiplication time @ 19.50.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 96.123398ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 96.863396ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 94.900200ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 101.035103ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 96.654099ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 98.017601ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 95.881401ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 98.767403ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 94.835602ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.24): Duration: 97.195297ms
+(Multiplication time @ 19.50.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 97.467598ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 96.845108ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 97.991798ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 95.555298ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 96.982399ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 95.992706ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 95.357903ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 96.191696ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.25): Duration: 96.172096ms
+(Multiplication time @ 19.50.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 95.052399ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 96.425293ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 96.082397ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 101.608101ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 96.720802ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Framerate @ 19.50.26): 9.124520
+(Timer: Matrix multiplications @ 19.50.26): Duration: 96.622398ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 94.254700ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 98.087296ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 95.667694ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.26): Duration: 97.341599ms
+(Multiplication time @ 19.50.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 95.974098ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 96.630203ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 96.987206ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 98.510300ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 97.441002ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 96.588699ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 93.175499ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 98.022095ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.27): Duration: 96.248894ms
+(Multiplication time @ 19.50.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 97.563507ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 95.443802ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 95.874496ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 100.297401ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 97.653000ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 96.610497ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 95.459297ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 97.120598ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 96.262894ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.28): Duration: 97.544098ms
+(Multiplication time @ 19.50.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 95.487801ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 105.678604ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 95.778496ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 101.677597ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 96.185806ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 97.748901ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Framerate @ 19.50.29): 9.576828
+(Timer: Matrix multiplications @ 19.50.29): Duration: 96.344101ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 97.234894ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.29): Duration: 97.001503ms
+(Multiplication time @ 19.50.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 97.613503ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 95.302101ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 96.547203ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 95.820999ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 99.591599ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 96.835800ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 97.240097ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 96.970894ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 96.589806ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.30): Duration: 96.603905ms
+(Multiplication time @ 19.50.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 97.308800ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 95.572601ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 96.660095ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 97.138702ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 95.433701ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 97.367195ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 96.298004ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 98.358498ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.31): Duration: 96.031693ms
+(Multiplication time @ 19.50.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 103.101204ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 96.212799ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 101.037193ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 99.448700ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 102.730301ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 95.881905ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 97.276596ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.32): Duration: 96.510406ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Framerate @ 19.50.32): 9.533079
+(Timer: Matrix multiplications @ 19.50.32): Duration: 97.384094ms
+(Multiplication time @ 19.50.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 95.547195ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 96.577003ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 94.717003ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 99.677200ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 97.195999ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 97.907898ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 96.606094ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 96.556404ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 97.362305ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.33): Duration: 95.513298ms
+(Multiplication time @ 19.50.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 97.453804ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 95.671104ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 96.625298ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 98.462097ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 97.505196ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 95.534401ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 97.924202ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 97.195198ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.34): Duration: 98.882202ms
+(Multiplication time @ 19.50.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 96.628998ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 97.076706ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 94.907104ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 102.569298ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 96.546799ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 100.963402ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 96.142601ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 96.557106ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 95.824898ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.35): Duration: 97.190895ms
+(Multiplication time @ 19.50.35): 0.000000ns
+(Framerate @ 19.50.35): 9.623046
+(Timer: Matrix multiplications @ 19.50.36): Duration: 97.165695ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 95.315109ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 95.727501ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 96.433502ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 97.666100ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 97.867294ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 96.416603ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 96.091499ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.36): Duration: 96.487511ms
+(Multiplication time @ 19.50.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 95.585098ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 96.086304ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 94.843605ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 100.062500ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 96.804100ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 95.959900ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 95.076004ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 106.899902ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 95.822403ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.37): Duration: 97.919205ms
+(Multiplication time @ 19.50.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 95.641205ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 97.453804ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 96.653198ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 99.732201ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 97.144897ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 97.303398ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 95.762093ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 97.853195ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.38): Duration: 96.172302ms
+(Multiplication time @ 19.50.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 95.746704ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 95.353996ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Framerate @ 19.50.39): 9.658634
+(Timer: Matrix multiplications @ 19.50.39): Duration: 95.753601ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 101.165604ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 96.814896ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 98.401802ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 96.663605ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 95.970497ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 96.361298ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.39): Duration: 96.170593ms
+(Multiplication time @ 19.50.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 95.871002ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 97.774704ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 94.942703ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 100.396996ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 98.693398ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 98.581108ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 94.815300ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 98.891197ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.40): Duration: 94.539902ms
+(Multiplication time @ 19.50.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 98.585907ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 94.946602ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 96.831299ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 96.510094ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 99.423698ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 96.562706ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 100.222496ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 95.047195ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 96.571907ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.41): Duration: 94.020699ms
+(Multiplication time @ 19.50.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 96.972397ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 95.343498ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 95.274307ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Framerate @ 19.50.42): 9.688954
+(Timer: Matrix multiplications @ 19.50.42): Duration: 97.626595ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 97.842400ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 95.828300ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 96.130302ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 96.965508ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.42): Duration: 95.091690ms
+(Multiplication time @ 19.50.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 97.462891ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 94.735909ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 97.420502ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 95.371101ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 102.665695ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 95.602600ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 96.607796ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 95.659904ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 97.244202ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.43): Duration: 94.948494ms
+(Multiplication time @ 19.50.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 97.833405ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 94.708900ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 99.299698ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 97.218498ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 99.350197ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 94.975296ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 97.212601ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 96.308403ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.44): Duration: 101.427505ms
+(Multiplication time @ 19.50.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 95.173401ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 99.595108ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 96.109802ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 96.932098ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 98.973801ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Framerate @ 19.50.45): 9.401862
+(Timer: Matrix multiplications @ 19.50.45): Duration: 96.674400ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 97.093109ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 96.274094ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 98.264893ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.45): Duration: 95.877502ms
+(Multiplication time @ 19.50.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 99.944801ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 95.136002ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 97.758194ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 99.025101ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 99.804893ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 94.730896ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 96.739799ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 95.796196ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.46): Duration: 97.093201ms
+(Multiplication time @ 19.50.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 95.992889ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 97.321907ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 96.320091ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 97.979103ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 98.910896ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 99.819801ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 96.778999ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 97.171997ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 96.395004ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.47): Duration: 96.144600ms
+(Multiplication time @ 19.50.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 97.242500ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 95.852203ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 96.494301ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 95.980003ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 98.306000ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 95.733902ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Framerate @ 19.50.48): 9.396086
+(Timer: Matrix multiplications @ 19.50.48): Duration: 97.368309ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 94.748001ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.48): Duration: 97.382202ms
+(Multiplication time @ 19.50.48): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 95.561195ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 97.579796ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 95.383499ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 98.181801ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 98.791595ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 98.257599ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 95.426201ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 98.512703ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 94.610603ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.49): Duration: 97.433205ms
+(Multiplication time @ 19.50.49): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 96.163101ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 96.353798ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 96.467499ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 99.019699ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 97.803596ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 98.242401ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 95.056396ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 98.865997ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.50): Duration: 95.839500ms
+(Multiplication time @ 19.50.50): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 96.330101ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 95.489395ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 97.383797ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 96.318604ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 99.877602ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 96.649994ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 95.277504ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 96.279297ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Framerate @ 19.50.51): 9.675765
+(Timer: Matrix multiplications @ 19.50.51): Duration: 95.638199ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.51): Duration: 97.534401ms
+(Multiplication time @ 19.50.51): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 95.190201ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 97.077293ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 95.686707ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 99.496201ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 97.378403ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 97.982300ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 95.006493ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 97.912994ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.52): Duration: 95.925194ms
+(Multiplication time @ 19.50.52): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 97.764893ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 95.003601ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 94.760597ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 96.042099ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 108.853195ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 96.495003ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 99.143806ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 95.021400ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 97.309509ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.53): Duration: 95.654800ms
+(Multiplication time @ 19.50.53): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 96.362595ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 97.649506ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 100.732002ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 97.784805ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 96.877998ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 97.508995ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 96.147697ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 99.608398ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.54): Duration: 96.079697ms
+(Multiplication time @ 19.50.54): 0.000000ns
+(Framerate @ 19.50.54): 9.311828
+(Timer: Matrix multiplications @ 19.50.55): Duration: 96.871002ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 95.183205ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 98.026001ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 95.343796ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 102.149109ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 95.790497ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 97.816093ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 96.557106ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.55): Duration: 98.331604ms
+(Multiplication time @ 19.50.55): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 95.166397ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 96.061104ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 94.380806ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 97.839600ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 99.998497ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 97.813110ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 95.197403ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 98.014000ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 94.684898ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.56): Duration: 96.653503ms
+(Multiplication time @ 19.50.56): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 94.106895ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 96.376999ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 95.075500ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 96.411903ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 99.058701ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 96.622093ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 96.381004ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 94.750000ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 96.321297ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.57): Duration: 96.731300ms
+(Multiplication time @ 19.50.57): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 96.815697ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Framerate @ 19.50.58): 9.506996
+(Timer: Matrix multiplications @ 19.50.58): Duration: 95.279205ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 97.742889ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 98.575401ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 98.683899ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 96.004898ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 97.521507ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 94.027603ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.58): Duration: 97.112305ms
+(Multiplication time @ 19.50.58): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 96.523697ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 105.175499ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 95.325508ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 96.784195ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 104.711098ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 101.231598ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 95.992401ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 100.158806ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.50.59): Duration: 95.481400ms
+(Multiplication time @ 19.50.59): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 96.400894ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 96.208405ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 97.822998ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 96.869698ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 99.646797ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 113.282700ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 95.782303ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 98.070999ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 95.716202ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.00): Duration: 97.762802ms
+(Multiplication time @ 19.51.00): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 95.388397ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 96.885597ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 96.500496ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Framerate @ 19.51.01): 9.537935
+(Timer: Matrix multiplications @ 19.51.01): Duration: 97.307999ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 99.996407ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 97.393295ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 95.292801ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 97.708000ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.01): Duration: 94.848892ms
+(Multiplication time @ 19.51.01): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 97.782898ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 96.040703ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 99.058495ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 95.723999ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 97.047905ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 96.832405ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 94.767097ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 97.405296ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 95.571693ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.02): Duration: 97.127907ms
+(Multiplication time @ 19.51.02): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 95.827904ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 96.017601ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 94.802307ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 97.286797ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 98.192001ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 102.533501ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 95.873398ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 97.347908ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.03): Duration: 96.183502ms
+(Multiplication time @ 19.51.03): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 97.185600ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 95.264702ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 98.111099ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 94.918091ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 101.523697ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Framerate @ 19.51.04): 9.737250
+(Timer: Matrix multiplications @ 19.51.04): Duration: 97.202400ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 97.431908ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 96.501900ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 97.440300ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.04): Duration: 95.162895ms
+(Multiplication time @ 19.51.04): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 98.467300ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 94.971596ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 98.399696ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 95.175804ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 99.565994ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 95.424400ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 97.332001ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 98.222298ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.05): Duration: 96.682304ms
+(Multiplication time @ 19.51.05): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 96.343506ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 95.214798ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 102.601402ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 94.006393ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 97.070206ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 97.869904ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 97.496704ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 96.659599ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 96.262596ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.06): Duration: 94.988396ms
+(Multiplication time @ 19.51.06): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 96.964897ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 94.428101ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 97.457100ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 95.834206ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 101.207397ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 94.891800ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Framerate @ 19.51.07): 9.148227
+(Timer: Matrix multiplications @ 19.51.07): Duration: 97.819298ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 95.589401ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.07): Duration: 97.890800ms
+(Multiplication time @ 19.51.07): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 95.542496ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 95.866493ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 95.396301ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 96.347298ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 98.320099ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 98.075394ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 96.999100ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 95.197899ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 97.328201ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.08): Duration: 96.246597ms
+(Multiplication time @ 19.51.08): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 108.692604ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 94.790497ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 97.423798ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 96.319298ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 109.513405ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 95.722397ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 96.743698ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 97.070999ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.09): Duration: 99.312096ms
+(Multiplication time @ 19.51.09): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 97.166702ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 96.621994ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 96.139603ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 96.501694ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 97.198898ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 102.439201ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 96.731606ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.10): Duration: 95.785606ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Framerate @ 19.51.10): 9.482331
+(Timer: Matrix multiplications @ 19.51.10): Duration: 96.313606ms
+(Multiplication time @ 19.51.10): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 94.958199ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 97.777107ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 94.205605ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 96.887505ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 95.534195ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 98.035599ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 95.622398ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 104.719101ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 99.836502ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.11): Duration: 98.220398ms
+(Multiplication time @ 19.51.11): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 95.690598ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 97.611290ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 95.467598ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 97.645294ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 98.821899ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 100.501900ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 95.708702ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 100.315201ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.12): Duration: 96.373100ms
+(Multiplication time @ 19.51.12): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 97.354706ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 97.559502ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 98.197906ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 97.588005ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 97.730598ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 97.899399ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 95.534195ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 98.133293ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 96.217903ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.13): Duration: 97.681694ms
+(Multiplication time @ 19.51.13): 0.000000ns
+(Framerate @ 19.51.13): 9.587507
+(Timer: Matrix multiplications @ 19.51.14): Duration: 95.391502ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 97.142601ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 96.082306ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 97.833694ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 96.337296ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 111.911804ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 97.083397ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 97.022202ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.14): Duration: 94.948700ms
+(Multiplication time @ 19.51.14): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 97.026802ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 94.821907ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 95.857903ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 94.985504ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 98.325699ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 99.469994ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 99.473106ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 96.025604ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 97.017197ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.15): Duration: 99.566299ms
+(Multiplication time @ 19.51.15): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 104.863602ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 96.373001ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 94.501198ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 96.734306ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 104.140198ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 98.249802ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 96.976707ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 98.071297ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.16): Duration: 96.628098ms
+(Multiplication time @ 19.51.16): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 97.440094ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 95.080093ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Framerate @ 19.51.17): 9.504041
+(Timer: Matrix multiplications @ 19.51.17): Duration: 97.298195ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 96.446701ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 98.133598ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 97.733604ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 96.949196ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 96.639999ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.17): Duration: 94.973907ms
+(Multiplication time @ 19.51.17): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 99.876396ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 97.046494ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 96.820091ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 97.243904ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 98.235001ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 97.198311ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 96.857101ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 96.382095ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 97.436302ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.18): Duration: 95.619507ms
+(Multiplication time @ 19.51.18): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 98.696892ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 97.734703ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 98.067902ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 95.016396ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 99.431694ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 98.467506ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 97.084206ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 94.287102ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.19): Duration: 99.420799ms
+(Multiplication time @ 19.51.19): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 97.094002ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 97.610497ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 95.643700ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 97.578598ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Framerate @ 19.51.20): 9.676017
+(Timer: Matrix multiplications @ 19.51.20): Duration: 96.853294ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 99.755905ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 95.915802ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 97.441109ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 95.889900ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.20): Duration: 95.146400ms
+(Multiplication time @ 19.51.20): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 99.279800ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 98.300301ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 99.646202ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 97.977905ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 100.608498ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 98.253098ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 108.463104ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 95.761200ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.21): Duration: 96.403198ms
+(Multiplication time @ 19.51.21): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 98.703400ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 98.534004ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 96.539299ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 97.017700ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 94.323105ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 100.662498ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 97.665909ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 97.165802ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 95.592796ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.22): Duration: 96.301399ms
+(Multiplication time @ 19.51.22): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 98.619606ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 94.944595ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 95.808304ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 96.650200ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 97.756889ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Framerate @ 19.51.23): 9.578847
+(Timer: Matrix multiplications @ 19.51.23): Duration: 97.456596ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 97.424995ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 95.685600ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.23): Duration: 98.187202ms
+(Multiplication time @ 19.51.23): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 98.617798ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 98.444893ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 96.209297ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 97.017906ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 96.417595ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 100.198898ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 95.633301ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 98.492798ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 96.775002ms
+(Multiplication time @ 19.51.24): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.24): Duration: 97.768600ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 95.817795ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 96.858894ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 96.256493ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 95.846306ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 95.539803ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 97.692001ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 97.536804ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 95.599007ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.25): Duration: 96.051300ms
+(Multiplication time @ 19.51.25): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 98.187294ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 97.871994ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 97.693695ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 97.180702ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 95.315399ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 99.758606ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 96.910706ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Framerate @ 19.51.26): 9.258041
+(Timer: Matrix multiplications @ 19.51.26): Duration: 97.382706ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.26): Duration: 96.337402ms
+(Multiplication time @ 19.51.26): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 98.199203ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 95.759804ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 96.970497ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 94.909805ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 104.171692ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 96.625504ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 98.771996ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 96.664299ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 97.054398ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.27): Duration: 96.965103ms
+(Multiplication time @ 19.51.27): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 97.072899ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 94.884003ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 97.720306ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 96.973999ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 95.756493ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 97.281799ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 95.904999ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 97.580490ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.28): Duration: 97.334000ms
+(Multiplication time @ 19.51.28): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 97.062096ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 96.924400ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 95.989601ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 96.818199ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 96.696091ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 95.486801ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 98.960495ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 97.155502ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.29): Duration: 96.250801ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Framerate @ 19.51.29): 9.531199
+(Timer: Matrix multiplications @ 19.51.29): Duration: 95.339294ms
+(Multiplication time @ 19.51.29): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 98.324699ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 96.777107ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 108.381401ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 96.489403ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 97.840706ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 98.097694ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 98.482094ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 96.123398ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.30): Duration: 98.239502ms
+(Multiplication time @ 19.51.30): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 97.017799ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 97.405693ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 98.077995ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 95.684402ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 96.210701ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 96.270302ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 99.342598ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 95.901802ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 96.397400ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.31): Duration: 96.544800ms
+(Multiplication time @ 19.51.31): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 98.092896ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 95.818001ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 96.791603ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 96.006500ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 98.460495ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 96.473000ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 96.330597ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 96.367004ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.32): Duration: 97.233803ms
+(Multiplication time @ 19.51.32): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 97.598099ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Framerate @ 19.51.33): 9.529482
+(Timer: Matrix multiplications @ 19.51.33): Duration: 97.192497ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 95.813103ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 97.611595ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 96.523109ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 97.935104ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 96.648895ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 99.306900ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 96.759605ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.33): Duration: 96.964996ms
+(Multiplication time @ 19.51.33): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 96.216698ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 97.214890ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 106.503998ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 95.994301ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 116.066597ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 99.757599ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 97.388306ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 95.482002ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.34): Duration: 97.225395ms
+(Multiplication time @ 19.51.34): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 96.036003ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 96.595802ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 95.494492ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 97.039001ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 96.409203ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 99.479698ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 96.862602ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 98.066803ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.35): Duration: 95.999397ms
+(Multiplication time @ 19.51.35): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 96.664902ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 98.707695ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 96.866707ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Framerate @ 19.51.36): 9.244400
+(Timer: Matrix multiplications @ 19.51.36): Duration: 98.665901ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 96.237602ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 97.819405ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 96.729111ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 101.336205ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 97.117104ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.36): Duration: 97.912895ms
+(Multiplication time @ 19.51.36): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 94.999298ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 97.058899ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 96.991798ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 97.627403ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 97.166397ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 97.382202ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 95.651001ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 98.156799ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.37): Duration: 94.753296ms
+(Multiplication time @ 19.51.37): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 98.227692ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 95.271103ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 96.390701ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 96.415298ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 97.029205ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 96.921402ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 98.849907ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 96.345604ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 95.092896ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.38): Duration: 97.057404ms
+(Multiplication time @ 19.51.38): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 95.843201ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 96.097404ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 95.225197ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 96.600197ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Framerate @ 19.51.39): 9.709634
+(Timer: Matrix multiplications @ 19.51.39): Duration: 97.556900ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 97.365204ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 96.180405ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 98.855400ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.39): Duration: 95.459793ms
+(Multiplication time @ 19.51.39): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 97.770996ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 96.005104ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 103.809402ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 94.912308ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 97.066002ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 98.236000ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 101.664398ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 95.985901ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 95.976700ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.40): Duration: 95.860802ms
+(Multiplication time @ 19.51.40): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 98.337395ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 94.753601ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 95.198494ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 97.844498ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 97.581902ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 97.148201ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 98.661507ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 98.703293ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.41): Duration: 95.949203ms
+(Multiplication time @ 19.51.41): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 96.849907ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 95.919800ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 98.796303ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 97.281906ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 97.054497ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 98.500000ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Framerate @ 19.51.42): 9.441935
+(Timer: Matrix multiplications @ 19.51.42): Duration: 98.092094ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 97.122803ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 98.752403ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.42): Duration: 96.458595ms
+(Multiplication time @ 19.51.42): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 98.346596ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 94.605606ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 101.289398ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 98.289993ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 100.115295ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 99.861298ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 99.096603ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 99.523399ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.43): Duration: 97.603401ms
+(Multiplication time @ 19.51.43): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 97.713402ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 95.394600ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 98.846001ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 97.862900ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 97.857201ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 95.997910ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 100.718201ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 95.558197ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.44): Duration: 97.531403ms
+(Multiplication time @ 19.51.44): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 95.130600ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 96.256706ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 96.081505ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 96.919106ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 95.489906ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 98.655594ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 95.695503ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 98.294495ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Framerate @ 19.51.45): 9.683475
+(Timer: Matrix multiplications @ 19.51.45): Duration: 96.744698ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.45): Duration: 100.154305ms
+(Multiplication time @ 19.51.45): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 97.718895ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 98.193298ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 95.987602ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 96.688202ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 98.979698ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 97.395500ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 99.789902ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 96.660004ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.46): Duration: 98.210495ms
+(Multiplication time @ 19.51.46): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 96.064201ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 97.866203ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 96.329201ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 97.515396ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 98.624199ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 100.493401ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 102.402702ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 98.013908ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 96.560997ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.47): Duration: 100.727997ms
+(Multiplication time @ 19.51.47): 0.000000ns
+(Timer: Matrix multiplications @ 19.51.48): Duration: 95.741295ms
+(Multiplication time @ 19.51.48): 0.000000ns
