@@ -64,6 +64,14 @@ namespace Utility
 		return str + lead;
 	}
 
+	//Will add $lead to string if it doesn't already end with $lead. Good for trailing slashes
+	inline std::string Lead(const std::string& str, const std::string& lead)
+	{
+		if (lead.size() <= str.size() && str.substr(str.size() - lead.size() - 1) == lead)
+			return str;
+		return str + lead;
+	}
+
 	//Will return a string vector of all folder in a specified directory
 	std::string ListToString(float* list, int length);
 

@@ -61,7 +61,7 @@ Quaternion Quaternion::PointTo(const Vector3& direction)
 {
 	Vector3 forwardVector = direction.Normalize();
 
-	float dot = Dot(Vector3::forward, forwardVector);
+	float dot = Vector3::Dot(Vector3::forward, forwardVector);
 
 	if (abs(dot - (-1.0f)) < 0.000001f)
 	{

@@ -8,7 +8,7 @@ struct Vector4
 {
 	Vector4();
 	Vector4(float x, float  y, float  z, float  w);
-	Vector4(Vector3 vec3, float w = 0);
+	Vector4(Vector3 vec3, float w = 1);
 
 	~Vector4();
 	union

@@ -1,5 +1,9 @@
 #pragma once
 #include "Systemdefs.h"
+#include "VertexArray.h"
+#include "IndexBuffer.h"
+#include "Shader.h"
+
 #include <GL/glew.h>
 #include <string>
 
@@ -21,5 +25,8 @@ class Renderer
 public:
 	Renderer();
 	~Renderer();
+
+	void Clear() const;
+	void Draw(const VertexArray& vertexArray, const IndexBuffer& indexBuffer, const Shader& shader) const;
 };
 

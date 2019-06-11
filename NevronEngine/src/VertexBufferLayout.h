@@ -1,7 +1,7 @@
 #pragma once
 #include "GL/glew.h"
 #include <vector>
-#include "Renderer.h"
+#include "Systemdefs.h"
 
 struct VBElement
 {

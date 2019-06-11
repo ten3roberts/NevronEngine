@@ -114,7 +114,7 @@ struct Matrix
 	}
 	Matrix(unsigned int height, unsigned int width) : m_height(height), m_width(width), m_size(height* width)
 	{
-		m_data = new float[m_height * m_width];
+		m_data = new float[m_size];
 		for (unsigned int i = 0; i < m_size; i++)
 			m_data[i] = 0;
 	}
@@ -230,6 +230,7 @@ struct Matrix
 	Matrix operator+(const Matrix& matrix) const
 	{
 		ASSERT((*this) == matrix);
+
 		Matrix result(m_height, m_width);
 		for (unsigned int i = 0; i < m_size; i++)
 			* result[i] = get(i) + matrix.get(i);
@@ -238,12 +239,15 @@ struct Matrix
 
 	Matrix operator-(const Matrix& matrix) const
 	{
+		ASSERT((*this) == matrix);
+
 		Matrix result(m_height, m_width);
 		for (unsigned int i = 0; i < m_size; i++)
 			* result[i] = get(i) - matrix.get(i);
 		return result;
 	}
 
+	//Returns true if the matrices are the same dimensions
 	bool operator==(const Matrix& matrix) const
 	{
 		return (m_height == matrix.height() && m_width == matrix.width());

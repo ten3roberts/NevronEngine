@@ -7,7 +7,7 @@ public:
 	Quaternion();
 	Quaternion(const Vector3& axis, float angle); //Axis angle rotations
 	Quaternion(float x, float y, float z, float w);
-	Quaternion(const Vector3& euler);
+	explicit Quaternion(const Vector3& euler);
 
 	~Quaternion();
 

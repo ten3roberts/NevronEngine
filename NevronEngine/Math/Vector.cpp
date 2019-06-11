@@ -1,6 +1,7 @@
 #include "Vector.h"
 #include "..\src\Systemdefs.h"
 #include "Math.h"
+#include <iostream>
 
 
 Vector::Vector(unsigned int size) : m_size(size)
@@ -49,7 +50,7 @@ Vector::Vector(const Vector& a, const Vector& b)
 Vector Vector::OnSphere(unsigned int size, float radius)
 {
 	Vector result(size);
-	for(int i = 0; i < size; i++)
+	for(unsigned int i = 0; i < size; i++)
 		result[i] = (2.0f * std::rand() / RAND_MAX) - 1.0f;
 
 	return result.Normalize() * size;
@@ -66,7 +67,7 @@ Vector Vector::InSphere(unsigned int size, float outerRadius, float innerRadius)
 
 	//Scales it with a random length
 	float randomLength = (float)std::rand() / RAND_MAX;
-	result *= randomLength;
+	result *= randomLength * (outerRadius - innerRadius) + innerRadius;
 
 	return result;
 }
@@ -162,7 +163,7 @@ Vector Vector::operator/(float scalar) const
 {
 	Vector result(m_size);
 	for (unsigned int i = 0; i < m_size; i++)
-		result[i] = m_data[i] + scalar;
+		result[i] = m_data[i] / scalar;
 	return result;
 }
 
@@ -291,7 +292,7 @@ Vector Vector::Clamp(float min, float max) const
 {
 	Vector result(m_size);
 	for (unsigned int i = 0; i < m_size; i++)
-		result = m_data[i] > max ? max : m_data[i] < min ? min : m_data[i];
+		result[i] = m_data[i] > max ? max : m_data[i] < min ? min : m_data[i];
 	return result;
 }
 

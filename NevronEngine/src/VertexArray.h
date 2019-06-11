@@ -2,6 +2,7 @@
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
 
+//Vertex Attribute Array
 class VertexArray
 {
 private:
@@ -11,6 +12,7 @@ public:
 	VertexArray();
 	~VertexArray();
 
+	//Adds a vertex buffer, i.e; a model and assigns the vertex layout
 	void AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout);
 
 	void Bind() const;
