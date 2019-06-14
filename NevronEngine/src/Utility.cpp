@@ -171,22 +171,22 @@ int Utility::ParseTime(const std::string& str)
 
 		if (parts[i] == "second")
 		{
-			seconds += 0;//num(parts[i - 1]);
+			seconds += num(parts[i - 1]);
 		}
 
 		else if (parts[i] == "minute")
 		{
-			seconds += 0;//num(parts[i - 1]) * 60;
+			seconds += num(parts[i - 1]) * 60;
 		}
 
 		else if (parts[i] == "hour")
 		{
-			seconds += 0;//num(parts[i - 1]) * 3600;
+			seconds += num(parts[i - 1]) * 3600;
 		}
 
 		else if (parts[i] == "day")
 		{
-			seconds += 0;//num(parts[i - 1]) * 86400;
+			seconds += num(parts[i - 1]) * 86400;
 		}
 	}
 	return seconds;
@@ -205,7 +205,7 @@ std::string Utility::FormatTime(int seconds)
 	seconds = seconds % 3600;
 
 	times[2] = seconds / 60;
-	seconds = seconds % 60;
+    seconds = seconds % 60;
 
 	times[3] = seconds;
 
@@ -388,6 +388,24 @@ std::string Utility::FindFile(const std::string& filename, const std::string& di
 			return files[i];
 		}
 	}
+	Log("No file found with name: " + filename, "FindFile");
+	return "";
+}
+
+std::string Utility::FindFile(const std::string& filename, bool useExtension, const std::string& directory)
+{
+	//Makes sure to remove any preceding path to the filename we're searching for
+	std::string fname = getFilename(filename, useExtension);
+
+	std::vector<std::string> files = ListAllFiles(directory);
+	for (int i = 0; i < files.size(); i++)
+	{
+		if (getFilename(files[i], useExtension) == fname)
+		{
+			return files[i];
+		}
+	}
+	Log("No file found with name: " + filename, "FindFile");
 	return "";
 }
 

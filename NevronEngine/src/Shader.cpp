@@ -60,6 +60,11 @@ void Shader::SetUniform(const std::string& name, float value)
 	glUniform1f(getUniformLocation(name), value);
 }
 
+void Shader::SetUnform(const std::string name, int value)
+{
+	glUniform1i(getUniformLocation(name), value);
+}
+
 int Shader::getUniformLocation(const std::string& name)
 {
 	if (m_uniformCache.find(name) != m_uniformCache.end())

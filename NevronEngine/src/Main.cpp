@@ -7,6 +7,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
+#include "Texture.h"
 
 #include "Shader.h"
 
@@ -71,11 +72,11 @@ int main(int argc, char** argv)
 	delete timer;
 
 	//Simple square
-	float positions[8] = {
-		-0.5f, -0.5f,
-		 0.5f,  -0.5f,
-		 0.5f, 0.5f,
-		 -0.5f, 0.5f
+	float positions[] = {
+		-0.5f, -0.5f, 0.0f, 0.0f,
+		 0.5f,  -0.5f, 1.0f, 0.0f,
+		 0.5f, 0.5f, 1.0f, 1.0f,
+		 -0.5f, 0.5f, 0.0f,1.0f
 	};
 
 	unsigned int indices[] = {
@@ -83,12 +84,16 @@ int main(int argc, char** argv)
 		2, 3, 0
 	};
 
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+
 	//Vertex buffer
 	VertexArray va;
-	VertexBuffer vb(positions, 4 * 2 * sizeof(float), true);
+	VertexBuffer vb(positions, 4 * 4/*sizeof vertex*/ * sizeof(float), true);
 
 	//Vertex layout
 	VertexBufferLayout layout;
+	layout.Push<float>(2);
 	layout.Push<float>(2);
 
 	//Adds vertives
@@ -101,6 +106,21 @@ int main(int argc, char** argv)
 	Shader shader("Basic");
 	shader.Bind();
 	shader.SetUniform("u_color", Vector4::red);
+
+	Texture iconTex("NevronLogo.png", false);
+
+	GLFWimage icon;
+	icon.height = iconTex.getHeight();
+	icon.width = iconTex.getWidth();
+	icon.pixels = iconTex.getData();
+	
+	
+	glfwSetWindowIcon(window, 1, &icon);
+	mat matrix(4, 4);
+
+	Texture texture("Checker.png");
+	texture.Bind();
+	shader.SetUnform("u_texture", 0); //0 is slot
 
 	va.Unbind();
 
@@ -121,9 +141,12 @@ int main(int argc, char** argv)
 
 		//Binding
 
+		texture.Bind();
 		shader.Bind();
 
-		vec3 color = vec3::HSV(Time::elapsedTime / 2.0f, 1, 1);
+		shader.SetUnform("u_texture", 0); //0 is slot
+
+		vec3 color = vec3::HSV(Time::elapsedTime / 5.0f, 1, 1);
 		shader.SetUniform("u_color", color);
 
 		renderer.Draw(va, ib, shader);

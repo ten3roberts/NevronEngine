@@ -119,6 +119,8 @@ namespace Utility
 
 	//Will go through all files in the directory and all of it's subfolder searching for a specified file and return the path for it
 	std::string FindFile(const std::string& filename, const std::string& directory = ASSETS);
+	//Will go through all files in the directory and all of it's subfolder searching for a specified file and return the path for it optionally ignore extension
+	std::string FindFile(const std::string& filename, bool useExtension, const std::string& directory = ASSETS);
 
 
 	//Will return the file as a string vector with each element being a separate line

@@ -45,6 +45,9 @@ public:
 	//Sets a float uniform
 	void SetUniform(const std::string& name, float value);
 
+	//Sets a integer value
+	void SetUnform(const std::string name, int value);
+
 
 	std::string getName() const { return m_name; }
 

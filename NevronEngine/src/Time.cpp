@@ -2,6 +2,7 @@
 #include "Utility.h"
 #include <string>
 #include <sstream>
+
 float Time::frameRate = 0.0;
 float Time::deltaTime = 0.0;
 float Time::elapsedTime = 0.0;
