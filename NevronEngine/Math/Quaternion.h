@@ -3,7 +3,7 @@
 
 struct Matrix4;
 
-class Quaternion
+struct Quaternion
 {
 public:
 	Quaternion();
@@ -12,7 +12,7 @@ public:
 	explicit Quaternion(const Vector3& euler);
 
 	~Quaternion();
-
+	static Quaternion Identity();
 	//Creates a quaternion from an euler rotation
 	static Quaternion Euler(const Vector3& euler);
 
@@ -78,8 +78,10 @@ public:
 	inline bool Valid() const { return SqrMagnitude() > 0.00001; }
 	inline bool Defined() const { return SqrMagnitude() > 0.00001; }
 
-	inline std::string str() { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w)); }
-	inline std::string str_d() { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w) + "; " + STR(Magnitude())); }
+	inline std::string str() const { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w)); }
+
+	//Quaternion should always be a unit quaternion; only use for debugging purposes
+	inline std::string str_d() const { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w) + "; " + STR(Magnitude())); }
 
 
 	static const Quaternion identity;

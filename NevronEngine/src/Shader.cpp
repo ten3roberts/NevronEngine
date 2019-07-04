@@ -10,7 +10,7 @@ Shader::Shader(const std::string& name) : m_rendererID(0)
 	m_name = getFilename(name);
 	m_filepath = FindFile(strLead(name, ".shader"));
 	if (m_filepath == "")
-		Log("Couldn't strFind shader with name: " + name, "Shader: " + m_name);
+		logger << author << "Shader: " + m_name << "Couldn't find shader with name: " << lend;
 
 	ShaderSource source = ParseShader(m_filepath);
 	m_rendererID = CreateShader(source);
@@ -77,10 +77,10 @@ int Shader::getUniformLocation(const std::string& name)
 	if (m_uniformCache.find(name) != m_uniformCache.end())
 		return m_uniformCache[name];
 
-	Log("Uniform: " + name + " is not yet cached, retrieving id", "Shader: " + m_name);
+	logger << author << "Shader: " + m_name << "Uniform: " + name + " is not yet cached, retrieving id" << lend;
 	int location = glGetUniformLocation(m_rendererID, name.c_str());
 	if (location == -1)
-		Log("Couldn't get uniform location: " + name + "; Uniform is either optimised away or does not exist in the current shader", "Shader: " + m_name);
+		logger << author << "Shader: " + m_name << "Couldn't get uniform location: " + name + "; Uniform is either optimised away or does not exist in the current shader" << lend;
 	else
 		m_uniformCache[name] = location;
 	return location;
@@ -105,7 +105,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 
 		char* message = new char[length * sizeof(char)];
 		glGetShaderInfoLog(id, length, &length, message);
-		Log((message), type == GL_VERTEX_SHADER ? "vertex" : "fragment" + std::string(" Shader Error"));
+		logger << author << (type == GL_VERTEX_SHADER ? "vertex" : "fragment" + std::string(" Shader Error")) << message;
 		glDeleteShader(id);
 		delete[] message;
 		return 0;
@@ -118,10 +118,10 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 {
 	unsigned int program = glCreateProgram();
 	unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
-	Log("Compiled vertex shader", "Shader: " + m_name);
+	logger << author << "Shader: " + m_name << "Compiled vertex shader" << lend;
 
 	unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
-	Log("Compiled fragment shader", "Shader: " + m_name);
+	logger << author << "Shader: " + m_name << "Compiled fragment shader" << lend;
 
 	glAttachShader(program, vs);
 	glAttachShader(program, fs);
@@ -140,10 +140,10 @@ unsigned int Shader::CreateShader(ShaderSource source)
 {
 	unsigned int program = glCreateProgram();
 	unsigned int vs = CompileShader(GL_VERTEX_SHADER, source.vertexSource);
-	Log("Compiled vertex shader", "Shader: " + m_name);
+	logger << author << "Shader: " + m_name << "Compiled vertex shader" << lend;
 
 	unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, source.fragmentSource);
-	Log("Compiled fragment shader", "Shader: " + m_name);
+	logger << author << "Shader: " + m_name << "Compiled fragment shader" << lend;
 
 	glAttachShader(program, vs);
 	glAttachShader(program, fs);

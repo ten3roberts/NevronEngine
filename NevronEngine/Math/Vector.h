@@ -137,7 +137,7 @@ struct Vector
 
 	inline float* Array() { return &m_data[0]; }
 
-	inline std::string str()
+	inline std::string str() const
 	{
 		std::string result;
 		for (unsigned int i = 0; i < m_size; i++)

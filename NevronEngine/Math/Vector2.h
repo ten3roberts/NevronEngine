@@ -1,6 +1,6 @@
 #pragma once
+#include "..\\Systemdefs.h"
 #include <string>
-#include "..\src\Utility.h"
 
 struct Vector2
 {
@@ -88,8 +88,8 @@ struct Vector2
 
 	inline float* Array() { return &x; }
 
-	inline std::string str() { return std::string(STR(x) + ", " + STR(y)); }
-	inline std::string str_d() { return std::string(STR(x) + ", " + STR(y) + "; " + STR(Magnitude())); }
+	inline std::string str() const { return std::string(STR(x) + ", " + STR(y)); }
+	inline std::string str_d() const { return std::string(STR(x) + ", " + STR(y) + "; " + STR(Magnitude())); }
 
 	//Calculates the dot product between two vectors
 	static float Dot(const Vector2& a, const Vector2& b);

@@ -43,6 +43,11 @@ Quaternion::~Quaternion()
 {
 }
 
+Quaternion Quaternion::Identity()
+{
+	return identity;
+}
+
 Quaternion Quaternion::Euler(const Vector3& euler)
 {
 	float Y = sinf(euler.y / 2);
@@ -355,7 +360,7 @@ Quaternion Quaternion::Lerp(const Quaternion& a, const Quaternion& b, float t)
 {
 	// If the inputs are too close, linearly interpolate
 	// and normalize the result.
-
+	t = Math::Clamp01(t);
 	Quaternion result = a + (b - a) * t;
 	result = result.Normalize();
 	return result;

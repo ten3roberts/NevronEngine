@@ -25,5 +25,5 @@ Timer::~Timer()
 	if (result)
 		* result = duration.count();
 	else
-		Log("Duration: " + std::to_string(duration.count() * 1000) + "ms", "Timer: " + name);
+		logger << author << "Timer: " + name << "Duration: " + std::to_string(duration.count() * 1000) + "ms" << lend;
 }

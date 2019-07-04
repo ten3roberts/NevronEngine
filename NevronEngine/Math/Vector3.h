@@ -118,12 +118,13 @@ struct Vector3
 
 
 	inline float* Array() { return &x; }
-	inline std::string str() { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z)); }
-	inline std::string str_d() { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + "; " + STR(Magnitude())); }
+	inline std::string str() const { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z)); }
+	inline std::string str_d() const { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + "; " + STR(Magnitude())); }
 
 	static const Vector3 red;
 	static const Vector3 green;
 	static const Vector3 blue;
+	static const Vector3 white;
 	static const Vector3 black;
 
 	static const Vector3 forward;

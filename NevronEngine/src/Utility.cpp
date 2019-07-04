@@ -25,7 +25,7 @@ void Utility::setWorkingDir(const std::string& dir)
 {
 	std::string oldDir = s_workingDir;
 	s_workingDir = getPath(dir);
-	Log("Working directory changed from \"" + oldDir + "\" to \"" + s_workingDir + "\"");
+	logger << "Working directory changed from \"" + oldDir + "\" to \"" + s_workingDir + "\"" << lend;
 
 }
 
@@ -398,7 +398,7 @@ std::string Utility::FindFile(const std::string& filename, const std::string& di
 			return files[i];
 		}
 	}
-	Log("No file found with name: " + filename, "FindFile");
+	logger << author << "FindFile" << "No file found with name: " + filename << lend;
 	return "";
 }
 
@@ -415,7 +415,7 @@ std::string Utility::FindFile(const std::string& filename, bool useExtension, co
 			return files[i];
 		}
 	}
-	Log("No file found with name: " + filename, "FindFile");
+	logger << author << "FindFile" << "No file found with name: " + filename << lend;
 	return "";
 }
 
@@ -502,7 +502,7 @@ void Utility::Copy(const std::string& oldPath, const std::string& newPath)
 		std::ofstream newFile(newPath, std::ios::binary);
 		if (!oldFile.is_open())
 		{
-			Log("Couldn't open file: " + oldPath, "CopyFile");
+			logger << author << "CopyFile" << "Couldn't open file: " + oldPath << lend;
 			return;
 		}
 		newFile << oldFile.rdbuf();
@@ -645,7 +645,7 @@ void Utility::SaveErrorDef()
 	GenerateFile(WORKDIR + "Assets\\Errordef.txt", ListTostring(s_errorDef), false);
 }
 
-void Utility::Log(const std::string& msg, const std::string& msgOrigin)
+/*void Utility::Log(const std::string& msg, const std::string& msgOrigin)
 {
 	//Make sure the logs folder exists
 	GeneratePath(WORKDIR + "Logs");
@@ -678,7 +678,7 @@ void Utility::Log(const std::string& msg, const std::string& msgOrigin)
 	if (ENABLE_CONSOLE)
 		std::cout.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
 	s_logFile.close();
-}*/
+}
 
 void Utility::Log_s(const std::string& msg, const std::string& msgOrigin)
 {
@@ -692,7 +692,7 @@ void Utility::Log_s(const std::string& msg, const std::string& msgOrigin)
 
 	s_logFile.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
 	s_logFile.close();
-}
+}*/
 
 /*void Utility::Log_s(std::initializer_list<std::string> msg, const std::string& msgOrigin)
 {

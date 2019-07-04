@@ -16,6 +16,7 @@ using namespace Utility;
 const Vector3 Vector3::red = { 1,0,0 };
 const Vector3 Vector3::green = { 0,1,0 };
 const Vector3 Vector3::blue = { 0,0,1 };
+const Vector3 Vector3::white = { 1,1,1 };
 const Vector3 Vector3::black = { 0,0,0 };
 
 

@@ -6,12 +6,12 @@ private:
 	unsigned int m_count;
 public:
 
-	//Creates and binds a index buffer
+	//Creates and binds a index buffer depening on $bind
 	IndexBuffer(unsigned int* data, unsigned int count);
 
-	void setData(unsigned int* data, unsigned int count);
-
 	~IndexBuffer();
+
+	void setData(unsigned int* data, unsigned int count);
 
 	void Bind() const;
 	void Unbind() const;

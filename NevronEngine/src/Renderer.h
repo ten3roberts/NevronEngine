@@ -1,7 +1,6 @@
 #pragma once
 #include "Systemdefs.h"
-#include "VertexArray.h"
-#include "IndexBuffer.h"
+#include "Model.h"
 #include "Shader.h"
 
 #include <GL/glew.h>
@@ -26,7 +25,8 @@ public:
 	Renderer();
 	~Renderer();
 
-	void Clear() const;
+	void Clear(Vector4 color = Vector4::black) const;
 	void Draw(const VertexArray& vertexArray, const IndexBuffer& indexBuffer, const Shader& shader) const;
+	void Draw(Model* model, const Shader& shader) const;
 };
 

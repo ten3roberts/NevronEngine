@@ -1,7 +1,6 @@
 #pragma once
 
 #include "..\\Math\Vector.h"
-#include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
 #include <vector>
@@ -25,14 +24,17 @@ private:
 	IndexBuffer *m_indexBuffer;
 	VertexArray *m_vertexArray;
 public:
-	Model();
-	Model(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
+	Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices);
+	Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount);
 	~Model();
 
-	std::vector<Vertex>& getVertices() { return m_vertices; }
-	std::vector<unsigned int>& getIndices() { return m_indices; }
-	VertexBuffer& getVertexBuffer() { return m_vertexBuffer; }
+	VertexBuffer* getVertexBuffer() const { return m_vertexBuffer; }
+	IndexBuffer* getIndexBuffer() const { return m_indexBuffer; }
+	VertexArray* getVertexArray() const { return m_vertexArray; }
 	void setVertices(std::vector<Vertex> vertices);
 	void setIndices(std::vector<unsigned int> indices);
+
+	void Bind() const;
+	void Unbind() const;
 };
 

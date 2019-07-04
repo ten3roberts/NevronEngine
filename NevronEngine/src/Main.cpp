@@ -11,6 +11,7 @@
 #include "Texture.h"
 #include "Logger.h"
 #include "Model.h"
+#include "Transform.h"
 
 #include "Shader.h"
 
@@ -38,7 +39,7 @@ int main(int argc, char** argv)
 	Settings* settings = Settings::get();
 	settings->Load();
 
-	Log(APPNAME " initializing...");
+	logger << APPNAME " initializing..." << lend;
 
 	Timer* timer = new Timer("Startup");
 
@@ -65,54 +66,9 @@ int main(int argc, char** argv)
 	//Initialize glew and fetch opengl functions
 	if (glewInit() != GLEW_OK)
 	{
-		Log("Could not init glew", "Fatal Error");
+		logger << author << "Fatal Error" << "Could not init glew" << lend;
 		return -1;
 	}
-
-	//During init, enable debug output
-	glEnable(GL_DEBUG_OUTPUT);
-	glDebugMessageCallback(ErrorCallBack, 0);
-
-	Log("OpenGl version: " + std::string((char*)glGetString(GL_VERSION)), "OpenGL");
-
-	delete timer;
-
-	//Simple square
-	Vertex vertices[4];
-	vertices[0] = Vertex({ -0.5f, -0.5f, 0.0f }, {0.0f, 0.0f});
-	vertices[1] = Vertex({ 0.5f, -0.5f, 0.0f }, {1.0f, 0.0f});
-	vertices[2] = Vertex({ 0.5f, 0.5f, 0.0f }, {1.0f, 1.0f});
-	vertices[3] = Vertex({ -0.5f, 0.5f, 0.0f }, {0.0f, 1.0f});
-
-	unsigned int indices[] = {
-		0, 1, 2,
-		2, 3, 0
-	};
-
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glEnable(GL_BLEND);
-
-	glEnable(GL_DEPTH_TEST);
-
-	//Vertex buffer
-	VertexArray va;
-	VertexBuffer vb(vertices, sizeof(Vertex)/*sizeof vertex*/ * 4/*Number of vertices*/);
-
-	//Vertex layout
-	VertexBufferLayout layout;
-	layout.Push<float>(3);
-	layout.Push<float>(2);
-
-	//Adds vertices
-	va.AddBuffer(vb, layout);
-
-	//Index buffer
-	IndexBuffer ib(indices, 6);
-
-	//Shaders
-	Shader shader("Basic");
-	shader.Bind();
-	shader.setUniform4f("u_color", Vector4::white);
 
 	Texture iconTex("NevronLogo.png", false);
 
@@ -120,19 +76,47 @@ int main(int argc, char** argv)
 	icon.height = iconTex.getHeight();
 	icon.width = iconTex.getWidth();
 	icon.pixels = iconTex.getData();
-
-
 	glfwSetWindowIcon(window, 1, &icon);
+
+	//During init, enable debug output
+	glEnable(GL_DEBUG_OUTPUT);
+	glDebugMessageCallback(ErrorCallBack, 0);
+
+	logger << "OpenGl version: " + std::string((char*)glGetString(GL_VERSION)) << lend;
+
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+	glEnable(GL_DEPTH_TEST);
+
+	delete timer;
+
+	//Simple square
+	Vertex vertices[4];
+	vertices[0] = Vertex({ -0.5f, -0.5f, 0.0f }, { 0.0f, 0.0f });
+	vertices[1] = Vertex({ 0.5f, -0.5f, 0.0f }, { 1.0f, 0.0f });
+	vertices[2] = Vertex({ 0.5f, 0.5f, 0.0f }, { 1.0f, 1.0f });
+	vertices[3] = Vertex({ -0.5f, 0.5f, 0.0f }, { 0.0f, 1.0f });
+
+	unsigned int indices[6] = {
+		0, 1, 2,
+		2, 3, 0
+	};
+
+
+
+	Model model(vertices, 4, indices, 6);
+
+	//Shaders
+	Shader shader("Basic");
+	shader.Bind();
+	shader.setUniform4f("u_color", Vector4::white);
 
 	Texture texture("NevronLogo.mc.png");
 	Texture texture2("Checker.png");
 	texture.Bind();
 	shader.setUniform1i("u_texture", 0); //0 is slot
 
-	va.Unbind();
 
-	vb.Unbind();
-	ib.Unbind();
 
 	shader.Unbind();
 
@@ -140,17 +124,15 @@ int main(int argc, char** argv)
 
 	//Matrix4 projectionMat = Matrix4::OrthoAspect(2, settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
 	Matrix4 projectionMat = Matrix4::Perspective(settings->getFOV(), settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
-
-	logger << "Does this work?" << lend;
-	logger << author << "Main" << "Hello darkness, " << "can you hear me?";
-	logger.end();
-	
-	Log("----------Entering game loop----------\n", "Main");
+	Transform transform1({ 0 }, Quaternion::identity, { 3 });
+	Transform transform2;
+	logger << author << "Main" << "----------Entering game loop----------\n" << lend;
 	while (!glfwWindowShouldClose(window))
 	{
 		Time::Update();
-		/*if (Time::frameCount % 30 == 0)
-			Log(STR(Time::frameRate), "Framerate");*/
+		if (Time::frameCount % 120 == 0)
+			logger << author << "Framerate" << STR(Time::frameRate) << lend;
+
 		renderer.Clear();
 
 		//Binding
@@ -165,21 +147,27 @@ int main(int argc, char** argv)
 		shader.setUniform4f("u_color", color);
 		//projectionMat = projectionMat.Transpose();
 
-		Quaternion rot({ 0, 1, 0 }, Time::elapsedTime * 1);
-		Matrix4 scale = Matrix4::Scale({ 3, 3, 3 });
-		Matrix4 translation = Matrix4::Translate({ -0.445, 0, -5 });
+		Quaternion rot = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
+		transform1.position = { -0.445, 0, -5 };
+		transform1.rotation = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
+
 		Matrix4 camTranslation = Matrix4::Translate({ 0,Math::Wave(0, 5, 1, Time::elapsedTime) * 0 + 0 ,0 });
 		Quaternion camRotation = Quaternion({ 0, 1, 0 }, 0);
-		Matrix4 u_MVP = (rot.toMatrix() * scale * translation) * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
+		transform1.Update();
+		Matrix4 u_MVP = /*(rot.toMatrix() * scale * translation)*/ transform1.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 
 		shader.setUniformMat4f("u_MVP", u_MVP);
 
-		renderer.Draw(va, ib, shader);
-
-		Matrix4 u_MVP2 = Quaternion({ 1, 0, 0 }, Time::elapsedTime * 1).toMatrix() * Matrix4::Scale({1, 1, 1}) * Matrix4::Translate({ 0.22, 0, Math::Wave(-25, 0, 0.5, Time::elapsedTime) }) * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
+		//renderer.Draw(va, ib, shader);
+		renderer.Draw(&model, shader);
+		transform2.position = { 0.22, 0, Math::Wave(-25, -0.5, 0.5, Time::elapsedTime) };
+		transform2.rotation = Quaternion({ 1, 0, 0 }, Time::elapsedTime * 3);
+		transform2.Update();
+		Matrix4 u_MVP2 = transform2.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 		shader.setUniformMat4f("u_MVP", u_MVP2);
 		texture2.Bind();
-		renderer.Draw(va, ib, shader);
+
+		renderer.Draw(&model, shader);
 
 
 		//Swap front and back buffers
@@ -189,20 +177,15 @@ int main(int argc, char** argv)
 		glfwPollEvents();
 
 		//Unbinding
-		va.Unbind();
 		GLCall(glUseProgram(0));
-		vb.Unbind();
-		ib.Unbind();
 	}
 
-	Log("Closing Window", "Main");
-
-	SaveErrorDef();
+	logger << ("Closing Window", "Main") << lend;
 
 	glfwTerminate();
 
 	settings->Save();
 
-	Log("Program has terminated correctly");
+	logger << "Program has terminated correctly" << lend;
 	return 0;
 }

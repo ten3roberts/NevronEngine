@@ -1,9 +1,13 @@
 #include "Matrix.h"
+#include "Quaternion.h"
 #include "..\src\Utility.h"
 #include "Math.h"
 #include <cmath>
 
 using namespace Utility;
+
+Matrix4 Matrix4::identity = { 1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1 };
+Matrix4 Matrix4::zero = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 Matrix4 Matrix4::Parse(const std::string& str)
 {
@@ -36,33 +40,12 @@ Matrix4::~Matrix4()
 
 Matrix4 Matrix4::Identity()
 {
-	Matrix4 result;
-
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			if (i == j)
-				result.m_data[i][j] = 1;
-			else
-				result.m_data[i][j] = 0;
-		}
-	}
-	return result;
+	return identity;
 }
 
 Matrix4 Matrix4::Zero()
 {
-	Matrix4 result;
-
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			result.m_data[i][j] = 0;
-		}
-	}
-	return result;
+	return zero;
 }
 
 Matrix4 Matrix4::Euler(Vector3 euler)
@@ -137,6 +120,17 @@ Matrix4 Matrix4::RotateZ(float amount)
 	result.m_data[3][3] = 1;
 
 	return result;
+}
+
+Matrix4 Matrix4::Rotate(Quaternion rotation)
+{
+	return
+	{
+	1 - 2 * rotation.y * rotation.y - 2 * rotation.z * rotation.z,		2 * rotation.x * rotation.y - 2 * rotation.z * rotation.w,		2 * rotation.x * rotation.z + 2 * rotation.y * rotation.w, 0,
+		2 * rotation.x * rotation.y + 2 * rotation.z * rotation.w,	1 - 2 * rotation.x * rotation.x - 2 * rotation.z * rotation.z,		2 * rotation.y * rotation.z - 2 * rotation.x * rotation.w, 0,
+		2 * rotation.x * rotation.z - 2 * rotation.y * rotation.w,		2 * rotation.y * rotation.z + 2 * rotation.x * rotation.w,	1 - 2 * rotation.x * rotation.x - 2 * rotation.y * rotation.y, 0,
+		0,							0,							0,					   1
+	};
 }
 
 Matrix4 Matrix4::Scale(const Vector3& scale)
@@ -243,10 +237,10 @@ Matrix4 Matrix4::Perspective(float fov, float aspect, float nearZ, float farZ)
 	result.m_data[2][2] = -(farZ + nearZ) / (farZ - nearZ);
 	result.m_data[3][2] = -2 * (farZ * nearZ) / (farZ - nearZ);
 	result.m_data[2][3] = -1;
-		return result;
+	return result;
 }
 
-Vector3 Matrix4::operator*(const Vector3& colVec)
+Vector3 Matrix4::operator*(const Vector3& colVec) const
 {
 	if (colVec.SqrMagnitude() < 0.1f)
 		return Vector3(0, 0, 0);
@@ -257,7 +251,7 @@ Vector3 Matrix4::operator*(const Vector3& colVec)
 }
 
 
-Vector4 Matrix4::operator*(const Vector4& colVec)
+Vector4 Matrix4::operator*(const Vector4& colVec) const
 {
 	return Vector4(
 		m_data[0][0] * colVec.x + m_data[0][1] * colVec.y + m_data[0][2] * colVec.z + m_data[0][3] * colVec.w,
@@ -277,7 +271,7 @@ float& Matrix4::operator()(int row, int col)
 	return m_data[row][col];
 }
 
-Matrix4 Matrix4::operator*(const Matrix4 matrix)
+Matrix4 Matrix4::operator*(const Matrix4 matrix) const
 {
 	Matrix4 result;
 	for (unsigned int i = 0; i < 4; i++) //row
@@ -286,7 +280,7 @@ Matrix4 Matrix4::operator*(const Matrix4 matrix)
 		{
 			//Loops through second matrix column and puts in result col
 			for (unsigned int d = 0; d < 4; d++)
-				result(i, d) += (*this)(i, j) * matrix.get(j, d);
+				result(i, d) += get(i, j) * matrix.get(j, d);
 		}
 	}
 	return result;
@@ -310,7 +304,7 @@ Matrix Matrix::Parse(const std::string& str)
 			result(i, j) = num(elems[i][j]);
 		}
 
-	Log("\n" + result.str());
+	logger << "\n" + result.str() << lend;
 
 	return result;
 }

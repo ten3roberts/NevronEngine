@@ -1,11 +1,11 @@
 #pragma once
-#include <vector>
-#include <string>
 #include "Systemdefs.h"
 #include <iostream>
 #include "..\Math\Vector.h"
+#include "Logger.h"
 #include <fstream>
-#include <cstdarg>
+#include <vector>
+#include <string>
 
 
 //Shortcuts
@@ -169,12 +169,12 @@ namespace Utility
 
 	void SaveErrorDef();
 	//Will compose a message complete with time message origin and the original message and write it both to the console and a instance specific logfile
-	void Log(const std::string& msg, const std::string& msgOrigin = "Log");
+	/*void Log(const std::string& msg, const std::string& msgOrigin = "Log");
 
 	//void Log(std::initializer_list<std::string> msg, const std::string& msgOrigin = "Log");
 
 	//Will compose a message complete with time message origin and the original message and write it to the log file but no the console
-	void Log_s(const std::string& msg, const std::string& msgOrigin = "Log");
+	void Log_s(const std::string& msg, const std::string& msgOrigin = "Log");*/
 	//void Log_s(std::initializer_list<std::string> msg, const std::string& msgOrigin = "Log");
 
 };

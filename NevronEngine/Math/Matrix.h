@@ -2,6 +2,8 @@
 #include "Vector.h"
 #include <iostream>
 
+struct Quaternion;
+
 struct Matrix4
 {
 	Matrix4() : m_data{ 0 } {}
@@ -23,7 +25,10 @@ struct Matrix4
 
 
 	static Matrix4 Identity();
+
 	static Matrix4 Zero();
+	static Matrix4 identity;
+	static Matrix4 zero;
 
 	static Matrix4 Random()
 	{
@@ -48,6 +53,7 @@ struct Matrix4
 	static Matrix4 RotateX(float amount);
 	static Matrix4 RotateY(float amount);
 	static Matrix4 RotateZ(float amount);
+	static Matrix4 Rotate(Quaternion rotation);
 
 	static Matrix4 Scale(const Vector3& scale);
 
@@ -66,12 +72,12 @@ struct Matrix4
 
 
 	static Matrix4 Perspective(float fov, float aspect, float nearZ, float farZ);
-	Vector3 operator*(const Vector3& colVec);
+	Vector3 operator*(const Vector3& colVec) const;
 
 
-	Vector4 operator*(const Vector4& colVec);
+	Vector4 operator*(const Vector4& colVec) const;
 
-	Matrix4 operator*(Matrix4 matrix);
+	Matrix4 operator*(Matrix4 matrix) const;
 
 	void operator=(const Matrix4& matrix);
 

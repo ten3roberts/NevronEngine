@@ -15,6 +15,7 @@ const Vector4 Vector4::red = { 1,0,0,1 };
 const Vector4 Vector4::green = { 0,1,0,1 };
 const Vector4 Vector4::blue = { 0,0,1,1 };
 const Vector4 Vector4::white = { 1,1,1,1 };
+const Vector4 Vector4::black = { 0,0,0,0 };
 
 Vector4::Vector4() :
 	x(0), y(0), z(0), w(0)

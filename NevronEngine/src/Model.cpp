@@ -1,13 +1,23 @@
 #include "Model.h"
 
-Model::Model()
+Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 {
+	m_vertexBuffer = new VertexBuffer(&(*vertices)[0], sizeof(Vertex) * vertices->size());
+	m_indexBuffer = new IndexBuffer(&(*indices)[0], indices->size());
+	m_vertexArray = new VertexArray();
+
+	VertexBufferLayout layout;
+	layout.Push<float>(3);
+	layout.Push<float>(2);
+
+	//Adds vertices
+	m_vertexArray->AddBuffer(*m_vertexBuffer, layout);
 }
 
-Model::Model(std::vector<Vertex> vertices, std::vector<unsigned int> indices)
+Model::Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount)
 {
-	m_vertexBuffer = new VertexBuffer(&vertices[0], sizeof(Vertex) * vertices.size());
-	m_indexBuffer = new IndexBuffer(&indices[0], indices.size());
+	m_vertexBuffer = new VertexBuffer(vertices, sizeof(Vertex) * vertexCount);
+	m_indexBuffer = new IndexBuffer(indices, indexCount);
 	m_vertexArray = new VertexArray();
 
 	VertexBufferLayout layout;
@@ -33,4 +43,17 @@ void Model::setVertices(std::vector<Vertex> vertices)
 void Model::setIndices(std::vector<unsigned int> indices)
 {
 	m_indexBuffer->setData(&indices[0], sizeof(unsigned int) * indices.size());
+}
+
+void Model::Bind() const
+{
+	m_vertexArray->Bind();
+	//m_vertexBuffer->Bind();
+	m_indexBuffer->Bind();
+}
+
+void Model::Unbind() const
+{
+	m_vertexArray->Unbind();
+	m_indexBuffer->Unbind();
 }

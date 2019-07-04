@@ -13,6 +13,7 @@ VertexArray::~VertexArray()
 
 void VertexArray::AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout)
 {
+	Bind();
 	//Binds buffer
 	vb.Bind();
 	//Adds the layout to it

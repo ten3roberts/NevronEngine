@@ -102,8 +102,8 @@ struct Vector4
 
 	inline float* Array() { return &x; }
 
-	inline std::string str() { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w)); }
-	inline std::string str_d() { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w) + "; " + STR(Magnitude())); }
+	inline std::string str() const { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w)); }
+	inline std::string str_d() const { return std::string(STR(x) + ", " + STR(y) + ", " + STR(z) + ", " + STR(w) + "; " + STR(Magnitude())); }
 
 	static const Vector4 one;
 	static const Vector4 zero;
@@ -111,6 +111,7 @@ struct Vector4
 	static const Vector4 green;
 	static const Vector4 blue;
 	static const Vector4 white;
+	static const Vector4 black;
 	
 
 	//Calculates the dot product between two vectors

@@ -7,7 +7,7 @@ void GLAPIENTRY ErrorCallBack(GLenum source, GLenum type, GLuint id, GLenum seve
 	{
 
 		std::string msg = "type: " + STR(type) + ", severity: " + STR(severity) + ", message: " + message;
-		Log(msg, "OpenGL Callback");
+		logger << author << "OpenGL Callback" << msg << lend;
 		return;
 	}
 }
@@ -21,7 +21,7 @@ bool GLLogCall(const char* function, const char* file, int line)
 {
 	while (GLenum  error = glGetError())
 	{
-		Log("0x" + STR(error) + "; Function: " + function + " " + getFilename(file, true) + ":" + STR(line), "OpenGL Error");
+		logger << author << "OpenGL Error" << "0x" << STR(error) << "; Function: " << function << " " << getFilename(file, true) << ":" << STR(line) << lend;
 		return false;
 	}
 	return true;
@@ -38,8 +38,11 @@ Renderer::~Renderer()
 {
 }
 
-void Renderer::Clear() const
+
+
+void Renderer::Clear(Vector4 color) const
 {
+	glClearColor(color.r, color.g, color.b, color.a);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
@@ -50,6 +53,21 @@ void Renderer::Draw(const VertexArray& vertexArray, const IndexBuffer& indexBuff
 	vertexArray.Bind();
 	indexBuffer.Bind();
 	GLCall(glDrawElements(GL_TRIANGLES, indexBuffer.getCount(), GL_UNSIGNED_INT, nullptr));
+
+	//Unbinding for debug; otherwise 
+
+}
+
+void Renderer::Draw(Model* model, const Shader& shader) const
+{
+	shader.Bind();
+
+	VertexArray* va = model->getVertexArray();
+	IndexBuffer* ib = model->getIndexBuffer();
+
+	va->Bind();
+	ib->Bind();
+	GLCall(glDrawElements(GL_TRIANGLES, ib->getCount(), GL_UNSIGNED_INT, nullptr));
 
 	//Unbinding for debug; otherwise 
 
