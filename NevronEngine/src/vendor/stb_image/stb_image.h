@@ -97,7 +97,7 @@ RECENT REVISION HISTORY:
 	the Horde3D community   Thomas Ruf         Ronny Chevalier    github:rlyeh
 	Janez Zemva             John Bartholomew   Michal Cichon      github:romigrou
 	Jonathan Blow           Ken Hamada         Tero Hanninen      github:svdijk
-	Laurent Gomila          Cort Stratton      Sergio Gonzalez    github:snagar
+	Laurent Gomila          Cort stratton      Sergio Gonzalez    github:snagar
 	Aruelien Pocheville     Thibault Reuille   Cass Everitt       github:Zelex
 	Ryamond Barbiero        Paul Du Bois       Engin Manap        github:grim210
 	Aldo Culquicondor       Philipp Wiesemann  Dale Weiler        github:sammyhw
@@ -642,7 +642,7 @@ typedef unsigned char validate_uint32[sizeof(stbi__uint32) == 4 ? 1 : -1];
 // See https://github.com/nothings/stb/issues/81 for more information.
 //
 // So default to no SSE2 on 32-bit MinGW. If you've read this far and added
-// -mstackrealign to your build settings, feel free to #define STBI_MINGW_ENABLE_SSE2.
+// -mstackrealign to your build Settings, feel free to #define STBI_MINGW_ENABLE_SSE2.
 #define STBI_NO_SIMD
 #endif
 
@@ -7270,7 +7270,7 @@ static int      stbi__pnm_info(stbi__context* s, int* x, int* y, int* comp)
 
 	stbi__rewind(s);
 
-	// Get identifier
+	// get identifier
 	p = (char)stbi__get8(s);
 	t = (char)stbi__get8(s);
 	if (p != 'P' || (t != '5' && t != '6')) {

@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 
-#include "Time.h"
+#include "..\src\Time.h"
 
 #include "..\Math\Math.h"
 
@@ -73,7 +73,7 @@ std::string Utility::Title(const std::string& str)
 
 
 
-std::vector<unsigned int> Utility::StrFind(const std::string& str, const std::string& keyW)
+std::vector<unsigned int> Utility::strFind(const std::string& str, const std::string& keyW)
 {
 	std::vector<unsigned int> results;
 
@@ -87,7 +87,7 @@ std::vector<unsigned int> Utility::StrFind(const std::string& str, const std::st
 	return results;
 }
 
-std::vector<std::string> Utility::StrSplit(const std::string& str, const std::string& keyW)
+std::vector<std::string> Utility::strSplit(const std::string& str, const std::string& keyW)
 {
 	//Terminating string with keyW
 	std::string text = str;
@@ -108,7 +108,17 @@ std::vector<std::string> Utility::StrSplit(const std::string& str, const std::st
 	return results;
 }
 
-std::string Utility::Purge(const std::string& str, const std::string& keyW)
+std::string Utility::strClamp(const std::string& str, unsigned int size)
+{
+	return str.substr(0, size);
+}
+
+std::string Utility::strStop(const std::string& str, std::string keyW)
+{
+	return str.substr(str.find_first_of(keyW));
+}
+
+std::string Utility::strPurge(const std::string& str, const std::string& keyW)
 {
 	std::string result;
 	//Left part iterator
@@ -129,7 +139,7 @@ std::string Utility::Purge(const std::string& str, const std::string& keyW)
 	return result + str.substr(c);
 }
 
-std::string Utility::ListToString(float* list, int size)
+std::string Utility::ListTostring(float* list, int size)
 {
 	std::string result;
 	for (int i = 0; i < size; i++)
@@ -141,7 +151,7 @@ std::string Utility::ListToString(float* list, int size)
 	return result;
 }
 
-std::string Utility::ListToString(std::vector<std::string> list, const std::string& separator)
+std::string Utility::ListTostring(std::vector<std::string> list, const std::string& separator)
 {
 	std::string result;
 	for (unsigned int i = 0; i < list.size(); i++)
@@ -160,7 +170,7 @@ int Utility::ParseTime(const std::string& str)
 	std::string text = str;
 	text = Uncapitalize(str);
 
-	std::vector<std::string> parts = StrSplit(text, " ");
+	std::vector<std::string> parts = strSplit(text, " ");
 
 	for (unsigned int i = 1; i < parts.size(); i++)
 	{
@@ -205,7 +215,7 @@ std::string Utility::FormatTime(int seconds)
 	seconds = seconds % 3600;
 
 	times[2] = seconds / 60;
-    seconds = seconds % 60;
+	seconds = seconds % 60;
 
 	times[3] = seconds;
 
@@ -431,7 +441,7 @@ std::vector<std::string> Utility::ReadFile(const std::string& filepath, bool cre
 	}
 	else
 	{
-		MessageBox(nullptr, "File could not be opened", (filepath.size() < 35 ? filepath.c_str() : ("..." + filepath.substr(35)).c_str()), MB_OK | MB_ICONEXCLAMATION);
+		MessageBox(nullptr, "File could not be opened", ShortenString(filepath, 35).c_str(), MB_OK | MB_ICONEXCLAMATION);
 	}
 	file.close();
 	return fileCont;
@@ -448,7 +458,7 @@ void Utility::GeneratePath(const std::string& path)
 	}
 
 	//Creates all directories leading the last directory
-	std::vector<unsigned int> folderAt = StrFind(path, "\\");
+	std::vector<unsigned int> folderAt = strFind(path, "\\");
 	for (unsigned int i = 1; i < folderAt.size(); i++)
 	{
 		std::string tmpPath = path.substr(0, folderAt[i]);
@@ -469,7 +479,7 @@ void Utility::GenerateFile(const std::string& path, const std::string& contents,
 	}
 
 	//Creates all directories leading up to the file
-	std::vector<unsigned int> folders = StrFind(path, "\\");
+	std::vector<unsigned int> folders = strFind(path, "\\");
 	for (unsigned int i = 1; i < folders.size(); i++)
 	{
 		std::string tmpPath = path.substr(0, folders[i]);
@@ -508,10 +518,10 @@ void Utility::Copy(const std::string& oldPath, const std::string& newPath)
 		//Copies the directory structure
 		for (std::string& dir : dirs)
 			//Cuts off parent path and adds new parent path
-			GeneratePath(Lead(newPath, '\\') + dir.substr(oldPath.size()));
+			GeneratePath(strLead(newPath, '\\') + dir.substr(oldPath.size()));
 
 		for (std::string& file : files)
-			Copy(file, Lead(newPath, '\\') + file.substr(oldPath.size()));
+			Copy(file, strLead(newPath, '\\') + file.substr(oldPath.size()));
 	}
 }
 
@@ -538,7 +548,7 @@ std::string Utility::getPath(const std::string& path)
 
 	//Check if text specified is already a directory
 	if (!IsFile(path))
-		return Lead(path, '\\');
+		return strLead(path, '\\');
 
 	//File
 	size_t slashIndex = text.find_last_of("\\");
@@ -550,10 +560,27 @@ std::string Utility::getPath(const std::string& path)
 	return text;
 }
 
+std::string Utility::ShortenPath(const std::string& path, int depth, bool omitIndicator)
+{
+	std::vector<unsigned int> pos = strFind(path, "\\");
+	if (depth >= pos.size())
+		return path;
+	return  (omitIndicator ? "" : "...") + path.substr(pos[pos.size() - depth]);
+}
+
+std::string Utility::ShortenString(const std::string& str, unsigned int size, bool omitIndicator)
+{
+	size -= 3;
+	int start = (str.size() - size);
+	if (start > 0)
+		return (omitIndicator ? "" : "...") + str.substr(start);
+	return str;
+}
+
 std::string Utility::DirectoryUp(const std::string& path, unsigned int steps)
 {
 	std::string text = getPath(path);
-	std::vector<unsigned int> folders = StrFind(text, "\\");
+	std::vector<unsigned int> folders = strFind(text, "\\");
 	unsigned int lastFolder = *(folders.end() - steps - 1);
 	return text.substr(0, lastFolder);
 }
@@ -615,7 +642,7 @@ unsigned int Utility::AddError(const std::string& definition, unsigned int code)
 
 void Utility::SaveErrorDef()
 {
-	GenerateFile(WORKDIR + "Assets\\Errordef.txt", ListToString(s_errorDef), false);
+	GenerateFile(WORKDIR + "Assets\\Errordef.txt", ListTostring(s_errorDef), false);
 }
 
 void Utility::Log(const std::string& msg, const std::string& msgOrigin)

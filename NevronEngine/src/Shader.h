@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "..\\Math\Math.h"
+#include "..\Math\Math.h"
 
 #include <sstream>
 #include <unordered_map>
@@ -28,25 +28,28 @@ public:
 	void Bind() const;
 	void Unbind() const;
 
-	//Set uniforms
+	//set uniforms
 
-	//Sets a quaternion uniform
-	void SetUniform(const std::string& name, Quaternion value);
+	//sets a quaternion uniform
+	void setUniform4f(const std::string& name, Quaternion value);
 
-	//Sets a matrix4x4 uniform
-	void SetUniform(const std::string& name, Matrix4 value);
+	//sets a matrix4x4 uniform
+	void setUniformMat4f(const std::string& name, Matrix4 value, bool transpose = false);
 
-	//Sets a vec4 uniform
-	void SetUniform(const std::string& name, Vector4 value);
+	//sets a vec4 uniform
+	void setUniform4f(const std::string& name, Vector4 value);
 	
-	//Sets a vec2 uniform
-	void SetUniform(const std::string& name, Vector2 value);
+	//sets a vec3 uniform
+	void setUniform3f(const std::string& name, Vector3 value);
+	
+	//sets a vec2 uniform
+	void setUniform2f(const std::string& name, Vector2 value);
 
-	//Sets a float uniform
-	void SetUniform(const std::string& name, float value);
+	//sets a float uniform
+	void setUniform1f(const std::string& name, float value);
 
-	//Sets a integer value
-	void SetUnform(const std::string name, int value);
+	//sets an integer value
+	void setUniform1i(const std::string name, int value);
 
 
 	std::string getName() const { return m_name; }

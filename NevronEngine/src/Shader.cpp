@@ -1,15 +1,16 @@
 #include "Shader.h"
 #include "Utility.h"
 #include "Renderer.h"
+#include "Logger.h"
 
 using namespace Utility;
 
 Shader::Shader(const std::string& name) : m_rendererID(0)
 {
 	m_name = getFilename(name);
-	m_filepath = FindFile(Lead(name, ".shader"));
+	m_filepath = FindFile(strLead(name, ".shader"));
 	if (m_filepath == "")
-		Log("Couldn't find shader with name: " + name, "Shader: " + m_name);
+		Log("Couldn't strFind shader with name: " + name, "Shader: " + m_name);
 
 	ShaderSource source = ParseShader(m_filepath);
 	m_rendererID = CreateShader(source);
@@ -31,36 +32,42 @@ void Shader::Unbind() const
 }
 
 //Shader needs to be bound before calling!
-void Shader::SetUniform(const std::string& name, Quaternion value)
+void Shader::setUniform4f(const std::string& name, Quaternion value)
 {
 	glUniform4f(getUniformLocation(name), value.x, value.y, value.z, value.w);
 }
 
 //Shader needs to be bound before calling!
-void Shader::SetUniform(const std::string& name, Matrix4 value)
+void Shader::setUniformMat4f(const std::string& name, Matrix4 value, bool transpose)
 {
-	glUniform4fv(getUniformLocation(name), 16, value[0]);
+	glUniformMatrix4fv(getUniformLocation(name), 1, transpose, value[0]);
 }
 
 //Shader needs to be bound before calling!
-void Shader::SetUniform(const std::string& name, Vector4 value)
+void Shader::setUniform4f(const std::string& name, Vector4 value)
 {
+
 	glUniform4f(getUniformLocation(name), value.x, value.y, value.z, value.w);
 }
 
+void Shader::setUniform3f(const std::string& name, Vector3 value)
+{
+	glUniform3f(getUniformLocation(name), value.x, value.y, value.z);
+}
+
 //Shader needs to be bound before calling!
-void Shader::SetUniform(const std::string& name, Vector2 value)
+void Shader::setUniform2f(const std::string& name, Vector2 value)
 {
 	glUniform2f(getUniformLocation(name), value.x, value.y);
 }
 
 //Shader needs to be bound before calling!
-void Shader::SetUniform(const std::string& name, float value)
+void Shader::setUniform1f(const std::string& name, float value)
 {
 	glUniform1f(getUniformLocation(name), value);
 }
 
-void Shader::SetUnform(const std::string name, int value)
+void Shader::setUniform1i(const std::string name, int value)
 {
 	glUniform1i(getUniformLocation(name), value);
 }
@@ -168,11 +175,11 @@ ShaderSource Shader::ParseShader(const std::string& path)
 	std::stringstream ss[2];
 	while (getline(stream, line))
 	{
-		//Set mode to vertex shader
+		//set mode to vertex shader
 		if (line.find("#VERTEX_SHADER") != std::string::npos)
 			type = ShaderType::VERTEX;
 
-		//Set mode to vertex shader
+		//set mode to vertex shader
 		else if (line.find("#FRAGMENT_SHADER") != std::string::npos)
 			type = ShaderType::FRAGMENT;
 		else

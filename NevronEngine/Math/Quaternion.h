@@ -1,6 +1,8 @@
 #pragma once
 #include "Vector.h"
 
+struct Matrix4;
+
 class Quaternion
 {
 public:
@@ -12,10 +14,11 @@ public:
 	~Quaternion();
 
 	//Creates a quaternion from an euler rotation
-	void Euler(const Vector3& euler);
+	static Quaternion Euler(const Vector3& euler);
 
-	//Will create a new quaternion to rotate from its current position to %direction%
+	//Will create a new quaternion pointing along to specified direction. Direction does not need to be normalized
 	static Quaternion PointTo(const Vector3& direction);
+	//Will create a new quaternion to rotate from its current position to %direction%
 	static Quaternion PointTo(const Vector3& sourcePoint, const Vector3& destinationPoint);
 
 	union
@@ -55,6 +58,9 @@ public:
 	void operator*=(float scalar);
 	void operator*=(const Quaternion& q);
 
+	Matrix4 toMatrix();
+	Vector3 toEuler();
+
 	Quaternion Normalize() const;
 	void Normalize(Quaternion* out);
 
@@ -82,5 +88,5 @@ public:
 	static Quaternion Lerp(const Quaternion& a, const Quaternion& b, float t);
 };
 
-
+typedef Quaternion quat;
 

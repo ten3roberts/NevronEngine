@@ -32,6 +32,7 @@ template <typename I> std::string hex(I w, size_t hex_len = sizeof(I) << 1) {
 	return rc;
 }
 
+
 namespace Utility
 {
 	//public:
@@ -41,7 +42,7 @@ namespace Utility
 
 	std::string getAppdata();
 
-#pragma region "String utilities"
+#pragma region "string utilities"
 	std::string Capitalize(const std::string& str);
 
 	std::string Uncapitalize(const std::string& str);
@@ -49,15 +50,20 @@ namespace Utility
 	std::string Title(const std::string& str);
 
 	//Will return a list of all indices of keyW in str
-	std::vector<unsigned int> StrFind(const std::string& str, const std::string& keyW);
+	std::vector<unsigned int> strFind(const std::string& str, const std::string& keyW);
 
 	//Will divide the string at every keyW(default space)
-	std::vector<std::string> StrSplit(const std::string& str, const std::string& keyW = " ");
+	std::vector<std::string> strSplit(const std::string& str, const std::string& keyW);
 
-	std::string Purge(const std::string& str, const std::string& keyW);
+	std::string strClamp(const std::string& str, unsigned int size);
+
+	//Will return a string to the keyW
+	std::string strStop(const std::string& str, std::string keyW);
+
+	std::string strPurge(const std::string& str, const std::string& keyW);
 
 	//Will add $lead to string if it doesn't already end with $lead. Good for trailing slashes
-	inline std::string Lead(const std::string& str, char lead)
+	inline std::string strLead(const std::string& str, char lead)
 	{
 		if (str.back() == lead)
 			return str;
@@ -65,18 +71,18 @@ namespace Utility
 	}
 
 	//Will add $lead to string if it doesn't already end with $lead. Good for trailing slashes
-	inline std::string Lead(const std::string& str, const std::string& lead)
+	inline std::string strLead(const std::string& str, const std::string& lead)
 	{
-		if (lead.size() <= str.size() && str.substr(str.size() - lead.size() - 1) == lead)
+		if (lead.size() <= str.size() && str.substr(str.size() - lead.size()) == lead)
 			return str;
 		return str + lead;
 	}
 
 	//Will return a string vector of all folder in a specified directory
-	std::string ListToString(float* list, int length);
+	std::string ListTostring(float* list, int length);
 
 
-	std::string ListToString(std::vector<std::string> list, const std::string& separator = ", ");
+	std::string ListTostring(std::vector<std::string> list, const std::string& separator = ", ");
 	int ParseTime(const std::string& str);
 
 	std::string FormatTime(int seconds);
@@ -142,6 +148,12 @@ namespace Utility
 	//Will return the path of folders leading up to the file with a leading '\\'
 	std::string getPath(const std::string& path);
 
+	//Will only display the $depth directories back
+	std::string ShortenPath(const std::string & path, int depth = 3, bool omitIndicator = false);
+
+	//Will strClamp the string preserving the end to a set size and add "..." to the beginning
+	std::string ShortenString(const std::string& str, unsigned int size, bool omitIndicator = false);
+
 	//Will return the file path moved up one directory
 	std::string DirectoryUp(const std::string& path, unsigned int steps = 1);
 
@@ -199,18 +211,49 @@ inline std::vector<int> Utility::Search(std::vector<N> list, N query)
 	return result;
 }
 
+static bool parseBool(const std::string& str)
+{
+	return Utility::Uncapitalize(str) == "true" ? true : str == "1" ? 1 : 0;
+}
 
-/*//Make sure the logs folder exists
-GeneratePath(WORKDIR + "Logs");
+static std::string FormatBool(bool boolean)
+{
+	return boolean ? "true" : "false";
+}
 
-if (!s_logFile.is_open())
-//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-s_logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
-std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): \n" + msg;
+//Will attempt to convert a string to float or integer. If it fails it will return 0 and if $failed is passed set it to true
+template <typename N = float>
+static N num(std::string in, bool* failed = nullptr)
+{
+	if (failed != nullptr)
+		* failed = false;
+	try
+	{
+		if constexpr (std::is_same<N, int>())
+		{
+			return std::stoi(in);
+		}
+		if constexpr (std::is_same<N, unsigned int>())
+		{
+			return std::stoi(in);
+		}
+		else if constexpr (std::is_same<N, float>())
+		{
+			return std::stof(in);
+		}
+	}
+	catch (...)
+	{
+		if (failed != nullptr)
+			* failed = true;
+		return 0;
+	}
+}
 
-s_logFile.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
+inline float min(float a, float b) { return a < b ? a : b; };
+inline int min(int a, int b) { return a < b ? a : b; };
+inline unsigned int min(unsigned int a, unsigned int b) { return a < b ? a : b; };
 
-if (ENABLE_CONSOLE)
-std::cout.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
-s_logFile.close();
-return;*/
+inline float max(float a, float b) { return a > b ? a : b; };
+inline int max(int a, int b) { return a > b ? a : b; };
+inline unsigned int max(unsigned int a, unsigned int b) { return a > b ? a : b; };

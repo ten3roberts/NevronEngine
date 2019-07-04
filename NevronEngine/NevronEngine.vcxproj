@@ -19,14 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Model.cpp" />
+    <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="Math\Matrix.cpp" />
     <ClCompile Include="Math\Quaternion.cpp" />
     <ClCompile Include="Math\Vector.cpp" />
+    <ClCompile Include="src\Settings.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="Math\Math.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\String.cpp" />
     <ClCompile Include="src\Time.cpp" />
     <ClCompile Include="src\Timer.cpp" />
     <ClCompile Include="src\Utility.cpp" />
@@ -39,12 +43,16 @@
     <ClCompile Include="src\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Model.h" />
+    <ClInclude Include="src\Logger.h" />
     <ClInclude Include="Math\Math.h" />
     <ClInclude Include="Math\Matrix.h" />
     <ClInclude Include="Math\Quaternion.h" />
+    <ClInclude Include="src\Settings.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Renderer.h" />
+    <ClInclude Include="src\String.h" />
     <ClInclude Include="src\Systemdefs.h" />
     <ClInclude Include="src\Time.h" />
     <ClInclude Include="src\Timer.h" />
@@ -61,13 +69,7 @@
     <ClInclude Include="src\Texture.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="rsc\GalaxyEngine.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="rsc\resource.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\bin\Assets\Shaders\Basic.shader" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

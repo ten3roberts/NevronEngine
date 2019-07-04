@@ -1,5 +1,6 @@
 #pragma once
 #include "Vector.h"
+#include <iostream>
 
 struct Matrix4
 {
@@ -13,8 +14,13 @@ struct Matrix4
 		memcpy(m_data, &list[0], (4 < list.size() ? 4 : list.size()) * sizeof(float));
 	}
 	Matrix4(float min, float max) { memcpy(m_data, Random(min, max)[0], 16 * sizeof(float)); }
-
 	~Matrix4();
+
+	//Parsing
+	static Matrix4 Parse(const std::string& str);
+	static Matrix4 ParseInline(const std::string& str);
+
+
 
 	static Matrix4 Identity();
 	static Matrix4 Zero();
@@ -35,22 +41,31 @@ struct Matrix4
 		return result;
 	}
 
-
-	//using vec3
-	static Matrix4 Translate(Vector3 translation);
+	
 
 	//Rotates in the order Yaw, Pitch, Roll. x : pitch, y : yaw, z : roll. Yaw clockwise
-	static Matrix4 RotateYawPitchRoll(Vector3 rotation);
+	static Matrix4 Euler(Vector3 euler);
 	static Matrix4 RotateX(float amount);
 	static Matrix4 RotateY(float amount);
 	static Matrix4 RotateZ(float amount);
 
 	static Matrix4 Scale(const Vector3& scale);
 
-	//using vec4
+	static Matrix4 Translate(Vector3 translation);
 	static Matrix4 Translate(const Vector4& translation);
 	static Matrix4 Scale(const Vector4& scale);
 
+	//Will create an orthographic porjection matrix with the edges specified
+	static Matrix4 Ortho(float left, float right, float bottom, float top, float nearZ, float farZ);
+
+	//Will create an orthographic porjection matrix with the size specified centered around 0,0
+	static Matrix4 Ortho(float width, float height, float nearZ, float farZ);
+
+	//Will create an orthographic porjection matrix with the hieght and aspect ratio specified centered around 0,0
+	inline static Matrix4 OrthoAspect(float height, float aspect, int nearZ, int farZ) { return Matrix4::Ortho(height * aspect, height, nearZ, farZ); }
+
+
+	static Matrix4 Perspective(float fov, float aspect, float nearZ, float farZ);
 	Vector3 operator*(const Vector3& colVec);
 
 
@@ -63,17 +78,17 @@ struct Matrix4
 	float& operator()(int row, int col);
 
 	//Returns the element at $index; treating the matrix as a 1D array
-	inline float* operator[](unsigned int index) { return m_data[index / 4, index % 4]; }
-	const float& Get(unsigned int row, unsigned int col) const { return m_data[row][col]; }
-	const float& Get(unsigned index) const { return m_data[index / 4][index % 4]; }
+	float* operator[](unsigned int index) { return &m_data[index / 4][index % 4]; }
+	const float& get(unsigned int row, unsigned int col) const { return m_data[row][col]; }
+	const float& get(unsigned index) const { return m_data[index / 4][index % 4]; }
 
 
-	operator std::string()
+	operator std::string() const
 	{
 		return str();
 	}
 
-	std::string str()
+	std::string str() const
 	{
 		std::string result;
 		for (int i = 0; i < 4; i++)
@@ -89,8 +104,20 @@ struct Matrix4
 		return result;
 	}
 
+	std::string strInline()
+	{
+		std::string result;
+		for (int i = 0; i < 16; i++)
+		{
+			result += std::to_string(get(i));
+			if (i < 15)
+				result += ", ";
+		}
+		return result;
+	}
+
 	//Return a copy of the matrix with the columns and rows swapped
-	Matrix4 Transpose()
+	Matrix4 Transpose() const
 	{
 		Matrix4 result;
 		for (unsigned int i = 0; i < 4; i++)
@@ -108,10 +135,10 @@ private:
 
 struct Matrix
 {
-	Matrix() : m_height(0), m_width(0), m_size(0)
-	{
-		m_data = nullptr;
-	}
+	//Doesn't allocate any memory
+	Matrix() : m_height(0), m_width(0), m_size(0), m_data(0) {}
+
+	//Sets all to zero
 	Matrix(unsigned int height, unsigned int width) : m_height(height), m_width(width), m_size(height* width)
 	{
 		m_data = new float[m_size];
@@ -144,13 +171,17 @@ struct Matrix
 		m_width = matrix.width();
 		m_size = matrix.size();
 
-		m_data = new float[matrix.size()];
+		m_data = new float[m_size];
 		memcpy(m_data, matrix.m_data, m_size * sizeof(float));
 	}
 	~Matrix()
 	{
 		delete[] m_data;
 	}
+
+	//Parsing
+	static Matrix Parse(const std::string& str);
+	static Matrix ParseInline(unsigned int width, unsigned int height, const std::string& str);
 
 	static Matrix Identity(unsigned int height, unsigned int width)
 	{
@@ -253,12 +284,6 @@ struct Matrix
 		return (m_height == matrix.height() && m_width == matrix.width());
 	}
 
-	void operator=(const Matrix& matrix)
-	{
-		ASSERT((*this) == matrix);
-		memcpy(this, &matrix, sizeof(Matrix));
-	}
-
 	inline float& operator()(unsigned int row, unsigned int col) { return m_data[row * m_width + col]; }
 
 	//Returns the element at $index; treating the matrix as a 1D array
@@ -277,7 +302,7 @@ struct Matrix
 		return str();
 	}
 
-	std::string str()
+	std::string str() const
 	{
 		std::string result;
 		for (unsigned int i = 0; i < m_height; i++)
@@ -293,8 +318,20 @@ struct Matrix
 		return result;
 	}
 
+	std::string strInline()
+	{
+		std::string result;
+		for (unsigned int i = 0; i < m_size; i++)
+		{
+			result += std::to_string(get(i));
+			if (i < m_size - 1)
+				result += ", ";
+		}
+		return result;
+	}
+
 	//Return a copy of the matrix with the columns and rows swapped
-	Matrix Transpose()
+	Matrix Transpose() const
 	{
 		Matrix result(m_width, m_height);
 		for (unsigned int i = 0; i < m_height; i++)

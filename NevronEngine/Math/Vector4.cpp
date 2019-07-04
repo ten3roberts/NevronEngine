@@ -1,14 +1,20 @@
 #include "Vector4.h"
 #include "Vector3.h"
 #include "Math.h"
+#include "..\src\Utility.h"
 
 #include "..\src\Systemdefs.h"
 #include <math.h>
 #include <sstream>
 
+using namespace Utility;
+
+const Vector4 Vector4::zero = { 0,0,0,0 };
+const Vector4 Vector4::one = { 1,1,1,1 };
 const Vector4 Vector4::red = { 1,0,0,1 };
 const Vector4 Vector4::green = { 0,1,0,1 };
 const Vector4 Vector4::blue = { 0,0,1,1 };
+const Vector4 Vector4::white = { 1,1,1,1 };
 
 Vector4::Vector4() :
 	x(0), y(0), z(0), w(0)
@@ -27,6 +33,24 @@ Vector4::Vector4(Vector3 vec3, float w) :
 
 Vector4::~Vector4()
 {
+}
+
+Vector4::Vector4(const std::string& str)
+{
+	//Removing spaces vector size if neccesary and splits into all the elements
+	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	for (unsigned int i = 0; i < 4; i++)
+		(*this)[i] = num(parts[i]);
+}
+
+Vector4 Vector4::Parse(const std::string& str)
+{
+	//Removing spaces vector size if neccesary and splits into all the elements
+	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	Vector4 result;
+	for (unsigned int i = 0; i < 4; i++)
+		result[i] = num(parts[i]);
+	return result;
 }
 
 void Vector4::operator=(const Vector4& vec4)
@@ -206,7 +230,7 @@ Vector4 Vector4::ClampMaxMag(float max) const
 	return *this;
 }
 
-Vector4 Vector4::Clamp(float min, float max) const
+Vector4 Vector4::strClamp(float min, float max) const
 {
 	Vector4 result;
 	result.x = x > max ? max : x < min ? min : x;

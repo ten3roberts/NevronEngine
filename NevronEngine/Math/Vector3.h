@@ -9,6 +9,10 @@ struct Vector3
 	Vector3(float x, float y, float z);
 	Vector3(float setTo);
 
+	Vector3(const std::string& str);
+
+	static Vector3 Parse(const std::string& str);
+
 	//inline static Vector3 Random(float min, float max);
 	//Will produce a vector with a random direction and a magnitude between min max(plots to sphere)
 	//static Vector3 RandomDirection(float min, float max);
@@ -46,9 +50,9 @@ struct Vector3
 		return str();
 	}
 
-	inline float* operator[](unsigned int index) { return &x + index; }
+	inline float& operator[](unsigned int index) { return *(&x + index); }
 	//Returns a costant reference and is therefore safe with cost&
-	const float& Get(unsigned int index) const { return *(&x + index); }
+	const float& get(unsigned int index) const { return *(&x + index); }
 
 	void operator=(const Vector3& vec3);
 	void operator=(float setTo) { x = setTo; y = setTo; z = setTo; }
@@ -94,18 +98,18 @@ struct Vector3
 	//Normalizes the vector and assigns it to $out. Out can be the same as self
 	void Normalize(Vector3* out);
 
-	//Will clamp the vector's magnitude between a minimum and maximum value
+	//Will strClamp the vector's magnitude between a minimum and maximum value
 	Vector3 ClampMag(float min, float max) const;
-	//Will clamp the vector's magnitude to a minimum value
+	//Will strClamp the vector's magnitude to a minimum value
 	Vector3 ClampMinMag(float min) const;
-	//Will clamp the vector's magnitude to a maximum value
+	//Will strClamp the vector's magnitude to a maximum value
 	Vector3 ClampMaxMag(float max) const;
 
-	//Will clamp all the vectors components individually between a minimum and maximum value;
-	Vector3 Clamp(float min, float max) const;
-	//Will clamp all the vectors components individually to a minimum;
+	//Will strClamp all the vectors components individually between a minimum and maximum value;
+	Vector3 strClamp(float min, float max) const;
+	//Will strClamp all the vectors components individually to a minimum;
 	Vector3 ClampMin(float min) const;
-	//Will clamp all the vectors components individually to a maximum value;
+	//Will strClamp all the vectors components individually to a maximum value;
 	Vector3 ClampMax(float max) const;
 
 	//Returns false if the vector doesnt have a direction or length
@@ -127,6 +131,7 @@ struct Vector3
 	static const Vector3 right;
 	static const Vector3 left;
 	static const Vector3 zero;
+	static const Vector3 one;
 
 	//Calculates the dot product between two vectors
 	static float Dot(const Vector3 a, Vector3 b);

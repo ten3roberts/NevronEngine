@@ -1,6 +1,7 @@
 #include "Quaternion.h"
 #include "Time.h"
-#include "Vector3.h"
+#include "Math.h"
+#include "Matrix.h"
 const Quaternion Quaternion::identity = { 0,0,0,1 };
 
 Quaternion::Quaternion() : x(0), y(0), z(0), w(1)
@@ -42,7 +43,7 @@ Quaternion::~Quaternion()
 {
 }
 
-void Quaternion::Euler(const Vector3& euler)
+Quaternion Quaternion::Euler(const Vector3& euler)
 {
 	float Y = sinf(euler.y / 2);
 	float X = sinf(euler.x / 2);
@@ -51,10 +52,11 @@ void Quaternion::Euler(const Vector3& euler)
 	float ey = cosf(euler.y / 2);
 	float ex = cosf(euler.x / 2);
 	float ez = cosf(euler.z / 2);
-	x = +ey * X * ez + Y * ex * Z;
-	y = -ey * X * Z + Y * ex * ez;
-	z = -Y * X * ez + ey * ex * Z;
-	w = +Y * X * Z + ey * ex * ez;
+	return Quaternion(
+		+ey * X * ez + Y * ex * Z,
+		-ey * X * Z + Y * ex * ez,
+		-Y * X * ez + ey * ex * Z,
+		+Y * X * Z + ey * ex * ez);
 }
 
 Quaternion Quaternion::PointTo(const Vector3& direction)
@@ -165,6 +167,39 @@ void Quaternion::operator*=(const Quaternion& q)
 		-x * q.z + y * q.w + z * q.x + w * q.y,
 		x * q.y - y * q.x + z * q.w + w * q.z,
 		-x * q.x - y * q.y - z * q.z + w * q.w);
+}
+
+Matrix4 Quaternion::toMatrix()
+{
+	return
+	{
+	1 - 2 * y * y - 2 * z * z,		2 * x * y - 2 * z * w,		2 * x * z + 2 * y * w, 0,
+		2 * x * y + 2 * z * w,	1 - 2 * x * x - 2 * z * z,		2 * y * z - 2 * x * w, 0,
+		2 * x * z - 2 * y * w,		2 * y * z + 2 * x * w,	1 - 2 * x * x - 2 * y * y, 0,
+		0,							0,							0,					   1
+	};
+}
+
+Vector3 Quaternion::toEuler()
+{
+	Vector3 result;
+	// roll (x-axis rotation)
+	double sinr_cosp = +2.0 * (w * x + y * z);
+	double cosr_cosp = +1.0 - 2.0 * (x * x * y * y);
+	result.roll = atan2(sinr_cosp, cosr_cosp);
+
+	// pitch (y-axis rotation)
+	double sinp = +2.0 * (w* y - z * x);
+	if (fabs(sinp) >= 1)
+		result.pitch = copysign(MATH_PI / 2, sinp); // use 90 degrees if out of range
+	else
+		result.pitch = asin(sinp);
+
+	// yaw (z-axis rotation)
+	double siny_cosp = +2.0 * (w * z + x * y);
+	double cosy_cosp = +1.0 - 2.0 * (y * y + z * z);
+	result.yaw = atan2(siny_cosp, cosy_cosp);
+	return result;
 }
 
 Quaternion Quaternion::Normalize() const
@@ -283,7 +318,7 @@ Quaternion Quaternion::Slerp(const Quaternion& a, const Quaternion& b, float t)
 	Quaternion q0 = a.Normalize();
 	Quaternion q1 = b.Normalize();
 
-	// Get the dot product between the two quaternions
+	// get the dot product between the two quaternions
 	float dot = Dot(q0, q1);
 
 	// Makes it take the shortest path

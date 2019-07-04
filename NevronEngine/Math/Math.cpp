@@ -157,7 +157,7 @@ Vector3 Random::InCube(float width)
 	return Vector3(((float)std::rand() / RAND_MAX) * width, ((float)std::rand() / RAND_MAX) * width, ((float)std::rand() / RAND_MAX) * width);
 }
 
-static int Math::GetMax(float* elements, int size) //Return the index of the greatest value in elements
+static int Math::getMax(float* elements, int size) //Return the index of the greatest value in elements
 {
 	int current = 0; // The current biggest index in elements
 	for (int i = 1; i < size; i++)
@@ -169,7 +169,7 @@ static int Math::GetMax(float* elements, int size) //Return the index of the gre
 	}
 	return current;
 }
-static int Math::GetMin(float* elements, int size) // Returns the index of the smallest value in elements
+static int Math::getMin(float* elements, int size) // Returns the index of the smallest value in elements
 {
 	int current = 0; // The current smallest index in elements
 	for (int i = 1; i < size; i++)
@@ -182,7 +182,7 @@ static int Math::GetMin(float* elements, int size) // Returns the index of the s
 	return current;
 }
 
-static int Math::GetMax(std::vector<float> elements)
+static int Math::getMax(std::vector<float> elements)
 {
 	int current = 0; // The current biggest index in elements
 	for (int i = 1; i < elements.size(); i++)
@@ -195,7 +195,7 @@ static int Math::GetMax(std::vector<float> elements)
 	return current;
 }
 
-static int Math::GetMin(std::vector<float> elements)
+static int Math::getMin(std::vector<float> elements)
 {
 	int current = 0; // The current smallest index in elements
 	for (int i = 1; i < elements.size(); i++)
@@ -208,7 +208,12 @@ static int Math::GetMin(std::vector<float> elements)
 	return current;
 }
 
-/*Vector3 Math::Clamp(Vector3& vector, const float min, const float max)
+float Math::Wave(float min, float max, float frequency, float t)
+{
+	return sinf(t * frequency) / 2 * (max - min) + (max + min)/2;
+}
+
+/*Vector3 Math::strClamp(Vector3& vector, const float min, const float max)
 {
 	if (vector.Magnitude() > max && vector.Magnitude() < min)
 	{
@@ -228,7 +233,7 @@ float Math::ToDeg(float& rad)
 	return (180.0f / MATH_PI) * rad;
 }
 
-int Math::GetMax(float* elements, int size)
+int Math::getMax(float* elements, int size)
 {
 	int current = 0; // The current biggest index in elements
 	for (int i = 1; i < size; i++)
@@ -241,7 +246,7 @@ int Math::GetMax(float* elements, int size)
 	return current;
 }
 
-int Math::GetMin(float* elements, int size)
+int Math::getMin(float* elements, int size)
 {
 	int current = 0; // The current smallest index in elements
 	for (int i = 1; i < size; i++)
@@ -254,7 +259,7 @@ int Math::GetMin(float* elements, int size)
 	return current;
 }
 
-int Math::GetMax(std::vector<float> elements)
+int Math::getMax(std::vector<float> elements)
 {
 	int current = 0; // The current biggest index in elements
 	for (int i = 1; i < elements.size(); i++)
@@ -267,7 +272,7 @@ int Math::GetMax(std::vector<float> elements)
 	return current;
 }
 
-int Math::GetMin(std::vector<float> elements)
+int Math::getMin(std::vector<float> elements)
 {
 	int current = 0; // The current smallest index in elements
 	for (int i = 1; i < elements.size(); i++)

@@ -3,6 +3,7 @@
 #include "Math.h"
 #include "Quaternion.h"
 #include "..\src\Systemdefs.h"
+#include "..\src\Utility.h"
 
 #include <cmath>
 #include <iostream>
@@ -10,7 +11,7 @@
 #include <random>
 #include "Math.h"
 
-
+using namespace Utility;
 
 const Vector3 Vector3::red = { 1,0,0 };
 const Vector3 Vector3::green = { 0,1,0 };
@@ -23,6 +24,7 @@ const Vector3 Vector3::up = { 0,1,0 };
 const Vector3 Vector3::right = { 1,0,0 };
 const Vector3 Vector3::left = { -1,0,0 };
 const Vector3 Vector3::zero = { 0,0,0 };
+const Vector3 Vector3::one = { 1, 1, 1 };
 
 
 
@@ -38,6 +40,24 @@ Vector3::Vector3(float x, float y, float z) :
 
 Vector3::Vector3(float setTo) : x(setTo), y(setTo), z(setTo)
 {
+}
+
+Vector3::Vector3(const std::string& str) : x(0), y(0), z(0)
+{
+	//Removing spaces vector size if neccesary and splits into all the elements
+	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	for (unsigned int i = 0; i < min(3, parts.size()); i++)
+		(*this)[i] = num(parts[i]);
+}
+
+Vector3 Vector3::Parse(const std::string& str)
+{
+	//Removing spaces vector size if neccesary and splits into all the elements
+	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	Vector3 result;
+	for (unsigned int i = 0; i < min(3, parts.size()); i++)
+		result[i] = num(parts[i]);
+	return result;
 }
 
 Vector3 Vector3::HSV(float h, float s, float v)
@@ -201,17 +221,17 @@ Vector3 Vector3::operator+(const Vector3& vec3) const
 	return Vector3(x + vec3.x, y + vec3.y, z + vec3.z);
 }
 
-Vector3 Vector3::operator-(const Vector3 & vec3) const
+Vector3 Vector3::operator-(const Vector3& vec3) const
 {
 	return Vector3(x - vec3.x, y - vec3.y, z - vec3.z);
 }
 
-Vector3 Vector3::operator*(const Vector3 & vec3) const
+Vector3 Vector3::operator*(const Vector3& vec3) const
 {
 	return Vector3(x * vec3.x, y * vec3.y, z * vec3.z);
 }
 
-Vector3 Vector3::operator/(const Vector3 & vec3) const
+Vector3 Vector3::operator/(const Vector3& vec3) const
 {
 	return Vector3(x / vec3.x, y / vec3.y, z / vec3.z);
 }
@@ -238,21 +258,21 @@ Vector3 Vector3::operator/(float scalar) const
 
 //operator "?=":
 
-void Vector3::operator+=(const Vector3 & vec3)
+void Vector3::operator+=(const Vector3& vec3)
 {
 	x += vec3.x;
 	y += vec3.y;
 	z += vec3.z;
 }
 
-void Vector3::operator-=(const Vector3 & vec3)
+void Vector3::operator-=(const Vector3& vec3)
 {
 	x -= vec3.x;
 	y -= vec3.y;
 	z -= vec3.z;
 }
 
-void Vector3::operator*=(const Vector3 & vec3)
+void Vector3::operator*=(const Vector3& vec3)
 {
 	x *= vec3.x;
 	y *= vec3.y;
@@ -260,7 +280,7 @@ void Vector3::operator*=(const Vector3 & vec3)
 
 }
 
-void Vector3::operator/=(const Vector3 & vec3)
+void Vector3::operator/=(const Vector3& vec3)
 {
 	x /= vec3.x;
 	y /= vec3.y;
@@ -305,7 +325,7 @@ float Vector3::Magnitude() const
 	return sqrt(x * x + y * y + z * z);
 }
 
-void Vector3::Normalize(Vector3 * out)
+void Vector3::Normalize(Vector3* out)
 {
 	if (SqrMagnitude() < 0.000001f)
 		return;
@@ -359,7 +379,7 @@ Vector3 Vector3::ClampMaxMag(float max) const
 	return *this;
 }
 
-Vector3 Vector3::Clamp(float min, float max) const
+Vector3 Vector3::strClamp(float min, float max) const
 {
 	Vector3 result;
 	result.x = x > max ? max : x < min ? min : x;
@@ -389,7 +409,7 @@ Vector3 Vector3::ClampMax(float max) const
 
 float Vector3::Dot(Vector3 a, Vector3 b)
 {
-	return a.x* b.x + a.y * b.y + a.z * b.z;
+	return a.x * b.x + a.y * b.y + a.z * b.z;
 }
 
 Vector3 Vector3::Project(const Vector3& vector, const Vector3& axis)
@@ -424,11 +444,11 @@ Vector3 Vector3::Lerp(const Vector3& a, const Vector3& b, float t)
 Vector3 Vector3::Slerp(const Vector3& a, const Vector3& b, float t)
 {
 	t = Math::Clamp01(t);
-	// Get the axis of rotation between from and to
+	// get the axis of rotation between from and to
 	Vector3 axis = Cross(b, a);
 	axis.Normalize(&axis);
 
-	// Get the angle to rotate around the axis 
+	// get the angle to rotate around the axis 
 	// NOTE: from and to must be of unit length!!!
 	float angleRads = acosf(Dot(b, a));
 

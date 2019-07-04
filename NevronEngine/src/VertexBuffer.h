@@ -8,8 +8,7 @@ public:
 	//Creates and binds a vertex buffer
 	VertexBuffer(const void* data, unsigned int size);
 
-	//Creates and binds a vertex buffer depening on $bind
-	VertexBuffer(const void* data, unsigned int size, bool bind);
+	void setData(const void* data, unsigned int size);
 
 	~VertexBuffer();
 

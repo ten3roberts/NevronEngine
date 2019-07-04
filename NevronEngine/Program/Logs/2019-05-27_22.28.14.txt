@@ -1,4 +1,0 @@
-(Log @ 22.28.14): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
-(Log @ 22.28.14): NevronEngine initializing...
-(OpenGL @ 22.28.15): OpenGl version: 3.3.0 NVIDIA 425.31
-(Timer: Startup @ 22.28.15): Duration: 651.281799ms

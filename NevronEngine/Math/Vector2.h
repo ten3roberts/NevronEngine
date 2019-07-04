@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "..\src\Systemdefs.h"
+#include "..\src\Utility.h"
 
 struct Vector2
 {
@@ -9,6 +9,11 @@ struct Vector2
 	//Vector2(float x, float y);
 
 	~Vector2();
+
+	Vector2(const std::string& str);
+
+	static Vector2 Parse(const std::string& str);
+
 	float x, y;
 
 
@@ -19,9 +24,9 @@ struct Vector2
 		return str();
 	}
 
-	inline float* operator[](int index) { return &x + index; }
+	inline float& operator[](int index) { return *(&x + index); }
 	//Returns a costant reference and is therefore safe with cost&
-	const float& Get(unsigned int index) const { return *(&x + index); }
+	const float& get(unsigned int index) const { return *(&x + index); }
 
 	void operator=(const Vector2& vec2);
 	void operator=(float  setTo) { x = setTo; y = setTo; }
@@ -63,18 +68,18 @@ struct Vector2
 	//Normalizes the vector and assigns it to $out. Out can be the same as self
 	void Normalize(Vector2* out);
 
-	//Will clamp the vector's magnitude between a minimum and maximum value
+	//Will strClamp the vector's magnitude between a minimum and maximum value
 	Vector2 ClampMag(float min, float max) const;
-	//Will clamp the vector's magnitude to a minimum value
+	//Will strClamp the vector's magnitude to a minimum value
 	Vector2 ClampMinMag(float min) const;
-	//Will clamp the vector's magnitude to a maximum value
+	//Will strClamp the vector's magnitude to a maximum value
 	Vector2 ClampMaxMag(float max) const;
 
-	//Will clamp all the vectors components individually between a minimum and maximum value;
-	Vector2 Clamp(float min, float max) const;
-	//Will clamp all the vectors components individually to a minimum;
+	//Will strClamp all the vectors components individually between a minimum and maximum value;
+	Vector2 strClamp(float min, float max) const;
+	//Will strClamp all the vectors components individually to a minimum;
 	Vector2 ClampMin(float min) const;
-	//Will clamp all the vectors components individually to a maximum value;
+	//Will strClamp all the vectors components individually to a maximum value;
 	Vector2 ClampMax(float max) const;
 
 	//Returns false if the vector doesnt have a direction or length

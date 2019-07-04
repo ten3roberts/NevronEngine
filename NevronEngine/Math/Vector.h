@@ -8,6 +8,7 @@
 
 struct Vector
 {
+	Vector() : m_data(0), m_size(0) {}
 	Vector(unsigned int size);
 
 	Vector(std::initializer_list<float> list);
@@ -20,6 +21,10 @@ struct Vector
 
 	//Append constructor
 	Vector(const Vector& a, const Vector& b);
+
+	Vector(const std::string& str);
+
+	static Vector Parse(const std::string& str);
 
 	~Vector()
 	{
@@ -120,7 +125,7 @@ struct Vector
 
 	Vector ClampMaxMag(float max) const;
 
-	Vector Clamp(float min, float max) const;
+	Vector strClamp(float min, float max) const;
 
 	Vector ClampMin(float min) const;
 
@@ -160,15 +165,10 @@ struct Vector
 	static const Vector blue;
 
 	//Calculates the dot product between two vectors
-	/*static float Dot(Vector a, Vector b);
-
-	//Returns a vector projected onto an axis
-	static Vector Project(Vector vector, Vector axis);
-	//Returns the length of a vector projected onto an axis
-	static float ProjectFlat(Vector vector, Vector axis);
+	static float Dot(Vector a, Vector b);
 
 	//Linearly interpolates a and b between t
-	static Vector Lerp(Vector a, Vector b, float t);*/
+	static Vector Lerp(Vector a, Vector b, float t);
 
 private:
 	//The element array

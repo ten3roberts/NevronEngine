@@ -1,0 +1,36 @@
+#include "Model.h"
+
+Model::Model()
+{
+}
+
+Model::Model(std::vector<Vertex> vertices, std::vector<unsigned int> indices)
+{
+	m_vertexBuffer = new VertexBuffer(&vertices[0], sizeof(Vertex) * vertices.size());
+	m_indexBuffer = new IndexBuffer(&indices[0], indices.size());
+	m_vertexArray = new VertexArray();
+
+	VertexBufferLayout layout;
+	layout.Push<float>(3);
+	layout.Push<float>(2);
+
+	//Adds vertices
+	m_vertexArray->AddBuffer(*m_vertexBuffer, layout);
+}
+
+Model::~Model()
+{
+	delete m_vertexBuffer;
+	delete m_indexBuffer;
+	delete m_vertexArray;
+}
+
+void Model::setVertices(std::vector<Vertex> vertices)
+{
+	m_vertexBuffer->setData(&vertices[0], sizeof(Vertex) * vertices.size());
+}
+
+void Model::setIndices(std::vector<unsigned int> indices)
+{
+	m_indexBuffer->setData(&indices[0], sizeof(unsigned int) * indices.size());
+}

@@ -12,6 +12,9 @@ struct Vector3;
 #define MATH_PI 3.141593f
 #define MATH_E  2.718282f
 
+#define M_PI 3.141593f
+#define M_E  2.718282f
+
 #define DEG_180 MATH_PI
 #define DEG_90  1.570796f
 #define DEG_60  0.047198f
@@ -115,32 +118,7 @@ namespace Math
 		return log(x) / log(base);
 	}
 
-	//Will attempt to convert a string to float or integer. If it fails it will return 0 and if $failed is passed set it to true
-	template <typename N = int>
-	N num(std::string in, bool* failed = nullptr)
-	{
-		if (failed != nullptr)
-			* failed = false;
-		try
-		{
-			if constexpr (std::is_same<N, int>())
-			{
-				return std::stoi(in);
-			}
-			else if constexpr (std::is_same<N, float>())
-			{
-				return std::stof(in);
-			}
-		}
-		catch (...)
-		{
-			if (failed != nullptr)
-				* failed = true;
-			return 0;
-		}
-	}
-
-	inline static float Clamp(float value, float min, float max)
+	inline static float strClamp(float value, float min, float max)
 	{
 		return value > max ? max : value < min ? min : value;
 	}
@@ -160,12 +138,15 @@ namespace Math
 		return (180.0f / MATH_PI) * rad;
 	}
 
-	int GetMax(float* elements, int size); //Return the index of the greatest value in elements
-	int GetMin(float* elements, int size); // Returns the index of the smallest value in elements
+	int getMax(float* elements, int size); //Return the index of the greatest value in elements
+	int getMin(float* elements, int size); // Returns the index of the smallest value in elements
 
-	int GetMax(std::vector<float> elements);
+	int getMax(std::vector<float> elements);
 
-	int GetMin(std::vector<float> elements);
+	int getMin(std::vector<float> elements);
+
+	//Will generate a sine wave between two thresholds
+	float Wave(float min, float max, float frequency, float t);
 
 #pragma region "Vector functions"
 	//Vector2

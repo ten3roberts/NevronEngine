@@ -1,7 +1,10 @@
 #include "Vector.h"
 #include "..\src\Systemdefs.h"
 #include "Math.h"
+#include "..\src\Utility.h"
 #include <iostream>
+
+using namespace Utility;
 
 
 Vector::Vector(unsigned int size) : m_size(size)
@@ -45,6 +48,25 @@ Vector::Vector(const Vector& a, const Vector& b)
 	m_data = new float[m_size];
 	memcpy(m_data, a.m_data, a.size() * sizeof(float));
 	memcpy(m_data + a.size(), b.m_data, a.size() * sizeof(float));
+}
+
+Vector::Vector(const std::string& str) : m_data(0), m_size(0)
+{
+	//Removing spaces vector size if neccesary and splits into all the elements
+	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	m_data = new float[parts.size()];
+	for (unsigned int i = 0; i < parts.size(); i++)
+		(*this)[i] = num(parts[i]);
+}
+
+Vector Vector::Parse(const std::string& str)
+{
+	//Removing spaces vector size if neccesary and splits into all the elements
+	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	Vector result(parts.size());
+	for (unsigned int i = 0; i < parts.size(); i++)
+		result[i] = num(parts[i]);
+	return result;
 }
 
 Vector Vector::OnSphere(unsigned int size, float radius)
@@ -288,7 +310,7 @@ Vector Vector::ClampMaxMag(float max) const
 	return *this;
 }
 
-Vector Vector::Clamp(float min, float max) const
+Vector Vector::strClamp(float min, float max) const
 {
 	Vector result(m_size);
 	for (unsigned int i = 0; i < m_size; i++)
@@ -310,5 +332,25 @@ Vector Vector::ClampMax(float max) const
 
 	for (unsigned int i = 0; i < m_size; i++)
 		result[i] = m_data[i] > max ? max : m_data[i];
+	return result;
+}
+
+float Vector::Dot(Vector a, Vector b)
+{
+	ASSERT(a.size() == b.size());
+
+	float result = 0;
+	for (unsigned int i = 0; i < a.size(); i++)
+		result += a[i] * b[i];
+	return result;
+}
+
+Vector Vector::Lerp(Vector a, Vector b, float t)
+{
+	ASSERT(a.size() == b.size());
+	t = Math::Clamp01(t);
+	Vector result(a.size());
+	for (unsigned int i = 0; i < a.size(); i++)
+		result[i] = a[i] * (1 - t) + b[i] * t;
 	return result;
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include "GL/glew.h"
 #include <vector>
-#include "Systemdefs.h"
+#include "..\src\Systemdefs.h"
 
 struct VBElement
 {
@@ -56,7 +56,7 @@ public:
 	}
 
 	inline const std::vector<VBElement> getElements() const { return m_elements; }
-	inline unsigned int getStride() const { return m_stride; }
+	inline unsigned int getstride() const { return m_stride; }
 
 };
 

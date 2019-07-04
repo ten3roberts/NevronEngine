@@ -2,7 +2,7 @@
 #include "Utility.h"
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "vendor/stb_image/stb_image.h"
+#include "..\src\vendor\stb_image\stb_image.h"
 
 #include <gl/glew.h>
 using namespace Utility;
@@ -10,8 +10,9 @@ using namespace Utility;
 Texture::Texture(const std::string& name, bool flip)
 	: m_localBuffer(nullptr), m_width(0), m_height(0), m_BPP(0)
 {
-	m_name = getFilename(name, false);
+	m_name = getFilename(name, true);
 	m_filepath = FindFile(name);
+	Log("Loading texture: " + ShortenPath(m_filepath));
 
 	stbi_set_flip_vertically_on_load(flip);
 	m_localBuffer = stbi_load(m_filepath.c_str(), &m_width, &m_height, &m_BPP, 4);
