@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Rigidbody.cpp" />
     <ClCompile Include="src\Model.cpp" />
     <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="Math\Matrix.cpp" />
@@ -44,6 +45,7 @@
     <ClCompile Include="src\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Rigidbody.h" />
     <ClInclude Include="src\Model.h" />
     <ClInclude Include="src\Logger.h" />
     <ClInclude Include="Math\Math.h" />

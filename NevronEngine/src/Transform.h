@@ -14,9 +14,9 @@ public:
 	Transform();
 	Transform(Vector3 position, Quaternion rotation, Vector3 scale);
 
-	//Updates the world matrix
+	//Updates the world matrix. Make sure to update the transform with a rigidbody first if neccesary
 	void Update();
-	//Overriding members
+	//Updates the world matrix with overridden values. Make sure to update the transform with a rigidbody first if neccesary
 	void Update(Vector3 position, Quaternion rotation, Vector3 scale);
 
 	Matrix4& getWorldMatrix() { return m_worldMatrix; };

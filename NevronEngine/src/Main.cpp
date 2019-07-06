@@ -12,6 +12,7 @@
 #include "Logger.h"
 #include "Model.h"
 #include "Transform.h"
+#include "Rigidbody.h"
 
 #include "Shader.h"
 
@@ -124,8 +125,10 @@ int main(int argc, char** argv)
 
 	//Matrix4 projectionMat = Matrix4::OrthoAspect(2, settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
 	Matrix4 projectionMat = Matrix4::Perspective(settings->getFOV(), settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
-	Transform transform1({ 0 }, Quaternion::identity, { 3 });
+	Transform transform1({ -0.445, 0, -5 }, Quaternion::identity, { 3 });
 	Transform transform2;
+	Rigidbody rb1;
+	Rigidbody rb2;
 	logger << author << "Main" << "----------Entering game loop----------\n" << lend;
 	while (!glfwWindowShouldClose(window))
 	{
@@ -148,21 +151,26 @@ int main(int argc, char** argv)
 		//projectionMat = projectionMat.Transpose();
 
 		Quaternion rot = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
-		transform1.position = { -0.445, 0, -5 };
-		transform1.rotation = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
+		//transform1.rotation = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
+		rb1.velocity = Vector3(0.5, 0, -1);
+		rb1.angularVelocity = Vector3(1, 2.35, 0);
+		rb1.Update(&transform1);
+
+		transform1.Update();
 
 		Matrix4 camTranslation = Matrix4::Translate({ 0,Math::Wave(0, 5, 1, Time::elapsedTime) * 0 + 0 ,0 });
 		Quaternion camRotation = Quaternion({ 0, 1, 0 }, 0);
-		transform1.Update();
 		Matrix4 u_MVP = /*(rot.toMatrix() * scale * translation)*/ transform1.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 
 		shader.setUniformMat4f("u_MVP", u_MVP);
 
 		//renderer.Draw(va, ib, shader);
 		renderer.Draw(&model, shader);
-		transform2.position = { 0.22, 0, Math::Wave(-25, -0.5, 0.5, Time::elapsedTime) };
-		transform2.rotation = Quaternion({ 1, 0, 0 }, Time::elapsedTime * 3);
+		transform2.position = { -2, 0, Math::Wave(-25, 25, 1, Time::elapsedTime) };
+		transform2.rotation = Quaternion({ 1, 0, 0 }, Time::elapsedTime * 2.8);
+
 		transform2.Update();
+
 		Matrix4 u_MVP2 = transform2.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 		shader.setUniformMat4f("u_MVP", u_MVP2);
 		texture2.Bind();
@@ -177,7 +185,7 @@ int main(int argc, char** argv)
 		glfwPollEvents();
 
 		//Unbinding
-		GLCall(glUseProgram(0));
+		shader.Unbind();
 	}
 
 	logger << ("Closing Window", "Main") << lend;

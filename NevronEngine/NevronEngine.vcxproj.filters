@@ -50,6 +50,7 @@
       <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\Rigidbody.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Systemdefs.h" />
@@ -105,6 +106,7 @@
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="src\Transform.h" />
+    <ClInclude Include="src\Rigidbody.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="rsc\resource.rc" />

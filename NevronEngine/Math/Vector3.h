@@ -128,7 +128,9 @@ struct Vector3
 	static const Vector3 black;
 
 	static const Vector3 forward;
+	static const Vector3 back;
 	static const Vector3 up;
+	static const Vector3 down;
 	static const Vector3 right;
 	static const Vector3 left;
 	static const Vector3 zero;

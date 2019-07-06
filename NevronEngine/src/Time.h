@@ -35,9 +35,16 @@ public:
 public:
 	static float frameRate;
 	static float deltaTime;
+	static float unscaledDeltaTime;
+	//Tick speed
+	static float fixedDeltaTime;
 	static float elapsedTime;
+	static float unscaledElapsedTime;
+	static float timeScale;
+
 	static std::string startDateAndTime;
 	static int frameCount;
+
 
 	static std::chrono::time_point<std::chrono::steady_clock> startTime;
 	static std::chrono::time_point<std::chrono::steady_clock> prevTime;
