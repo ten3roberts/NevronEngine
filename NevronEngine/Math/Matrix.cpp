@@ -304,8 +304,6 @@ Matrix Matrix::Parse(const std::string& str)
 			result(i, j) = num(elems[i][j]);
 		}
 
-	logger << "\n" + result.str() << lend;
-
 	return result;
 }
 

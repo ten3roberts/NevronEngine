@@ -6,9 +6,11 @@
 class Timer
 {
 public:
-	Timer(std::string name = "");
+	Timer(const std::string& name = "unnammed");
+	Timer(const std::string& name, unsigned long itemCount);
 	//Will assign the resulting time to $result and suppres log call
-	Timer(double* result, std::string name = "");
+	Timer(double* result, const std::string& name = "unnammed");
+	Timer(double* result, const std::string& name, unsigned long itemCount);
 	~Timer();
 private:
 	std::chrono::time_point<std::chrono::steady_clock> start;
@@ -16,6 +18,9 @@ private:
 	std::chrono::duration<float> duration;
 	double* result;
 	std::string name;
+	
+	//If you time several similar events it can calculate an average time per event. E.g; when calculating collisions it can use the amount of entities to calculate time per entity
+	unsigned long itemCount;
 
 };
 

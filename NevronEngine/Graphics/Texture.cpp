@@ -1,5 +1,5 @@
 #include "Texture.h"
-#include "Utility.h"
+#include <src\Utility.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image\stb_image.h>
@@ -7,18 +7,18 @@
 #include <gl/glew.h>
 using namespace Utility;
 
-Texture::Texture(const std::string& name, bool flip)
-	: m_localBuffer(nullptr), m_width(0), m_height(0), m_BPP(0)
+Texture::Texture(const std::string& name, unsigned int slot)
+	: m_slot(slot), m_localBuffer(nullptr), m_width(0), m_height(0), m_BPP(0)
 {
-	m_name = getFilename(name, false);
-	m_filepath = FindFile(name);
-	logger << author << "Texture: " + m_name << "Loading texture: " + ShortenPath(m_filepath) << lend;
+	m_name = strLead(getFilename(name, true), ".png");
+	m_filepath = FindFile(m_name);
+	Logf("Texture: " + m_name, "Loading texture: %s", ShortenPath(m_filepath).c_str());
 
-	stbi_set_flip_vertically_on_load(flip);
+	stbi_set_flip_vertically_on_load(true);
 	m_localBuffer = stbi_load(m_filepath.c_str(), &m_width, &m_height, &m_BPP, 4);
 
-	glGenTextures(1, &m_rendererID);
-	glBindTexture(GL_TEXTURE_2D, m_rendererID);
+	glGenTextures(1, &m_rscID);
+	glBindTexture(GL_TEXTURE_2D, m_rscID);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -34,13 +34,13 @@ Texture::Texture(const std::string& name, bool flip)
 
 Texture::~Texture()
 {
-	glDeleteTextures(1, &m_rendererID);
+	glDeleteTextures(1, &m_rscID);
 }
 
-void Texture::Bind(unsigned int slot) const
+void Texture::Bind() const
 {
-	glActiveTexture(GL_TEXTURE0 + slot);
-	glBindTexture(GL_TEXTURE_2D, m_rendererID);
+	glActiveTexture(GL_TEXTURE0 + m_slot);
+	glBindTexture(GL_TEXTURE_2D, m_rscID);
 }
 
 void Texture::Unbind() const

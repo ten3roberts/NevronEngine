@@ -27,11 +27,11 @@ void Time::Update()
 	frameCount++;
 
 	currentTime = std::chrono::high_resolution_clock::now();
-	unscaledElapsedTime = (currentTime - startTime).count() / (float)BILLION;
-	elapsedTime = ((currentTime - startTime).count() / (float)BILLION) * timeScale;
+	unscaledElapsedTime = (currentTime - startTime).count() / (float)GIGA;
+	elapsedTime = ((currentTime - startTime).count() / (float)GIGA) * timeScale;
 
-	unscaledDeltaTime = (currentTime - prevTime).count() / (float)BILLION;
-	deltaTime = ((currentTime - prevTime).count() / (float)BILLION) * timeScale;
+	unscaledDeltaTime = (currentTime - prevTime).count() / (float)GIGA;
+	deltaTime = ((currentTime - prevTime).count() / (float)GIGA) * timeScale;
 
 	frameRate = 1.0f / deltaTime;
 

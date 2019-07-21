@@ -1,5 +1,5 @@
 #include "Renderer.h"
-#include "Utility.h"
+#include "..\src\Utility.h"
 using namespace Utility;
 
 void GLAPIENTRY ErrorCallBack(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
@@ -7,7 +7,7 @@ void GLAPIENTRY ErrorCallBack(GLenum source, GLenum type, GLuint id, GLenum seve
 	{
 
 		std::string msg = "type: " + STR(type) + ", severity: " + STR(severity) + ", message: " + message;
-		logger << author << "OpenGL Callback" << msg << lend;
+		Logf("OpenGL Callback", msg.c_str());
 		return;
 	}
 }
@@ -21,7 +21,7 @@ bool GLLogCall(const char* function, const char* file, int line)
 {
 	while (GLenum  error = glGetError())
 	{
-		logger << author << "OpenGL Error" << "0x" << STR(error) << "; Function: " << function << " " << getFilename(file, true) << ":" << STR(line) << lend;
+		Logf("OpenGL Error", ("0x" + STR(error) + "; Function: " + function + " " + getFilename(file, true) + ":" + STR(line)).c_str());
 		return false;
 	}
 	return true;

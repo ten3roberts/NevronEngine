@@ -91,6 +91,10 @@ struct Vector2
 	inline std::string str() const { return std::string(STR(x) + ", " + STR(y)); }
 	inline std::string str_d() const { return std::string(STR(x) + ", " + STR(y) + "; " + STR(Magnitude())); }
 
+
+	static const Vector2 zero;
+	static const Vector2 one;
+
 	//Calculates the dot product between two vectors
 	static float Dot(const Vector2& a, const Vector2& b);
 

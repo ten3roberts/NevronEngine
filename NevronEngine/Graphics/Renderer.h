@@ -1,6 +1,6 @@
 #pragma once
-#include "Systemdefs.h"
-#include "Model.h"
+#include "..\src\Systemdefs.h"
+#include "..\src\Model.h"
 #include "Shader.h"
 
 #include <GL/glew.h>

@@ -227,7 +227,34 @@ Logger& operator<<(Logger& output, const logModifier& modifier)
 	return output;
 }
 
-Logger::Logger() : m_logFile(std::ofstream()), m_streams(), m_currentAuthor("Log"), m_state(logState::compose)
+static std::ofstream logFile;
+
+void Logf(const std::string& author, const char* format, ...)
+{
+	if (!logFile.is_open())
+	{
+		Utility::GenerateFile(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", "");
+		logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt");
+	}
+
+	va_list vl;
+	va_start(vl, format);
+	char buf[512];
+	vsnprintf(buf, sizeof(buf), format, vl);
+	va_end(vl);
+
+
+
+	std::string fullMsg = '(' + (author == "" ? "Log" : author) + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + buf + '\n';
+
+	printf(fullMsg.c_str());
+	logFile.write(fullMsg.c_str(), fullMsg.size());
+
+
+	return;
+}
+
+Logger::Logger() : m_logFile(std::ofstream()), m_streams(), m_currentAuthor("Log"), m_state(logState::compose), m_keepAuthor(false)
 {
 }
 

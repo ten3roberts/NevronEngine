@@ -20,6 +20,18 @@ struct Vector3;
 #define DEG_60  0.047198f
 #define DEG_45  0.785398f
 
+#define KILO 1000
+#define MEGA 1000000
+#define GIGA 1000000000
+
+#define NANO 1/GIGA
+#define MICRO 1/MEGA
+#define MILLI 1/KILO
+
+#define MINUTE 60
+#define HOUR 3600
+#define DAY 86400
+
 
 //Namepsace for generating random values, arrays, and vectors. No arguments yields a result between 0 and 1
 namespace Random
@@ -65,7 +77,7 @@ namespace Random
 	inline std::vector<float> Array(unsigned int size, float min, float max)
 	{
 		std::vector<float> result(size);
-		for(unsigned int i = 0; i < size; i++)
+		for (unsigned int i = 0; i < size; i++)
 			result[i] = ((float)std::rand() / RAND_MAX) * (max - min) + min;
 		return result;
 	}
@@ -76,7 +88,7 @@ namespace Random
 		for (unsigned int i = 0; i < size; i++)
 			result[i] = (float)std::rand() / RAND_MAX;
 		return result;
-	}	
+	}
 
 	//Vector math
 
@@ -98,7 +110,7 @@ namespace Random
 
 	//Will return a vector to a random point on a sphere
 	Vector3 OnSphere(float radius, unsigned int seed);
-	
+
 	//Will return a a vector with a random direction and magnitude. (Equal chance for each magnitude; sparser further out)
 	Vector3 InSphere(float outerRadius, float innerRadius = 0);
 	Vector3 InSphere();
@@ -118,11 +130,25 @@ namespace Math
 		return log(x) / log(base);
 	}
 
-	inline static float strClamp(float value, float min, float max)
+	//Clamps value between min and max
+	inline static float Clamp(float value, float min, float max)
 	{
 		return value > max ? max : value < min ? min : value;
 	}
 
+	//Clamps value between 0 and infinity
+	inline static float ClampPos(float value)
+	{
+		return value < 0 ? 0 : value;
+	}
+
+	//Clamps value between 0 and negative infinity
+	inline static float ClampNeg(float value)
+	{
+		return value > 0 ? 0 : value;
+	}
+
+	//Clamps value between 0 and 1
 	inline static float Clamp01(float value)
 	{
 		return value > 1 ? 1 : value < 0 ? 0 : value;
@@ -139,14 +165,22 @@ namespace Math
 	}
 
 	int getMax(float* elements, int size); //Return the index of the greatest value in elements
-	int getMin(float* elements, int size); // Returns the index of the smallest value in elements
 
 	int getMax(std::vector<float> elements);
 
+	int getMax(int n, ...);
+
+	// Returns the index of the smallest value in elements
+	int getMin(float* elements, int size);
+
 	int getMin(std::vector<float> elements);
 
+	int getMin(int n, ...);
+
 	//Will generate a sine wave between two thresholds
-	float Wave(float min, float max, float frequency, float t);
+	inline float SineWave(float min, float max, float frequency, float t) { return sinf(t * frequency) / 2 * (max - min) + (max + min) / 2; }
+	inline float CosineWave(float min, float max, float frequency, float t) { return cosf(t * frequency) / 2 * (max - min) + (max + min) / 2; }
+
 
 #pragma region "Vector functions"
 	//Vector2
@@ -214,7 +248,7 @@ private:
 		}
 	}
 
-	static void Merge(std::vector<T> & input, Vector3 & other, int low, int middle, int high, bool(*comp)(T a, T b, Vector3 & other))
+	static void Merge(std::vector<T>& input, Vector3& other, int low, int middle, int high, bool(*comp)(T a, T b, Vector3& other))
 	{
 
 		int left = low;

@@ -1,29 +1,29 @@
 #include "Shader.h"
-#include "Utility.h"
+#include "..\src\Utility.h"
 #include "Renderer.h"
-#include "Logger.h"
+#include "..\src\Logger.h"
 
 using namespace Utility;
 
-Shader::Shader(const std::string& name) : m_rendererID(0)
+Shader::Shader(const std::string& name)
 {
-	m_name = getFilename(name);
-	m_filepath = FindFile(strLead(name, ".shader"));
+	m_name = strLead(getFilename(name, true), ".glsl");
+	m_filepath = FindFile(m_name);
 	if (m_filepath == "")
-		logger << author << "Shader: " + m_name << "Couldn't find shader with name: " << lend;
+		Logf("Shader: " + m_name, "Couldn't find shader with name: ");
 
 	ShaderSource source = ParseShader(m_filepath);
-	m_rendererID = CreateShader(source);
+	m_rscID = CreateShader(source);
 }
 
 Shader::~Shader()
 {
-	glDeleteProgram(m_rendererID);
+	glDeleteProgram(m_rscID);
 }
 
 void Shader::Bind() const
 {
-	glUseProgram(m_rendererID);
+	glUseProgram(m_rscID);
 }
 
 void Shader::Unbind() const
@@ -72,15 +72,30 @@ void Shader::setUniform1i(const std::string name, int value)
 	glUniform1i(getUniformLocation(name), value);
 }
 
+void Shader::setMaterial(Material* material)
+{
+	glUniform1i(getUniformLocation("u_texture"), material->texture->getSlot()); //Texture
+
+	if (material->texture1)
+		glUniform1i(getUniformLocation("u_texture1"), material->texture1->getSlot()); //Texture1
+	if (material->texture2)
+		glUniform1i(getUniformLocation("u_texture2"), material->texture2->getSlot()); //Texture2
+
+	if (material->texture3)
+		glUniform1i(getUniformLocation("u_texture3"), material->texture3->getSlot()); //Texture2
+
+	glUniform4f(getUniformLocation("u_color"), material->color.b, material->color.g, material->color.b, material->color.a); //Color
+}
+
 int Shader::getUniformLocation(const std::string& name)
 {
 	if (m_uniformCache.find(name) != m_uniformCache.end())
 		return m_uniformCache[name];
 
-	logger << author << "Shader: " + m_name << "Uniform: " + name + " is not yet cached, retrieving id" << lend;
-	int location = glGetUniformLocation(m_rendererID, name.c_str());
+	Logf("Shader: " + m_name, "Uniform: %s %s", name.c_str(), "is not yet cached, retrieving id");
+	int location = glGetUniformLocation(m_rscID, name.c_str());
 	if (location == -1)
-		logger << author << "Shader: " + m_name << "Couldn't get uniform location: " + name + "; Uniform is either optimised away or does not exist in the current shader" << lend;
+		Logf("Shader: " + m_name, "Couldn't get uniform location: %s%s", name.c_str(), "; Uniform is either optimised away or does not exist in the current shader");
 	else
 		m_uniformCache[name] = location;
 	return location;
@@ -105,7 +120,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 
 		char* message = new char[length * sizeof(char)];
 		glGetShaderInfoLog(id, length, &length, message);
-		logger << author << (type == GL_VERTEX_SHADER ? "vertex" : "fragment" + std::string(" Shader Error")) << message;
+		Logf((type == GL_VERTEX_SHADER ? "vertex" : "fragment" + std::string(" Shader Error")), message);
 		glDeleteShader(id);
 		delete[] message;
 		return 0;
@@ -118,10 +133,10 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 {
 	unsigned int program = glCreateProgram();
 	unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
-	logger << author << "Shader: " + m_name << "Compiled vertex shader" << lend;
+	Logf("Shader: " + m_name, "Compiled vertex shader");
 
 	unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
-	logger << author << "Shader: " + m_name << "Compiled fragment shader" << lend;
+	Logf("Shader: " + m_name, "Compiled fragment shader");
 
 	glAttachShader(program, vs);
 	glAttachShader(program, fs);
@@ -140,10 +155,10 @@ unsigned int Shader::CreateShader(ShaderSource source)
 {
 	unsigned int program = glCreateProgram();
 	unsigned int vs = CompileShader(GL_VERTEX_SHADER, source.vertexSource);
-	logger << author << "Shader: " + m_name << "Compiled vertex shader" << lend;
+	Logf("Shader: " + m_name, "Compiled vertex shader");
 
 	unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, source.fragmentSource);
-	logger << author << "Shader: " + m_name << "Compiled fragment shader" << lend;
+	Logf("Shader: " + m_name, "Compiled fragment shader");
 
 	glAttachShader(program, vs);
 	glAttachShader(program, fs);

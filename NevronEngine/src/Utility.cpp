@@ -25,7 +25,7 @@ void Utility::setWorkingDir(const std::string& dir)
 {
 	std::string oldDir = s_workingDir;
 	s_workingDir = getPath(dir);
-	logger << "Working directory changed from \"" + oldDir + "\" to \"" + s_workingDir + "\"" << lend;
+	Logf("Utility", "Working directory changed from \"%s%s%s%s", oldDir.c_str(), "\" to \"", s_workingDir.c_str(), "\"");
 
 }
 
@@ -398,7 +398,7 @@ std::string Utility::FindFile(const std::string& filename, const std::string& di
 			return files[i];
 		}
 	}
-	logger << author << "FindFile" << "No file found with name: " + filename << lend;
+	Logf("FindFile", "No file found with name: %s", filename.c_str());
 	return "";
 }
 
@@ -415,7 +415,7 @@ std::string Utility::FindFile(const std::string& filename, bool useExtension, co
 			return files[i];
 		}
 	}
-	logger << author << "FindFile" << "No file found with name: " + filename << lend;
+	Logf("FindFile", "No file found with name: %s", filename.c_str());
 	return "";
 }
 
@@ -441,7 +441,7 @@ std::vector<std::string> Utility::ReadFile(const std::string& filepath, bool cre
 	}
 	else
 	{
-		MessageBox(nullptr, "File could not be opened", ShortenString(filepath, 35).c_str(), MB_OK | MB_ICONEXCLAMATION);
+		Logf("Unable to open file: %s", ShortenString(filepath, 35).c_str());
 	}
 	file.close();
 	return fileCont;
@@ -486,6 +486,7 @@ void Utility::GenerateFile(const std::string& path, const std::string& contents,
 		std::filesystem::create_directory(tmpPath);
 		//CreateDirectory(tmpPath.c_str(), nullptr);
 	}
+
 	//Creates the file at the end and pushing optional data into it
 	std::ofstream fstream(path, append ? std::ios::app : std::ios::trunc);
 	fstream.write(contents.c_str(), contents.size());
@@ -502,7 +503,7 @@ void Utility::Copy(const std::string& oldPath, const std::string& newPath)
 		std::ofstream newFile(newPath, std::ios::binary);
 		if (!oldFile.is_open())
 		{
-			logger << author << "CopyFile" << "Couldn't open file: " + oldPath << lend;
+			Logf("CopyFile", "Couldn't open file: %s", oldPath.c_str());
 			return;
 		}
 		newFile << oldFile.rdbuf();

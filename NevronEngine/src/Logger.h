@@ -60,5 +60,15 @@ Logger& operator<<(Logger& output, const Matrix& msg);
 
 Logger& operator<<(Logger& output, const logModifier& modifier);
 
-extern Logger logger;
+//extern Logger logger;
 //static Logger& Log = logger;
+
+
+/* va_arg example */
+#include <stdio.h>      /* printf */
+#include <stdarg.h>     /* va_list, va_start, va_arg, va_end */
+
+#define max_loglenght 512
+
+//extern void Logf(const char* format, ...);
+extern void Logf(const std::string& author, const char* format, ...);

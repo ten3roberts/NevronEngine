@@ -1,8 +1,10 @@
 #pragma once
 
-#include "..\\Math\Vector.h"
-#include "IndexBuffer.h"
-#include "VertexArray.h"
+#include <Math/Vector2.h>
+#include <Math/Vector3.h>
+#include <Graphics/IndexBuffer.h>
+#include <Graphics/VertexArray.h>
+#include <src/Component.h>
 #include <vector>
 
 struct Vertex
@@ -14,7 +16,7 @@ struct Vertex
 	Vector2 uv;
 };
 
-class Model
+class Model : public Component
 {
 private:
 	//std::vector<Vertex> m_vertices;
@@ -26,7 +28,10 @@ private:
 public:
 	Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices);
 	Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount);
+
 	~Model();
+
+	static Model GenerateQuad(Vector2 size = Vector2::one);
 
 	VertexBuffer* getVertexBuffer() const { return m_vertexBuffer; }
 	IndexBuffer* getIndexBuffer() const { return m_indexBuffer; }
@@ -36,5 +41,7 @@ public:
 
 	void Bind() const;
 	void Unbind() const;
+
+	static void ApplyLayout(VertexBufferLayout* layout);
 };
 

@@ -221,9 +221,27 @@ static std::string FormatBool(bool boolean)
 	return boolean ? "true" : "false";
 }
 
+//Will attempt to convert a string to float or integer. Does nothing if failed
+template <typename T = float>
+static T num(std::string in)
+{
+	if constexpr (std::is_same<T, int>())
+	{
+		return std::atoi(in.c_str());
+	}
+	if constexpr (std::is_same<T, unsigned int>())
+	{
+		return std::atoi(in.c_str());
+	}
+	else if constexpr (std::is_same<T, float>())
+	{
+		return std::atof(in.c_str());
+	}
+}
+
 //Will attempt to convert a string to float or integer. If it fails it will return 0 and if $failed is passed set it to true
 template <typename N = float>
-static N num(std::string in, bool* failed = nullptr)
+static N num(std::string in, bool* failed)
 {
 	if (failed != nullptr)
 		* failed = false;
@@ -252,8 +270,8 @@ static N num(std::string in, bool* failed = nullptr)
 
 inline float min(float a, float b) { return a < b ? a : b; };
 inline int min(int a, int b) { return a < b ? a : b; };
-inline unsigned int min(unsigned int a, unsigned int b) { return a < b ? a : b; };
+//inline unsigned int min(unsigned int a, unsigned int b) { return a < b ? a : b; };
 
 inline float max(float a, float b) { return a > b ? a : b; };
 inline int max(int a, int b) { return a > b ? a : b; };
-inline unsigned int max(unsigned int a, unsigned int b) { return a > b ? a : b; };
+//inline unsigned int max(unsigned int a, unsigned int b) { return a > b ? a : b; };

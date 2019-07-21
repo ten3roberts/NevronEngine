@@ -7,6 +7,9 @@
 
 using namespace Utility;
 
+const Vector2 Vector2::zero = { 0, 0 };
+const Vector2 Vector2::one = { 1, 1 };
+
 Vector2::Vector2() :
 	x(0), y(0)
 {

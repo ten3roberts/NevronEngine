@@ -1,19 +1,9 @@
 #pragma once
 #include <chrono>
 #include <string>
+#include "..\\Math\Math.h"
 
 
-#define KILO 1000
-#define MILLION 1000000
-#define BILLION 1000000000
-
-#define NANO 1/BILLION
-#define MICRO 1/MILLION
-#define MILLI 1/KILO
-
-#define MINUTE 60
-#define HOUR 3600
-#define DAY 86400
 
 #define SLEEP std::this_thread::sleep_for
 

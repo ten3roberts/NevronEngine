@@ -35,6 +35,24 @@ Model::~Model()
 	delete m_vertexArray;
 }
 
+Model Model::GenerateQuad(Vector2 size)
+{
+	//Simple square
+	Vertex vertices[4];
+	vertices[0] = Vertex({ -0.5f * size.x, -0.5f * size.y, 0.0f }, { 0.0f, 0.0f });
+	vertices[1] = Vertex({ 0.5f * size.x, -0.5f * size.y, 0.0f }, { 1.0f, 0.0f });
+	vertices[2] = Vertex({ 0.5f * size.x, 0.5f * size.y, 0.0f }, { 1.0f, 1.0f });
+	vertices[3] = Vertex({ -0.5f * size.x, 0.5f * size.y, 0.0f }, { 0.0f, 1.0f });
+
+	unsigned int indices[6] = {
+		0, 1, 2,
+		2, 3, 0
+	};
+
+
+	return Model(vertices, 4, indices, 6);
+}
+
 void Model::setVertices(std::vector<Vertex> vertices)
 {
 	m_vertexBuffer->setData(&vertices[0], sizeof(Vertex) * vertices.size());
@@ -56,4 +74,10 @@ void Model::Unbind() const
 {
 	m_vertexArray->Unbind();
 	m_indexBuffer->Unbind();
+}
+
+void Model::ApplyLayout(VertexBufferLayout* layout)
+{
+	layout->Push<float>(3);
+	layout->Push<float>(2);
 }

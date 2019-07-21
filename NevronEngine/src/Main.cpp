@@ -2,19 +2,16 @@
 #include "Settings.h"
 #include "Time.h"
 #include "Timer.h"
-#include "..\Math\Math.h"
+#include <Math.h>
 #include "Systemdefs.h"
-#include "Renderer.h"
-#include "VertexBuffer.h"
-#include "IndexBuffer.h"
-#include "VertexArray.h"
-#include "Texture.h"
+#include <Graphics/Renderer.h>
+#include <Graphics/Texture.h>
 #include "Logger.h"
 #include "Model.h"
 #include "Transform.h"
 #include "Rigidbody.h"
 
-#include "Shader.h"
+#include <Graphics/Shader.h>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -40,7 +37,7 @@ int main(int argc, char** argv)
 	Settings* settings = Settings::get();
 	settings->Load();
 
-	logger << APPNAME " initializing..." << lend;
+	Logf("Main", APPNAME " initializing...");
 
 	Timer* timer = new Timer("Startup");
 
@@ -67,7 +64,7 @@ int main(int argc, char** argv)
 	//Initialize glew and fetch opengl functions
 	if (glewInit() != GLEW_OK)
 	{
-		logger << author << "Fatal Error" << "Could not init glew" << lend;
+		Logf("Fatal Error", "Could not init glew");
 		return -1;
 	}
 
@@ -83,7 +80,7 @@ int main(int argc, char** argv)
 	glEnable(GL_DEBUG_OUTPUT);
 	glDebugMessageCallback(ErrorCallBack, 0);
 
-	logger << "OpenGl version: " + std::string((char*)glGetString(GL_VERSION)) << lend;
+	Logf("Main", std::string("OpenGl version: " + std::string((char*)glGetString(GL_VERSION))).c_str());
 
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
@@ -91,30 +88,23 @@ int main(int argc, char** argv)
 
 	delete timer;
 
-	//Simple square
-	Vertex vertices[4];
-	vertices[0] = Vertex({ -0.5f, -0.5f, 0.0f }, { 0.0f, 0.0f });
-	vertices[1] = Vertex({ 0.5f, -0.5f, 0.0f }, { 1.0f, 0.0f });
-	vertices[2] = Vertex({ 0.5f, 0.5f, 0.0f }, { 1.0f, 1.0f });
-	vertices[3] = Vertex({ -0.5f, 0.5f, 0.0f }, { 0.0f, 1.0f });
-
-	unsigned int indices[6] = {
-		0, 1, 2,
-		2, 3, 0
-	};
 
 
 
-	Model model(vertices, 4, indices, 6);
+
+	//Model model(vertices, 4, indices, 6);
+	Model model = Model::GenerateQuad();
 
 	//Shaders
 	Shader shader("Basic");
+	Shader multiMapShader("MultiMap");
 	shader.Bind();
 	shader.setUniform4f("u_color", Vector4::white);
 
-	Texture texture("NevronLogo.mc.png");
-	Texture texture2("Checker.png");
-	texture.Bind();
+	Material material1("Logo");
+	Material material2("Checker");
+	Material ground("Ground");
+
 	shader.setUniform1i("u_texture", 0); //0 is slot
 
 
@@ -127,28 +117,26 @@ int main(int argc, char** argv)
 	Matrix4 projectionMat = Matrix4::Perspective(settings->getFOV(), settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
 	Transform transform1({ -0.445, 0, -5 }, Quaternion::identity, { 3 });
 	Transform transform2;
+	Transform transform3;
 	Rigidbody rb1;
 	Rigidbody rb2;
-	logger << author << "Main" << "----------Entering game loop----------\n" << lend;
+	Logf("Main", "----------Entering game loop----------\n");
+
 	while (!glfwWindowShouldClose(window))
 	{
 		Time::Update();
 		if (Time::frameCount % 120 == 0)
-			logger << author << "Framerate" << STR(Time::frameRate) << lend;
+			Logf("Framerate", STR(Time::frameRate).c_str());
 
 		renderer.Clear();
 
 		//Binding
 
-		texture.Bind();
+		material1.color = vec3::HSV(Time::elapsedTime / 10.0f, 1, 1);
 		shader.Bind();
 
-		shader.setUniform1i("u_texture", 0); //0 is slot
-
-		vec3 color = vec3::HSV(Time::elapsedTime / 10.0f, 1, 1);
-
-		shader.setUniform4f("u_color", color);
-		//projectionMat = projectionMat.Transpose();
+		material1.Bind();
+		shader.setMaterial(&material1);
 
 		Quaternion rot = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
 		//transform1.rotation = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
@@ -158,7 +146,7 @@ int main(int argc, char** argv)
 
 		transform1.Update();
 
-		Matrix4 camTranslation = Matrix4::Translate({ 0,Math::Wave(0, 5, 1, Time::elapsedTime) * 0 + 0 ,0 });
+		Matrix4 camTranslation = Matrix4::Translate({ 0,Math::SineWave(-5, 5, 1, Time::elapsedTime) * 0 ,0 });
 		Quaternion camRotation = Quaternion({ 0, 1, 0 }, 0);
 		Matrix4 u_MVP = /*(rot.toMatrix() * scale * translation)*/ transform1.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 
@@ -166,17 +154,32 @@ int main(int argc, char** argv)
 
 		//renderer.Draw(va, ib, shader);
 		renderer.Draw(&model, shader);
-		transform2.position = { -2, 0, Math::Wave(-25, 25, 1, Time::elapsedTime) };
+
+		//Object2
+		transform2.position = { -2, 0, Math::CosineWave(-25, 25, 1, Time::elapsedTime) };
 		transform2.rotation = Quaternion({ 1, 0, 0 }, Time::elapsedTime * 2.8);
 
 		transform2.Update();
 
 		Matrix4 u_MVP2 = transform2.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 		shader.setUniformMat4f("u_MVP", u_MVP2);
-		texture2.Bind();
-
+		material2.Bind();
+		shader.setMaterial(&material2);
 		renderer.Draw(&model, shader);
 
+		//Object3
+
+		multiMapShader.Bind();
+		transform3.position = { 0, 0, Math::CosineWave(-1, -5, 1, Time::elapsedTime / 5) };
+		transform3.rotation = Quaternion({ 0, 1, 0 }, Time::elapsedTime * 2.8);
+
+		transform3.Update();
+		ground.color = vec3::HSV(Time::elapsedTime / 5.0f, 1, 1);
+		Matrix4 u_MVP3 = transform3.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
+		multiMapShader.setUniformMat4f("u_MVP", u_MVP3);
+		ground.Bind();
+		multiMapShader.setMaterial(&ground);
+		renderer.Draw(&model, multiMapShader);
 
 		//Swap front and back buffers
 		glfwSwapBuffers(window);
@@ -188,12 +191,12 @@ int main(int argc, char** argv)
 		shader.Unbind();
 	}
 
-	logger << ("Closing Window", "Main") << lend;
+	Logf("Main", "Closing Window");
 
 	glfwTerminate();
 
 	settings->Save();
 
-	logger << "Program has terminated correctly" << lend;
+	Logf("Main", "Program has terminated correctly");
 	return 0;
 }

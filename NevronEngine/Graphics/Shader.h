@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
-#include "..\Math\Math.h"
+#include <src\Component.h>
+#include <src/Material.h>
+#include <Math/Math.h>
 
 #include <sstream>
 #include <unordered_map>
@@ -12,12 +14,10 @@ struct ShaderSource
 	std::string operator[](unsigned int index) { return *(&vertexSource + index); };
 };
 
-class Shader
+class Shader : public Component
 {
 private:
 	std::string m_filepath;
-	std::string m_name;
-	unsigned int m_rendererID;
 	//Uniform caching
 	std::unordered_map<std::string, int> m_uniformCache;
 public:
@@ -50,6 +50,8 @@ public:
 
 	//sets an integer value
 	void setUniform1i(const std::string name, int value);
+
+	void setMaterial(Material* material);
 
 
 	std::string getName() const { return m_name; }
