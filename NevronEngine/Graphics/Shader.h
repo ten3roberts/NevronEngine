@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include <src\Component.h>
-#include <src/Material.h>
+#include <src/Component.h>
+#include <Graphics/Material.h>
 #include <Math/Math.h>
 
 #include <sstream>

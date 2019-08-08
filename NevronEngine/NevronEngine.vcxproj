@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Material.cpp" />
+    <ClCompile Include="Graphics\Material.cpp" />
     <ClCompile Include="src\ResourceManager.cpp" />
     <ClCompile Include="src\Component.cpp" />
     <ClCompile Include="src\Rigidbody.cpp" />
-    <ClCompile Include="src\Model.cpp" />
+    <ClCompile Include="Graphics\Model.cpp" />
     <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="Math\Matrix.cpp" />
     <ClCompile Include="Math\Quaternion.cpp" />
@@ -46,13 +46,14 @@
     <ClCompile Include="Graphics\VertexBufferLayout.cpp" />
     <ClCompile Include="Graphics\Texture.cpp" />
     <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="Graphics\UniformBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Material.h" />
+    <ClInclude Include="Graphics\Material.h" />
     <ClInclude Include="src\ResourceManager.h" />
     <ClInclude Include="src\Component.h" />
     <ClInclude Include="src\Rigidbody.h" />
-    <ClInclude Include="src\Model.h" />
+    <ClInclude Include="Graphics\Model.h" />
     <ClInclude Include="src\Logger.h" />
     <ClInclude Include="Math\Math.h" />
     <ClInclude Include="Math\Matrix.h" />
@@ -77,6 +78,7 @@
     <ClInclude Include="Graphics\VertexBufferLayout.h" />
     <ClInclude Include="Graphics\Texture.h" />
     <ClInclude Include="src\Transform.h" />
+    <ClInclude Include="Graphics\UniformBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="rsc\resource.rc" />

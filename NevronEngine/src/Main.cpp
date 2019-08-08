@@ -7,13 +7,12 @@
 #include <Graphics/Renderer.h>
 #include <Graphics/Texture.h>
 #include "Logger.h"
-#include "Model.h"
+#include <Graphics/Model.h>
 #include "Transform.h"
 #include "Rigidbody.h"
 
 #include <Graphics/Shader.h>
-
-#include <GL/glew.h>
+#include <Graphics/UniformBuffer.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
@@ -21,6 +20,8 @@
 #include <fstream>
 #include <sstream>
 #include <thread>
+
+#include <src/ResourceManager.h>
 
 using namespace std::chrono_literals;
 using namespace Utility;
@@ -85,13 +86,14 @@ int main(int argc, char** argv)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	glEnable(GL_DEPTH_TEST);
+	glCullFace(GL_BACK);
+	glEnable(GL_CULL_FACE);
 
 	delete timer;
 
 
 
-
-
+	ResourceManager* rscManager = ResourceManager::Get();
 	//Model model(vertices, 4, indices, 6);
 	Model model = Model::GenerateQuad();
 
@@ -102,12 +104,23 @@ int main(int argc, char** argv)
 	shader.setUniform4f("u_color", Vector4::white);
 
 	Material material1("Logo");
-	Material material2("Checker");
-	Material ground("Ground");
-
+	rsc<Material> ground = rscManager->GetMaterial("Ground");
 	shader.setUniform1i("u_texture", 0); //0 is slot
+	shader.Bind();
+	//Uniform buffer objects
 
+	struct EnvironmentType
+	{
+		vec3 color;
+		float viewDistance;
+	};
 
+	EnvironmentType environment;
+	environment.color = vec3::red;
+	environment.viewDistance = 10;
+
+	UniformBuffer ubo("Environment", nullptr, sizeof(EnvironmentType));
+	ubo.setData(&shader, &environment, sizeof(EnvironmentType));	
 
 	shader.Unbind();
 
@@ -122,8 +135,12 @@ int main(int argc, char** argv)
 	Rigidbody rb2;
 	Logf("Main", "----------Entering game loop----------\n");
 
+	
+
+
 	while (!glfwWindowShouldClose(window))
 	{
+	rsc<Material> material2 = rscManager->GetResource<Material>("Mario");
 		Time::Update();
 		if (Time::frameCount % 120 == 0)
 			Logf("Framerate", STR(Time::frameRate).c_str());
@@ -163,21 +180,22 @@ int main(int argc, char** argv)
 
 		Matrix4 u_MVP2 = transform2.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 		shader.setUniformMat4f("u_MVP", u_MVP2);
-		material2.Bind();
+		material2->Bind();
 		shader.setMaterial(&material2);
 		renderer.Draw(&model, shader);
 
 		//Object3
 
 		multiMapShader.Bind();
-		transform3.position = { 0, 0, Math::CosineWave(-1, -5, 1, Time::elapsedTime / 5) };
-		transform3.rotation = Quaternion({ 0, 1, 0 }, Time::elapsedTime * 2.8);
+		transform3.position = { 0, 0, Math::CosineWave(-1, -2, 5, Time::elapsedTime) };
+		transform3.rotation = Quaternion({ 0, 1, 0 }, Time::elapsedTime);
 
 		transform3.Update();
-		ground.color = vec3::HSV(Time::elapsedTime / 5.0f, 1, 1);
+		//rscManager->GetMaterial("Ground")->color = vec3::HSV(Time::elapsedTime / 5.0f, 1, 1);
+
 		Matrix4 u_MVP3 = transform3.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 		multiMapShader.setUniformMat4f("u_MVP", u_MVP3);
-		ground.Bind();
+		ground->Bind();
 		multiMapShader.setMaterial(&ground);
 		renderer.Draw(&model, multiMapShader);
 

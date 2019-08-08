@@ -35,6 +35,8 @@ Texture::Texture(const std::string& name, unsigned int slot)
 Texture::~Texture()
 {
 	glDeleteTextures(1, &m_rscID);
+	if (m_localBuffer)
+		stbi_image_free(m_localBuffer);
 }
 
 void Texture::Bind() const

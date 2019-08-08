@@ -16,6 +16,7 @@ struct Vertex
 	Vector2 uv;
 };
 
+//Gets its ID determined by the internal VertexArray
 class Model : public Component
 {
 private:
@@ -27,6 +28,7 @@ private:
 	VertexArray *m_vertexArray;
 public:
 	Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices);
+	Model(const std::string& name);
 	Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount);
 
 	~Model();

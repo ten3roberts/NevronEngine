@@ -2,8 +2,7 @@
 #include "Utility.h"
 #include <iostream>
 #include "Time.h"
-
-Logger logger = Logger::Logger();
+/*Logger logger = Logger::Logger();
 
 Logger& operator<<(Logger& output, const std::string& msg)
 {
@@ -227,33 +226,6 @@ Logger& operator<<(Logger& output, const logModifier& modifier)
 	return output;
 }
 
-static std::ofstream logFile;
-
-void Logf(const std::string& author, const char* format, ...)
-{
-	if (!logFile.is_open())
-	{
-		Utility::GenerateFile(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", "");
-		logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt");
-	}
-
-	va_list vl;
-	va_start(vl, format);
-	char buf[512];
-	vsnprintf(buf, sizeof(buf), format, vl);
-	va_end(vl);
-
-
-
-	std::string fullMsg = '(' + (author == "" ? "Log" : author) + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + buf + '\n';
-
-	printf(fullMsg.c_str());
-	logFile.write(fullMsg.c_str(), fullMsg.size());
-
-
-	return;
-}
-
 Logger::Logger() : m_logFile(std::ofstream()), m_streams(), m_currentAuthor("Log"), m_state(logState::compose), m_keepAuthor(false)
 {
 }
@@ -283,4 +255,41 @@ void Logger::end()
 
 	if (!m_keepAuthor) //Doesn't reset author if true
 		setAuthor("");
+}*/
+
+static std::ofstream logFile;
+
+//Checks to see if the frame changes to put a divider between log calls on different frames
+static int frame;
+void Logf(const std::string& author, const char* format, ...)
+{
+	
+
+	if (!logFile.is_open())
+	{
+		Utility::GenerateFile(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", "");
+		logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt");
+	}
+
+	va_list vl;
+	va_start(vl, format);
+	char buf[512];
+	vsnprintf(buf, sizeof(buf), format, vl);
+	va_end(vl);
+
+	std::string fullMsg = '(' + (author == "" ? "Log" : author) + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + buf + '\n';
+
+	if (frame != Time::frameCount)
+	{
+		frame = Time::frameCount;
+		std::string divider(fullMsg.size(), '-');
+		divider += "\n";
+		fullMsg.insert(fullMsg.begin(), divider.begin(), divider.end());
+	}
+
+	printf(fullMsg.c_str());
+	logFile.write(fullMsg.c_str(), fullMsg.size());
+
+
+	return;
 }

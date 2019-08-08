@@ -8,9 +8,9 @@ using namespace Utility;
 
 Material::Material(const std::string& name) : texture(nullptr), texture1(nullptr), texture2(nullptr), texture3(nullptr), color(Vector3::white), reflectivity(0), smoothness(0)
 {
-	m_name = strLead(getFilename(name, true), ".mat");
+	m_name = getFilename(name, false);
 
-	std::ifstream file(FindFile(m_name));
+	std::ifstream file(FindFile(strLead(m_name, ".mat")));
 
 	if (!file.is_open())
 		return;

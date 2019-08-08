@@ -15,5 +15,7 @@ public:
 
 	void Bind() const;
 	void Unbind() const;
+
+	unsigned int getID() const { return m_rendererID; }
 };
 

@@ -12,6 +12,12 @@ Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 
 	//Adds vertices
 	m_vertexArray->AddBuffer(*m_vertexBuffer, layout);
+	m_rscID = m_vertexArray->getID();
+}
+
+Model::Model(const std::string& name)
+{
+	//TODO: load model from obj file
 }
 
 Model::Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount)

@@ -1,7 +1,7 @@
 #pragma once
-#include "..\src\Systemdefs.h"
-#include "..\src\Model.h"
-#include "Shader.h"
+#include <src/Systemdefs.h>
+#include <Graphics/Model.h>
+#include <Graphics/Shader.h>
 
 #include <GL/glew.h>
 #include <string>

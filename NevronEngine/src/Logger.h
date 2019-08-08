@@ -17,7 +17,7 @@ enum logModifier
 	none, author, lend, 
 };
 
-class Logger
+/*class Logger
 {
 public:
 	Logger();
@@ -41,9 +41,9 @@ private:
 	logState m_state;
 	bool m_keepAuthor; //Does not reset the author after lend
 private:
-};
+};*/
 
-Logger& operator<<(Logger& output, const std::string& msg);
+/*Logger& operator<<(Logger& output, const std::string& msg);
 
 Logger& operator<<(Logger& output, int msg);
 Logger& operator<<(Logger& output, unsigned int msg);
@@ -63,7 +63,7 @@ Logger& operator<<(Logger& output, const logModifier& modifier);
 //extern Logger logger;
 //static Logger& Log = logger;
 
-
+*/
 /* va_arg example */
 #include <stdio.h>      /* printf */
 #include <stdarg.h>     /* va_list, va_start, va_arg, va_end */

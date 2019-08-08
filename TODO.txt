@@ -1,1 +1,5 @@
-Implement material; class for a shader with all of it's required uniforms
+Resource manager
+
+Entity
+
+Gui

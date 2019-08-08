@@ -7,8 +7,8 @@ using namespace Utility;
 
 Shader::Shader(const std::string& name)
 {
-	m_name = strLead(getFilename(name, true), ".glsl");
-	m_filepath = FindFile(m_name);
+	m_name = getFilename(name, false);
+	m_filepath = FindFile(strLead(m_name, ".glsl"));
 	if (m_filepath == "")
 		Logf("Shader: " + m_name, "Couldn't find shader with name: ");
 
@@ -92,10 +92,11 @@ int Shader::getUniformLocation(const std::string& name)
 	if (m_uniformCache.find(name) != m_uniformCache.end())
 		return m_uniformCache[name];
 
-	Logf("Shader: " + m_name, "Uniform: %s %s", name.c_str(), "is not yet cached, retrieving id");
+	//Logf("Shader: " + m_name, "Uniform: %s %s", name.c_str(), "is not yet cached, retrieving id");
 	int location = glGetUniformLocation(m_rscID, name.c_str());
 	if (location == -1)
-		Logf("Shader: " + m_name, "Couldn't get uniform location: %s%s", name.c_str(), "; Uniform is either optimised away or does not exist in the current shader");
+	{
+	}	//Logf("Shader: " + m_name, "Couldn't get uniform location: %s%s", name.c_str(), "; Uniform is either optimised away or does not exist in the current shader");
 	else
 		m_uniformCache[name] = location;
 	return location;
