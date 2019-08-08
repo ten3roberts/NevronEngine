@@ -47,3 +47,5 @@ public:
 	static void ApplyLayout(VertexBufferLayout* layout);
 };
 
+
+

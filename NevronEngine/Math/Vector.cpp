@@ -354,3 +354,4 @@ Vector Vector::Lerp(Vector a, Vector b, float t)
 		result[i] = a[i] * (1 - t) + b[i] * t;
 	return result;
 }
+

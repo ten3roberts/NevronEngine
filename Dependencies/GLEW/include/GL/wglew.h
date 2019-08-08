@@ -1445,3 +1445,4 @@ GLEWAPI GLboolean GLEWAPIENTRY wglewGetExtension (const char *name);
 #undef GLEWAPI
 
 #endif /* __wglew_h__ */
+

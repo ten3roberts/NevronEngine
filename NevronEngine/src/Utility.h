@@ -20,17 +20,9 @@
 #define APPDATA getAppdata()
 
 //Normal defines
-#define ENABLE_CONSOLE true
+#define ENABLE_CONSOLE true 
 #define INVALID_ERROR -1
 #define APPEND_CODE -2
-
-template <typename I> std::string hex(I w, size_t hex_len = sizeof(I) << 1) {
-	static const char* digits = "0123456789ABCDEF";
-	std::string rc(hex_len, '0');
-	for (size_t i = 0, j = (hex_len - 1) * 4; i < hex_len; ++i, j -= 4)
-		rc[i] = digits[(w >> j) & 0x0f];
-	return rc;
-}
 
 
 namespace Utility
@@ -168,7 +160,7 @@ namespace Utility
 	unsigned int AddError(const std::string& definition, unsigned int code = APPEND_CODE);
 
 	void SaveErrorDef();
-	//Will compose a message complete with time message origin and the original message and write it both to the console and a instance specific logfile
+	//Will compose a message complete with time message origin and the original message and write it both to the console and a instance specific LogSile
 	/*void Log(const std::string& msg, const std::string& msgOrigin = "Log");
 
 	//void Log(std::initializer_list<std::string> msg, const std::string& msgOrigin = "Log");
@@ -223,42 +215,66 @@ static std::string FormatBool(bool boolean)
 
 //Will attempt to convert a string to float or integer. Does nothing if failed
 template <typename T = float>
-static T num(std::string in)
+static T num(const std::string & str) = delete;
+static float num(const std::string& str)
 {
-	if constexpr (std::is_same<T, int>())
-	{
-		return std::atoi(in.c_str());
-	}
-	if constexpr (std::is_same<T, unsigned int>())
-	{
-		return std::atoi(in.c_str());
-	}
-	else if constexpr (std::is_same<T, float>())
-	{
-		return std::atof(in.c_str());
-	}
+	return atof(str.c_str());
+}
+
+template <>
+static int num(const std::string& str)
+{
+	return atof(str.c_str());
+}
+
+template <>
+static unsigned int num(const std::string& str)
+{
+	return atof(str.c_str());
 }
 
 //Will attempt to convert a string to float or integer. If it fails it will return 0 and if $failed is passed set it to true
 template <typename N = float>
-static N num(std::string in, bool* failed)
+static N num(const std::string & in, bool* str) = delete;
+static float num(const std::string& str, bool* failed)
 {
 	if (failed != nullptr)
 		* failed = false;
 	try
 	{
-		if constexpr (std::is_same<N, int>())
-		{
-			return std::stoi(in);
-		}
-		if constexpr (std::is_same<N, unsigned int>())
-		{
-			return std::stoi(in);
-		}
-		else if constexpr (std::is_same<N, float>())
-		{
-			return std::stof(in);
-		}
+		return std::stof(str);
+	}
+	catch (...)
+	{
+		if (failed != nullptr)
+			* failed = true;
+		return 0;
+	}
+}
+template<>
+static int num(const std::string& in, bool* failed)
+{
+	if (failed != nullptr)
+		* failed = false;
+	try
+	{
+		return std::stoi (in);
+	}
+	catch (...)
+	{
+		if (failed != nullptr)
+			* failed = true;
+		return 0;
+	}
+}
+template<>
+static unsigned int num(const std::string& in, bool* failed)
+{
+	if (failed != nullptr)
+		* failed = false;
+	try
+	{
+		return std::stoi(in);
 	}
 	catch (...)
 	{
@@ -268,6 +284,7 @@ static N num(std::string in, bool* failed)
 	}
 }
 
+
 inline float min(float a, float b) { return a < b ? a : b; };
 inline int min(int a, int b) { return a < b ? a : b; };
 //inline unsigned int min(unsigned int a, unsigned int b) { return a < b ? a : b; };
@@ -275,3 +292,5 @@ inline int min(int a, int b) { return a < b ? a : b; };
 inline float max(float a, float b) { return a > b ? a : b; };
 inline int max(int a, int b) { return a > b ? a : b; };
 //inline unsigned int max(unsigned int a, unsigned int b) { return a > b ? a : b; };
+
+

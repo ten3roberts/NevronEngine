@@ -365,3 +365,5 @@ Quaternion Quaternion::Lerp(const Quaternion& a, const Quaternion& b, float t)
 	result = result.Normalize();
 	return result;
 }
+
+

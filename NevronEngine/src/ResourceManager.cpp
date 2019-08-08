@@ -66,7 +66,7 @@ void ResourceManager::FreeUBOSlot(unsigned int slot)
 	{
 		if (m_UBOSlots[i] == slot)
 		{
-			Logf("ResourceManager", "Slot %d has already been freed", slot);
+			LogS("ResourceManager", "Slot %d has already been freed", slot);
 			return;
 		}
 		m_UBOSlots.insert(m_UBOSlots.begin(), slot);
@@ -80,7 +80,7 @@ rsc<Shader> ResourceManager::GetShader(const std::string& name)
 		if (m_shaders[i]->getName() == name)
 			return m_shaders[i];
 	}
-	Logf("ResourceManager", "No shader exists with name %s, creating", name.c_str());
+	LogS("ResourceManager", "No shader exists with name %s, creating", name);
 	Shader* shader = new Shader(name);
 	return m_shaders.emplace_back(shader, false);
 }
@@ -102,7 +102,7 @@ rsc<Model> ResourceManager::GetModel(const std::string& name)
 		if (m_models[i]->getName() == name)
 			return m_models[i];
 	}
-	Logf("ResourceManager", "No model exists with name %s, creating", name.c_str());
+	LogS("ResourceManager", "No model exists with name %s, creating", name);
 	Model* model = new Model(name);
 	return m_models.emplace_back(model, false);
 }
@@ -124,7 +124,7 @@ rsc<Material> ResourceManager::GetMaterial(const std::string& name)
 		if (m_materials[i]->getName() == name)
 			return m_materials[i];
 	}
-	Logf("ResourceManager", "No material exists with name %s, creating", name.c_str());
+	LogS("ResourceManager", "No material exists with name %s, creating", name);
 	Material* material = new Material(name);
 	return m_materials.emplace_back(material, false);
 }
@@ -146,7 +146,7 @@ rsc<UniformBuffer> ResourceManager::GetUBO(const std::string& name)
 		if (m_uniformBuffers[i]->getName() == name)
 			return m_uniformBuffers[i];
 	}
-	Logf("ResourceManager", "No material exists with name %s, creating", name.c_str());
+	LogS("ResourceManager", "No material exists with name %s, creating", name);
 	UniformBuffer* uBuffer = new UniformBuffer(name);
 	return m_uniformBuffers.emplace_back(rsc<UniformBuffer>(uBuffer, false));
 }
@@ -169,7 +169,7 @@ bool ResourceManager::DeleteShader(const std::string& name)
 	{
 		if (m_shaders[i]->getName() == name)
 		{
-			Logf("ResourceManager", "Deleting shader %s", m_shaders[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting shader %s", m_shaders[i]->getName());
 			m_shaders.erase(m_shaders.begin() + i);
 			return true;
 		}
@@ -183,7 +183,7 @@ bool ResourceManager::DeleteShader(unsigned int ID)
 	{
 		if (m_shaders[i]->getID() == ID)
 		{
-			Logf("ResourceManager", "Deleting shader %s", m_shaders[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting shader %s", m_shaders[i]->getName());
 			m_shaders.erase(m_shaders.begin() + i);
 			return true;
 		}
@@ -197,7 +197,7 @@ bool ResourceManager::DeleteModel(const std::string& name)
 	{
 		if (m_models[i]->getName() == name)
 		{
-			Logf("ResourceManager", "Deleting model %s", m_models[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting model %s", m_models[i]->getName());
 			m_models.erase(m_models.begin() + i);
 			return true;
 		}
@@ -211,7 +211,7 @@ bool ResourceManager::DeleteModel(unsigned int ID)
 	{
 		if (m_models[i]->getID() == ID)
 		{
-			Logf("ResourceManager", "Deleting model %s", m_models[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting model %s", m_models[i]->getName());
 			m_models.erase(m_models.begin() + i);
 			return true;
 		}
@@ -224,7 +224,7 @@ bool ResourceManager::DeleteMaterial(const std::string& name)
 	{
 		if (m_materials[i]->getName() == name)
 		{
-			Logf("ResourceManager", "Deleting material %s", m_materials[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting material %s", m_materials[i]->getName());
 			m_materials.erase(m_materials.begin() + i);
 			return true;
 		}
@@ -238,7 +238,7 @@ bool ResourceManager::DeleteMaterial(unsigned int ID)
 	{
 		if (m_materials[i]->getID() == ID)
 		{
-			Logf("ResourceManager", "Deleting material %s", m_materials[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting material %s", m_materials[i]->getName());
 			m_materials.erase(m_materials.begin() + i);
 			return true;
 		}
@@ -252,7 +252,7 @@ bool ResourceManager::DeleteUBO(const std::string& name)
 	{
 		if (m_uniformBuffers[i]->getName() == name)
 		{
-			Logf("ResourceManager", "Deleting UBO %s", m_uniformBuffers[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting UBO %s", m_uniformBuffers[i]->getName());
 			m_uniformBuffers.erase(m_uniformBuffers.begin() + i);
 			return true;
 		}
@@ -266,10 +266,12 @@ bool ResourceManager::DeleteUBO(unsigned int ID)
 	{
 		if (m_uniformBuffers[i]->getID() == ID)
 		{
-			Logf("ResourceManager", "Deleting UBO %s", m_uniformBuffers[i]->getName().c_str());
+			LogS("ResourceManager", "Deleting UBO %s", m_uniformBuffers[i]->getName());
 			m_uniformBuffers.erase(m_uniformBuffers.begin() + i);
 			return true;
 		}
 	}
 	return false;
 }
+
+

@@ -87,3 +87,5 @@ void Model::ApplyLayout(VertexBufferLayout* layout)
 	layout->Push<float>(3);
 	layout->Push<float>(2);
 }
+
+

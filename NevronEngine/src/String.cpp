@@ -106,3 +106,5 @@ inline std::string String::Lead(const std::string& lead) const
 		return *this;
 	return *this + lead;
 }
+
+

@@ -24,3 +24,6 @@ public:
 	void FixedUpdate(Transform* transform);
 };
 
+
+
+

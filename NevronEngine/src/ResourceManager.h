@@ -155,3 +155,5 @@ public:
 	inline bool DeleteResource<UniformBuffer>(unsigned int ID) { return DeleteUBO(ID); }
 #pragma endregion
 };
+
+

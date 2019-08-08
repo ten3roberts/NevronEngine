@@ -24,3 +24,5 @@ public:
 	void setSlot(unsigned int slot) { m_slot = slot; }
 };
 
+
+

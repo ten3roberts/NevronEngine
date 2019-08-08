@@ -31,6 +31,8 @@ int main(int argc, char** argv)
 {
 	system("color a");
 
+	LogS("", "%c", "Hello");
+
 	Time::Init();
 
 	setWorkingDir(DirectoryUp(argv[0]));
@@ -38,7 +40,7 @@ int main(int argc, char** argv)
 	Settings* settings = Settings::get();
 	settings->Load();
 
-	Logf("Main", APPNAME " initializing...");
+	LogS("Main", APPNAME " initializing...");
 
 	Timer* timer = new Timer("Startup");
 
@@ -65,7 +67,7 @@ int main(int argc, char** argv)
 	//Initialize glew and fetch opengl functions
 	if (glewInit() != GLEW_OK)
 	{
-		Logf("Fatal Error", "Could not init glew");
+		LogS("Fatal Error", "Could not init glew");
 		return -1;
 	}
 
@@ -81,7 +83,7 @@ int main(int argc, char** argv)
 	glEnable(GL_DEBUG_OUTPUT);
 	glDebugMessageCallback(ErrorCallBack, 0);
 
-	Logf("Main", std::string("OpenGl version: " + std::string((char*)glGetString(GL_VERSION))).c_str());
+	LogS("Main", std::string("OpenGl version: " + std::string((char*)glGetString(GL_VERSION))));
 
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
@@ -133,17 +135,18 @@ int main(int argc, char** argv)
 	Transform transform3;
 	Rigidbody rb1;
 	Rigidbody rb2;
-	Logf("Main", "----------Entering game loop----------\n");
+	LogS("Main", "----------Entering game loop----------\n");
 
 	
 
 
+	rsc<Material> material2 = rscManager->GetResource<Material>("Mario");
+
 	while (!glfwWindowShouldClose(window))
 	{
-	rsc<Material> material2 = rscManager->GetResource<Material>("Mario");
 		Time::Update();
 		if (Time::frameCount % 120 == 0)
-			Logf("Framerate", STR(Time::frameRate).c_str());
+			LogS("Framerate", STR(Time::frameRate));
 
 		renderer.Clear();
 
@@ -160,7 +163,8 @@ int main(int argc, char** argv)
 		rb1.velocity = Vector3(0.5, 0, -1);
 		rb1.angularVelocity = Vector3(1, 2.35, 0);
 		rb1.Update(&transform1);
-
+		Vector list = Random::Array(5);
+		LogS("", "Entity 1 pos %vn", list);
 		transform1.Update();
 
 		Matrix4 camTranslation = Matrix4::Translate({ 0,Math::SineWave(-5, 5, 1, Time::elapsedTime) * 0 ,0 });
@@ -209,12 +213,14 @@ int main(int argc, char** argv)
 		shader.Unbind();
 	}
 
-	Logf("Main", "Closing Window");
+	LogS("Main", "Closing Window");
 
 	glfwTerminate();
 
 	settings->Save();
 
-	Logf("Main", "Program has terminated correctly");
+	LogS("Main", "Program has terminated correctly");
 	return 0;
 }
+
+

@@ -31,3 +31,4 @@ public:
 
 	unsigned int getSlot() { return m_slot; }
 };
+

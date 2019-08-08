@@ -12,7 +12,7 @@ Texture::Texture(const std::string& name, unsigned int slot)
 {
 	m_name = strLead(getFilename(name, true), ".png");
 	m_filepath = FindFile(m_name);
-	Logf("Texture: " + m_name, "Loading texture: %s", ShortenPath(m_filepath).c_str());
+	LogS("Texture: " + m_name, "Loading texture: %s", ShortenPath(m_filepath));
 
 	stbi_set_flip_vertically_on_load(true);
 	m_localBuffer = stbi_load(m_filepath.c_str(), &m_width, &m_height, &m_BPP, 4);
@@ -49,3 +49,5 @@ void Texture::Unbind() const
 {
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
+
+

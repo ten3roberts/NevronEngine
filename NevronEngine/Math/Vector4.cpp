@@ -40,7 +40,7 @@ Vector4::Vector4(const std::string& str)
 {
 	//Removing spaces vector size if neccesary and splits into all the elements
 	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
-	for (unsigned int i = 0; i < 4; i++)
+	for (unsigned int i = 0; i < min(4, parts.size()); i++)
 		(*this)[i] = num(parts[i]);
 }
 
@@ -49,7 +49,7 @@ Vector4 Vector4::Parse(const std::string& str)
 	//Removing spaces vector size if neccesary and splits into all the elements
 	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
 	Vector4 result;
-	for (unsigned int i = 0; i < 4; i++)
+	for (unsigned int i = 0; i < min(4, parts.size()); i++)
 		result[i] = num(parts[i]);
 	return result;
 }
@@ -284,4 +284,6 @@ Vector4 Vector4::Lerp(const Vector4& a, const Vector4& b, float t)
 	t = Math::Clamp01(t);
 	return Vector4((a * (1 - t) + b * t));
 }
+
+
 

@@ -177,3 +177,4 @@ static Vector3 operator/(float scalar, const Vector3& vec)
 }
 #pragma endregion
 typedef Vector3 vec3;
+

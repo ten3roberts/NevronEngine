@@ -30,3 +30,5 @@ public:
 	void Draw(Model* model, const Shader& shader) const;
 };
 
+
+

@@ -463,3 +463,5 @@ Vector3 Vector3::Slerp(const Vector3& a, const Vector3& b, float t)
 
 	return result;
 }
+
+

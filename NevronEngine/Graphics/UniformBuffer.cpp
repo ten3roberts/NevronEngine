@@ -42,7 +42,7 @@ void UniformBuffer::setData(Shader* shader, const void* data, unsigned int size,
 
 	if (buffer == nullptr)
 	{
-		Logf("Error", "Uniform buffer could not be mapped");
+		LogS("Error", "Uniform buffer could not be mapped");
 		return;
 	}
 
@@ -61,7 +61,7 @@ void UniformBuffer::setData(unsigned int shaderID, const void* data, unsigned in
 
 	if (buffer == nullptr)
 	{
-		Logf("Error", "Uniform buffer could not be mapped");
+		LogS("Error", "Uniform buffer could not be mapped");
 		return;
 	}
 
@@ -72,3 +72,5 @@ void UniformBuffer::setData(unsigned int shaderID, const void* data, unsigned in
 	int uniformIndex = glGetUniformBlockIndex(shaderID, "Environment");
 	glUniformBlockBinding(shaderID, uniformIndex, m_slot);
 }
+
+

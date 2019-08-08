@@ -7,7 +7,7 @@ void GLAPIENTRY ErrorCallBack(GLenum source, GLenum type, GLuint id, GLenum seve
 	{
 
 		std::string msg = "type: " + STR(type) + ", severity: " + STR(severity) + ", message: " + message;
-		Logf("OpenGL Callback", msg.c_str());
+		LogS("OpenGL Callback", msg);
 		return;
 	}
 }
@@ -21,7 +21,7 @@ bool GLLogCall(const char* function, const char* file, int line)
 {
 	while (GLenum  error = glGetError())
 	{
-		Logf("OpenGL Error", ("0x" + STR(error) + "; Function: " + function + " " + getFilename(file, true) + ":" + STR(line)).c_str());
+		LogS("OpenGL Error", ("0x" + STR(error) + "; Function: " + function + " " + getFilename(file, true) + ":" + STR(line)));
 		return false;
 	}
 	return true;
@@ -72,3 +72,5 @@ void Renderer::Draw(Model* model, const Shader& shader) const
 	//Unbinding for debug; otherwise 
 
 }
+
+

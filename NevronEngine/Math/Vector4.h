@@ -145,3 +145,5 @@ static Vector4 operator/(float scalar, const Vector4& vec)
 }
 
 typedef Vector4 vec4;
+
+

@@ -18,14 +18,14 @@
 using namespace Math;
 
 static std::vector<std::string> s_errorDef = {};
-static std::ofstream s_logFile = std::ofstream();
+static std::ofstream s_LogSile = std::ofstream();
 static std::string s_workingDir = "";
 
 void Utility::setWorkingDir(const std::string& dir)
 {
 	std::string oldDir = s_workingDir;
 	s_workingDir = getPath(dir);
-	Logf("Utility", "Working directory changed from \"%s%s%s%s", oldDir.c_str(), "\" to \"", s_workingDir.c_str(), "\"");
+	LogS("Utility", "Working directory changed from \"%s %c %s %c", oldDir, "\" to \"", s_workingDir, "\"");
 
 }
 
@@ -398,7 +398,7 @@ std::string Utility::FindFile(const std::string& filename, const std::string& di
 			return files[i];
 		}
 	}
-	Logf("FindFile", "No file found with name: %s", filename.c_str());
+	LogS("FindFile", "No file found with name: %s", filename);
 	return "";
 }
 
@@ -415,7 +415,7 @@ std::string Utility::FindFile(const std::string& filename, bool useExtension, co
 			return files[i];
 		}
 	}
-	Logf("FindFile", "No file found with name: %s", filename.c_str());
+	LogS("FindFile", "No file found with name: %s", filename);
 	return "";
 }
 
@@ -441,7 +441,7 @@ std::vector<std::string> Utility::ReadFile(const std::string& filepath, bool cre
 	}
 	else
 	{
-		Logf("Unable to open file: %s", ShortenString(filepath, 35).c_str());
+		LogS("Unable to open file: %s", ShortenString(filepath, 35));
 	}
 	file.close();
 	return fileCont;
@@ -503,7 +503,7 @@ void Utility::Copy(const std::string& oldPath, const std::string& newPath)
 		std::ofstream newFile(newPath, std::ios::binary);
 		if (!oldFile.is_open())
 		{
-			Logf("CopyFile", "Couldn't open file: %s", oldPath.c_str());
+			LogS("CopyFile", "Couldn't open file: %s", oldPath);
 			return;
 		}
 		newFile << oldFile.rdbuf();
@@ -651,34 +651,34 @@ void Utility::SaveErrorDef()
 	//Make sure the logs folder exists
 	GeneratePath(WORKDIR + "Logs");
 
-	if (!s_logFile.is_open())
+	if (!s_LogSile.is_open())
 		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
+		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
 	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + msg;
 
-	s_logFile.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
+	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
 
 	if (ENABLE_CONSOLE)
 		std::cout.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
-	s_logFile.close();
+	s_LogSile.close();
 }
 /*void Utility::Log(std::initializer_list<std::string> msg, const std::string& msgOrigin)
 {
 	//Make sure the logs folder exists
 	GeneratePath(WORKDIR + "Logs");
 
-	if (!s_logFile.is_open())
+	if (!s_LogSile.is_open())
 		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
+		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
 	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): ";
 	for (int i = 0; i < msg.size(); i++)
 		fullMsg += *(msg.begin() + i);
 
-	s_logFile.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
+	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
 
 	if (ENABLE_CONSOLE)
 		std::cout.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
-	s_logFile.close();
+	s_LogSile.close();
 }
 
 void Utility::Log_s(const std::string& msg, const std::string& msgOrigin)
@@ -686,13 +686,13 @@ void Utility::Log_s(const std::string& msg, const std::string& msgOrigin)
 	//Make sure the logs folder exists
 	GeneratePath(WORKDIR + "Logs");
 
-	if (!s_logFile.is_open())
+	if (!s_LogSile.is_open())
 		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
+		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
 	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + msg;
 
-	s_logFile.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
-	s_logFile.close();
+	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
+	s_LogSile.close();
 }*/
 
 /*void Utility::Log_s(std::initializer_list<std::string> msg, const std::string& msgOrigin)
@@ -700,13 +700,15 @@ void Utility::Log_s(const std::string& msg, const std::string& msgOrigin)
 	//Make sure the logs folder exists
 	GeneratePath(WORKDIR + "Logs");
 
-	if (!s_logFile.is_open())
+	if (!s_LogSile.is_open())
 		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
+		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
 	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): ";
 	for (int i = 0; i < msg.size(); i++)
 		fullMsg += *(msg.begin() + i);
 
-	s_logFile.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
-	s_logFile.close();
+	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
+	s_LogSile.close();
 }*/
+
+

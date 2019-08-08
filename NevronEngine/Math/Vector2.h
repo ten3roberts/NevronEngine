@@ -126,3 +126,5 @@ static Vector2 operator/(float scalar, Vector2 vec)
 }
 
 typedef Vector2 vec2;
+
+

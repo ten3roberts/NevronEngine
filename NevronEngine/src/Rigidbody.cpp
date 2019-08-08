@@ -29,3 +29,6 @@ void Rigidbody::FixedUpdate(Transform* transform)
 	transform->position += velocity * Time::fixedDeltaTime;
 	transform->rotation *= Quaternion(angularVelocity * Time::fixedDeltaTime);
 }
+
+
+

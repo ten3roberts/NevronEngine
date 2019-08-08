@@ -98,3 +98,6 @@ private:
 	bool m_strong;
 	unsigned int* m_referenceCount;
 };
+
+
+

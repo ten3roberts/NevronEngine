@@ -182,6 +182,21 @@ namespace Math
 	inline float SineWave(float min, float max, float frequency, float t) { return sinf(t * frequency) / 2 * (max - min) + (max + min) / 2; }
 	inline float CosineWave(float min, float max, float frequency, float t) { return cosf(t * frequency) / 2 * (max - min) + (max + min) / 2; }
 
+	template <typename I> std::string ToHex(I w, size_t hex_len = sizeof(I) << 1, bool uppercase = true) {
+		static const char* digits = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
+		std::string rc(hex_len, '0');
+		for (size_t i = 0, j = (hex_len - 1) * 4; i < hex_len; ++i, j -= 4)
+			rc[i] = digits[(w >> j) & 0x0f];
+		return rc;
+	}
+
+	template <typename I> std::string ToOctal(I w, size_t hex_len = sizeof(I) << 1) {
+		static const char* digits = "01234567";
+		std::string rc(hex_len, '0');
+		for (size_t i = 0, j = (hex_len - 1) * 4; i < hex_len; ++i, j -= 4)
+			rc[i] = digits[(w >> j) & 7];
+		return rc;
+	}
 
 #pragma region "Vector functions"
 	//Vector2
@@ -300,3 +315,4 @@ private:
 
 	}
 };
+

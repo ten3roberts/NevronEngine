@@ -239,3 +239,4 @@ int Math::getMin(std::vector<float> elements)
 	}
 	return current;
 }
+

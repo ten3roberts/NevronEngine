@@ -25,7 +25,7 @@ bool Settings::Load(const std::string& filename)
 
 	if (SettingsFile.is_open())
 	{
-		Logf("Settings", "Loading Settingsfile: %s", ShortenPath(m_filepath).c_str());
+		LogS("Settings", "Loading Settingsfile: %s", ShortenPath(m_filepath));
 		while (SettingsFile.good())
 		{
 			std::string currentLine;
@@ -38,56 +38,56 @@ bool Settings::Load(const std::string& filename)
 			{
 					m_screenWidth = num<unsigned int>(value.substr(0, value.find_first_of(',')));
 					m_screenHeight = num<unsigned int>(value.substr(value.find_first_of(',') + 1));
-					Logf("Settings", "Resoulution: %u, %u", m_screenWidth, m_screenHeight);;
+					LogS("Settings", "Resoulution: %u, %u", m_screenWidth, m_screenHeight);;
 			}
 			if (keyWord == "useNativeResoultion")
 			{
 				m_useNativeResoultion = parseBool(value);
-				Logf("Settings", ("UseNativeResolution: " + FormatBool(m_screenFar)).c_str());
+				LogS("Settings", ("UseNativeResolution: " + FormatBool(m_screenFar)));
 			}
 			else if (keyWord == "screenFar")
 			{
 				m_screenFar = num(value);
-				Logf("Settings", "ScreenFar: %f", m_screenFar);
+				LogS("Settings", "ScreenFar: %f", m_screenFar);
 			}
 			else if (keyWord == "screenNear")
 			{
 				m_screenNear = num(value);
-				Logf("Settings", "ScreenNear: %f", m_screenNear);
+				LogS("Settings", "ScreenNear: %f", m_screenNear);
 			}
 
 			else if (keyWord == "displayMode")
 			{
 				m_displayMode = value == "WINDOWED" ? WINDOWED : value == "FULLSCREEN" ? FULLSCREEN : value == "BORDERLESS" ? BORDERLESS : WINDOWED;
 
-				Logf("Settings", "DisplayMode: %d", m_displayMode);
+				LogS("Settings", "DisplayMode: %d", m_displayMode);
 			}
 
 			else if (keyWord == "VSync")
 			{
 				m_VSync = parseBool(value);
-				Logf("Settings", ("Vsync: " + FormatBool(m_VSync)).c_str());
+				LogS("Settings", ("Vsync: " + FormatBool(m_VSync)));
 			}
 			else if (keyWord == "MSAA")
 			{
 				m_MSAA = parseBool(value);
-				Logf("Settings", ("MSAA: " + FormatBool(m_MSAA)).c_str());
+				LogS("Settings", ("MSAA: " + FormatBool(m_MSAA)));
 			}
 			else if (keyWord == "MSAASamples")
 			{
 				m_MSAASamples = num<unsigned int>(value);
-				Logf("Settings", "MSAASamples: %u", m_MSAASamples);
+				LogS("Settings", "MSAASamples: %u", m_MSAASamples);
 			}
 			else if (keyWord == "FOV")
 			{
 
 				m_FOV = num(value);
-				Logf("Settings", "FOV: %f", m_FOV);
+				LogS("Settings", "FOV: %f", m_FOV);
 			}
 			else if (keyWord == "sensitivity")
 			{
 				m_mouseSensitivity = num(value);
-				Logf("Settings", "Sensitivity: %f", m_mouseSensitivity);
+				LogS("Settings", "Sensitivity: %f", m_mouseSensitivity);
 			}
 		}
 
@@ -95,7 +95,7 @@ bool Settings::Load(const std::string& filename)
 	}
 	else
 	{
-		Logf("Settings", "Could not locate Settingsfile. Generating default Settings");
+		LogS("Settings", "Could not locate Settingsfile. Generating default Settings");
 		m_filepath = ASSETS + "Settings.cnf";
 		Save(m_filepath);
 		return false;
@@ -197,3 +197,5 @@ Settings* Settings::get()
 
 	return m_instance;
 }
+
+

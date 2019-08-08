@@ -31,3 +31,6 @@ class String
 	inline std::string Lead(const std::string& lead) const;
 };
 
+
+
+
