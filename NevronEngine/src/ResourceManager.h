@@ -14,15 +14,15 @@ class ResourceManager
 private:
 
 	//Object resources; A.K.A components
-	std::vector<rsc<Shader>> m_shaders;
+	std::vector<rsc<Shader, false>> m_shaders;
 
-	std::vector<rsc<Model>> m_models;
+	std::vector<rsc<Model, false>> m_models;
 
-	std::vector<rsc<Material>> m_materials;
+	std::vector<rsc<Material, false>> m_materials;
 
 	//Graphical resources
 
-	std::vector<rsc<UniformBuffer>> m_uniformBuffers;
+	std::vector<rsc<UniformBuffer, false>> m_uniformBuffers;
 
 	//Keeps track of the availabale uniform buffer slots. The last element in the array indicates that all above those are free
 	std::vector<unsigned int> m_UBOSlots;

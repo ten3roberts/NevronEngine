@@ -82,7 +82,7 @@ rsc<Shader> ResourceManager::GetShader(const std::string& name)
 	}
 	LogS("ResourceManager", "No shader exists with name %s, creating", name);
 	Shader* shader = new Shader(name);
-	return m_shaders.emplace_back(shader, false);
+	return m_shaders.emplace_back(shader);
 }
 
 rsc<Shader> ResourceManager::GetShader(unsigned int ID)
@@ -104,7 +104,7 @@ rsc<Model> ResourceManager::GetModel(const std::string& name)
 	}
 	LogS("ResourceManager", "No model exists with name %s, creating", name);
 	Model* model = new Model(name);
-	return m_models.emplace_back(model, false);
+	return m_models.emplace_back(model);
 }
 
 rsc<Model> ResourceManager::GetModel(unsigned int ID)
@@ -126,7 +126,7 @@ rsc<Material> ResourceManager::GetMaterial(const std::string& name)
 	}
 	LogS("ResourceManager", "No material exists with name %s, creating", name);
 	Material* material = new Material(name);
-	return m_materials.emplace_back(material, false);
+	return m_materials.emplace_back(material);
 }
 
 rsc<Material> ResourceManager::GetMaterial(unsigned int ID)
@@ -148,7 +148,7 @@ rsc<UniformBuffer> ResourceManager::GetUBO(const std::string& name)
 	}
 	LogS("ResourceManager", "No material exists with name %s, creating", name);
 	UniformBuffer* uBuffer = new UniformBuffer(name);
-	return m_uniformBuffers.emplace_back(rsc<UniformBuffer>(uBuffer, false));
+	return m_uniformBuffers.emplace_back(rsc<UniformBuffer>(uBuffer));
 }
 
 rsc<UniformBuffer> ResourceManager::GetUBO(unsigned int ID)

@@ -36,18 +36,18 @@ public:
 
 };
 
-template <typename R>
+template <typename R, bool Strong = true>
 struct rsc
 {
-	rsc(bool strong = true) : m_pData(nullptr), m_referenceCount(nullptr), m_strong(strong) {}
+	rsc() : m_pData(nullptr), m_referenceCount(nullptr), m_strong(Strong) {}
 	//Creates a new managed resource
-	rsc(R* pData, bool makeStrong = true) : m_pData(pData), m_strong(makeStrong)
+	rsc(R* pData) : m_pData(pData), m_strong(Strong)
 	{
 		m_referenceCount = new unsigned int(m_strong);
 	}
-	template <typename A>
+	template <typename A, bool S>
 	//Assigns a new internal pointer and removes one instance from the previous one. The pointer keeps its strength
-	void operator=(const rsc<A>& rsc)
+	void operator=(const rsc<A, S>& rsc)
 	{
 		Remove();
 		LogS("rsc", "Equals operator");
@@ -58,11 +58,12 @@ struct rsc
 			return;
 		}
 		m_referenceCount = rsc.getRawReferenceCount();
-		(*m_referenceCount)++;
+		if (m_strong)
+			(*m_referenceCount)++;
 	}
 
-	template<typename D>
-	rsc(const rsc<D>& rsc)
+	template<typename D = R, bool S>
+	rsc(const rsc<D, S>& rsc)
 	{
 		m_pData = dynamic_cast<R*>(rsc.GetPointer());
 		if (!m_pData)
@@ -76,7 +77,7 @@ struct rsc
 	}
 
 	//Ref copy
-	rsc(const rsc<R>& rsc) : m_strong(1)
+	rsc(const rsc<R, Strong>& rsc) : m_strong(1)
 	{
 		m_pData = rsc.m_pData;
 		m_referenceCount = rsc.m_referenceCount;
@@ -113,7 +114,15 @@ struct rsc
 
 	}
 
-	bool getStrenght() { return m_strong; }
+	void setStrength(bool strong)
+	{
+		if (strong)
+			makeStrong();
+		else
+			makeWeak();
+	}
+
+	bool getStrength() { return m_strong; }
 
 	R* operator->() { return m_pData; }	//Dereference
 	R* operator&() { return m_pData; }	//Dereference

@@ -15,11 +15,11 @@ private:
 	std::vector<rsc<Component>> m_components;
 
 	//Fast access
-	rsc<Shader> m_shader;
-	rsc<Model> m_model;
-	rsc<Material> m_material;
-	rsc<Transform> m_transform;
-	rsc<Rigidbody> m_rigidbody;
+	rsc<Shader, false> m_shader;
+	rsc<Model, false> m_model;
+	rsc<Material, false> m_material;
+	rsc<Transform, false> m_transform;
+	rsc<Rigidbody, false> m_rigidbody;
 public:
 	//If added component is shader, model, material, transform or rigibody it will replace the current one
 	void AddComponent(rsc<Component> component);
