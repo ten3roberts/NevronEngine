@@ -779,9 +779,9 @@ std::string format(std::string format, ...)
 				switch (format[i + 2])
 				{
 				case 4:
-					fullMsg += va_arg(vl, Matrix4).str();
+					result += va_arg(vl, Matrix4).str();
 				default:
-					fullMsg += va_arg(vl, Matrix).str();
+					result += va_arg(vl, Matrix).str();
 					break;
 				}
 				break;
@@ -789,9 +789,9 @@ std::string format(std::string format, ...)
 				switch (format[i + 2])
 				{
 				case 4:
-					fullMsg += va_arg(vl, Matrix4).str();
+					result += va_arg(vl, Matrix4).str();
 				default:
-					fullMsg += va_arg(vl, Matrix).str();
+					result += va_arg(vl, Matrix).str();
 					break;
 				}
 			case 'o': //Unsigned octal
