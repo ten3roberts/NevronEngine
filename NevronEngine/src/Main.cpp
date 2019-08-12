@@ -70,13 +70,16 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
-	Texture iconTex("NevronLogo.png", 0, false);
+	Texture iconTex("NevronLogo.a", 0, false);
+	Texture cursorTex("Arrow", 0, false);
 
 	GLFWimage icon;
 	icon.height = iconTex.getHeight();
 	icon.width = iconTex.getWidth();
 	icon.pixels = iconTex.getData();
 	glfwSetWindowIcon(window, 1, &icon);
+
+	GLFWcursor* cursor = glfwCreateStandardCursor(GLFW_HRESIZE_CURSOR);
 
 	//During init, enable debug output
 	glEnable(GL_DEBUG_OUTPUT);
@@ -124,7 +127,7 @@ int main(int argc, char** argv)
 	environment.viewDistance = 10;
 
 	UniformBuffer ubo("Environment", nullptr, sizeof(EnvironmentType));
-	ubo.setData(&shader, &environment, sizeof(EnvironmentType));	
+	ubo.setData(&shader, &environment, sizeof(EnvironmentType));
 
 	shader->Unbind();
 
@@ -139,18 +142,22 @@ int main(int argc, char** argv)
 	Rigidbody rb2;
 	LogS("Main", "----------Entering game loop----------\n");
 
-	
+
 
 
 	rsc<Material> material2 = rscManager->GetResource<Material>("Mario");
-	
+
 	Object object;
 
 	while (!glfwWindowShouldClose(window))
 	{
+		if (Time::frameCount % 10 == 0)
+			glfwSetWindowTitle(window, format("%c FPS: %d", APPNAME, (int)Time::frameRate).c_str());
+
 		object.AddComponent(rscManager->GetShader("Basic"));
 		Time::Update();
-		LogS("Basic shader references","references: %d", object.GetComponent<Shader>().getReferenceCount());
+
+		LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 		if (Time::frameCount % 120 == 0)
 			LogS("Framerate", STR(Time::frameRate));
 
