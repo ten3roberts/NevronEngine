@@ -67,7 +67,7 @@ Material::Material(const std::string& name) : texture(nullptr), texture1(nullptr
 
 Material::Material(const std::string& textureName, Vector4 color, float reflectivity, float smoothness) : color(color), reflectivity(reflectivity), smoothness(smoothness)
 {
-	texture = new Texture(textureName);
+	texture = new Texture(textureName, 0);
 }
 
 Material::~Material()

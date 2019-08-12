@@ -9,8 +9,7 @@
 #include "Logger.h"
 #include <Graphics/Model.h>
 #include "Transform.h"
-#include "Rigidbody.h"
-
+#include "Object.h"
 #include <Graphics/Shader.h>
 #include <Graphics/UniformBuffer.h>
 #include <GLFW/glfw3.h>
@@ -71,7 +70,7 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
-	Texture iconTex("NevronLogo.png", false);
+	Texture iconTex("NevronLogo.png", 0, false);
 
 	GLFWimage icon;
 	icon.height = iconTex.getHeight();
@@ -100,15 +99,18 @@ int main(int argc, char** argv)
 	Model model = Model::GenerateQuad();
 
 	//Shaders
-	Shader shader("Basic");
+	rsc<Shader> shader = rscManager->GetShader("Basic");
+	rsc<Shader> shader1 = rscManager->GetShader("Basic");
+	rsc<Shader> shader2 = rscManager->GetShader("Basic");
+	//Shader shader("Basic");
 	Shader multiMapShader("MultiMap");
-	shader.Bind();
-	shader.setUniform4f("u_color", Vector4::white);
+	shader->Bind();
+	shader->setUniform4f("u_color", Vector4::white);
 
 	Material material1("Logo");
 	rsc<Material> ground = rscManager->GetMaterial("Ground");
-	shader.setUniform1i("u_texture", 0); //0 is slot
-	shader.Bind();
+	shader->setUniform1i("u_texture", 0); //0 is slot
+	shader->Bind();
 	//Uniform buffer objects
 
 	struct EnvironmentType
@@ -124,7 +126,7 @@ int main(int argc, char** argv)
 	UniformBuffer ubo("Environment", nullptr, sizeof(EnvironmentType));
 	ubo.setData(&shader, &environment, sizeof(EnvironmentType));	
 
-	shader.Unbind();
+	shader->Unbind();
 
 	Renderer renderer;
 
@@ -141,10 +143,14 @@ int main(int argc, char** argv)
 
 
 	rsc<Material> material2 = rscManager->GetResource<Material>("Mario");
+	
+	Object object;
 
 	while (!glfwWindowShouldClose(window))
 	{
+		object.AddComponent(rscManager->GetShader("Basic"));
 		Time::Update();
+		LogS("Basic shader references","references: %d", object.GetComponent<Shader>().getReferenceCount());
 		if (Time::frameCount % 120 == 0)
 			LogS("Framerate", STR(Time::frameRate));
 
@@ -153,10 +159,10 @@ int main(int argc, char** argv)
 		//Binding
 
 		material1.color = vec3::HSV(Time::elapsedTime / 10.0f, 1, 1);
-		shader.Bind();
+		shader->Bind();
 
 		material1.Bind();
-		shader.setMaterial(&material1);
+		shader->setMaterial(&material1);
 
 		Quaternion rot = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
 		//transform1.rotation = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
@@ -171,10 +177,10 @@ int main(int argc, char** argv)
 		Quaternion camRotation = Quaternion({ 0, 1, 0 }, 0);
 		Matrix4 u_MVP = /*(rot.toMatrix() * scale * translation)*/ transform1.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
 
-		shader.setUniformMat4f("u_MVP", u_MVP);
+		shader->setUniformMat4f("u_MVP", u_MVP);
 
 		//renderer.Draw(va, ib, shader);
-		renderer.Draw(&model, shader);
+		renderer.Draw(&model, *shader);
 
 		//Object2
 		transform2.position = { -2, 0, Math::CosineWave(-25, 25, 1, Time::elapsedTime) };
@@ -183,10 +189,10 @@ int main(int argc, char** argv)
 		transform2.Update();
 
 		Matrix4 u_MVP2 = transform2.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
-		shader.setUniformMat4f("u_MVP", u_MVP2);
+		shader->setUniformMat4f("u_MVP", u_MVP2);
 		material2->Bind();
-		shader.setMaterial(&material2);
-		renderer.Draw(&model, shader);
+		shader->setMaterial(&material2);
+		renderer.Draw(&model, *shader);
 
 		//Object3
 
@@ -210,7 +216,7 @@ int main(int argc, char** argv)
 		glfwPollEvents();
 
 		//Unbinding
-		shader.Unbind();
+		shader->Unbind();
 	}
 
 	LogS("Main", "Closing Window");

@@ -11,7 +11,7 @@ class UniformBuffer;
 class Component
 {
 public:
-
+	~Component();
 	//Used to differentiate the type of object if it has several inheritors; like scripts
 	enum class Type
 	{
@@ -39,23 +39,56 @@ public:
 template <typename R>
 struct rsc
 {
+	rsc(bool strong = true) : m_pData(nullptr), m_referenceCount(nullptr), m_strong(strong) {}
 	//Creates a new managed resource
 	rsc(R* pData, bool makeStrong = true) : m_pData(pData), m_strong(makeStrong)
 	{
 		m_referenceCount = new unsigned int(m_strong);
 	}
+	template <typename A>
+	//Assigns a new internal pointer and removes one instance from the previous one. The pointer keeps its strength
+	void operator=(const rsc<A>& rsc)
+	{
+		Remove();
+		LogS("rsc", "Equals operator");
+		m_pData = dynamic_cast<R*>(rsc.GetPointer());
+		if (!m_pData)
+		{
+			LogS("rsc", "Couldn't convert resource; Incompatible types");
+			return;
+		}
+		m_referenceCount = rsc.getRawReferenceCount();
+		(*m_referenceCount)++;
+	}
+
+	template<typename D>
+	rsc(const rsc<D>& rsc)
+	{
+		m_pData = dynamic_cast<R*>(rsc.GetPointer());
+		if (!m_pData)
+		{
+			LogS("rsc", "Couldn't convert resource; Incompatible types");
+			return;
+		}
+		m_referenceCount = rsc.getRawReferenceCount();
+		(*m_referenceCount)++;
+		m_strong = true;
+	}
 
 	//Ref copy
-	rsc(const rsc<R>& rsc) : m_pData(rsc.m_pData), m_referenceCount(rsc.m_referenceCount), m_strong(1)
+	rsc(const rsc<R>& rsc) : m_strong(1)
 	{
+		m_pData = rsc.m_pData;
+		m_referenceCount = rsc.m_referenceCount;
+		LogS("rsc", "Copy constructor");
 		(*m_referenceCount)++;
 	}
 
 	~rsc()
 	{
+		if (!Valid()) return;
 		if (m_strong && *m_referenceCount <= 1)
 		{
-			ResourceManager::Get()->DeleteResource<R>(m_pData->getName());
 			delete m_pData;
 			delete m_referenceCount;
 		}
@@ -82,21 +115,34 @@ struct rsc
 
 	bool getStrenght() { return m_strong; }
 
-	R* operator->() { return m_pData; }
-	R* operator&() { return m_pData; }
+	R* operator->() { return m_pData; }	//Dereference
+	R* operator&() { return m_pData; }	//Dereference
 	R& operator*() { return *m_pData; }
-	
+
 
 	unsigned int getReferenceCount() const { return *m_referenceCount; }
+	unsigned int* getRawReferenceCount() const { return m_referenceCount; }
+	R* GetPointer() const { return m_pData; }
 
-	/*//This function shall not be called unless you arre perfectly sure what you are doing. This retrieves the refrenec
-	unsigned int* getRawReferenceCount() { return m_referenceCount; }*/
+	bool Valid() { if (m_pData && m_referenceCount) return true; return false; }
+
 private:
 	R* m_pData;
 
 	//Determines whether or not this reference should be accounted into the reference count and should actively keep the resource alive.
 	bool m_strong;
 	unsigned int* m_referenceCount;
+	void Remove()
+	{
+		if (!Valid()) return;
+		if (m_strong && *m_referenceCount <= 1)
+		{
+			delete m_pData;
+			delete m_referenceCount;
+		}
+		else if (m_strong)
+			(*m_referenceCount)--;
+	}
 };
 
 

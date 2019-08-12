@@ -26,7 +26,6 @@ void Utility::setWorkingDir(const std::string& dir)
 	std::string oldDir = s_workingDir;
 	s_workingDir = getPath(dir);
 	LogS("Utility", "Working directory changed from \"%s %c %s %c", oldDir, "\" to \"", s_workingDir, "\"");
-
 }
 
 std::string Utility::getWorkingDir()

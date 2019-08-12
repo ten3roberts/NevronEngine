@@ -7,14 +7,14 @@
 #include <gl/glew.h>
 using namespace Utility;
 
-Texture::Texture(const std::string& name, unsigned int slot)
+Texture::Texture(const std::string& name, unsigned int slot, bool flip)
 	: m_slot(slot), m_localBuffer(nullptr), m_width(0), m_height(0), m_BPP(0)
 {
 	m_name = strLead(getFilename(name, true), ".png");
 	m_filepath = FindFile(m_name);
 	LogS("Texture: " + m_name, "Loading texture: %s", ShortenPath(m_filepath));
 
-	stbi_set_flip_vertically_on_load(true);
+	stbi_set_flip_vertically_on_load(flip);
 	m_localBuffer = stbi_load(m_filepath.c_str(), &m_width, &m_height, &m_BPP, 4);
 
 	glGenTextures(1, &m_rscID);

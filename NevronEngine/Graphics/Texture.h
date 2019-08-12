@@ -10,7 +10,7 @@ private:
 	unsigned char* m_localBuffer;
 	int m_width, m_height, m_BPP;
 public:
-	Texture(const std::string& name, unsigned int slot = 0);
+	Texture(const std::string& name, unsigned int slot, bool flip = true);
 	~Texture();
 
 	void Bind() const;

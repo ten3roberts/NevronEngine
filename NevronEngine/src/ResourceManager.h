@@ -2,7 +2,6 @@
 
 #include "Component.h"
 #include <src\Logger.h>
-#include <Graphics/Model.h>
 #include <vector>
 
 class Model;
@@ -118,7 +117,7 @@ public:
 #pragma region Freeing of resources by name
 
 	template <typename D>
-	inline bool DeleteResource(const std::string& name) = delete;
+	inline bool DeleteResource(const std::string& name) {};
 
 	template <>
 	inline bool DeleteResource<Shader>(const std::string& name) { return DeleteShader(name); }
