@@ -24,6 +24,7 @@
 #define INVALID_ERROR -1
 #define APPEND_CODE -2
 
+std::string format(std::string format, ...);
 
 namespace Utility
 {
@@ -95,7 +96,7 @@ namespace Utility
 	bool IsFile(std::string path);
 	//Will return false if the given path is a file and return true if the given path is a directory
 	bool IsDir(std::string path);
-	
+
 	//Will list all files with full path and sub-directories in specified directory
 	std::vector<std::string> ListDir(const std::string& directory = ASSETS);
 
@@ -128,9 +129,9 @@ namespace Utility
 	//Will create the specified path
 	void GeneratePath(const std::string& path);
 	void GenerateFile(const std::string& path, const std::string& contents, bool append = true);
-	
+
 	void Copy(const std::string& oldPath, const std::string& newPath);
-    void Rename(const std::string& oldPath, const std::string& newPath);
+	void Rename(const std::string& oldPath, const std::string& newPath);
 	//Will return the extension of a file
 	std::string getExtension(const std::string& path);
 
@@ -141,7 +142,7 @@ namespace Utility
 	std::string getPath(const std::string& path);
 
 	//Will only display the $depth directories back
-	std::string ShortenPath(const std::string & path, int depth = 3, bool omitIndicator = false);
+	std::string ShortenPath(const std::string& path, int depth = 3, bool omitIndicator = false);
 
 	//Will strClamp the string preserving the end to a set size and add "..." to the beginning
 	std::string ShortenString(const std::string& str, unsigned int size, bool omitIndicator = false);
@@ -258,7 +259,7 @@ static int num(const std::string& in, bool* failed)
 		* failed = false;
 	try
 	{
-		return std::stoi (in);
+		return std::stoi(in);
 	}
 	catch (...)
 	{

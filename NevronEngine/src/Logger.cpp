@@ -80,40 +80,40 @@ void LogS(const std::string& author, std::string format, ...)
 			case 'X': //Unsigned hexadecimal integer (uppercase)
 				fullMsg += Math::ToHex(va_arg(vl, unsigned int), true);
 				break;
-			case 'f': //Decimal floating point (lowercase)
-				fullMsg += std::to_string(va_arg(vl, float));
+			case 'f': //Decimal doubleing point (lowercase)
+				fullMsg += std::to_string(va_arg(vl, double));
 				break;
-			case 'F': //Decimal floating point (uppercase)
-				fullMsg += std::to_string(va_arg(vl, float));
+			case 'F': //Decimal doubleing point (uppercase)
+				fullMsg += std::to_string(va_arg(vl, double));
 				break;
 			case 'e':
 			{char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%e", va_arg(vl, float));
+			snprintf(buffer, max_loglenght, "%e", va_arg(vl, double));
 			fullMsg.append(buffer);
 			break; }
 			case 'E':
 			{char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%E", va_arg(vl, float));
+			snprintf(buffer, max_loglenght, "%E", va_arg(vl, double));
 			fullMsg.append(buffer);
 			break; }
 			case 'g':
 			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%g", va_arg(vl, float));
+			snprintf(buffer, max_loglenght, "%g", va_arg(vl, double));
 			fullMsg.append(buffer);
 			break; }
 			case 'G':
 			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%G", va_arg(vl, float));
+			snprintf(buffer, max_loglenght, "%G", va_arg(vl, double));
 			fullMsg.append(buffer);
 			break; }
 			case 'a':
 			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%a", va_arg(vl, float));
+			snprintf(buffer, max_loglenght, "%a", va_arg(vl, double));
 			fullMsg.append(buffer);
 			break; }
 			case 'A':
 			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%A", va_arg(vl, float));
+			snprintf(buffer, max_loglenght, "%A", va_arg(vl, double));
 			fullMsg.append(buffer);
 			break; }
 			case 'c': //Character
