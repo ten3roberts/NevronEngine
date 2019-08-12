@@ -63,13 +63,30 @@ void LogS(const std::string& author, std::string format, ...)
 				case '4':
 					fullMsg += va_arg(vl, Vector4).str_d();
 					break;
-				case 'n':
-					fullMsg += va_arg(vl, Vector).str_d();
-					break;
 				default:
+					fullMsg += va_arg(vl, Vector).str_d();
 					break;
 				}
 				break;
+			case 'm':
+				switch (format[i+2])
+				{
+				case 4:
+					fullMsg += va_arg(vl, Matrix4).str();
+				default:
+					fullMsg += va_arg(vl, Matrix).str();
+					break;
+				}
+				break;
+			case 'M':
+				switch (format[i + 2])
+				{
+				case 4:
+					fullMsg += va_arg(vl, Matrix4).str();
+				default:
+					fullMsg += va_arg(vl, Matrix).str();
+					break;
+				}
 			case 'o': //Unsigned octal
 				fullMsg += Math::ToOctal(va_arg(vl, signed int));
 				break;

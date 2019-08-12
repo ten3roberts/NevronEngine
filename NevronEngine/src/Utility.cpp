@@ -775,6 +775,25 @@ std::string format(std::string format, ...)
 					break;
 				}
 				break;
+			case 'm':
+				switch (format[i + 2])
+				{
+				case 4:
+					fullMsg += va_arg(vl, Matrix4).str();
+				default:
+					fullMsg += va_arg(vl, Matrix).str();
+					break;
+				}
+				break;
+			case 'M':
+				switch (format[i + 2])
+				{
+				case 4:
+					fullMsg += va_arg(vl, Matrix4).str();
+				default:
+					fullMsg += va_arg(vl, Matrix).str();
+					break;
+				}
 			case 'o': //Unsigned octal
 				result += Math::ToOctal(va_arg(vl, signed int));
 				break;
