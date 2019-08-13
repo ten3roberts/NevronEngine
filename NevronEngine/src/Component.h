@@ -126,7 +126,7 @@ struct rsc
 			makeWeak();
 	}
 
-	bool getStrength() { return m_strong; }
+	bool getStrength() const { return m_strong; }
 
 	R* operator->() { return m_pData; }	//Dereference
 	R* operator&() { return m_pData; }	//Dereference
@@ -137,7 +137,7 @@ struct rsc
 	unsigned int* getRawReferenceCount() const { return m_referenceCount; }
 	R* GetPointer() const { return m_pData; }
 
-	inline bool Valid() { if (m_pData && m_referenceCount) return true; return false; }
+	inline bool Valid() const { if (m_pData && m_referenceCount) return true; return false; }
 
 private:
 	R* m_pData;
@@ -157,6 +157,3 @@ private:
 			(*m_referenceCount)--;
 	}
 };
-
-
-
