@@ -16,7 +16,7 @@ public:
 	//Creates a quaternion from an euler rotation
 	static Quaternion Euler(const Vector3& euler);
 
-	//Will create a new quaternion pointing along to specified direction. Direction does not need to be Normalised
+	//Will create a new quaternion pointing along to specified direction. Direction does not need to be Normalized
 	static Quaternion PointTo(const Vector3& direction);
 	//Will create a new quaternion to rotate from its current position to %direction%
 	static Quaternion PointTo(const Vector3& sourcePoint, const Vector3& destinationPoint);
@@ -61,8 +61,8 @@ public:
 	Matrix4 toMatrix();
 	Vector3 toEuler();
 
-	Quaternion Normalise() const;
-	void Normalise(Quaternion* out);
+	Quaternion Normalize() const;
+	void Normalize(Quaternion* out);
 
 	Quaternion Inverse();
 	void Inverse(Quaternion* out);

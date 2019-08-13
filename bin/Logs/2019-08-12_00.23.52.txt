@@ -1,0 +1,539 @@
+(Utility @ 00.23.52): Working directory changed from " " to " C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\ "
+(Settings @ 00.23.52): Loading Settingsfile: ...\bin\Assets\Settings.cnf
+(Settings @ 00.23.52): Resoulution: 1280, 720
+(Settings @ 00.23.52): UseNativeResolution: true
+(Settings @ 00.23.52): ScreenFar: 0.000000
+(Settings @ 00.23.52): ScreenNear: 2.000000
+(Settings @ 00.23.52): DisplayMode: 0
+(Settings @ 00.23.52): Vsync: false
+(Settings @ 00.23.52): MSAA: false
+(Settings @ 00.23.52): MSAASamples: 1
+(Settings @ 00.23.52): FOV: 0.000000
+(Settings @ 00.23.52): Sensitivity: 0.000000
+(Main @ 00.23.52): NevronEngine initializing...
+(Texture: NevronLogo.png @ 00.23.52): Loading texture: ...\Textures\NevronLogo\NevronLogo.png
+(Main @ 00.23.52): OpenGl version: 3.3.0 NVIDIA 431.60
+(Timer: Startup @ 00.23.52): Duration: -1.0842E-19s
+(OpenGL Callback @ 00.23.52): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 00.23.52): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(ResourceManager @ 00.23.52): No shader exists with name Basic, creating
+(Shader: Basic @ 00.23.52): Compiled vertex shader
+(Shader: Basic @ 00.23.52): Compiled fragment shader
+(rsc @ 00.23.52): Copy constructor
+(rsc @ 00.23.52): Copy constructor
+(rsc @ 00.23.52): Copy constructor
+(Shader: MultiMap @ 00.23.52): Compiled vertex shader
+(Shader: MultiMap @ 00.23.52): Compiled fragment shader
+(Texture: NevronLogo.png @ 00.23.52): Loading texture: ...\Textures\NevronLogo\NevronLogo.png
+(ResourceManager @ 00.23.52): No material exists with name Ground, creating
+(Texture: Sand.png @ 00.23.52): Loading texture: ...\Textures\Ground\Sand.png
+(Texture: Grass.png @ 00.23.53): Loading texture: ...\Textures\Ground\Grass.png
+(Texture: Cobble.png @ 00.23.53): Loading texture: ...\Textures\Ground\Cobble.png
+(Texture: 2b2t.png @ 00.23.53): Loading texture: ...\Assets\Textures\2b2t.png
+(rsc @ 00.23.53): Copy constructor
+(OpenGL Callback @ 00.23.53): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 00.23.53): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) has been mapped in HOST memory.
+(Main @ 00.23.53): ----------Entering game loop----------
+
+(ResourceManager @ 00.23.53): No material exists with name Mario, creating
+(Texture: MarioSprite.png @ 00.23.53): Loading texture: ...\Assets\Textures\MarioSprite.png
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.001251, 0.563585, 0.193304, 0.808740, 0.585009
+(OpenGL Callback @ 00.23.53): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) stored in DMA CACHED memory has been updated.
+(OpenGL Callback @ 00.23.53): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+(OpenGL Callback @ 00.23.53): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.479873, 0.350291, 0.895962, 0.822840, 0.746605
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.174108, 0.858943, 0.710501, 0.513535, 0.303995
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.014985, 0.091403, 0.364452, 0.147313, 0.165899
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.988525, 0.445692, 0.119083, 0.004669, 0.008911
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.377880, 0.531663, 0.571184, 0.601764, 0.607166
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.166234, 0.663045, 0.450789, 0.352123, 0.057039
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.607685, 0.783319, 0.802606, 0.519883, 0.301950
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.875973, 0.726676, 0.955901, 0.925718, 0.539354
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.142338, 0.462081, 0.235328, 0.862239, 0.209601
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.779656, 0.843654, 0.996796, 0.999695, 0.611499
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.392438, 0.266213, 0.297281, 0.840144, 0.023743
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.375866, 0.092624, 0.677206, 0.056215, 0.008789
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.918790, 0.275887, 0.272896, 0.587909, 0.691183
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.837611, 0.726493, 0.484939, 0.205359, 0.743736
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.468459, 0.457961, 0.949156, 0.744438, 0.108280
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.599048, 0.385235, 0.735008, 0.608966, 0.572405
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.361339, 0.151555, 0.225105, 0.425153, 0.802881
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.517106, 0.989990, 0.751549, 0.345561, 0.168981
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.657308, 0.491897, 0.063540, 0.699759, 0.504807
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.147496, 0.949583, 0.141575, 0.905118, 0.692892
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.303049, 0.426557, 0.070376, 0.966613, 0.683187
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.153233, 0.877255, 0.821680, 0.582049, 0.191351
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.177892, 0.817194, 0.475265, 0.155553, 0.503922
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.732017, 0.405591, 0.279580, 0.568743, 0.682241
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.755852, 0.721915, 0.475295, 0.123020, 0.367809
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.834681, 0.035096, 0.517014, 0.662984, 0.426221
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.104678, 0.949339, 0.921384, 0.549547, 0.345988
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.471725, 0.374981, 0.846980, 0.316874, 0.456099
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.271889, 0.982971, 0.297800, 0.739189, 0.567278
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.195990, 0.761315, 0.839442, 0.397656, 0.500900
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.890164, 0.027467, 0.994629, 0.572588, 0.050508
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.531327, 0.194067, 0.843043, 0.626759, 0.657613
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.197851, 0.842158, 0.123325, 0.109928, 0.743126
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.314066, 0.941069, 0.286081, 0.336314, 0.140263
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.53): Equals operator
+----------------------------------
+(rsc @ 00.23.53): Copy constructor
+(Basic shader references @ 00.23.53): references: 5
+(Log @ 00.23.53): Entity 1 pos 0.733085, 0.834620, 0.707999, 0.600238, 0.747215
+(rsc @ 00.23.53): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.252724, 0.144475, 0.001617, 0.061007, 0.806238
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.852626, 0.210578, 0.115604, 0.553209, 0.014252
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.113773, 0.454512, 0.752220, 0.686148, 0.543443
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.073885, 0.436720, 0.201941, 0.696219, 0.290353
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.436689, 0.232429, 0.577868, 0.532579, 0.628681
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.160192, 0.504135, 0.963042, 0.695761, 0.924802
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.189947, 0.335948, 0.178350, 0.995178, 0.457442
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.998016, 0.097507, 0.625172, 0.094394, 0.437727
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.931516, 0.048433, 0.894620, 0.290017, 0.227302
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.769066, 0.410718, 0.201972, 0.628071, 0.604144
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.451613, 0.466353, 0.597827, 0.634724, 0.854793
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.828791, 0.624775, 0.720908, 0.565752, 0.375134
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.184271, 0.737907, 0.555132, 0.905087, 0.242866
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.188940, 0.604724, 0.698508, 0.584613, 0.351299
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.494461, 0.080386, 0.740745, 0.612049, 0.620380
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.691122, 0.804529, 0.149113, 0.576037, 0.867733
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.911557, 0.614704, 0.727683, 0.043214, 0.667776
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.976531, 0.315012, 0.569201, 0.305826, 0.173925
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.108554, 0.869045, 0.851222, 0.744316, 0.154881
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.326914, 0.079348, 0.076601, 0.640980, 0.820002
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.545091, 0.448256, 0.408979, 0.298746, 0.465560
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.501206, 0.152654, 0.323038, 0.737999, 0.313883
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.826685, 0.959075, 0.873348, 0.725028, 0.300058
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.943999, 0.127232, 0.065737, 0.784967, 0.524583
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.609638, 0.956114, 0.072268, 0.875637, 0.653859
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.322123, 0.104801, 0.505051, 0.227088, 0.290292
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.919980, 0.551164, 0.662801, 0.114536, 0.492538
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.379131, 0.496811, 0.793359, 0.509262, 0.382366
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.688162, 0.532151, 0.606281, 0.395184, 0.005890
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.707877, 0.100620, 0.623066, 0.863247, 0.491501
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.747337, 0.496902, 0.380108, 0.785363, 0.552812
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.357097, 0.955718, 0.630848, 0.176580, 0.374248
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.131626, 0.743278, 0.951720, 0.611988, 0.027833
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.329844, 0.055910, 0.639210, 0.131626, 0.847072
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.864315, 0.596881, 0.721641, 0.853969, 0.014679
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.126469, 0.707907, 0.617145, 0.217566, 0.065950
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.168920, 0.624104, 0.340983, 0.319407, 0.367565
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.661000, 0.802393, 0.806879, 0.526536, 0.611103
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.798181, 0.900601, 0.144810, 0.630177, 0.402417
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.253700, 0.136540, 0.855190, 0.066164, 0.427808
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.573351, 0.302286, 0.548051, 0.225562, 0.311350
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.110630, 0.808039, 0.134709, 0.284249, 0.788110
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.895230, 0.789636, 0.743797, 0.615223, 0.361126
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.856655, 0.228492, 0.863582, 0.229438, 0.249550
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.542405, 0.984832, 0.053804, 0.081423, 0.524674
+(rsc @ 00.23.54): Copy constructor
+(rsc @ 00.23.54): Equals operator
+----------------------------------
+(rsc @ 00.23.54): Copy constructor
+(Basic shader references @ 00.23.54): references: 5
+(Log @ 00.23.54): Entity 1 pos 0.426801, 0.094668, 0.258797, 0.891537, 0.232765
+(Main @ 00.23.54): Closing Window
+(Main @ 00.23.54): Program has terminated correctly
+(ResourceManager @ 00.23.54): Slot 0 has already been freed

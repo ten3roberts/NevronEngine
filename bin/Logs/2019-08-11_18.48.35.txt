@@ -1,0 +1,50 @@
+(Utility @ 18.48.35): Working directory changed from " " to " C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\ "
+(Settings @ 18.48.35): Loading Settingsfile: ...\bin\Assets\Settings.cnf
+(Settings @ 18.48.35): Resoulution: 1280, 720
+(Settings @ 18.48.35): UseNativeResolution: true
+(Settings @ 18.48.35): ScreenFar: 0.000000
+(Settings @ 18.48.35): ScreenNear: 2.000000
+(Settings @ 18.48.35): DisplayMode: 0
+(Settings @ 18.48.35): Vsync: false
+(Settings @ 18.48.35): MSAA: false
+(Settings @ 18.48.35): MSAASamples: 1
+(Settings @ 18.48.35): FOV: 0.000000
+(Settings @ 18.48.35): Sensitivity: 0.000000
+(Main @ 18.48.35): NevronEngine initializing...
+(Texture: NevronLogo.png @ 18.48.36): Loading texture: ...\Textures\NevronLogo\NevronLogo.png
+(Main @ 18.48.36): OpenGl version: 3.3.0 NVIDIA 431.60
+(Timer: Startup @ 18.48.36): Duration: 1.0842E-19s
+(OpenGL Callback @ 18.48.36): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 18.48.36): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(ResourceManager @ 18.48.36): No shader exists with name Basic, creating
+(Shader: Basic @ 18.48.36): Compiled vertex shader
+(Shader: Basic @ 18.48.36): Compiled fragment shader
+(rsc @ 18.48.36): Copy constructor
+(Shader: MultiMap @ 18.48.36): Compiled vertex shader
+(Shader: MultiMap @ 18.48.36): Compiled fragment shader
+(Texture: NevronLogo.png @ 18.48.36): Loading texture: ...\Textures\NevronLogo\NevronLogo.png
+(ResourceManager @ 18.48.36): No material exists with name Ground, creating
+(Texture: Sand.png @ 18.48.36): Loading texture: ...\Textures\Ground\Sand.png
+(Texture: Grass.png @ 18.48.36): Loading texture: ...\Textures\Ground\Grass.png
+(Texture: Cobble.png @ 18.48.36): Loading texture: ...\Textures\Ground\Cobble.png
+(Texture: 2b2t.png @ 18.48.36): Loading texture: ...\Assets\Textures\2b2t.png
+(rsc @ 18.48.36): Copy constructor
+(OpenGL Callback @ 18.48.36): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 18.48.36): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) has been mapped in HOST memory.
+(Main @ 18.48.36): ----------Entering game loop----------
+
+(ResourceManager @ 18.48.36): No material exists with name Mario, creating
+(Texture: MarioSprite.png @ 18.48.36): Loading texture: ...\Assets\Textures\MarioSprite.png
+(rsc @ 18.48.36): Copy constructor
+(rsc @ 18.48.36): Copy constructor
+(rsc @ 18.48.36): Copy constructor
+(rsc @ 18.48.36): Cast constructor
+(rsc @ 18.48.55): Copy constructor
+(rsc @ 18.48.55): Cast constructor
+-------------------------------------------------------------------------------
+(Log @ 18.50.54): Entity 1 pos 0.001251, 0.563585, 0.193304, 0.808740, 0.585009
+(OpenGL Callback @ 18.52.02): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) stored in DMA CACHED memory has been updated.
+(OpenGL Callback @ 18.52.02): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+(OpenGL Callback @ 18.52.02): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+(ResourceManager @ 18.52.43): No shader exists with name Basic, creating
+(Shader: Basic @ 18.52.43): Compiled 

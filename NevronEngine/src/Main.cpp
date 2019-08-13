@@ -149,17 +149,18 @@ int main(int argc, char** argv)
 
 	Object object;
 
+		object.AddComponent<Shader>("Basic");
 	while (!glfwWindowShouldClose(window))
 	{
 		Time::Update();
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
-
-		object.AddComponent(rscManager->GetShader("Basic"));
+		object.AddComponent<Shader>("MultiMap");
 		object.AddComponent(rscManager->GetMaterial("Ground"));
-		LogS("Object shader", object.GetComponent<Material>()->getName());
+		LogS("Object Material", object.GetComponent<Material>()->getName());
+		LogS("Object shader", object.GetComponent<Shader>()->getName());
 
-		LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
+		//LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 		if (Time::frameCount % 120 == 0)
 			LogS("Framerate", STR(Time::frameRate));
 

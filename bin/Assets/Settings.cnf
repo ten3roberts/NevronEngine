@@ -1,0 +1,10 @@
+resolution 1280,720
+useNativeResoultion 0
+screenFar 100
+screenNear 0.01
+displayMode WINDOWED
+VSync 0
+MSAA 0
+MSAASamples 1
+FOV 1
+sensitivity 1

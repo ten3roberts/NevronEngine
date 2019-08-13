@@ -106,14 +106,14 @@ struct Vector
 	inline float Volume() const;
 
 
-	//Returns the Normalised version of the vector; does not modify the vector
-	inline Vector Normalise() const
+	//Returns the Normalized version of the vector; does not modify the vector
+	inline Vector Normalize() const
 	{
 		return *this / Magnitude();
 	}
 
-	//Normalises the vector and assigns it to $out. Out can be the same as self
-	inline void Normalise(Vector* out)
+	//Normalizes the vector and assigns it to $out. Out can be the same as self
+	inline void Normalize(Vector* out)
 	{
 		if (out)
 			* out = *this / Magnitude();

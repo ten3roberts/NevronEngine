@@ -147,7 +147,7 @@ float Vector2::Magnitude() const
 	return sqrt(x*x + y*y);
 }
 
-Vector2 Vector2::Normalise() const
+Vector2 Vector2::Normalize() const
 {
 	if (SqrMagnitude() < 0.000001f)
 		return Vector2(0, 0);
@@ -156,7 +156,7 @@ Vector2 Vector2::Normalise() const
 	return Vector2(x / mag, y / mag);
 }
 
-void Vector2::Normalise(Vector2* out)
+void Vector2::Normalize(Vector2* out)
 {
 	if (SqrMagnitude() < 0.000001f)
 		return;
@@ -173,12 +173,12 @@ Vector2 Vector2::ClampMag(float min, float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalise() * max;
+		return Normalize() * max;
 	}
 
 	else if (SqrMagnitude() < min * min)
 	{
-		return Normalise() * min;
+		return Normalize() * min;
 	}
 	return *this;
 }
@@ -187,7 +187,7 @@ Vector2 Vector2::ClampMinMag(float min) const
 {
 	if (SqrMagnitude() < min * min)
 	{
-		return Normalise() * min;
+		return Normalize() * min;
 	}
 	return *this;
 }
@@ -196,7 +196,7 @@ Vector2 Vector2::ClampMaxMag(float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalise() * max;
+		return Normalize() * max;
 	}
 	return *this;
 }
@@ -241,7 +241,7 @@ Vector2 Vector2::Project(const Vector2& vector, const Vector2& axis)
 
 float Vector2::ProjectFlat(const Vector2& vector, const Vector2& axis)
 {
-	return (Dot(vector.Normalise(), axis.Normalise()) * vector.Magnitude());
+	return (Dot(vector.Normalize(), axis.Normalize()) * vector.Magnitude());
 }
 
 Vector2 Vector2::Lerp(const Vector2& a, const Vector2& b, float t)

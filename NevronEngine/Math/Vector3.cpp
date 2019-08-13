@@ -328,7 +328,7 @@ float Vector3::Magnitude() const
 	return sqrt(x * x + y * y + z * z);
 }
 
-void Vector3::Normalise(Vector3* out)
+void Vector3::Normalize(Vector3* out)
 {
 	if (SqrMagnitude() < 0.000001f)
 		return;
@@ -341,7 +341,7 @@ void Vector3::Normalise(Vector3* out)
 
 }
 
-Vector3 Vector3::Normalise() const
+Vector3 Vector3::Normalize() const
 {
 	if (SqrMagnitude() < 0.000001f)
 		return Vector3(0, 0, 0);
@@ -354,12 +354,12 @@ Vector3 Vector3::ClampMag(float min, float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalise() * max;
+		return Normalize() * max;
 	}
 
 	else if (SqrMagnitude() < min * min)
 	{
-		return Normalise() * min;
+		return Normalize() * min;
 	}
 	return *this;
 }
@@ -368,7 +368,7 @@ Vector3 Vector3::ClampMinMag(float min) const
 {
 	if (SqrMagnitude() < min * min)
 	{
-		return Normalise() * min;
+		return Normalize() * min;
 	}
 	return *this;
 }
@@ -377,7 +377,7 @@ Vector3 Vector3::ClampMaxMag(float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalise() * max;
+		return Normalize() * max;
 	}
 	return *this;
 }
@@ -424,7 +424,7 @@ Vector3 Vector3::Project(const Vector3& vector, const Vector3& axis)
 
 float Vector3::ProjectFlat(const Vector3& vector, const Vector3& axis)
 {
-	return (Dot(vector.Normalise(), axis.Normalise()) * vector.Magnitude());
+	return (Dot(vector.Normalize(), axis.Normalize()) * vector.Magnitude());
 }
 
 Vector3 Vector3::Cross(const Vector3& a, const Vector3& b)
@@ -434,7 +434,7 @@ Vector3 Vector3::Cross(const Vector3& a, const Vector3& b)
 
 Vector3 Vector3::Reflect(const Vector3& ray, const Vector3& normal)
 {
-	Vector3 n = normal.Normalise();
+	Vector3 n = normal.Normalize();
 	return Vector3(ray - n * 2 * Dot(ray, n));
 }
 
@@ -449,7 +449,7 @@ Vector3 Vector3::Slerp(const Vector3& a, const Vector3& b, float t)
 	t = Math::Clamp01(t);
 	// get the axis of rotation between from and to
 	Vector3 axis = Cross(b, a);
-	axis.Normalise(&axis);
+	axis.Normalize(&axis);
 
 	// get the angle to rotate around the axis 
 	// NOTE: from and to must be of unit length!!!

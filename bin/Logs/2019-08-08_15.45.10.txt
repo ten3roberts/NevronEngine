@@ -1,0 +1,34 @@
+(Utility @ 15.45.10): Working directory changed from "" to "C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\"
+(Settings @ 15.45.10): Loading Settingsfile: ...\bin\Assets\Settings.cnf
+(Settings @ 15.45.10): Resoulution: 1280, 720
+(Settings @ 15.45.10): UseNativeResolution: true
+(Settings @ 15.45.10): ScreenFar: 100.000000
+(Settings @ 15.45.10): ScreenNear: 0.010000
+(Settings @ 15.45.10): DisplayMode: 0
+(Settings @ 15.45.10): Vsync: false
+(Settings @ 15.45.10): MSAA: false
+(Settings @ 15.45.10): MSAASamples: 1
+(Settings @ 15.45.10): FOV: 1.000000
+(Settings @ 15.45.10): Sensitivity: 1.000000
+(Main @ 15.45.10): NevronEngine initializing...
+(Texture: NevronLogo.png @ 15.45.10): Loading texture: ...\Textures\NevronLogo\NevronLogo.png
+(Main @ 15.45.11): OpenGl version: 3.3.0 NVIDIA 431.60
+(Timer: Startup @ 15.45.11): Duration: 0.716798s
+(OpenGL Callback @ 15.45.11): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 15.45.11): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(Shader: Basic @ 15.45.11): Compiled vertex shader
+(Shader: Basic @ 15.45.11): Compiled fragment shader
+(Shader: MultiMap @ 15.45.11): Compiled vertex shader
+(Shader: MultiMap @ 15.45.11): Compiled fragment shader
+(Texture: NevronLogo.png @ 15.45.11): Loading texture: ...\Textures\NevronLogo\NevronLogo.png
+(ResourceManager @ 15.45.11): No material exists with name Ground, creating
+(Texture: Sand.png @ 15.45.11): Loading texture: ...\Textures\Ground\Sand.png
+(Texture: Grass.png @ 15.45.11): Loading texture: ...\Textures\Ground\Grass.png
+(Texture: Cobble.png @ 15.45.11): Loading texture: ...\Textures\Ground\Cobble.png
+(Texture: 2b2t.png @ 15.45.11): Loading texture: ...\Assets\Textures\2b2t.png
+(OpenGL Callback @ 15.45.11): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 15.45.11): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) has been mapped in HOST memory.
+(Main @ 15.45.11): ----------Entering game loop----------
+
+(ResourceManager @ 15.45.11): No material exists with name Mario, creating
+(Texture: MarioSprite.png @ 15.45.11): Loading texture: ...\Assets\Textures\MarioSprite.png

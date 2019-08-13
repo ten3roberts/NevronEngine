@@ -75,7 +75,7 @@ Vector Vector::OnSphere(unsigned int size, float radius)
 	for(unsigned int i = 0; i < size; i++)
 		result[i] = (2.0f * std::rand() / RAND_MAX) - 1.0f;
 
-	return result.Normalise() * size;
+	return result.Normalize() * size;
 }
 
 Vector Vector::InSphere(unsigned int size, float outerRadius, float innerRadius)
@@ -85,7 +85,7 @@ Vector Vector::InSphere(unsigned int size, float outerRadius, float innerRadius)
 	for (unsigned int i = 0; i < size; i++)
 		result[i] = (2.0f * std::rand() / RAND_MAX) - 1.0f;
 
-	result.Normalise(&result);
+	result.Normalize(&result);
 
 	//Scales it with a random length
 	float randomLength = (float)std::rand() / RAND_MAX;
@@ -100,7 +100,7 @@ Vector Vector::InSphereEven(unsigned int size, float outerRadius, float innerRad
 	for (unsigned int i = 0; i < size; i++)
 		result[i] = (2.0f * std::rand() / RAND_MAX) - 1.0f;
 
-	result.Normalise(&result);
+	result.Normalize(&result);
 
 	float randomLength = sqrt(((float)std::rand() / RAND_MAX) / MATH_PI); //Accounting sparser distrobution
 	result *= randomLength * (outerRadius - innerRadius) + innerRadius;
@@ -282,12 +282,12 @@ Vector Vector::ClampMag(float min, float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalise() * max;
+		return Normalize() * max;
 	}
 
 	else if (SqrMagnitude() < min * min)
 	{
-		return Normalise() * min;
+		return Normalize() * min;
 	}
 	return *this;
 }
@@ -296,7 +296,7 @@ Vector Vector::ClampMinMag(float min) const
 {
 	if (SqrMagnitude() < min * min)
 	{
-		return Normalise() * min;
+		return Normalize() * min;
 	}
 	return *this;
 }
@@ -305,7 +305,7 @@ Vector Vector::ClampMaxMag(float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalise() * max;
+		return Normalize() * max;
 	}
 	return *this;
 }
