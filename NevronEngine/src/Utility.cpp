@@ -99,7 +99,7 @@ std::vector<std::string> Utility::strSplit(const std::string& str, const std::st
 		if (text.substr(i, keyW.size()) == keyW) //Cursor att keyword
 		{
 			results.push_back(text.substr(0, i)); //Push left bit to results
-			text = text.substr(i + 1); //And remove it from string and reset cursor
+			text = text.substr((__int64)i + 1); //And remove it from string and reset cursor
 			i = 0;
 		}
 	}
@@ -494,7 +494,7 @@ void Utility::GenerateFile(const std::string& path, const std::string& contents,
 	return;
 }
 
-void Utility::Copy(const std::string& oldPath, const std::string& newPath)
+bool Utility::Copy(const std::string& oldPath, const std::string& newPath)
 {
 	if (IsFile(oldPath))
 	{
@@ -503,7 +503,7 @@ void Utility::Copy(const std::string& oldPath, const std::string& newPath)
 		if (!oldFile.is_open())
 		{
 			LogS("CopyFile", "Couldn't open file: %s", oldPath);
-			return;
+			return true;
 		}
 		newFile << oldFile.rdbuf();
 		oldFile.close();
@@ -523,11 +523,12 @@ void Utility::Copy(const std::string& oldPath, const std::string& newPath)
 		for (std::string& file : files)
 			Copy(file, strLead(newPath, '\\') + file.substr(oldPath.size()));
 	}
+	return true;
 }
 
-void Utility::Rename(const std::string& oldPath, const std::string& newPath)
+bool Utility::Rename(const std::string& oldPath, const std::string& newPath)
 {
-	std::rename(oldPath.c_str(), newPath.c_str());
+	return std::rename(oldPath.c_str(), newPath.c_str());
 }
 
 std::string Utility::getExtension(const std::string& path)
@@ -723,7 +724,7 @@ std::string format(std::string format, ...)
 		std::string a;
 		//Is a two wide substr of fmt
 		if (format[i] == '%' && !(i > 0 && format[i - 1] == '\\')) //Format expected
-			switch (format[i + 1]) //checks next
+			switch (format[(__int64)i + 1]) //checks next
 			{
 			case 'd': //Signed decimal integer
 				result += std::to_string(va_arg(vl, signed int));
@@ -737,7 +738,7 @@ std::string format(std::string format, ...)
 				result += std::to_string(va_arg(vl, unsigned int));
 				break;
 			case 'v':
-				switch (format[i + 2])
+				switch (format[(__int64)i + 2])
 				{
 				case '2':
 					result += va_arg(vl, Vector2).str();
@@ -757,7 +758,7 @@ std::string format(std::string format, ...)
 				i++; //Skipping vector size indicator
 				break;
 			case 'V':
-				switch (format[i + 2])
+				switch (format[(__int64)i + 2])
 				{
 				case '2':
 					result += va_arg(vl, Vector2).str_d();
@@ -776,7 +777,7 @@ std::string format(std::string format, ...)
 				}
 				break;
 			case 'm':
-				switch (format[i + 2])
+				switch (format[(__int64)i + 2])
 				{
 				case 4:
 					result += va_arg(vl, Matrix4).str();
@@ -786,7 +787,7 @@ std::string format(std::string format, ...)
 				}
 				break;
 			case 'M':
-				switch (format[i + 2])
+				switch (format[(__int64)i + 2])
 				{
 				case 4:
 					result += va_arg(vl, Matrix4).str();

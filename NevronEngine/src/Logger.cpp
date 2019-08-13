@@ -18,7 +18,7 @@ void LogS(const std::string& author, std::string format, ...)
 		std::string a;
 		//Is a two wide substr of fmt
 		if (format[i] == '%' && !(i > 0 && format[i - 1] == '\\')) //Format expected
-			switch (format[i + 1]) //checks next
+			switch (format[(__int64)i + 1]) //checks next
 			{
 			case 'd': //Signed decimal integer
 				fullMsg += std::to_string(va_arg(vl, signed int));
@@ -32,7 +32,7 @@ void LogS(const std::string& author, std::string format, ...)
 				fullMsg += std::to_string(va_arg(vl, unsigned int));
 				break;
 			case 'v':
-				switch (format[i + 2])
+				switch (format[(__int64)i + 2])
 				{
 				case '2':
 					fullMsg += va_arg(vl, Vector2).str();
@@ -52,7 +52,7 @@ void LogS(const std::string& author, std::string format, ...)
 				i++; //Skipping vector size indicator
 				break;
 			case 'V':
-				switch (format[i + 2])
+				switch (format[(__int64)i + 2])
 				{
 				case '2':
 					fullMsg += va_arg(vl, Vector2).str_d();
@@ -69,7 +69,7 @@ void LogS(const std::string& author, std::string format, ...)
 				}
 				break;
 			case 'm':
-				switch (format[i+2])
+				switch (format[(__int64)i+2])
 				{
 				case 4:
 					fullMsg += va_arg(vl, Matrix4).str();
@@ -79,7 +79,7 @@ void LogS(const std::string& author, std::string format, ...)
 				}
 				break;
 			case 'M':
-				switch (format[i + 2])
+				switch (format[(__int64)i + 2])
 				{
 				case 4:
 					fullMsg += va_arg(vl, Matrix4).str();

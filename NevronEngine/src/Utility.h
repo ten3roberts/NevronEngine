@@ -130,8 +130,8 @@ namespace Utility
 	void GeneratePath(const std::string& path);
 	void GenerateFile(const std::string& path, const std::string& contents, bool append = true);
 
-	void Copy(const std::string& oldPath, const std::string& newPath);
-	void Rename(const std::string& oldPath, const std::string& newPath);
+	bool Copy(const std::string& oldPath, const std::string& newPath);
+	bool Rename(const std::string& oldPath, const std::string& newPath);
 	//Will return the extension of a file
 	std::string getExtension(const std::string& path);
 

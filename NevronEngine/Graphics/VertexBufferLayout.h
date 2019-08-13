@@ -7,7 +7,7 @@ struct VBElement
 {
 	unsigned int type;
 	unsigned int count;
-	unsigned int normalized;
+	unsigned int Normalised;
 	static unsigned int getSizeOfType(unsigned int type)
 	{
 		switch (type)

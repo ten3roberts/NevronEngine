@@ -151,11 +151,13 @@ int main(int argc, char** argv)
 
 	while (!glfwWindowShouldClose(window))
 	{
+		Time::Update();
 		if (Time::frameCount % 10 == 0)
-			glfwSetWindowTitle(window, format("%c FPS: %d", APPNAME, (int)Time::frameRate).c_str());
+			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
 
 		object.AddComponent(rscManager->GetShader("Basic"));
-		Time::Update();
+		object.AddComponent(rscManager->GetMaterial("Ground"));
+		LogS("Object shader", object.GetComponent<Material>()->getName());
 
 		LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 		if (Time::frameCount % 120 == 0)

@@ -1,4 +1,5 @@
 #include "Object.h"
+#include <src/ResourceManager.h>
 
 void Object::AddComponent(rsc<Component> component)
 {
