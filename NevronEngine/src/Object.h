@@ -12,6 +12,7 @@
 class Object
 {
 private:
+	void RemoveSpecialized(rsc<Component> component);
 	std::vector<rsc<Component>> m_components;
 
 	//Fast access
@@ -24,12 +25,12 @@ public:
 #pragma region AddComponent
 	//If added component is shader, model, material, transform or rigibody it will replace the current one
 	void AddComponent(rsc<Component> component);
-	
+
 	//Resource manager integration; return true if resource was successfully added
 	template <typename A>
 	bool AddComponent(const std::string& name)
 	{
-		rsc<A, false> tmp = ResourceManager::GetResource<A>(name);
+		rsc<A, false> tmp = ResourceManager::Get()->GetResource<A>(name);
 		if (!tmp)
 		{
 			return false;
@@ -37,236 +38,98 @@ public:
 		AddComponent(tmp);
 		return true;
 	}
-
-	template <typename A>
-	void AddComponent(rsc<A> component)
-	{
-		m_components.push_back(component);
-	}
-
-	template <>
-	void AddComponent(rsc<Shader> shader)
-	{
-		m_components.push_back(shader);
-		m_shader = shader;
-	}
-
-	template <>
-	void AddComponent(rsc<Model> model)
-	{
-		m_components.push_back(model);
-		m_model = model;
-	}
-
-	template <>
-	void AddComponent(rsc<Material> material)
-	{
-		m_components.push_back(material);
-		m_material = material;
-	}
-
-	template <>
-	void AddComponent(rsc<Transform> transform)
-	{
-		m_components.push_back(transform);
-		m_transform = transform;
-	}
-
-	template <>
-	void AddComponent(rsc<Rigidbody> rigidbody)
-	{
-		m_components.push_back(rigidbody);
-		m_rigidbody = rigidbody;
-	}
 #pragma endregion;
 
 #pragma region RemoveComponent
+	//Removes the first component of R or derived from R type
 	template <typename R>
 	void RemoveComponent()
 	{
 		for (int i = 0; i < m_components.size(); i++)
 		{
 			R* cast = dynamic_cast<R*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
+			//If conversion was successful and name was correct
+			if (cast != nullptr)
 			{
+				RemoveSpecialized(m_components[i]);
 				m_components.erase(m_components.begin() + i);
 				return;
 			}
 		}
 	}
 
-	template<>
-	void RemoveComponent<Shader>()
+	//Removes the first component of R or derived from R type with the correct name
+	template <typename R = Component>
+	void RemoveComponent(const std::string & name)
 	{
 		for (int i = 0; i < m_components.size(); i++)
 		{
-			Shader* cast = dynamic_cast<Shader*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
+			R* cast = dynamic_cast<R*>(&m_components[i]);
+			//If conversion was successful
+			if (cast != nullptr && m_components[i]->getName() == name)
 			{
+				RemoveSpecialized(m_components[i]);
 				m_components.erase(m_components.begin() + i);
 				return;
 			}
 		}
-		m_shader = nullptr;
-	}
-
-	template<>
-	void RemoveComponent<Model>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Model* cast = dynamic_cast<Model*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-				return;
-			}
-		}
-		m_model = nullptr;
-	}
-
-	template<>
-	void RemoveComponent<Material>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Material* cast = dynamic_cast<Material*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-				return;
-			}
-		}
-		m_material = nullptr;
-	}
-
-	template<>
-	void RemoveComponent<Transform>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Transform* cast = dynamic_cast<Transform*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-				return;
-			}
-		}
-		m_transform = nullptr;
-	}
-
-	template<>
-	void RemoveComponent<Rigidbody>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Rigidbody* cast = dynamic_cast<Rigidbody*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-				return;
-			}
-		}
-		m_rigidbody = nullptr;
-	}
+	}	
 #pragma endregion
+#pragma region RemoveComponents
 	template <typename R>
+	//Removes all components of R or derived from R type
 	void RemoveComponents()
 	{
 		for (int i = 0; i < m_components.size(); i++)
 		{
 			R* cast = dynamic_cast<R*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
+			//If conversion was successful
+			if (cast != nullptr)
 			{
+				RemoveSpecialized(m_components[i]);
 				m_components.erase(m_components.begin() + i);
 			}
 		}
 	}
 
-	template <>
-	void RemoveComponents<Shader>()
+	template <typename R = Component>
+	//Removes all components of R or derived from R type
+	void RemoveComponents(const std::string& name)
 	{
 		for (int i = 0; i < m_components.size(); i++)
 		{
-			Shader* cast = dynamic_cast<Shader*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
+			R* cast = dynamic_cast<R*>(&m_components[i]);
+			//If conversion was successful and name is correct
+			if (cast != nullptr && m_components[i]->getName() == name)
 			{
+				RemoveSpecialized(m_components[i]);
 				m_components.erase(m_components.begin() + i);
 			}
 		}
-		m_shader = nullptr;
 	}
-
-	template <>
-	void RemoveComponents<Model>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Model* cast = dynamic_cast<Model*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-			}
-		}
-		m_model = nullptr;
-	}
-
-	template <>
-	void RemoveComponents<Material>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Material* cast = dynamic_cast<Material*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-			}
-		}
-		m_material = nullptr;
-	}
-
-	template <>
-	void RemoveComponents<Transform>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Transform* cast = dynamic_cast<Transform*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-			}
-		}
-		m_transform = nullptr;
-	}
-
-	template <>
-	void RemoveComponents<Rigidbody>()
-	{
-		for (int i = 0; i < m_components.size(); i++)
-		{
-			Rigidbody* cast = dynamic_cast<Rigidbody*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
-			{
-				m_components.erase(m_components.begin() + i);
-			}
-		}
-		m_rigidbody = nullptr;
-	}
-
+#pragma endregion
 #pragma region GetComponent
-	rsc<Component> GetComponent(const std::string& name)
+	template<typename C>
+	rsc<C> GetComponent(const std::string& name)
 	{
 		for (int i = 0; i < m_components.size(); i++)
-			if (m_components[i]->getName() == name)
+		{
+			C* cast = dynamic_cast<C*>(&m_components[i]);
+			//If conversion was successful and name is correct
+			if (cast != nullptr && m_components[i]->getName() == name)
 				return m_components[i];
+		}
+		return rsc<C>(nullptr);
 	}
+
 	template<typename C>
 	rsc<C> GetComponent()
 	{
 		for (int i = 0; i < m_components.size(); i++)
 		{
 			C* cast = dynamic_cast<C*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
+			//If conversion was successful
+			if (cast != nullptr)
 				return m_components[i];
 		}
 		return rsc<C>(nullptr);
@@ -302,14 +165,32 @@ public:
 		return m_rigidbody;
 	}
 #pragma endregion
-	template<typename S>
+#pragma region GetComponents
+	template<typename S = Component>
 	std::vector<rsc<S>> GetComponents()
 	{
 		std::vector<rsc<S>> result;
 		for (int i = 0; i < m_components.size(); i++)
 		{
 			S* cast = dynamic_cast<S*>(&m_components[i]);
-			if (cast != nullptr) //If conversion was successful
+			//If conversion was successful
+			if (cast != nullptr)
+			{
+				result.push_back(m_components[i]);
+			}
+		}
+		return result;
+	}
+
+	template<typename S = Component>
+	std::vector<rsc<S>> GetComponents(const std::string& name)
+	{
+		std::vector<rsc<S>> result;
+		for (int i = 0; i < m_components.size(); i++)
+		{
+			S* cast = dynamic_cast<S*>(&m_components[i]);
+			//If conversion was successful and name is correct
+			if (cast != nullptr && m_components[i]->getName() == name) 
 			{
 				result.push_back(m_components[i]);
 			}
@@ -318,6 +199,7 @@ public:
 	}
 
 	//TODO template specialise script list
+#pragma endregion
 };
 
 
