@@ -13,17 +13,17 @@ Shader::Shader(const std::string& name)
 		LogS("Shader: " + m_name, "Couldn't find shader with name: ");
 
 	ShaderSource source = ParseShader(m_filepath);
-	m_rscID = CreateShader(source);
+	m_bufferID = CreateShader(source);
 }
 
 Shader::~Shader()
 {
-	glDeleteProgram(m_rscID);
+	glDeleteProgram(m_bufferID);
 }
 
 void Shader::Bind() const
 {
-	glUseProgram(m_rscID);
+	glUseProgram(m_bufferID);
 }
 
 void Shader::Unbind() const
@@ -93,7 +93,7 @@ int Shader::getUniformLocation(const std::string& name)
 		return m_uniformCache[name];
 
 	//LogS("Shader: " + m_name, "Uniform: %s %s", name, "is not yet cached, retrieving id");
-	int location = glGetUniformLocation(m_rscID, name.c_str());
+	int location = glGetUniformLocation(m_bufferID, name.c_str());
 	if (location == -1)
 	{
 	}	//LogS("Shader: " + m_name, "Couldn't get uniform location: %s%s", name, "; Uniform is either optimised away or does not exist in the current shader");
@@ -206,9 +206,9 @@ ShaderSource Shader::ParseShader(const std::string& path)
 	ShaderSource sources(ss);
 
 	if (sources.vertexSource.size() == 0)
-		Error(1);
+		LogS("Could not parse vertex shader", "");
 	if (sources.fragmentSource.size() == 0)
-		Error(2);
+		LogS("Could not parse fragment shader", "");
 
 	return sources;
 }

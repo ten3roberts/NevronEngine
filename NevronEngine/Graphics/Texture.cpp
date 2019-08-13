@@ -17,8 +17,8 @@ Texture::Texture(const std::string& name, unsigned int slot, bool flip)
 	stbi_set_flip_vertically_on_load(flip);
 	m_localBuffer = stbi_load(m_filepath.c_str(), &m_width, &m_height, &m_BPP, 4);
 
-	glGenTextures(1, &m_rscID);
-	glBindTexture(GL_TEXTURE_2D, m_rscID);
+	glGenTextures(1, &m_bufferID);
+	glBindTexture(GL_TEXTURE_2D, m_bufferID);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -34,7 +34,7 @@ Texture::Texture(const std::string& name, unsigned int slot, bool flip)
 
 Texture::~Texture()
 {
-	glDeleteTextures(1, &m_rscID);
+	glDeleteTextures(1, &m_bufferID);
 	if (m_localBuffer)
 		stbi_image_free(m_localBuffer);
 }
@@ -42,7 +42,7 @@ Texture::~Texture()
 void Texture::Bind() const
 {
 	glActiveTexture(GL_TEXTURE0 + m_slot);
-	glBindTexture(GL_TEXTURE_2D, m_rscID);
+	glBindTexture(GL_TEXTURE_2D, m_bufferID);
 }
 
 void Texture::Unbind() const

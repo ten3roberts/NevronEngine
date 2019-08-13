@@ -30,10 +30,6 @@ int main(int argc, char** argv)
 {
 	system("color a");
 
-	LogS("", "%c", "Hello");
-
-	Time::Init();
-
 	setWorkingDir(DirectoryUp(argv[0]));
 
 	Settings* settings = Settings::get();
@@ -103,8 +99,6 @@ int main(int argc, char** argv)
 
 	//Shaders
 	rsc<Shader> shader = rscManager->GetShader("Basic");
-	rsc<Shader> shader1 = rscManager->GetShader("Basic");
-	rsc<Shader> shader2 = rscManager->GetShader("Basic");
 	//Shader shader("Basic");
 	Shader multiMapShader("MultiMap");
 	shader->Bind();
@@ -149,17 +143,13 @@ int main(int argc, char** argv)
 
 	Object object;
 
-		object.AddComponent<Shader>("Basic");
+	object.AddComponent<Shader>("Basic");
 	while (!glfwWindowShouldClose(window))
 	{
 		Time::Update();
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
-		object.AddComponent<Shader>("MultiMap");
-		object.AddComponent(rscManager->GetMaterial("Ground"));
-		LogS("Object Material", object.GetComponent<Material>()->getName());
-		LogS("Object shader", object.GetComponent<Shader>()->getName());
-
+		object.AddComponent(rscManager->GetShader("Other"));
 		//LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 		if (Time::frameCount % 120 == 0)
 			LogS("Framerate", STR(Time::frameRate));

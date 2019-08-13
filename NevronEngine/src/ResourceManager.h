@@ -42,34 +42,34 @@ public:
 	//Will return a shader by name. If it doesn't exist it will attempt to load it from file
 	rsc<Shader> GetShader(const std::string& name);
 	//Will return a shader by ID. Returns nullptr if it doesn't exist
-	rsc<Shader> GetShader(unsigned int ID);
+	rsc<Shader> GetShader(GUID ID);
 
 	//Will return a model by name. If it doesn't exist it will attempt to load it from file
 	rsc<Model> GetModel(const std::string& name);
 	//Will return a model by ID. Returns nullptr if it doesn't exist
-	rsc<Model> GetModel(unsigned int ID);
+	rsc<Model> GetModel(GUID ID);
 
 	//Will return a material by name. If it doesn't exist it will attempt to load it from file
 	rsc<Material> GetMaterial(const std::string& name);
 	//Will return a material by ID. Returns nullptr if it doesn't exist
-	rsc<Material> GetMaterial(unsigned int ID);
+	rsc<Material> GetMaterial(GUID ID);
 
 	//Will return a uniformBuffer by name. If it doesn't exist it will attempt to load it from file
 	rsc<UniformBuffer> GetUBO(const std::string& name);
 	//Will return a uniformBuffer by ID. Returns nullptr if it doesn't exist
-	rsc<UniformBuffer> GetUBO(unsigned int ID);
+	rsc<UniformBuffer> GetUBO(GUID ID);
 
 	bool DeleteShader(const std::string& name);
-	bool DeleteShader(unsigned int ID);
+	bool DeleteShader(GUID ID);
 
 	bool DeleteModel(const std::string& name);
-	bool DeleteModel(unsigned int ID);
+	bool DeleteModel(GUID ID);
 
 	bool DeleteMaterial(const std::string& name);
-	bool DeleteMaterial(unsigned int ID);
+	bool DeleteMaterial(GUID ID);
 
 	bool DeleteUBO(const std::string& name);
-	bool DeleteUBO(unsigned int ID);
+	bool DeleteUBO(GUID ID);
 public:
 #pragma region Get resource by name
 	//Will return a shader by name. If it doesn't exist it will attempt to load it from file
@@ -93,24 +93,24 @@ public:
 #pragma region Get resource by ID
 
 	template <typename R>
-	inline rsc<R> GetResource(unsigned int ID) = delete;
+	inline rsc<R> GetResource(GUID ID) = delete;
 	template<>
-	inline rsc<Shader> GetResource<Shader>(unsigned int ID) { return GetShader(ID); }
+	inline rsc<Shader> GetResource<Shader>(GUID ID) { return GetShader(ID); }
 	
 
 	template<>
 	//Will return a model by ID. Returns nullptr if it doesn't exist
-	inline rsc<Model> GetResource<Model>(unsigned int ID) { return GetModel(ID); }
+	inline rsc<Model> GetResource<Model>(GUID ID) { return GetModel(ID); }
 
 
 	template<>
 	//Will return a material by ID. Returns nullptr if it doesn't exist
-	inline rsc<Material> GetResource<Material>(unsigned int ID) { return GetMaterial(ID); }
+	inline rsc<Material> GetResource<Material>(GUID ID) { return GetMaterial(ID); }
 	
 
 	template <>
 	//Will return a uniformBuffer by ID. Returns nullptr if it doesn't exist
-	inline rsc<UniformBuffer> GetResource<UniformBuffer>(unsigned int ID) { return GetUBO(ID); }
+	inline rsc<UniformBuffer> GetResource<UniformBuffer>(GUID ID) { return GetUBO(ID); }
 
 #pragma endregion
 	//Will not free the memory but remove it from the list. rsc wrapper deletes the internal pointer. Returns true if resource could be deleted
@@ -136,22 +136,22 @@ public:
 #pragma region Freeing of resources by ID
 
 	template <typename D>
-	inline bool DeleteResource(unsigned int ID) = delete;
+	inline bool DeleteResource(GUID ID) = delete;
 
 	template <>
-	inline bool DeleteResource<Shader>(unsigned int ID) { return DeleteShader(ID); }
+	inline bool DeleteResource<Shader>(GUID ID) { return DeleteShader(ID); }
 	
 
 	template <>
-	inline bool DeleteResource<Model>(unsigned int ID) { return DeleteModel(ID); }
+	inline bool DeleteResource<Model>(GUID ID) { return DeleteModel(ID); }
 
 
 	template <>
-	inline bool DeleteResource<Material>(unsigned int ID) { return DeleteMaterial(ID); }
+	inline bool DeleteResource<Material>(GUID ID) { return DeleteMaterial(ID); }
 	
 
 	template <>
-	inline bool DeleteResource<UniformBuffer>(unsigned int ID) { return DeleteUBO(ID); }
+	inline bool DeleteResource<UniformBuffer>(GUID ID) { return DeleteUBO(ID); }
 #pragma endregion
 };
 

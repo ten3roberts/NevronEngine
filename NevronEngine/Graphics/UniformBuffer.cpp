@@ -4,7 +4,7 @@
 #include "GL/glew.h"
 #include <src/ResourceManager.h>
 
-UniformBuffer::UniformBuffer(const std::string& name, const void* data, unsigned int size) : m_name(name)
+UniformBuffer::UniformBuffer(const std::string& name, const void* data, unsigned int size)
 {
 	m_name = name;
 	//Buffer generation
@@ -16,7 +16,7 @@ UniformBuffer::UniformBuffer(const std::string& name, const void* data, unsigned
 	m_slot = ResourceManager::Get()->GetUBOSlot();
 }
 
-UniformBuffer::UniformBuffer(const std::string& name) : m_bufferID(0)
+UniformBuffer::UniformBuffer(const std::string& name)
 {
 	m_name = name;
 
@@ -50,8 +50,8 @@ void UniformBuffer::setData(Shader* shader, const void* data, unsigned int size,
 
 	glUnmapBuffer(GL_UNIFORM_BUFFER);
 	glBindBufferBase(GL_UNIFORM_BUFFER, m_slot, m_bufferID);
-	int uniformIndex = glGetUniformBlockIndex(shader->getID(), "Environment");
-	glUniformBlockBinding(shader->getID(), uniformIndex, m_slot);
+	int uniformIndex = glGetUniformBlockIndex(shader->getBufferID(), "Environment");
+	glUniformBlockBinding(shader->getBufferID(), uniformIndex, m_slot);
 }
 
 void UniformBuffer::setData(unsigned int shaderID, const void* data, unsigned int size, unsigned int offset)

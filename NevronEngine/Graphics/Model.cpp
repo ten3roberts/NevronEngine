@@ -12,7 +12,7 @@ Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 
 	//Adds vertices
 	m_vertexArray->AddBuffer(*m_vertexBuffer, layout);
-	m_rscID = m_vertexArray->getID();
+	m_bufferID = m_vertexArray->getBufferID();
 }
 
 Model::Model(const std::string& name)

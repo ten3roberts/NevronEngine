@@ -1,11 +1,11 @@
-#include "UUID.h"
+#include "GUID.h"
 
-UUID::UUID()
+GUID::GUID()
 {
 	Generate();
 }
 
-void UUID::Generate()
+void GUID::Generate()
 {
 	std::bitset<128> bits;
 

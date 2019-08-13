@@ -24,25 +24,25 @@ void ResourceManager::Refresh()
 	for (int i = 0; i < m_shaders.size(); i++)
 	{
 		if (m_shaders[i].getReferenceCount() == 0)
-			DeleteResource<Shader>(m_shaders[i]->getID());
+			DeleteResource<Shader>(m_shaders[i]->getGUID());
 	}
 
 	for (int i = 0; i < m_models.size(); i++)
 	{
 		if (m_models[i].getReferenceCount() == 0)
-			DeleteResource<Model>(m_models[i]->getID());
+			DeleteResource<Model>(m_models[i]->getGUID());
 	}
 
 	for (int i = 0; i < m_materials.size(); i++)
 	{
 		if (m_materials[i].getReferenceCount() == 0)
-			DeleteResource<Material>(m_materials[i]->getID());
+			DeleteResource<Material>(m_materials[i]->getGUID());
 	}
 
 	for (int i = 0; i < m_uniformBuffers.size(); i++)
 	{
 		if (m_uniformBuffers[i].getReferenceCount() == 0)
-			DeleteResource<Model>(m_uniformBuffers[i]->getID());
+			DeleteResource<Model>(m_uniformBuffers[i]->getGUID());
 	}
 }
 
@@ -85,11 +85,11 @@ rsc<Shader> ResourceManager::GetShader(const std::string& name)
 	return m_shaders.emplace_back(shader);
 }
 
-rsc<Shader> ResourceManager::GetShader(unsigned int ID)
+rsc<Shader> ResourceManager::GetShader(GUID ID)
 {
 	for (unsigned int i = 0; i < m_shaders.size(); i++)
 	{
-		if (m_shaders[i]->getID() == ID)
+		if (m_shaders[i]->getGUID() == ID)
 			return m_shaders[i];
 	}
 	return nullptr;
@@ -107,11 +107,11 @@ rsc<Model> ResourceManager::GetModel(const std::string& name)
 	return m_models.emplace_back(model);
 }
 
-rsc<Model> ResourceManager::GetModel(unsigned int ID)
+rsc<Model> ResourceManager::GetModel(GUID ID)
 {
 	for (unsigned int i = 0; i < m_models.size(); i++)
 	{
-		if (m_models[i]->getID() == ID)
+		if (m_models[i]->getGUID() == ID)
 			return m_models[i];
 	}
 	return nullptr;
@@ -129,11 +129,11 @@ rsc<Material> ResourceManager::GetMaterial(const std::string& name)
 	return m_materials.emplace_back(material);
 }
 
-rsc<Material> ResourceManager::GetMaterial(unsigned int ID)
+rsc<Material> ResourceManager::GetMaterial(GUID ID)
 {
 	for (unsigned int i = 0; i < m_materials.size(); i++)
 	{
-		if (m_materials[i]->getID() == ID)
+		if (m_materials[i]->getGUID() == ID)
 			return m_materials[i];
 	}
 	return nullptr;
@@ -151,11 +151,11 @@ rsc<UniformBuffer> ResourceManager::GetUBO(const std::string& name)
 	return m_uniformBuffers.emplace_back(rsc<UniformBuffer>(uBuffer));
 }
 
-rsc<UniformBuffer> ResourceManager::GetUBO(unsigned int ID)
+rsc<UniformBuffer> ResourceManager::GetUBO(GUID ID)
 {
 	for (unsigned int i = 0; i < m_uniformBuffers.size(); i++)
 	{
-		if (m_uniformBuffers[i]->getID() == ID)
+		if (m_uniformBuffers[i]->getGUID() == ID)
 			return m_uniformBuffers[i];
 	}
 	return nullptr;
@@ -177,11 +177,11 @@ bool ResourceManager::DeleteShader(const std::string& name)
 	return false;
 }
 
-bool ResourceManager::DeleteShader(unsigned int ID)
+bool ResourceManager::DeleteShader(GUID ID)
 {
 	for (int i = 0; i < m_shaders.size(); i++)
 	{
-		if (m_shaders[i]->getID() == ID)
+		if (m_shaders[i]->getGUID() == ID)
 		{
 			LogS("ResourceManager", "Deleting shader %s", m_shaders[i]->getName());
 			m_shaders.erase(m_shaders.begin() + i);
@@ -205,11 +205,11 @@ bool ResourceManager::DeleteModel(const std::string& name)
 	return false;
 }
 
-bool ResourceManager::DeleteModel(unsigned int ID)
+bool ResourceManager::DeleteModel(GUID ID)
 {
 	for (int i = 0; i < m_models.size(); i++)
 	{
-		if (m_models[i]->getID() == ID)
+		if (m_models[i]->getGUID() == ID)
 		{
 			LogS("ResourceManager", "Deleting model %s", m_models[i]->getName());
 			m_models.erase(m_models.begin() + i);
@@ -232,11 +232,11 @@ bool ResourceManager::DeleteMaterial(const std::string& name)
 	return false;
 }
 
-bool ResourceManager::DeleteMaterial(unsigned int ID)
+bool ResourceManager::DeleteMaterial(GUID ID)
 {
 	for (int i = 0; i < m_materials.size(); i++)
 	{
-		if (m_materials[i]->getID() == ID)
+		if (m_materials[i]->getGUID() == ID)
 		{
 			LogS("ResourceManager", "Deleting material %s", m_materials[i]->getName());
 			m_materials.erase(m_materials.begin() + i);
@@ -260,11 +260,11 @@ bool ResourceManager::DeleteUBO(const std::string& name)
 	return false;
 }
 
-bool ResourceManager::DeleteUBO(unsigned int ID)
+bool ResourceManager::DeleteUBO(GUID ID)
 {
 	for (int i = 0; i < m_uniformBuffers.size(); i++)
 	{
-		if (m_uniformBuffers[i]->getID() == ID)
+		if (m_uniformBuffers[i]->getGUID() == ID)
 		{
 			LogS("ResourceManager", "Deleting UBO %s", m_uniformBuffers[i]->getName());
 			m_uniformBuffers.erase(m_uniformBuffers.begin() + i);

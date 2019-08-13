@@ -1,0 +1,242 @@
+(Utility @ 23.38.44): Working directory changed from " " to " C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\ "
+(Settings @ 23.38.44): Loading Settingsfile: ...\bin\Assets\Settings.cnf
+(Settings @ 23.38.44): Resoulution: 1280, 720
+(Settings @ 23.38.44): UseNativeResolution: true
+(Settings @ 23.38.44): ScreenFar: 100.000000
+(Settings @ 23.38.44): ScreenNear: 0.010000
+(Settings @ 23.38.44): DisplayMode: 0
+(Settings @ 23.38.44): Vsync: false
+(Settings @ 23.38.44): MSAA: false
+(Settings @ 23.38.44): MSAASamples: 1
+(Settings @ 23.38.44): FOV: 1.000000
+(Settings @ 23.38.44): Sensitivity: 1.000000
+(Main @ 23.38.44): NevronEngine initializing...
+(Texture: NevronLogo.a.png @ 23.38.44): Loading texture: ...\Textures\Icons\NevronLogo.a.png
+(Texture: Arrow.png @ 23.38.44): Loading texture: ...\Textures\Icons\Arrow.png
+(Main @ 23.38.44): OpenGl version: 3.3.0 NVIDIA 431.60
+(Timer: Startup @ 23.38.44): Duration: 0.679065s
+(OpenGL Callback @ 23.38.44): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 23.38.44): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(ResourceManager @ 23.38.44): No shader exists with name Basic, creating
+(Shader: Basic @ 23.38.44): Compiled vertex shader
+(Shader: Basic @ 23.38.44): Compiled fragment shader
+(Shader: MultiMap @ 23.38.44): Compiled vertex shader
+(Shader: MultiMap @ 23.38.44): Compiled fragment shader
+(Texture: NevronLogo.png @ 23.38.44): Loading texture: ...\Textures\Icons\NevronLogo.png
+(ResourceManager @ 23.38.44): No material exists with name Ground, creating
+(Texture: Sand.png @ 23.38.44): Loading texture: ...\Textures\Ground\Sand.png
+(Texture: Grass.png @ 23.38.44): Loading texture: ...\Textures\Ground\Grass.png
+(Texture: Cobble.png @ 23.38.45): Loading texture: ...\Textures\Ground\Cobble.png
+(Texture: 2b2t.png @ 23.38.45): Loading texture: ...\Assets\Textures\2b2t.png
+(OpenGL Callback @ 23.38.45): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 23.38.45): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) has been mapped in HOST memory.
+(Main @ 23.38.45): ----------Entering game loop----------
+
+(ResourceManager @ 23.38.45): No material exists with name Mario, creating
+(Texture: MarioSprite.png @ 23.38.45): Loading texture: ...\Assets\Textures\MarioSprite.png
+---------------------------------------------------------------------------
+(ResourceManager @ 23.38.45): No shader exists with name MultiMap, creating
+(Shader: MultiMap @ 23.38.45): Compiled vertex shader
+(Shader: MultiMap @ 23.38.45): Compiled fragment shader
+(ResourceManager @ 23.38.45): No shader exists with name Basic2, creating
+(FindFile @ 23.38.45): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.38.45): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.38.49): Compiled vertex shader
+(Shader: Basic2 @ 23.38.49): Compiled fragment shader
+(Log @ 23.38.49): Entity 1 pos 0.152348, 0.928617, 0.580889, 0.385693, 0.072512
+(OpenGL Callback @ 23.38.49): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) stored in DMA CACHED memory has been updated.
+(OpenGL Callback @ 23.38.49): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+(OpenGL Callback @ 23.38.49): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+-------------------------------------------------------------------------
+(ResourceManager @ 23.38.49): No shader exists with name Basic2, creating
+(FindFile @ 23.38.49): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.38.49): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.38.50): Compiled vertex shader
+(Shader: Basic2 @ 23.38.50): Compiled fragment shader
+(Log @ 23.38.50): Entity 1 pos 0.862270, 0.888180, 0.727134, 0.494858, 0.733909
+-------------------------------------------------------------------------
+(ResourceManager @ 23.38.50): No shader exists with name Basic2, creating
+(FindFile @ 23.38.50): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.38.50): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.38.50): Compiled vertex shader
+(Shader: Basic2 @ 23.38.50): Compiled fragment shader
+(Log @ 23.38.50): Entity 1 pos 0.050752, 0.623096, 0.798212, 0.422376, 0.124149
+-------------------------------------------------------------------------
+(ResourceManager @ 23.38.50): No shader exists with name Basic2, creating
+(FindFile @ 23.38.50): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.38.50): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.38.51): Compiled vertex shader
+(Shader: Basic2 @ 23.38.51): Compiled fragment shader
+(ResourceManager @ 23.38.51): Deleting shader 
+(ResourceManager @ 23.38.51): Deleting shader 
+(Log @ 23.38.51): Entity 1 pos 0.870724, 0.371075, 0.109989, 0.781915, 0.773553
+-------------------------------------------------------------------------
+(ResourceManager @ 23.38.52): No shader exists with name Basic2, creating
+(FindFile @ 23.38.52): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.38.52): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.39.59): Compiled vertex shader
+(Shader: Basic2 @ 23.39.59): Compiled fragment shader
+(ResourceManager @ 23.39.59): Deleting shader 
+(Log @ 23.39.59): Entity 1 pos 0.579577, 0.960784, 0.896573, 0.141697, 0.877132
+-------------------------------------------------------------------------
+(ResourceManager @ 23.39.59): No shader exists with name Basic2, creating
+(FindFile @ 23.39.59): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.39.59): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.00): Compiled vertex shader
+(Shader: Basic2 @ 23.40.00): Compiled fragment shader
+(ResourceManager @ 23.40.00): Deleting shader 
+(Log @ 23.40.00): Entity 1 pos 0.942106, 0.599506, 0.836207, 0.151189, 0.675436
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.00): No shader exists with name Basic2, creating
+(FindFile @ 23.40.00): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.00): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.01): Compiled vertex shader
+(Shader: Basic2 @ 23.40.01): Compiled fragment shader
+(ResourceManager @ 23.40.01): Deleting shader 
+(Log @ 23.40.01): Entity 1 pos 0.210639, 0.460311, 0.080020, 0.963744, 0.036714
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.01): No shader exists with name Basic2, creating
+(FindFile @ 23.40.01): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.01): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.01): Compiled vertex shader
+(Shader: Basic2 @ 23.40.01): Compiled fragment shader
+(ResourceManager @ 23.40.01): Deleting shader 
+(Log @ 23.40.01): Entity 1 pos 0.241829, 0.924192, 0.624958, 0.192755, 0.238227
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.01): No shader exists with name Basic2, creating
+(FindFile @ 23.40.01): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.01): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.37): Compiled vertex shader
+(Shader: Basic2 @ 23.40.37): Compiled fragment shader
+(ResourceManager @ 23.40.37): Deleting shader 
+(Log @ 23.40.37): Entity 1 pos 0.822657, 0.637074, 0.410901, 0.689505, 0.798944
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.37): No shader exists with name Basic2, creating
+(FindFile @ 23.40.37): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.37): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.38): Compiled vertex shader
+(Shader: Basic2 @ 23.40.38): Compiled fragment shader
+(Log @ 23.40.38): Entity 1 pos 0.775719, 0.124485, 0.560594, 0.948973, 0.761925
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.38): No shader exists with name Basic2, creating
+(FindFile @ 23.40.38): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.38): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.41): Compiled vertex shader
+(Shader: Basic2 @ 23.40.41): Compiled fragment shader
+(ResourceManager @ 23.40.41): Deleting shader 
+(Log @ 23.40.41): Entity 1 pos 0.537065, 0.249214, 0.809198, 0.287606, 0.134739
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.41): No shader exists with name Basic2, creating
+(FindFile @ 23.40.41): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.41): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.43): Compiled vertex shader
+(Shader: Basic2 @ 23.40.43): Compiled fragment shader
+(ResourceManager @ 23.40.43): Deleting shader 
+(Log @ 23.40.43): Entity 1 pos 0.870571, 0.767113, 0.614124, 0.556322, 0.500290
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.43): No shader exists with name Basic2, creating
+(FindFile @ 23.40.43): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.43): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.43): Compiled vertex shader
+(Shader: Basic2 @ 23.40.43): Compiled fragment shader
+(ResourceManager @ 23.40.43): Deleting shader 
+(Log @ 23.40.43): Entity 1 pos 0.202612, 0.254646, 0.951872, 0.887722, 0.735405
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.43): No shader exists with name Basic2, creating
+(FindFile @ 23.40.43): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.43): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.44): Compiled vertex shader
+(Shader: Basic2 @ 23.40.44): Compiled fragment shader
+(ResourceManager @ 23.40.44): Deleting shader 
+(ResourceManager @ 23.40.44): Deleting shader 
+(Log @ 23.40.44): Entity 1 pos 0.781945, 0.714927, 0.120151, 0.803217, 0.024049
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.44): No shader exists with name Basic2, creating
+(FindFile @ 23.40.44): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.44): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.45): Compiled vertex shader
+(Shader: Basic2 @ 23.40.45): Compiled fragment shader
+(ResourceManager @ 23.40.45): Deleting shader 
+(Log @ 23.40.45): Entity 1 pos 0.569536, 0.604297, 0.943358, 0.616993, 0.960601
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.45): No shader exists with name Basic2, creating
+(FindFile @ 23.40.45): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.45): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.46): Compiled vertex shader
+(Shader: Basic2 @ 23.40.46): Compiled fragment shader
+(ResourceManager @ 23.40.46): Deleting shader 
+(Log @ 23.40.46): Entity 1 pos 0.777825, 0.989746, 0.849330, 0.932463, 0.753655
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.46): No shader exists with name Basic2, creating
+(FindFile @ 23.40.46): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.46): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.46): Compiled vertex shader
+(Shader: Basic2 @ 23.40.46): Compiled fragment shader
+(ResourceManager @ 23.40.46): Deleting shader 
+(Log @ 23.40.46): Entity 1 pos 0.251656, 0.828700, 0.138310, 0.385815, 0.719047
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.46): No shader exists with name Basic2, creating
+(FindFile @ 23.40.46): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.46): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.47): Compiled vertex shader
+(Shader: Basic2 @ 23.40.47): Compiled fragment shader
+(ResourceManager @ 23.40.47): Deleting shader 
+(Log @ 23.40.47): Entity 1 pos 0.282937, 0.482986, 0.442335, 0.639241, 0.063387
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.47): No shader exists with name Basic2, creating
+(FindFile @ 23.40.47): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.47): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.48): Compiled vertex shader
+(Shader: Basic2 @ 23.40.48): Compiled fragment shader
+(ResourceManager @ 23.40.48): Deleting shader 
+(Log @ 23.40.48): Entity 1 pos 0.146550, 0.656789, 0.647908, 0.278634, 0.565813
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.48): No shader exists with name Basic2, creating
+(FindFile @ 23.40.48): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.48): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.48): Compiled vertex shader
+(Shader: Basic2 @ 23.40.48): Compiled fragment shader
+(ResourceManager @ 23.40.48): Deleting shader 
+(Log @ 23.40.48): Entity 1 pos 0.609394, 0.190435, 0.428480, 0.848292, 0.454329
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.48): No shader exists with name Basic2, creating
+(FindFile @ 23.40.48): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.48): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.49): Compiled vertex shader
+(Shader: Basic2 @ 23.40.49): Compiled fragment shader
+(ResourceManager @ 23.40.49): Deleting shader 
+(Log @ 23.40.49): Entity 1 pos 0.696249, 0.768364, 0.477615, 0.957335, 0.043031
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.49): No shader exists with name Basic2, creating
+(FindFile @ 23.40.49): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.49): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.49): Compiled vertex shader
+(Shader: Basic2 @ 23.40.49): Compiled fragment shader
+(ResourceManager @ 23.40.49): Deleting shader 
+(Log @ 23.40.49): Entity 1 pos 0.564745, 0.344462, 0.958068, 0.129521, 0.466597
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.49): No shader exists with name Basic2, creating
+(FindFile @ 23.40.49): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.49): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.49): Compiled vertex shader
+(Shader: Basic2 @ 23.40.49): Compiled fragment shader
+(ResourceManager @ 23.40.49): Deleting shader 
+(Log @ 23.40.49): Entity 1 pos 0.850856, 0.344829, 0.550310, 0.564409, 0.051912
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.49): No shader exists with name Basic2, creating
+(FindFile @ 23.40.49): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.49): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.50): Compiled vertex shader
+(Shader: Basic2 @ 23.40.50): Compiled fragment shader
+(ResourceManager @ 23.40.50): Deleting shader 
+(Log @ 23.40.50): Entity 1 pos 0.951323, 0.654530, 0.865413, 0.153508, 0.380139
+-------------------------------------------------------------------------
+(ResourceManager @ 23.40.50): No shader exists with name Basic2, creating
+(FindFile @ 23.40.50): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.40.50): Couldn't find shader with name: 
+(Shader: Basic2 @ 23.40.50): Compiled vertex shader
+(Shader: Basic2 @ 23.40.50): Compiled fragment shader
+(ResourceManager @ 23.40.50): Deleting shader 
+(Log @ 23.40.50): Entity 1 pos 0.465316, 0.476608, 0.691183, 0.147313, 0.443678
+-------------------------------------------------------------------------
+(ResourceManager @ 23.

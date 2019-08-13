@@ -7,7 +7,7 @@ class VertexArray
 {
 private:
 	//Vertex attrib object; vao
-	unsigned int m_rendererID;
+	unsigned int m_bufferID;
 public:
 	VertexArray();
 	~VertexArray();
@@ -18,7 +18,7 @@ public:
 	void Bind() const;
 	void Unbind() const;
 
-	unsigned int getID() const { return m_rendererID; }
+	unsigned int getBufferID() const { return m_bufferID; }
 
 
 };

@@ -1,0 +1,48 @@
+(Utility @ 23.54.54): Working directory changed from " " to " C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\ "
+(Settings @ 23.54.54): Loading Settingsfile: ...\bin\Assets\Settings.cnf
+(Settings @ 23.54.54): Resoulution: 1280, 720
+(Settings @ 23.54.54): UseNativeResolution: true
+(Settings @ 23.54.54): ScreenFar: 100.000000
+(Settings @ 23.54.54): ScreenNear: 0.010000
+(Settings @ 23.54.54): DisplayMode: 0
+(Settings @ 23.54.54): Vsync: false
+(Settings @ 23.54.54): MSAA: false
+(Settings @ 23.54.54): MSAASamples: 1
+(Settings @ 23.54.54): FOV: 1.000000
+(Settings @ 23.54.54): Sensitivity: 1.000000
+(Main @ 23.54.54): NevronEngine initializing...
+(Texture: NevronLogo.a.png @ 23.54.55): Loading texture: ...\Textures\Icons\NevronLogo.a.png
+(Texture: Arrow.png @ 23.54.55): Loading texture: ...\Textures\Icons\Arrow.png
+(Main @ 23.54.55): OpenGl version: 3.3.0 NVIDIA 431.60
+(Timer: Startup @ 23.54.55): Duration: 0.67701s
+(OpenGL Callback @ 23.54.55): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 23.54.55): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(ResourceManager @ 23.54.55): No shader exists with name Basic, creating
+(Shader: Basic @ 23.54.55): Compiled vertex shader
+(Shader: Basic @ 23.54.55): Compiled fragment shader
+(Shader: MultiMap @ 23.54.55): Compiled vertex shader
+(Shader: MultiMap @ 23.54.55): Compiled fragment shader
+(Texture: NevronLogo.png @ 23.54.55): Loading texture: ...\Textures\Icons\NevronLogo.png
+(ResourceManager @ 23.54.55): No material exists with name Ground, creating
+(Texture: Sand.png @ 23.54.55): Loading texture: ...\Textures\Ground\Sand.png
+(Texture: Grass.png @ 23.54.55): Loading texture: ...\Textures\Ground\Grass.png
+(Texture: Cobble.png @ 23.54.55): Loading texture: ...\Textures\Ground\Cobble.png
+(Texture: 2b2t.png @ 23.54.55): Loading texture: ...\Assets\Textures\2b2t.png
+(OpenGL Callback @ 23.54.55): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 23.54.55): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) has been mapped in HOST memory.
+(Main @ 23.54.55): ----------Entering game loop----------
+
+(ResourceManager @ 23.54.55): No material exists with name Mario, creating
+(Texture: MarioSprite.png @ 23.54.55): Loading texture: ...\Assets\Textures\MarioSprite.png
+-------------------------------------------------------------------------
+(ResourceManager @ 23.54.56): No shader exists with name Basic2, creating
+(FindFile @ 23.54.56): No file found with name: Basic2.glsl
+(Shader: Basic2 @ 23.54.56): Couldn't find shader with name: 
+(Could not parse vertex shader @ 23.54.56): 
+(Could not parse fragment shader @ 23.54.56): 
+(Shader: Basic2 @ 23.54.56): Compiled vertex shader
+(Shader: Basic2 @ 23.54.56): Compiled fragment shader
+(Log @ 23.54.56): Entity 1 pos 0.237220, 0.067049, 0.423963, 0.768517, 0.125462
+(OpenGL Callback @ 23.54.56): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) stored in DMA CACHED memory has been updated.
+(OpenGL Callback @ 23.54.56): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+(OpenGL Callback @ 23.54.56): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) w

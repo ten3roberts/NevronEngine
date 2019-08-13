@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <src/Logger.h>
+#include <src/GUID.h>
 
 class Shader;
 class Model;
@@ -11,6 +12,8 @@ class UniformBuffer;
 class Component
 {
 public:
+	Component();
+	Component(const std::string& name);
 	~Component();
 	//Used to differentiate the type of object if it has several inheritors; like scripts
 	enum class Type
@@ -21,13 +24,16 @@ protected:
 	std::string m_name;
 
 	//The ID of the resource of this component if managed by resource manager, if not value is -1 or UINT32_MAX
-	//For OpenGL bound classes the rscID is the OpenGL location/id and is not to be determined by the resource manager
-	unsigned int m_rscID;
+	//For OpenGL bound classes; the id of the buffer or program on the GPU
+	unsigned int m_bufferID;
+private:
+	GUID m_GUID;
 public:
 
 	const std::string& getName() const { return m_name; };
-	unsigned int getID() const { return m_rscID; }
-
+	GUID getGUID() const { return m_GUID; }
+	unsigned int getBufferID() { return m_bufferID; }
+	
 	//Will return what base type the component is if it has children classes. Scripts will be derived so it's used to keep track of what it is.
 	virtual Type getType() const { return Type::Component; }
 
