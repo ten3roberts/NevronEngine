@@ -15,7 +15,7 @@ Quaternion::Quaternion(const Vector3& axis, float angle)
 	y = axis.y * sinAngle;
 	z = axis.z * sinAngle;
 	w = cosf(angle / 2);// sqrt(1 - sinAngle * sinAngle); //Cosine of half angle
-	*this = Normalize();
+	*this = Normalise();
 }
 
 Quaternion::Quaternion(float x, float y, float z, float w) : x(x), y(y), z(z), w(w)
@@ -66,7 +66,7 @@ Quaternion Quaternion::Euler(const Vector3& euler)
 
 Quaternion Quaternion::PointTo(const Vector3& direction)
 {
-	Vector3 forwardVector = direction.Normalize();
+	Vector3 forwardVector = direction.Normalise();
 
 	float dot = Vector3::Dot(Vector3::forward, forwardVector);
 
@@ -81,13 +81,13 @@ Quaternion Quaternion::PointTo(const Vector3& direction)
 
 	float rotAngle = (float)acos(dot);
 	Vector3 rotAxis = Vector3::Cross(Vector3::forward, forwardVector);
-	rotAxis = rotAxis.Normalize();
+	rotAxis = rotAxis.Normalise();
 	return Quaternion(rotAxis, rotAngle);
 }
 
 Quaternion Quaternion::PointTo(const Vector3& sourcePoint, const Vector3& destinationPoint)
 {
-	Vector3 forwardVector = (destinationPoint - sourcePoint).Normalize();
+	Vector3 forwardVector = (destinationPoint - sourcePoint).Normalise();
 
 	float dot = Vector3::Dot(Vector3::forward, forwardVector);
 
@@ -102,7 +102,7 @@ Quaternion Quaternion::PointTo(const Vector3& sourcePoint, const Vector3& destin
 
 	float rotAngle = (float)acos(dot);
 	Vector3 rotAxis = Vector3::Cross(Vector3::forward, forwardVector);
-	rotAxis = rotAxis.Normalize();
+	rotAxis = rotAxis.Normalise();
 	return Quaternion(rotAxis, rotAngle);
 }
 
@@ -207,12 +207,12 @@ Vector3 Quaternion::toEuler()
 	return result;
 }
 
-Quaternion Quaternion::Normalize() const
+Quaternion Quaternion::Normalise() const
 {
 	if (!Valid())
 		return *this;
 	float magnitude = Magnitude();
-	if (abs(magnitude - 1) < 0.001) //If its already normalized
+	if (abs(magnitude - 1) < 0.001) //If its already Normalised
 	{
 		return *this;
 	}
@@ -226,7 +226,7 @@ Quaternion Quaternion::Normalize() const
 	return outQ;
 }
 
-void Quaternion::Normalize(Quaternion* out)
+void Quaternion::Normalise(Quaternion* out)
 {
 	if (!out)
 		return;
@@ -236,7 +236,7 @@ void Quaternion::Normalize(Quaternion* out)
 
 
 	float magnitude = Magnitude();
-	if (abs(magnitude - 1) < 0.001) //If its already normalized
+	if (abs(magnitude - 1) < 0.001) //If its already Normalised
 	{
 		*out = *this;
 	}
@@ -319,9 +319,9 @@ float Quaternion::Dot(const Quaternion& q0, const Quaternion& q1)
 Quaternion Quaternion::Slerp(const Quaternion& a, const Quaternion& b, float t)
 {
 	// Only unit quaternions are valid rotations.
-	// Normalize to avoid undefined behavior.
-	Quaternion q0 = a.Normalize();
-	Quaternion q1 = b.Normalize();
+	// Normalise to avoid undefined behavior.
+	Quaternion q0 = a.Normalise();
+	Quaternion q1 = b.Normalise();
 
 	// get the dot product between the two quaternions
 	float dot = Dot(q0, q1);
@@ -337,10 +337,10 @@ Quaternion Quaternion::Slerp(const Quaternion& a, const Quaternion& b, float t)
 	if (dot > CLOSEST_DOT)
 	{
 		// If the inputs are too close, linearly interpolate
-		// and normalize the result.
+		// and Normalise the result.
 
 		Quaternion result = q0 + (q1 - q0) * t;
-		result = result.Normalize();
+		result = result.Normalise();
 		return result;
 	}
 
@@ -359,10 +359,10 @@ Quaternion Quaternion::Slerp(const Quaternion& a, const Quaternion& b, float t)
 Quaternion Quaternion::Lerp(const Quaternion& a, const Quaternion& b, float t)
 {
 	// If the inputs are too close, linearly interpolate
-	// and normalize the result.
+	// and Normalise the result.
 	t = Math::Clamp01(t);
 	Quaternion result = a + (b - a) * t;
-	result = result.Normalize();
+	result = result.Normalise();
 	return result;
 }
 

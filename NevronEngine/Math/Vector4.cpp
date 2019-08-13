@@ -176,7 +176,7 @@ float Vector4::Magnitude() const
 	return sqrt(x * x + y * y + z * z + w * w);
 }
 
-Vector4 Vector4::Normalize() const
+Vector4 Vector4::Normalise() const
 {
 	if (SqrMagnitude() < 0.000001f)
 		return Vector4(0, 0, 0, 0);
@@ -185,7 +185,7 @@ Vector4 Vector4::Normalize() const
 	return Vector4(x / mag, y / mag, z / mag, w / mag);
 }
 
-void Vector4::Normalize(Vector4* out)
+void Vector4::Normalise(Vector4* out)
 {
 	if (SqrMagnitude() < 0.000001f)
 		return;
@@ -203,12 +203,12 @@ Vector4 Vector4::ClampMag(float min, float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalize() * max;
+		return Normalise() * max;
 	}
 
 	else if (SqrMagnitude() < min * min)
 	{
-		return Normalize() * min;
+		return Normalise() * min;
 	}
 	return *this;
 }
@@ -217,7 +217,7 @@ Vector4 Vector4::ClampMinMag(float min) const
 {
 	if (SqrMagnitude() < min * min)
 	{
-		return Normalize() * min;
+		return Normalise() * min;
 	}
 	return *this;
 }
@@ -226,7 +226,7 @@ Vector4 Vector4::ClampMaxMag(float max) const
 {
 	if (SqrMagnitude() > max * max)
 	{
-		return Normalize() * max;
+		return Normalise() * max;
 	}
 	return *this;
 }
@@ -276,7 +276,7 @@ Vector4 Vector4::Project(const Vector4& vector, const Vector4& axis)
 
 float Vector4::ProjectFlat(const Vector4& vector, const Vector4& axis)
 {
-	return (Dot(vector.Normalize(), axis.Normalize()) * vector.Magnitude());
+	return (Dot(vector.Normalise(), axis.Normalise()) * vector.Magnitude());
 }
 
 Vector4 Vector4::Lerp(const Vector4& a, const Vector4& b, float t)

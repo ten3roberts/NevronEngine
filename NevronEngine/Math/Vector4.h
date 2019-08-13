@@ -76,11 +76,11 @@ struct Vector4
 	inline float Volume() const { return x * y* z* w; }  //Multiplies the components together
 
 
-	//Returns the normalized version of the vector; does not modify the vector
-	Vector4 Normalize() const;
+	//Returns the Normalised version of the vector; does not modify the vector
+	Vector4 Normalise() const;
 
-	//Normalizes the vector and assigns it to $out. Out can be the same as self
-	void Normalize(Vector4* out);
+	//Normalises the vector and assigns it to $out. Out can be the same as self
+	void Normalise(Vector4* out);
 
 	//Will strClamp the vector's magnitude between a minimum and maximum value
 	Vector4 ClampMag(float min, float max) const;

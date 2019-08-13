@@ -93,10 +93,10 @@ struct Vector3
 	float Magnitude() const;
 	inline float Volume() const { return x * y* z; } //Multiplies the components together
 
-	//Returns the normalized version of the vector; does not modify the vector
-	Vector3 Normalize() const;
-	//Normalizes the vector and assigns it to $out. Out can be the same as self
-	void Normalize(Vector3* out);
+	//Returns the Normalised version of the vector; does not modify the vector
+	Vector3 Normalise() const;
+	//Normalises the vector and assigns it to $out. Out can be the same as self
+	void Normalise(Vector3* out);
 
 	//Will strClamp the vector's magnitude between a minimum and maximum value
 	Vector3 ClampMag(float min, float max) const;

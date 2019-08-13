@@ -68,7 +68,7 @@ struct Matrix4
 	static Matrix4 Ortho(float width, float height, float nearZ, float farZ);
 
 	//Will create an orthographic porjection matrix with the hieght and aspect ratio specified centered around 0,0
-	inline static Matrix4 OrthoAspect(float height, float aspect, int nearZ, int farZ) { return Matrix4::Ortho(height * aspect, height, nearZ, farZ); }
+	inline static Matrix4 OrthoAspect(float height, float aspect, float nearZ, float farZ) { return Matrix4::Ortho(height * aspect, height, nearZ, farZ); }
 
 
 	static Matrix4 Perspective(float fov, float aspect, float nearZ, float farZ);
@@ -155,7 +155,7 @@ struct Matrix
 	{
 		ASSERT(m_size == list.size());
 
-		m_data = new float[m_height * m_width];
+		m_data = new float[(__int64)m_height * m_width];
 
 		memcpy(m_data, list.begin(), m_size * sizeof(float));
 	}
@@ -163,12 +163,12 @@ struct Matrix
 	{
 		ASSERT(m_size == list.size());
 
-		m_data = new float[m_height * m_width];
+		m_data = new float[(__int64)m_height * m_width];
 
 		memcpy(m_data, &list[0], m_size * sizeof(float));
 	}
 
-	Matrix(unsigned int height, unsigned int width, float min, float max) { memcpy(m_data, Random(height, width, min, max)[0], height * width * sizeof(float)); }
+	Matrix(unsigned int height, unsigned int width, float min, float max) { memcpy(m_data, Random(height, width, min, max)[0], (__int64)height * width * sizeof(float)); }
 
 
 	Matrix(const Matrix& matrix)

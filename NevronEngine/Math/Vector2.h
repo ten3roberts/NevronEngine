@@ -63,10 +63,10 @@ struct Vector2
 	float Magnitude() const;
 	inline float Volume() const { return x * y; }  //Multiplies the components together
 
-	//Returns the normalized version of the vector; does not modify the vector
-	Vector2 Normalize() const;
-	//Normalizes the vector and assigns it to $out. Out can be the same as self
-	void Normalize(Vector2* out);
+	//Returns the Normalised version of the vector; does not modify the vector
+	Vector2 Normalise() const;
+	//Normalises the vector and assigns it to $out. Out can be the same as self
+	void Normalise(Vector2* out);
 
 	//Will strClamp the vector's magnitude between a minimum and maximum value
 	Vector2 ClampMag(float min, float max) const;
