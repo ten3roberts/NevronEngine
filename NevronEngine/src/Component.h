@@ -46,7 +46,7 @@ struct rsc
 		m_referenceCount = new unsigned int(m_strong);
 	}
 
-	//Enables the instance to be compared with a bool; return true if m_pData is valid
+	//Enables the instance to be compared with a bool; returns true if m_pData is valid
 	operator bool() const
 	{
 		return Valid();

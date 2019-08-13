@@ -2,10 +2,11 @@
 #include "..\Math\Vector.h"
 #include "..\Math\Quaternion.h"
 #include "Time.h"
+#include <src/Component.h>
 
 class Transform;
 
-class Rigidbody
+class Rigidbody : public Component
 {
 public:
 	Vector3 velocity;

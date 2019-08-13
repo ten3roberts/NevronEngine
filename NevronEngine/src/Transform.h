@@ -1,7 +1,8 @@
 #pragma once
 #include <Math/Math.h>
+#include <src/Component.h>
 
-class Transform
+class Transform : public Component
 {
 public:
 	Vector3 position;
