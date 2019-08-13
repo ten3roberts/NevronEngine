@@ -45,12 +45,18 @@ struct rsc
 	{
 		m_referenceCount = new unsigned int(m_strong);
 	}
+
+	//Enables the instance to be compared with a bool; return true if m_pData is valid
+	operator bool() const
+	{
+		return Valid();
+	}
+
 	template <typename A, bool S>
 	//Assigns a new internal pointer and removes one instance from the previous one. The pointer keeps its strength
 	void operator=(const rsc<A, S>& rsc)
 	{
 		Remove();
-		LogS("rsc", "Equals operator");
 		m_pData = dynamic_cast<R*>(rsc.GetPointer());
 		if (!m_pData)
 		{
@@ -63,7 +69,7 @@ struct rsc
 	}
 
 	template<typename D = R, bool S>
-	rsc(const rsc<D, S>& rsc)
+	rsc(const rsc<D, S>& rsc) :m_pData(nullptr), m_referenceCount(nullptr), m_strong(true)
 	{
 		m_pData = dynamic_cast<R*>(rsc.GetPointer());
 		if (!m_pData)
@@ -73,15 +79,13 @@ struct rsc
 		}
 		m_referenceCount = rsc.getRawReferenceCount();
 		(*m_referenceCount)++;
-		m_strong = true;
 	}
 
 	//Ref copy
-	rsc(const rsc<R, Strong>& rsc) : m_strong(1)
+	rsc(const rsc<R, Strong>& rsc) : m_strong(true)
 	{
 		m_pData = rsc.m_pData;
 		m_referenceCount = rsc.m_referenceCount;
-		LogS("rsc", "Copy constructor");
 		(*m_referenceCount)++;
 	}
 
@@ -126,14 +130,14 @@ struct rsc
 
 	R* operator->() { return m_pData; }	//Dereference
 	R* operator&() { return m_pData; }	//Dereference
-	R& operator*() { return *m_pData; }
+	R& operator*() { return *m_pData; } //Returns internal pointer
 
 
 	unsigned int getReferenceCount() const { return *m_referenceCount; }
 	unsigned int* getRawReferenceCount() const { return m_referenceCount; }
 	R* GetPointer() const { return m_pData; }
 
-	bool Valid() { if (m_pData && m_referenceCount) return true; return false; }
+	inline bool Valid() { if (m_pData && m_referenceCount) return true; return false; }
 
 private:
 	R* m_pData;
