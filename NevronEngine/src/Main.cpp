@@ -150,7 +150,7 @@ int main(int argc, char** argv)
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
 		object.AddComponent<Shader>("Basic2");
-		object.AddComponent<Model>("Ground");
+		//object.AddComponent<Model>("Ground");
 		//rscManager->GetShader("Basic2");
 		//LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 
