@@ -1,6 +1,19 @@
 #include "Object.h"
 #include <src/ResourceManager.h>
 
+Object::Object()
+{
+}
+
+Object::Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components)
+{
+
+}
+
+Object::Object(const std::string& shader, const std::string model, const std::string material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
+{
+}
+
 void Object::AddComponent(rsc<Component> component)
 {
 	if (dynamic_cast<Shader*>(&component))
@@ -48,4 +61,17 @@ void Object::RemoveSpecialized(rsc<Component> component)
 		m_transform = nullptr;
 	else if (dynamic_cast<Rigidbody*>(&component))
 		m_rigidbody = nullptr;
+}
+
+void Object::Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
+{
+	ResourceManager* rscManager = ResourceManager::Get();
+	m_shader = rscManager->GetShader(shader);
+	m_components.push_back(m_shader);
+	m_model = rscManager->GetModel(model);
+	m_components.push_back(m_model);
+	m_material = rscManager->GetShader(material);
+	m_components.push_back(m_material);
+
+	m_transform = new Transform(position, rotation, scale);
 }

@@ -1,0 +1,48 @@
+(Utility @ 21.25.28): Working directory changed from " " to " C:\Users\Tim Roberts\Documents\1_NevronEngine\bin\ "
+(Settings @ 21.25.28): Loading Settingsfile: ...\bin\Assets\Settings.cnf
+(Settings @ 21.25.28): Resoulution: 1280, 720
+(Settings @ 21.25.28): UseNativeResolution: true
+(Settings @ 21.25.28): ScreenFar: 100.000000
+(Settings @ 21.25.28): ScreenNear: 0.010000
+(Settings @ 21.25.28): DisplayMode: 0
+(Settings @ 21.25.28): Vsync: false
+(Settings @ 21.25.28): MSAA: false
+(Settings @ 21.25.28): MSAASamples: 1
+(Settings @ 21.25.28): FOV: 1.000000
+(Settings @ 21.25.28): Sensitivity: 1.000000
+(Main @ 21.25.28): NevronEngine initializing...
+(Texture: NevronLogo.a.png @ 21.25.29): Loading texture: ...\Textures\Icons\NevronLogo.a.png
+(Texture: Arrow.png @ 21.25.29): Loading texture: ...\Textures\Icons\Arrow.png
+(Main @ 21.25.29): OpenGl version: 3.3.0 NVIDIA 431.60
+(Timer: Startup @ 21.25.29): Duration: 0.761787s
+(OpenGL Callback @ 21.25.29): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 21.25.29): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(ResourceManager @ 21.25.29): No shader exists with name Basic, creating
+(Shader: Basic @ 21.25.29): Compiled vertex shader
+(Shader: Basic @ 21.25.29): Compiled fragment shader
+(Shader: MultiMap @ 21.25.29): Compiled vertex shader
+(Shader: MultiMap @ 21.25.29): Compiled fragment shader
+(Texture: NevronLogo.png @ 21.25.29): Loading texture: ...\Textures\Icons\NevronLogo.png
+(ResourceManager @ 21.25.29): No material exists with name Ground, creating
+(Texture: Sand.png @ 21.25.29): Loading texture: ...\Textures\Ground\Sand.png
+(Texture: Grass.png @ 21.25.29): Loading texture: ...\Textures\Ground\Grass.png
+(Texture: Cobble.png @ 21.25.29): Loading texture: ...\Textures\Ground\Cobble.png
+(Texture: 2b2t.png @ 21.25.29): Loading texture: ...\Assets\Textures\2b2t.png
+(OpenGL Callback @ 21.25.29): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+(OpenGL Callback @ 21.25.29): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) has been mapped in HOST memory.
+(Main @ 21.25.29): ----------Entering game loop----------
+
+(ResourceManager @ 21.25.29): No material exists with name Mario, creating
+(Texture: MarioSprite.png @ 21.25.29): Loading texture: ...\Assets\Textures\MarioSprite.png
+-------------------------------------------------------------------------
+(ResourceManager @ 21.25.29): No shader exists with name Basic2, creating
+(Shader: Basic2 @ 21.25.29): Compiled vertex shader
+(Shader: Basic2 @ 21.25.29): Compiled fragment shader
+(OpenGL Callback @ 21.25.29): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) stored in DMA CACHED memory has been updated.
+(OpenGL Callback @ 21.25.29): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+(OpenGL Callback @ 21.25.29): type: 33361, severity: 33387, message: Buffer detailed info: Buffer object 3 (bound to GL_UNIFORM_BUFFER (0), and GL_UNIFORM_BUFFER_EXT, usage hint is GL_DYNAMIC_DRAW) will use DMA CACHED memory as the source for buffer object operations.
+---------------------------------
+(Main @ 21.25.35): Closing Window
+(Main @ 21.25.35): Program has terminated correctly
+(ResourceManager @ 21.25.35): Deleting material Mario
+(ResourceManager @ 21.25.35): Slot 0 has already been freed
