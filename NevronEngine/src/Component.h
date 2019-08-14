@@ -33,7 +33,7 @@ public:
 	const std::string& getName() const { return m_name; };
 	GUID getGUID() const { return m_GUID; }
 	unsigned int getBufferID() { return m_bufferID; }
-	
+
 	//Will return what base type the component is if it has children classes. Scripts will be derived so it's used to keep track of what it is.
 	virtual Type getType() const { return Type::Component; }
 
@@ -49,7 +49,8 @@ struct rsc
 	//Creates a new managed resource
 	rsc(R* pData) : m_pData(pData), m_strong(Strong)
 	{
-		m_referenceCount = new unsigned int(m_strong);
+		if (m_pData)
+			m_referenceCount = new unsigned int(m_strong);
 	}
 
 	//Enables the instance to be compared with a bool; returns true if m_pData is valid
@@ -74,8 +75,26 @@ struct rsc
 			(*m_referenceCount)++;
 	}
 
+	void operator=(const rsc<R, Strong>& rsc)
+	{
+		Remove();
+		if (rsc.GetPointer())
+		{
+			m_pData = dynamic_cast<R*>(rsc.GetPointer());
+			if (!m_pData)
+			{
+				LogS("rsc", "Couldn't convert resource; Incompatible types");
+				return;
+			}
+		}
+		m_referenceCount = rsc.getRawReferenceCount();
+		if (m_strong)
+			(*m_referenceCount)++;
+	}
+
+	//Ref copy from other pointer
 	template<typename D = R, bool S>
-	rsc(const rsc<D, S>& rsc) :m_pData(nullptr), m_referenceCount(nullptr), m_strong(true)
+	rsc(const rsc<D, S>& rsc) : m_pData(nullptr), m_referenceCount(nullptr), m_strong(Strong)
 	{
 		m_pData = dynamic_cast<R*>(rsc.GetPointer());
 		if (!m_pData)
@@ -88,7 +107,7 @@ struct rsc
 	}
 
 	//Ref copy
-	rsc(const rsc<R, Strong>& rsc) : m_strong(true)
+	rsc(const rsc<R, Strong>& rsc) : m_strong(Strong)
 	{
 		m_pData = rsc.m_pData;
 		m_referenceCount = rsc.m_referenceCount;
@@ -97,14 +116,7 @@ struct rsc
 
 	~rsc()
 	{
-		if (!Valid()) return;
-		if (m_strong && *m_referenceCount <= 1)
-		{
-			delete m_pData;
-			delete m_referenceCount;
-		}
-		else if (m_strong)
-			(*m_referenceCount)--;
+		Remove();
 	}
 
 	void makeStrong()
@@ -153,11 +165,13 @@ private:
 	unsigned int* m_referenceCount;
 	void Remove()
 	{
-		if (!Valid()) return;
 		if (m_strong && *m_referenceCount <= 1)
 		{
-			delete m_pData;
-			delete m_referenceCount;
+			(*m_referenceCount)--;
+			if (m_pData)
+				delete m_pData;
+			if (m_referenceCount)
+				delete m_referenceCount;
 		}
 		else if (m_strong)
 			(*m_referenceCount)--;
