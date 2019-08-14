@@ -9,7 +9,7 @@ class Shader;
 class Material;
 class UniformBuffer;
 
-#define RSCMAN ResourecManager::Get();
+#define RSCMAN ResourceManager::Get();
 
 class ResourceManager
 {
