@@ -80,6 +80,9 @@ namespace Utility
 
 	std::string FormatTime(int seconds);
 
+	//Will format seconds into either seconds, milliseconds or nanoseconds
+	std::string FormatSeconds(float seconds);
+
 	bool Contains(std::vector<std::string> list, const std::string& item);
 
 	//Returns true if $item occurs in $list

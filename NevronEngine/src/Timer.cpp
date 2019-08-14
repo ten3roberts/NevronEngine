@@ -44,9 +44,9 @@ Timer::~Timer()
 	if (result)
 		* result = duration.count();
 	else if (itemCount > 1)
-		LogS("Timer: " + name, ("Total duration: %G" + unit + "; time per item: %G" + (durationC / itemCount < 0.00001 ? "ns" : durationC / itemCount < 0.01 ? "ms" : "s")), durationU, durationC / itemCount * (durationC / itemCount < 0.00001 ? GIGA : durationC / itemCount < 0.1 ? MEGA : 1));
+		LogS("Timer: " + name, "Duration: %s; time per item %s", FormatSeconds(duration.count()), FormatSeconds(duration.count() / itemCount));
 	else
-		LogS("Timer: " + name, std::string("Duration: %G" + unit), durationU);
+		LogS("Timer: " + name, "Duration: %s", FormatSeconds(duration.count()));
 }
 
 
