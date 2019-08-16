@@ -13,6 +13,7 @@ class Object
 {
 private:
 	void RemoveSpecialized(rsc<Component> component);
+	void Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components);
 	std::vector<rsc<Component>> m_components;
 
 	//Fast access
@@ -22,6 +23,10 @@ private:
 	rsc<Transform, false> m_transform;
 	rsc<Rigidbody, false> m_rigidbody;
 public:
+	Object();
+	Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components);
+	Object(const std::string& shader, const std::string model, const std::string material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components);
+
 #pragma region AddComponent
 	//If added component is shader, model, material, transform or rigibody it will replace the current one
 	void AddComponent(rsc<Component> component);

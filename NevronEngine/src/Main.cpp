@@ -150,7 +150,8 @@ int main(int argc, char** argv)
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
 		object.AddComponent<Shader>("Basic2");
-		//object.AddComponent<Model>("Ground");
+		object.RemoveComponent<Shader>();
+		//object.AddComponent<Shader>("Basic2");
 		//rscManager->GetShader("Basic2");
 		//LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 
@@ -170,7 +171,7 @@ int main(int argc, char** argv)
 		rb1.angularVelocity = Vector3(1, 2.35, 0);
 		rb1.Update(&transform1);
 		Vector list = Random::Array(5);
-		LogS("", "Entity 1 pos %vn", list);
+		//LogS("", "Entity 1 pos %vn", list);
 		transform1.Update();
 
 		Matrix4 camTranslation = Matrix4::Translate({ 0,Math::SineWave(-5, 5, 1, Time::elapsedTime) * 0 ,0 });
