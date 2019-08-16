@@ -236,6 +236,19 @@ std::string Utility::FormatTime(int seconds)
 	return result;
 }
 
+std::string Utility::FormatSeconds(float seconds)
+{
+	if(seconds > 0.1)
+		return std::to_string(seconds) + "s";
+	else if (seconds > 0.0001)
+		return std::to_string(seconds * 1000) + "ms";
+	else if(seconds > 0.0000001)
+		return std::to_string(seconds * 1000000) + "us";
+	else
+		return std::to_string(seconds * 1000000000) + "ns";
+
+}
+
 bool Utility::Contains(std::vector<std::string> list, const std::string& item)
 {
 	for (unsigned int i = 0; i < list.size(); i++)

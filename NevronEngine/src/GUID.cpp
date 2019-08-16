@@ -2,7 +2,6 @@
 
 GUID::GUID()
 {
-	Generate();
 }
 
 void GUID::Generate()
