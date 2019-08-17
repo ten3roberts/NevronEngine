@@ -47,7 +47,7 @@ struct rsc
 {
 	rsc() : m_pData(nullptr), m_referenceCount(nullptr), m_strong(Strong) {}
 	//Creates a new managed resource
-	rsc(R* pData) : m_pData(pData), m_strong(Strong)
+	rsc(R* pData) : m_pData(pData), m_referenceCount(nullptr), m_strong(Strong)
 	{
 		if (m_pData)
 			m_referenceCount = new unsigned int(m_strong);
@@ -163,15 +163,30 @@ private:
 	//Determines whether or not this reference should be accounted into the reference count and should actively keep the resource alive.
 	bool m_strong;
 	unsigned int* m_referenceCount;
+
 	void Remove()
 	{
-		if (m_strong && *m_referenceCount <= 1)
+		if (!m_strong && m_referenceCount && *m_referenceCount == 0)
+		{
+			LogS("rsc", "Last one alive");
+			m_referenceCount = nullptr;
+			delete m_referenceCount;
+		}
+
+		if (m_strong && *m_referenceCount == 1)
 		{
 			(*m_referenceCount)--;
-			if (m_pData)
-				delete m_pData;
 			if (m_referenceCount)
+			{
+				m_referenceCount = nullptr;
 				delete m_referenceCount;
+			}
+			if (m_pData)
+			{
+				m_pData = nullptr;
+				delete m_pData;
+			}
+			
 		}
 		else if (m_strong)
 			(*m_referenceCount)--;
