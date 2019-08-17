@@ -126,7 +126,7 @@ int main(int argc, char** argv)
 
 	shader->Unbind();
 
-	Renderer renderer;
+	Renderer* renderer = Renderer::Get();
 
 	//Matrix4 projectionMat = Matrix4::OrthoAspect(2, settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
 	Matrix4 projectionMat = Matrix4::Perspective(settings->getFOV(), settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
@@ -156,7 +156,7 @@ int main(int argc, char** argv)
 		//rscManager->GetShader("Basic2");
 		//LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 
-		renderer.Clear();
+		renderer->Clear();
 
 		//Binding
 
@@ -182,7 +182,7 @@ int main(int argc, char** argv)
 		shader->setUniformMat4f("u_MVP", u_MVP);
 
 		//renderer.Draw(va, ib, shader);
-		renderer.Draw(&model, *shader);
+		renderer->Draw(&model, shader);
 
 		//Object2
 		transform2.position = { -2, 0, Math::CosineWave(-25, 25, 1, Time::elapsedTime) };
@@ -194,7 +194,7 @@ int main(int argc, char** argv)
 		shader->setUniformMat4f("u_MVP", u_MVP2);
 		material2->Bind();
 		shader->setMaterial(&material2);
-		renderer.Draw(&model, *shader);
+		renderer->Draw(&model, shader);
 
 		//Object3
 
@@ -209,7 +209,7 @@ int main(int argc, char** argv)
 		multiMapShader.setUniformMat4f("u_MVP", u_MVP3);
 		ground->Bind();
 		multiMapShader.setMaterial(&ground);
-		renderer.Draw(&model, multiMapShader);
+		renderer->Draw(&model, &multiMapShader);
 
 		//Swap front and back buffers
 		glfwSwapBuffers(window);

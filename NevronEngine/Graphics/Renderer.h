@@ -21,14 +21,29 @@ bool GLLogCall(const char* function, const char* file, int line);
 #pragma endregion
 class Renderer
 {
-public:
-	Renderer();
+private:
 	~Renderer();
+	Renderer();
+	unsigned int m_bound_shader;
+	unsigned int m_bound_model;
+	unsigned int m_bound_material;
+public:
+	static Renderer* Get();
+
+	//Binds a shader and keeps if it's not already bound
+	void BindShader(rsc<Shader, false> shader);
+
+	//Binds a model and keeps if it's not already bound
+	void BindModel(rsc<Model, false> model);
+
+	//Binds a material to the current shader and keeps if it's not already bound
+	void BindMaterial(rsc<Material, false> material);
+
+	void UnbindShader();
+	void UnbindModel();
+	void UnbindMaterial();
 
 	void Clear(Vector4 color = Vector4::black) const;
-	void Draw(const VertexArray& vertexArray, const IndexBuffer& indexBuffer, const Shader& shader) const;
-	void Draw(Model* model, const Shader& shader) const;
+	void Draw(rsc<Model, false> model, rsc<Shader, false> shader) const;
+	void Draw(rsc<Shader, false> shader, rsc<Model, false> model, rsc<Material, false> material);
 };
-
-
-

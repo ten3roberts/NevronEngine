@@ -1,4 +1,5 @@
 #include "Model.h"
+#include "Renderer.h"
 
 Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 {
@@ -69,17 +70,14 @@ void Model::setIndices(std::vector<unsigned int> indices)
 	m_indexBuffer->setData(&indices[0], sizeof(unsigned int) * indices.size());
 }
 
-void Model::Bind() const
+void Model::Bind()
 {
-	m_vertexArray->Bind();
-	//m_vertexBuffer->Bind();
-	m_indexBuffer->Bind();
+	Renderer::Get()->BindModel(this);
 }
 
-void Model::Unbind() const
+void Model::Unbind()
 {
-	m_vertexArray->Unbind();
-	m_indexBuffer->Unbind();
+	Renderer::Get()->UnbindModel();
 }
 
 void Model::ApplyLayout(VertexBufferLayout* layout)

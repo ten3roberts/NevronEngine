@@ -169,7 +169,6 @@ private:
 		if (!m_strong && m_referenceCount && *m_referenceCount == 0)
 		{
 			LogS("rsc", "Last one alive");
-			m_referenceCount = nullptr;
 			delete m_referenceCount;
 		}
 

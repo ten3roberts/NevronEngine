@@ -38,6 +38,54 @@ Renderer::~Renderer()
 {
 }
 
+Renderer* Renderer::Get()
+{
+	static Renderer* instance;
+	if (!instance)
+		instance = new Renderer();
+	return instance;
+}
+
+void Renderer::BindShader(rsc<Shader, false> shader)
+{
+	unsigned int bufferID = shader->getBufferID();
+	if (m_bound_shader == bufferID)
+		return;
+	glUseProgram(bufferID);
+	m_bound_shader = bufferID;
+}
+
+void Renderer::BindModel(rsc<Model, false> model)
+{
+
+	unsigned int bufferID = model->getBufferID();
+	if (m_bound_shader == bufferID)
+		return;
+	model->getVertexArray()->Bind();
+	model->getIndexBuffer()->Bind();
+	m_bound_shader = bufferID;
+}
+
+void Renderer::BindMaterial(rsc<Material, false> material)
+{
+}
+
+void Renderer::UnbindShader()
+{
+	glUseProgram(0);
+	m_bound_shader = 0;
+}
+
+void Renderer::UnbindModel()
+{
+	glBindVertexArray(0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	m_bound_model = 0;
+}
+
+void Renderer::UnbindMaterial()
+{
+}
 
 
 void Renderer::Clear(Vector4 color) const
@@ -46,21 +94,9 @@ void Renderer::Clear(Vector4 color) const
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Renderer::Draw(const VertexArray& vertexArray, const IndexBuffer& indexBuffer, const Shader& shader) const
+void Renderer::Draw(rsc<Model, false> model, rsc<Shader, false> shader) const
 {
-	shader.Bind();
-
-	vertexArray.Bind();
-	indexBuffer.Bind();
-	GLCall(glDrawElements(GL_TRIANGLES, indexBuffer.getCount(), GL_UNSIGNED_INT, nullptr));
-
-	//Unbinding for debug; otherwise 
-
-}
-
-void Renderer::Draw(Model* model, const Shader& shader) const
-{
-	shader.Bind();
+	shader->Bind();
 
 	VertexArray* va = model->getVertexArray();
 	IndexBuffer* ib = model->getIndexBuffer();
@@ -73,4 +109,7 @@ void Renderer::Draw(Model* model, const Shader& shader) const
 
 }
 
+void Renderer::Draw(rsc<Shader, false> shader, rsc<Model, false> model, rsc<Material, false> material)
+{
 
+}

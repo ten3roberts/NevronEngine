@@ -1,5 +1,6 @@
 #include "Object.h"
 #include <src/ResourceManager.h>
+#include <Graphics/Renderer.h>
 
 Object::Object()
 {
@@ -12,6 +13,19 @@ Object::Object(const std::string& shader, const std::string model, const std::st
 
 Object::Object(const std::string& shader, const std::string model, const std::string material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
 {
+}
+
+void Object::Update()
+{
+}
+
+void Object::FixedUpdate()
+{
+}
+
+void Object::Render()
+{
+	Renderer::Get()->Draw(m_shader, m_model, m_material);
 }
 
 void Object::AddComponent(rsc<Component> component)

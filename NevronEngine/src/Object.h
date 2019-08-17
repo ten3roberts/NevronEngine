@@ -27,6 +27,11 @@ public:
 	Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components);
 	Object(const std::string& shader, const std::string model, const std::string material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components);
 
+	void Update();
+	void FixedUpdate();
+	void Render();
+
+
 #pragma region AddComponent
 	//If added component is shader, model, material, transform or rigibody it will replace the current one
 	void AddComponent(rsc<Component> component);
