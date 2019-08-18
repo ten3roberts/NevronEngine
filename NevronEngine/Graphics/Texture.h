@@ -11,6 +11,7 @@ private:
 	int m_width, m_height, m_BPP;
 public:
 	Texture(const std::string& name, unsigned int slot, bool flip = true);
+	Texture(const std::string& name);
 	~Texture();
 
 	void Bind() const;

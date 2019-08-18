@@ -6,7 +6,9 @@
 class Shader;
 class Model;
 class Material;
+class Texture;
 class UniformBuffer;
+
 
 //This is a base class and is used as a common parent for all Shaders, Textures, Transforms, Scripts and so on that a Object might use. The class itself shall not be used
 class Component
@@ -166,10 +168,12 @@ private:
 
 	void Remove()
 	{
+		if (!Valid()) return;
 		if (!m_strong && m_referenceCount && *m_referenceCount == 0)
 		{
-			LogS("rsc", "Last one alive");
+			//LogS("rsc", "Last one alive");
 			delete m_referenceCount;
+			return;
 		}
 
 		if (m_strong && *m_referenceCount == 1)

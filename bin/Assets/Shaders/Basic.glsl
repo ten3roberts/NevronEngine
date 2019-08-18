@@ -30,6 +30,8 @@ in vec4 toCamera;
 
 uniform vec4 u_color;
 uniform sampler2D u_texture;
+uniform sampler2D u_normalMap;
+uniform sampler2D u_specularMap;
 
 
 layout (std140, row_major) uniform Environment

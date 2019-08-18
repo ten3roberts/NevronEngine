@@ -1,12 +1,13 @@
 #include "Material.h"
 
+#include <src/ResourceManager.h>
 #include <src/Utility.h>
 #include <Math/Math.h>
 #include <fstream>
 
 using namespace Utility;
 
-Material::Material(const std::string& name) : texture(nullptr), texture1(nullptr), texture2(nullptr), texture3(nullptr), color(Vector3::white), reflectivity(0), smoothness(0)
+Material::Material(const std::string& name) : m_slot(0), m_texture(nullptr), m_normalMap(nullptr), m_specularMap(nullptr)
 {
 	m_name = getFilename(name, false);
 
@@ -23,27 +24,26 @@ Material::Material(const std::string& name) : texture(nullptr), texture1(nullptr
 		//Texture
 		if (line.find("tex: ") == 0)
 		{
-			texture = new Texture(line.substr(5), 0);
+			m_texture = ResourceManager::Get()->GetTexture(line.substr(5));
+			if (m_texture)
+				m_texture->setSlot(m_slot * 3);
 		}
 
-		//Texture1
-		else if (line.find("tex1: ") == 0)
+		//normalMap
+		else if (line.find("norm: ") == 0)
 		{
-			texture1 = new Texture(line.substr(6), 1);
+			m_normalMap = ResourceManager::Get()->GetTexture(line.substr(6));
+			if (m_normalMap)
+				m_normalMap->setSlot(m_slot * 3 + 1);
 		}
 
-		//Texture2
-		else if (line.find("tex2: ") == 0)
+		//specularMap
+		else if (line.find("spec: ") == 0)
 		{
-			texture2 = new Texture(line.substr(6), 2);
+			m_specularMap = ResourceManager::Get()->GetTexture(line.substr(6));
+			if (m_specularMap)
+				m_specularMap->setSlot(m_slot * 3 + 2);
 		}
-
-		//Texture3
-		else if (line.find("tex3: ") == 0)
-		{
-			texture3 = new Texture(line.substr(6), 3);
-		}
-
 		//Color
 		else if (line.find("col: ") == 0)
 		{
@@ -67,39 +67,34 @@ Material::Material(const std::string& name) : texture(nullptr), texture1(nullptr
 
 Material::Material(const std::string& textureName, Vector4 color, float reflectivity, float smoothness) : color(color), reflectivity(reflectivity), smoothness(smoothness)
 {
-	texture = new Texture(textureName, 0);
+	m_texture = ResourceManager::Get()->GetTexture(textureName);
 }
 
 Material::~Material()
 {
-	if (texture)
-		delete texture;
-
-	if (texture1)
-		delete texture1;
-
-	if (texture2)
-		delete texture2;
-
-	if (texture3)
-		delete texture3;
 }
 
-void Material::Bind() const
+void Material::Bind()
 {
-	if (texture)
-		texture->Bind();
-	if (texture1)
-		texture1->Bind();
-	if (texture2)
-		texture2->Bind();
-	if (texture3)
-		texture3->Bind();
+	if (m_texture)
+		m_texture->Bind();
+	if (m_normalMap)
+		m_normalMap->Bind();
+	if (m_specularMap)
+		m_specularMap->Bind();
 }
 
-void Material::Unbind() const
+void Material::Unbind()
 {
-	texture->Unbind();
+	m_texture->Unbind();
+}
+
+void Material::setSlot(unsigned int slot)
+{
+	m_slot = slot;
+	m_texture->setSlot(m_slot * 3);
+	m_normalMap->setSlot(m_slot * 3 + 1);
+	m_specularMap->setSlot(m_slot * 3 + 2);
 }
 
 

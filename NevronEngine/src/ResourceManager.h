@@ -22,6 +22,8 @@ private:
 
 	std::vector<rsc<Material, false>> m_materials;
 
+	std::vector<rsc<Texture, false>> m_textures;
+
 	//Graphical resources
 
 	std::vector<rsc<UniformBuffer, false>> m_uniformBuffers;
@@ -56,6 +58,11 @@ public:
 	//Will return a material by ID. Returns nullptr if it doesn't exist
 	rsc<Material> GetMaterial(GUID ID);
 
+	//Will return a texture by name. If it doesn't exist it will attempt to load it from file
+	rsc<Texture> GetTexture(const std::string& name);
+	//Will return a texture by ID. Returns nullptr if it doesn't exist
+	rsc<Texture> GetTexture(GUID ID);
+
 	//Will return a uniformBuffer by name. If it doesn't exist it will attempt to load it from file
 	rsc<UniformBuffer> GetUBO(const std::string& name);
 	//Will return a uniformBuffer by ID. Returns nullptr if it doesn't exist
@@ -69,6 +76,9 @@ public:
 
 	bool DeleteMaterial(const std::string& name);
 	bool DeleteMaterial(GUID ID);
+
+	bool DeleteTexture(const std::string& name);
+	bool DeleteTexture(GUID ID);
 
 	bool DeleteUBO(const std::string& name);
 	bool DeleteUBO(GUID ID);
@@ -87,6 +97,10 @@ public:
 	template<>
 	//Will return a material by name. If it doesn't exist it will attempt to load it from file
 	inline rsc<Material> GetResource<Material>(const std::string& name) { return GetMaterial(name); }
+
+	template<>
+	//Will return a material by name. If it doesn't exist it will attempt to load it from file
+	inline rsc<Texture> GetResource<Texture>(const std::string& name) { return GetTexture(name); }
 
 	template <>
 	//Will return a uniformBuffer by name. If it doesn't exist it will attempt to load it from file
@@ -108,6 +122,10 @@ public:
 	template<>
 	//Will return a material by ID. Returns nullptr if it doesn't exist
 	inline rsc<Material> GetResource<Material>(GUID ID) { return GetMaterial(ID); }
+
+	template<>
+	//Will return a material by ID. Returns nullptr if it doesn't exist
+	inline rsc<Texture> GetResource<Texture>(GUID ID) { return GetTexture(ID); }
 	
 
 	template <>
@@ -130,6 +148,9 @@ public:
 	template <>
 	inline bool DeleteResource<Material>(const std::string& name) { return DeleteMaterial(name); }
 	
+	template <>
+	inline bool DeleteResource<Texture>(const std::string& name) { return DeleteTexture(name); }
+	
 
 	template <>
 	inline bool DeleteResource<UniformBuffer>(const std::string& name) { return DeleteUBO(name); }
@@ -150,6 +171,9 @@ public:
 
 	template <>
 	inline bool DeleteResource<Material>(GUID ID) { return DeleteMaterial(ID); }
+
+	template <>
+	inline bool DeleteResource<Texture>(GUID ID) { return DeleteTexture(ID); }
 	
 
 	template <>

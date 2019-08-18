@@ -74,15 +74,15 @@ void Shader::setUniform1i(const std::string name, int value)
 
 void Shader::setMaterial(Material* material)
 {
-	glUniform1i(getUniformLocation("u_texture"), material->texture->getSlot()); //Texture
+	if (material->getTexture())
+		glUniform1i(getUniformLocation("u_texture"), material->getTexture()->getSlot()); //Texture
 
-	if (material->texture1)
-		glUniform1i(getUniformLocation("u_texture1"), material->texture1->getSlot()); //Texture1
-	if (material->texture2)
-		glUniform1i(getUniformLocation("u_texture2"), material->texture2->getSlot()); //Texture2
+	if (material->getNormalMap())
+		glUniform1i(getUniformLocation("u_normalMap"), material->getNormalMap()->getSlot()); //Texture1
 
-	if (material->texture3)
-		glUniform1i(getUniformLocation("u_texture3"), material->texture3->getSlot()); //Texture2
+	if (material->getSpecularMap())
+		glUniform1i(getUniformLocation("u_specularMap"), material->getSpecularMap()->getSlot()); //Texture2
+
 
 	glUniform4f(getUniformLocation("u_color"), material->color.b, material->color.g, material->color.b, material->color.a); //Color
 }

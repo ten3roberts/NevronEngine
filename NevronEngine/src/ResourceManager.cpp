@@ -4,6 +4,9 @@
 #include <Graphics/Shader.h>
 #include <Graphics/Model.h>
 #include <Graphics/Material.h>
+#include <Graphics/Texture.h>
+
+
 #include <Graphics/UniformBuffer.h>
 
 ResourceManager::ResourceManager()
@@ -39,10 +42,16 @@ void ResourceManager::Refresh()
 			DeleteResource<Material>(m_materials[i]->getGUID());
 	}
 
+	for (int i = 0; i < m_textures.size(); i++)
+	{
+		if (m_textures[i].getReferenceCount() == 0)
+			DeleteResource<Texture>(m_textures[i]->getGUID());
+	}
+
 	for (int i = 0; i < m_uniformBuffers.size(); i++)
 	{
 		if (m_uniformBuffers[i].getReferenceCount() == 0)
-			DeleteResource<Model>(m_uniformBuffers[i]->getGUID());
+			DeleteResource<UniformBuffer>(m_uniformBuffers[i]->getGUID());
 	}
 }
 
@@ -135,6 +144,28 @@ rsc<Material> ResourceManager::GetMaterial(GUID ID)
 	{
 		if (m_materials[i]->getGUID() == ID)
 			return m_materials[i];
+	}
+	return nullptr;
+}
+
+rsc<Texture> ResourceManager::GetTexture(const std::string& name)
+{
+	for (unsigned int i = 0; i < m_textures.size(); i++)
+	{
+		if (m_textures[i]->getName() == name)
+			return m_textures[i];
+	}
+	LogS("ResourceManager", "No texture exists with name %s, creating", name);
+	Texture* texture = new Texture(name);
+	return m_textures.emplace_back(texture);
+}
+
+rsc<Texture> ResourceManager::GetTexture(GUID ID)
+{
+	for (unsigned int i = 0; i < m_textures.size(); i++)
+	{
+		if (m_textures[i]->getGUID() == ID)
+			return m_textures[i];
 	}
 	return nullptr;
 }
@@ -240,6 +271,34 @@ bool ResourceManager::DeleteMaterial(GUID ID)
 		{
 			LogS("ResourceManager", "Deleting material %s", m_materials[i]->getName());
 			m_materials.erase(m_materials.begin() + i);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool ResourceManager::DeleteTexture(const std::string& name)
+{
+	for (int i = 0; i < m_textures.size(); i++)
+	{
+		if (m_textures[i]->getName() == name)
+		{
+			LogS("ResourceManager", "Deleting texture %s", m_textures[i]->getName());
+			m_textures.erase(m_textures.begin() + i);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool ResourceManager::DeleteTexture(GUID ID)
+{
+	for (int i = 0; i < m_textures.size(); i++)
+	{
+		if (m_textures[i]->getGUID() == ID)
+		{
+			LogS("ResourceManager", "Deleting texture %s", m_textures[i]->getName());
+			m_textures.erase(m_textures.begin() + i);
 			return true;
 		}
 	}
