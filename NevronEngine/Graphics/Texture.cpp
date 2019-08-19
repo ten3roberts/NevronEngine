@@ -1,5 +1,6 @@
 #include "Texture.h"
 #include <src\Utility.h>
+#include <Graphics/Renderer.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image\stb_image.h>
@@ -66,8 +67,7 @@ Texture::~Texture()
 
 void Texture::Bind() const
 {
-	glActiveTexture(GL_TEXTURE0 + m_slot);
-	glBindTexture(GL_TEXTURE_2D, m_bufferID);
+	Renderer::Get()->BindTexture(this);
 }
 
 void Texture::Unbind() const

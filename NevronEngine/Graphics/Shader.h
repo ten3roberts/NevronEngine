@@ -25,8 +25,8 @@ public:
 	Shader(const std::string& name);
 	~Shader();
 
-	void Bind();
-	void Unbind();
+	void Bind() const;
+	void Unbind() const;
 
 	//set uniforms
 

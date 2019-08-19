@@ -21,12 +21,12 @@ Shader::~Shader()
 	glDeleteProgram(m_bufferID);
 }
 
-void Shader::Bind()
+void Shader::Bind() const
 {
 	Renderer::Get()->BindShader(this);
 }
 
-void Shader::Unbind()
+void Shader::Unbind() const
 {
 	Renderer::Get()->UnbindShader();
 }

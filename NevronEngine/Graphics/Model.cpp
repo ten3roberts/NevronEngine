@@ -70,12 +70,12 @@ void Model::setIndices(std::vector<unsigned int> indices)
 	m_indexBuffer->setData(&indices[0], sizeof(unsigned int) * indices.size());
 }
 
-void Model::Bind()
+void Model::Bind() const
 {
 	Renderer::Get()->BindModel(this);
 }
 
-void Model::Unbind()
+void Model::Unbind() const
 {
 	Renderer::Get()->UnbindModel();
 }

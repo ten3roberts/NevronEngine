@@ -26,18 +26,21 @@ private:
 	Renderer();
 	unsigned int m_bound_shader;
 	unsigned int m_bound_model;
-	unsigned int m_bound_material;
+	//Indicates which texture is bound at which slot
+	unsigned int m_bound_textures[GL_MAX_TEXTURE_IMAGE_UNITS];
 public:
 	static Renderer* Get();
 
 	//Binds a shader and keeps if it's not already bound
-	void BindShader(rsc<Shader, false> shader);
+	void BindShader(const Shader* shader);
 
 	//Binds a model and keeps if it's not already bound
-	void BindModel(rsc<Model, false> model);
+	void BindModel(const Model* model);
 
 	//Binds a material to the current shader and keeps if it's not already bound
-	void BindMaterial(rsc<Material, false> material);
+	void BindMaterial(const Material* material);
+
+	void BindTexture(const Texture* texture);
 
 	void UnbindShader();
 	void UnbindModel();

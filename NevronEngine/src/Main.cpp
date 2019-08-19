@@ -101,7 +101,7 @@ int main(int argc, char** argv)
 	//Shaders
 	rsc<Shader> shader = rscManager->GetShader("Basic");
 	//Shader shader("Basic");
-	Shader multiMapShader("MultiMap");
+	rsc<Shader> multiMapShader = rscManager->GetShader("MultiMap");
 	shader->Bind();
 	shader->setUniform4f("u_color", Vector4::white);
 
@@ -150,7 +150,7 @@ int main(int argc, char** argv)
 		Time::Update();
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
-		object.AddComponent<Shader>("Basic2");
+		object.AddComponent<Shader>("Basic");
 		object.RemoveComponent<Shader>();
 		//object.AddComponent<Shader>("Basic2");
 		//rscManager->GetShader("Basic2");
@@ -198,7 +198,7 @@ int main(int argc, char** argv)
 
 		//Object3
 
-		multiMapShader.Bind();
+		multiMapShader->Bind();
 		transform3.position = { 0, 0, Math::CosineWave(-1, -2, 5, Time::elapsedTime) };
 		transform3.rotation = Quaternion({ 0, 1, 0 }, Time::elapsedTime);
 
@@ -206,9 +206,9 @@ int main(int argc, char** argv)
 		//rscManager->GetMaterial("Ground")->color = vec3::HSV(Time::elapsedTime / 5.0f, 1, 1);
 
 		Matrix4 u_MVP3 = transform3.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
-		multiMapShader.setUniformMat4f("u_MVP", u_MVP3);
+		multiMapShader->setUniformMat4f("u_MVP", u_MVP3);
 		ground->Bind();
-		multiMapShader.setMaterial(&ground);
+		multiMapShader->setMaterial(&ground);
 		renderer->Draw(&model, &multiMapShader);
 
 		//Swap front and back buffers
@@ -218,7 +218,7 @@ int main(int argc, char** argv)
 		glfwPollEvents();
 
 		//Unbinding
-		shader->Unbind();
+		//shader->Unbind();
 	}
 
 	LogS("Main", "Closing Window");

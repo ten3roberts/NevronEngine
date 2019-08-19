@@ -41,8 +41,8 @@ public:
 	void setVertices(std::vector<Vertex> vertices);
 	void setIndices(std::vector<unsigned int> indices);
 
-	void Bind();
-	void Unbind();
+	void Bind() const;
+	void Unbind() const;
 
 	static void ApplyLayout(VertexBufferLayout* layout);
 };

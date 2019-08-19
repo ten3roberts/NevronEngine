@@ -1,5 +1,6 @@
 #include "Renderer.h"
 #include "..\src\Utility.h"
+#include <src/ResourceManager.h>
 using namespace Utility;
 
 void GLAPIENTRY ErrorCallBack(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
@@ -46,28 +47,45 @@ Renderer* Renderer::Get()
 	return instance;
 }
 
-void Renderer::BindShader(rsc<Shader, false> shader)
+void Renderer::BindShader(const Shader* shader)
 {
 	unsigned int bufferID = shader->getBufferID();
 	if (m_bound_shader == bufferID)
 		return;
+
+	auto rscManager = ResourceManager::Get();
+	LogS("Renderer", "Binding shader %s %d", shader->getName());
 	glUseProgram(bufferID);
 	m_bound_shader = bufferID;
 }
 
-void Renderer::BindModel(rsc<Model, false> model)
+void Renderer::BindModel(const Model* model)
 {
-
 	unsigned int bufferID = model->getBufferID();
 	if (m_bound_shader == bufferID)
 		return;
+	LogS("Renderer", "Binding model %s", model->getName());
+
 	model->getVertexArray()->Bind();
 	model->getIndexBuffer()->Bind();
 	m_bound_shader = bufferID;
 }
 
-void Renderer::BindMaterial(rsc<Material, false> material)
+void Renderer::BindMaterial(const Material* material)
 {
+}
+
+void Renderer::BindTexture(const Texture* texture)
+{
+	unsigned int bufferID = texture->getBufferID();
+	unsigned int slot = texture->getSlot();
+	if (m_bound_textures[slot] == bufferID)
+		return;
+		
+	LogS("Renderer", "Binding texture %s", texture->getName());
+	glActiveTexture(GL_TEXTURE0 + slot);
+	glBindTexture(GL_TEXTURE_2D, bufferID);
+	m_bound_textures[slot] = bufferID;
 }
 
 void Renderer::UnbindShader()

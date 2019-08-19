@@ -34,7 +34,7 @@ public:
 
 	const std::string& getName() const { return m_name; };
 	GUID getGUID() const { return m_GUID; }
-	unsigned int getBufferID() { return m_bufferID; }
+	unsigned int getBufferID() const { return m_bufferID; }
 
 	//Will return what base type the component is if it has children classes. Scripts will be derived so it's used to keep track of what it is.
 	virtual Type getType() const { return Type::Component; }
@@ -85,7 +85,8 @@ struct rsc
 			m_pData = dynamic_cast<R*>(rsc.GetPointer());
 			if (!m_pData)
 			{
-				LogS("rsc", "Couldn't convert resource; Incompatible types");
+				if (rsc)
+					LogS("rsc", "Couldn't convert resource; Incompatible types");
 				return;
 			}
 		}
@@ -101,7 +102,8 @@ struct rsc
 		m_pData = dynamic_cast<R*>(rsc.GetPointer());
 		if (!m_pData)
 		{
-			LogS("rsc", "Couldn't convert resource; Incompatible types");
+			if (rsc)
+				LogS("rsc", "Couldn't convert resource; Incompatible types");
 			return;
 		}
 		m_referenceCount = rsc.getRawReferenceCount();
@@ -148,9 +150,9 @@ struct rsc
 
 	bool getStrength() const { return m_strong; }
 
-	R* operator->() { return m_pData; }	//Dereference
-	R* operator&() { return m_pData; }	//Dereference
-	R& operator*() { return *m_pData; } //Returns internal pointer
+	R* operator->() const { return m_pData; }	//Dereference
+	R* operator&() { return m_pData; }	//Returns internal pointer
+	R& operator*() { return *m_pData; } //Returns reference to *pData
 
 
 	unsigned int getReferenceCount() const { return *m_referenceCount; }
@@ -189,7 +191,7 @@ private:
 				m_pData = nullptr;
 				delete m_pData;
 			}
-			
+
 		}
 		else if (m_strong)
 			(*m_referenceCount)--;

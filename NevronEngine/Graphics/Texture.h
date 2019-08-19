@@ -21,7 +21,7 @@ public:
 	inline int getHeight() const { return m_height; }
 	unsigned char* getData() { return m_localBuffer; };
 
-	unsigned int getSlot() { return m_slot; }
+	unsigned int getSlot() const { return m_slot; }
 	void setSlot(unsigned int slot) { m_slot = slot; }
 };
 
