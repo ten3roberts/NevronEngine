@@ -1,7 +1,11 @@
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
-#* text=auto
+* text=auto
+
+#Prevent Dependencies from counting to code statistics
+* text=auto
+Dependencies/* linguist-vendored=false
 
 ###############################################################################
 # Set default behavior for command prompt diff.
