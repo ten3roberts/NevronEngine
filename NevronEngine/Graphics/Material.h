@@ -35,7 +35,7 @@ public:
 	void setSpecularMap(rsc<Texture, false> specularMap) { m_specularMap = specularMap; m_specularMap->setSlot(m_slot * 3 + 2); }
 
 
-	void Bind();
+	void Bind() const;
 	void Unbind();
 
 	unsigned int getSlot() { return m_slot; }

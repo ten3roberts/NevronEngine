@@ -22,44 +22,44 @@ Material::Material(const std::string& name) : m_slot(0), m_texture(nullptr), m_n
 		std::getline(file, line);
 
 		//Texture
-		if (line.find("tex: ") == 0)
+		if (line.find("texture: ") == 0)
 		{
-			m_texture = ResourceManager::Get()->GetTexture(line.substr(5));
+			m_texture = ResourceManager::Get()->GetTexture(line.substr(strlen("texture: ")));
 			if (m_texture)
 				m_texture->setSlot(m_slot * 3);
 		}
 
 		//normalMap
-		else if (line.find("norm: ") == 0)
+		else if (line.find("normalMap: ") == 0)
 		{
-			m_normalMap = ResourceManager::Get()->GetTexture(line.substr(6));
+			m_normalMap = ResourceManager::Get()->GetTexture(line.substr(strlen("normalMap: ")));
 			if (m_normalMap)
 				m_normalMap->setSlot(m_slot * 3 + 1);
 		}
 
 		//specularMap
-		else if (line.find("spec: ") == 0)
+		else if (line.find("specularMap: ") == 0)
 		{
-			m_specularMap = ResourceManager::Get()->GetTexture(line.substr(6));
+			m_specularMap = ResourceManager::Get()->GetTexture(line.substr(strlen("specularMap: ")));
 			if (m_specularMap)
 				m_specularMap->setSlot(m_slot * 3 + 2);
 		}
 		//Color
-		else if (line.find("col: ") == 0)
+		else if (line.find("color: ") == 0)
 		{
-			color = Vector4::Parse(line.substr(6));
+			color = Vector4::Parse(line.substr(strlen("color: ")));
 		}
 
 		//Reflectivity
 		else if (line.find("ref: ") == 0)
 		{
-			reflectivity = Math::Clamp01(num(line.substr(6)));
+			reflectivity = Math::Clamp01(num(line.substr(strlen("ref: "))));
 		}
 
 		//Smoothness
 		else if (line.find("smo: ") == 0)
 		{
-			smoothness = Math::ClampPos(num(line.substr(6)));
+			smoothness = Math::ClampPos(num(line.substr(strlen("smo: "))));
 		}
 	}
 	file.close();
@@ -74,7 +74,7 @@ Material::~Material()
 {
 }
 
-void Material::Bind()
+void Material::Bind() const
 {
 	if (m_texture)
 		m_texture->Bind();
