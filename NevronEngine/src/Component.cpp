@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Component.h"
 #include <src/ResourceManager.h>
 

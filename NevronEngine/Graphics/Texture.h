@@ -1,6 +1,7 @@
 #pragma once
+#include <src/pch.h>
 #include <src/Component.h>
-#include <string>
+
 
 class Texture : public Component
 {

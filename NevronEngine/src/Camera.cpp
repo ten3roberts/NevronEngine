@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Camera.h"
 #include <src/Settings.h>
 

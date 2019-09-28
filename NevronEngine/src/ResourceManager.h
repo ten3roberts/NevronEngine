@@ -1,8 +1,9 @@
 #pragma once
+#include <src/pch.h>
 
 #include "Component.h"
 #include <src\Logger.h>
-#include <vector>
+
 
 class Model;
 class Shader;

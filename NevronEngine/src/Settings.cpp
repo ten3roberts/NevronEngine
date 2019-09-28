@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Settings.h"
 #include "Utility.h"
 #include "Logger.h"

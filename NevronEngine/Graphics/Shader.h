@@ -1,11 +1,10 @@
 #pragma once
-#include <string>
+#include <src/pch.h>
+
 #include <src/Component.h>
 #include <Graphics/Material.h>
-#include <Math/Math.h>
 
 #include <sstream>
-#include <unordered_map>
 
 struct ShaderSource
 {

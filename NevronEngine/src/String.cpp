@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "String.h"
 
 std::string String::Capitalize() const

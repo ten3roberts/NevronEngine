@@ -1,6 +1,7 @@
 #pragma once
+#include <src/pch.h>
 #include "GL/glew.h"
-#include <vector>
+
 #include "..\src\Systemdefs.h"
 
 struct VBElement

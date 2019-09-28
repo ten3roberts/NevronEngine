@@ -1,11 +1,5 @@
 #pragma once
-#include "Systemdefs.h"
-#include <iostream>
-#include "..\Math\Vector.h"
-#include <fstream>
-#include <vector>
-#include <string>
-
+#include <src/pch.h>
 
 //Shortcuts
 //#define Util Utility
@@ -232,13 +226,13 @@ static float num(const std::string& str)
 template <>
 static int num(const std::string& str)
 {
-	return atof(str.c_str());
+	return atoi(str.c_str());
 }
 
 template <>
 static unsigned int num(const std::string& str)
 {
-	return atof(str.c_str());
+	return atoi(str.c_str());
 }
 
 //Will attempt to convert a string to float or integer. If it fails it will return 0 and if $failed is passed set it to true

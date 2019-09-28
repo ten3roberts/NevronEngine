@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Renderer.h"
 #include "..\src\Utility.h"
 #include <src/ResourceManager.h>

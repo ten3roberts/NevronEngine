@@ -1,9 +1,7 @@
+#include <src/pch.h>
 #include "Material.h"
 
 #include <src/ResourceManager.h>
-#include <src/Utility.h>
-#include <Math/Math.h>
-#include <fstream>
 
 using namespace Utility;
 

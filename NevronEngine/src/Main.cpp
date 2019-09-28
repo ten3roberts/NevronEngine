@@ -1,9 +1,7 @@
-#include "Utility.h"
+#include <src/pch.h>
+#include "pch.h"
 #include "Settings.h"
-#include "Time.h"
-#include "Timer.h"
-#include <Math.h>
-#include "Systemdefs.h"
+
 #include <Graphics/Renderer.h>
 #include <Graphics/Texture.h>
 #include "Logger.h"
@@ -16,7 +14,7 @@
 #include <src/Camera.h>
 
 #include <iostream>
-#include <string>
+
 #include <fstream>
 #include <sstream>
 #include <thread>

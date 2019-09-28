@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Utility.h"
 #include "Logger.h"
 
@@ -698,8 +699,6 @@ void Utility::SaveErrorDef()
 {
 	GenerateFile(WORKDIR + "Assets\\Errordef.txt", ListTostring(s_errorDef), false);
 }
-
-#include <Math/Math.h>
 
 std::string vformat(std::string format, va_list vl)
 {

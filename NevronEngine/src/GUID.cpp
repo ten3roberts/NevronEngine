@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "GUID.h"
 
 GUID::GUID()

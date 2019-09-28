@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Vector2.h"
 #include "..\src\Systemdefs.h"
 #include "Math.h"

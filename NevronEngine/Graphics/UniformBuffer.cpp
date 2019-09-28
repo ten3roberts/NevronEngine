@@ -1,6 +1,6 @@
+#include <src/pch.h>
 #include "UniformBuffer.h"
 #include <Graphics/Shader.h>
-#include <src/Logger.h>
 #include "GL/glew.h"
 #include <src/ResourceManager.h>
 

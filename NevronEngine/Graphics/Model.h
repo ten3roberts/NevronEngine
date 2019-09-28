@@ -1,11 +1,10 @@
 #pragma once
+#include <src/pch.h>
 
-#include <Math/Vector2.h>
-#include <Math/Vector3.h>
 #include <Graphics/IndexBuffer.h>
 #include <Graphics/VertexArray.h>
 #include <src/Component.h>
-#include <vector>
+
 
 struct Vertex
 {

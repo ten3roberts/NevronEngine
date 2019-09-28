@@ -1,8 +1,7 @@
 #pragma once
-#include <string>
-#include <src/Logger.h>
+#include <src/pch.h>
 #include <src/GUID.h>
-#include <src/rsc.h>
+
 
 class Shader;
 class Model;

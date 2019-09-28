@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Shader.h"
 #include "..\src\Utility.h"
 #include "Renderer.h"

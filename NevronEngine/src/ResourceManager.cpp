@@ -1,5 +1,5 @@
+#include <src/pch.h>
 #include "ResourceManager.h"
-#include <src/Logger.h>
 
 #include <Graphics/Shader.h>
 #include <Graphics/Model.h>

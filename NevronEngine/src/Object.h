@@ -1,4 +1,6 @@
 #pragma once
+#include <src/pch.h>
+
 #include <src/Component.h>
 #include <src/ResourceManager.h>
 #include <Graphics/Shader.h>
@@ -7,7 +9,6 @@
 #include <src/Transform.h>
 #include <src/Camera.h>
 #include <src/Rigidbody.h>
-#include <vector>
 
 class Object
 {

@@ -1,3 +1,4 @@
+#include <src/pch.h>
 #include "Texture.h"
 #include <src\Utility.h>
 #include <Graphics/Renderer.h>

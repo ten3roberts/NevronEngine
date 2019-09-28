@@ -1,6 +1,7 @@
 #pragma once
+#include <src/pch.h>
 #include <chrono>
-#include <string>
+
 #include "..\\Math\Math.h"
 #include <chrono>
 #include <thread>

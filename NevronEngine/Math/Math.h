@@ -1,10 +1,11 @@
 #pragma once
+#include <src/pch.h>
 #include "Vector.h"
 #include "Matrix.h"
 #include "Quaternion.h"
 
-#include <string>
-#include <vector>
+
+
 #include <cmath>
 #include <limits.h>
 

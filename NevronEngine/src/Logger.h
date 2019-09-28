@@ -1,11 +1,7 @@
 #pragma once
+#include <src/pch.h>
 #include <ostream>
-#include <fstream>
 #include <sstream>
-#include <unordered_map>
-#include "../Math/Vector.h"
-#include "../Math/Quaternion.h"
-#include "../Math/Matrix.h"
 
 #include <stdio.h>      /* printf */
 #include <stdarg.h>     /* va_list, va_start, va_arg, va_end */

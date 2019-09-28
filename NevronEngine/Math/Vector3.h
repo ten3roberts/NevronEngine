@@ -1,6 +1,7 @@
 #pragma once
+#include <src/pch.h>
 #include "..\src\Systemdefs.h"
-#include <string>
+
 
 //x : right, red channel; y : up, green channel; z : forward, blue channel
 struct Vector3

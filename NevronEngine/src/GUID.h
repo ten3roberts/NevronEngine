@@ -1,5 +1,6 @@
 #pragma once
-#include <string>
+#include <src/pch.h>
+
 #include <bitset>
 class GUID
 {

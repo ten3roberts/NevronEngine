@@ -1,7 +1,8 @@
 #pragma once
+#include <src/pch.h>
 #include "..\src\Systemdefs.h"
 
-#include <string>
+
 
 struct Vector3;
 struct Vector4

@@ -1,6 +1,7 @@
+#include <src/pch.h>
 #include "Time.h"
 #include "Utility.h"
-#include <string>
+
 #include <sstream>
 
 float Time::frameRate = 0.0;

@@ -1,4 +1,5 @@
 #pragma once
+#include <src/pch.h>
 #include "..\Math\Vector.h"
 #include "..\Math\Quaternion.h"
 #include "Time.h"

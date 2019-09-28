@@ -1,7 +1,7 @@
 #pragma once
+#include <src/pch.h>
 
 #include <Graphics/Texture.h>
-#include <Math\Vector4.h>
 
 //Matches the shader representation of Material
 struct MaterialType

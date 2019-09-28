@@ -1,3 +1,5 @@
+#include <src/pch.h>
+
 #include "Object.h"
 #include <src/ResourceManager.h>
 #include <Graphics/Renderer.h>

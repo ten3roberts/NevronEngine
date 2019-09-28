@@ -1,7 +1,8 @@
+#include <src/pch.h>
 #include "Math.h"
 #include "..\src\Utility.h"
 #include "Vector3.h"
-#include <string>
+
 #include <stdarg.h>     /* va_list, va_start, va_arg, va_end */
 
 

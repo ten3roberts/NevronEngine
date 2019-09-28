@@ -1,3 +1,7 @@
+#pragma once
+#include <src/pch.h>
+#include <src/Logger.h>
+
 template <typename R>
 class rsc_weak;
 template <typename R>

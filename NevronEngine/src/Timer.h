@@ -1,6 +1,7 @@
 #pragma once
+#include <src/pch.h>
 #include <chrono>
-#include <string>
+
 
 //Will print the duration of its lifetime aka to time a function in ms and write the results to float if provided in seconds
 class Timer

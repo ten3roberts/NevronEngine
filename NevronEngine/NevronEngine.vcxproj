@@ -22,6 +22,14 @@
     <ClCompile Include="Graphics\Material.cpp" />
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\Object.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeaderFile>
+    </ClCompile>
     <ClCompile Include="src\ResourceManager.cpp" />
     <ClCompile Include="src\Component.cpp" />
     <ClCompile Include="src\Rigidbody.cpp" />
@@ -55,6 +63,7 @@
     <ClInclude Include="Graphics\Material.h" />
     <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\ResourceManager.h" />
     <ClInclude Include="src\Component.h" />
     <ClInclude Include="src\Rigidbody.h" />
@@ -190,6 +199,8 @@
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src\vendor;$(SolutionDir)Dependencies\glfwx64\include;$(SolutionDir)Dependencies\GLEW\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>src/pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\glfwx64\lib-vc2015;$(SolutionDir)Dependencies\GLEW\lib\Release\x64</AdditionalLibraryDirectories>
@@ -242,6 +253,8 @@
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src\vendor;$(SolutionDir)Dependencies\glfwx64\include;$(SolutionDir)Dependencies\GLEW\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>src/pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
