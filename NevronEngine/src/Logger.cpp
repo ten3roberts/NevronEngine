@@ -161,8 +161,8 @@ void LogS(const std::string& author, std::string format, ...)
 
 	if (!logFile.is_open())
 	{
-		Utility::GenerateFile(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", "");
-		logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt");
+		Utility::GenerateFile(WORKDIR + "Logs\\" + Time::startDateAndTime + ".log", "");
+		logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".log");
 	}
 
 	if (frame != Time::frameCount)
@@ -184,8 +184,8 @@ void LogF(const std::string& author, const char* format, ...)
 
 	if (!logFile.is_open())
 	{
-		Utility::GenerateFile(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", "");
-		logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt");
+		Utility::GenerateFile(WORKDIR + "Logs\\" + Time::startDateAndTime + ".log", "");
+		logFile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".log");
 	}
 
 	va_list vl;
