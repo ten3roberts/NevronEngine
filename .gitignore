@@ -14,12 +14,16 @@
 *.userprefs
 
 # Build results
-# bld/
-#[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Oo]bj/
 [Ll]ogs/
-bin/intermediates
 
-#Log files
 *.log
 
 # Visual Studio 2015 cache/options directory

@@ -2,16 +2,17 @@
 #include <src/ResourceManager.h>
 #include <Graphics/Renderer.h>
 
-Object::Object()
+Object::Object() : m_name("")
 {
+	Init("Basic.glsl", "Quad.dae", "Default.mat", 0, Quaternion::identity, 1, {});
 }
 
-Object::Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components)
+Object::Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components) : m_name("")
 {
 	Init(shader, model, material, 0, Quaternion::identity, 1, components);
 }
 
-Object::Object(const std::string& shader, const std::string model, const std::string material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
+Object::Object(const std::string& shader, const std::string model, const std::string material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components) : m_name("")
 {
 	Init(shader, model, material, position, rotation, scale, components);
 }
@@ -128,6 +129,7 @@ void Object::RefreshComponents()
 
 void Object::Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
 {
+	m_GUID.Generate();
 	ResourceManager* rscManager = ResourceManager::Get();
 	this->shader = rscManager->GetShader(shader);
 	m_components.push_back(this->shader);

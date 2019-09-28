@@ -12,9 +12,8 @@
 class Object
 {
 private:
-	void RemoveSpecialized(rsc<Component> component);
-	void RefreshComponents();
-	void Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components);
+	std::string m_name;
+	GUID m_GUID;
 	std::vector<rsc<Component>> m_components;
 public:
 	//Fast access
@@ -23,6 +22,10 @@ public:
 	rsc_weak<Material>		material;
 	rsc_weak<Transform>		transform;
 	rsc_weak<Rigidbody>		rigidbody;
+private:
+	void RemoveSpecialized(rsc<Component> component);
+	void RefreshComponents();
+	void Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components);
 public:
 	Object();
 	Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components);
@@ -32,7 +35,8 @@ public:
 	void FixedUpdate();
 	void Render(rsc_weak<Camera> camera);
 
-
+	std::string getName() { return m_name; }
+	void setName(const std::string& name) { m_name = name; }
 #pragma region AddComponent
 	//If added component is shader, model, material, transform or rigibody it will replace the current one
 	void AddComponent(rsc<Component> component);
@@ -44,6 +48,7 @@ public:
 		rsc_weak<A> tmp = ResourceManager::Get()->GetResource<A>(name);
 		if (!tmp || !tmp->getValid())
 		{
+			LogS("Object : " + m_name + ";" + m_GUID.getString(), "Trying to add invalid %c; nothing changed", typeid(A).name());
 			return false;
 		}
 		AddComponent(tmp);
