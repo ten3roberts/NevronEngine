@@ -13,6 +13,6 @@
 #define max_loglenght 512
 extern void LogS(const std::string& author, std::string format, ...);
 //extern void LogS(const char* format, ...);
-extern void LogF(const std::string& author, const char* format, ...);
+extern void LogF(std::string format, ...);
 
 

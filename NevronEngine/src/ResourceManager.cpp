@@ -26,31 +26,31 @@ void ResourceManager::Refresh()
 {
 	for (int i = 0; i < m_shaders.size(); i++)
 	{
-		if (m_shaders[i].getReferenceCount() == 0)
+		if (m_shaders[i].getRefCount() == 0)
 			DeleteResource<Shader>(m_shaders[i]->getGUID());
 	}
 
 	for (int i = 0; i < m_models.size(); i++)
 	{
-		if (m_models[i].getReferenceCount() == 0)
+		if (m_models[i].getRefCount() == 0)
 			DeleteResource<Model>(m_models[i]->getGUID());
 	}
 
 	for (int i = 0; i < m_materials.size(); i++)
 	{
-		if (m_materials[i].getReferenceCount() == 0)
+		if (m_materials[i].getRefCount() == 0)
 			DeleteResource<Material>(m_materials[i]->getGUID());
 	}
 
 	for (int i = 0; i < m_textures.size(); i++)
 	{
-		if (m_textures[i].getReferenceCount() == 0)
+		if (m_textures[i].getRefCount() == 0)
 			DeleteResource<Texture>(m_textures[i]->getGUID());
 	}
 
 	for (int i = 0; i < m_uniformBuffers.size(); i++)
 	{
-		if (m_uniformBuffers[i].getReferenceCount() == 0)
+		if (m_uniformBuffers[i].getRefCount() == 0)
 			DeleteResource<UniformBuffer>(m_uniformBuffers[i]->getGUID());
 	}
 }
@@ -91,6 +91,11 @@ rsc<Shader> ResourceManager::GetShader(const std::string& name)
 	}
 	LogS("ResourceManager", "No shader exists with name %s, creating", name);
 	Shader* shader = new Shader(name);
+	if (!shader->getValid())
+	{
+		delete shader;
+		return nullptr;
+	}
 	return m_shaders.emplace_back(shader);
 }
 
@@ -113,6 +118,11 @@ rsc<Model> ResourceManager::GetModel(const std::string& name)
 	}
 	LogS("ResourceManager", "No model exists with name %s, creating", name);
 	Model* model = new Model(name);
+	if (!model->getValid())
+	{
+		delete model;
+		return nullptr;
+	}
 	return m_models.emplace_back(model);
 }
 
@@ -135,6 +145,11 @@ rsc<Material> ResourceManager::GetMaterial(const std::string& name)
 	}
 	LogS("ResourceManager", "No material exists with name %s, creating", name);
 	Material* material = new Material(name);
+	if (!material->getValid())
+	{
+		delete material;
+		return nullptr;
+	}
 	return m_materials.emplace_back(material);
 }
 
@@ -157,6 +172,11 @@ rsc<Texture> ResourceManager::GetTexture(const std::string& name)
 	}
 	LogS("ResourceManager", "No texture exists with name %s, creating", name);
 	Texture* texture = new Texture(name);
+	if (!texture)
+	{
+		delete texture;
+		return nullptr;
+	}
 	return m_textures.emplace_back(texture);
 }
 
@@ -177,7 +197,7 @@ rsc<UniformBuffer> ResourceManager::GetUBO(const std::string& name)
 		if (m_uniformBuffers[i]->getName() == name)
 			return m_uniformBuffers[i];
 	}
-	LogS("ResourceManager", "No material exists with name %s, creating", name);
+	LogS("ResourceManager", "No uniform buffer exists with name %s, creating", name);
 	UniformBuffer* uBuffer = new UniformBuffer(name);
 	return m_uniformBuffers.emplace_back(rsc<UniformBuffer>(uBuffer));
 }

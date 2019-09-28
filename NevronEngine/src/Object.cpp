@@ -8,57 +8,79 @@ Object::Object()
 
 Object::Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components)
 {
-
+	Init(shader, model, material, 0, Quaternion::identity, 1, components);
 }
 
 Object::Object(const std::string& shader, const std::string model, const std::string material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
 {
+	Init(shader, model, material, position, rotation, scale, components);
 }
 
 void Object::Update()
 {
+	if (rigidbody)
+		rigidbody->Update(transform);
+	transform->Update();
 }
 
 void Object::FixedUpdate()
 {
 }
 
-void Object::Render()
+void Object::Render(rsc_weak<Camera> camera)
 {
-	Renderer::Get()->Draw(m_shader, m_model, m_material);
+	TransformType t;
+	Update();
+	t.mvp = transform->getWorldMatrix() * camera->getViewMatrix() * camera->getProjectionMatrix();
+
+	t.position = transform->position;
+	/*t.rotation = transform->rotation;
+	t.scale = transform->scale;
+	t.camPos = camera->transform.position;
+	t.camForward = camera->transform.forward;*/
+
+	shader->Bind();
+
+	shader->setUniformBuffer("Transform", &t, sizeof(TransformType));
+	//shader->setUniformMat4f("u_MVP", t.mvp);
+
+	Renderer::Get()->Draw(shader, model, material);
 }
 
 void Object::AddComponent(rsc<Component> component)
 {
+	if (!component)
+		return;
+
 	if (dynamic_cast<Shader*>(&component))
 	{
-		if (m_shader)
+		if (shader)
 			RemoveComponents<Shader>();
-		m_shader = component;
+		shader = component;
 	}
 	else if (dynamic_cast<Model*>(&component))
 	{
-		if (m_model)
+		if (model)
 			RemoveComponents<Model>();
-		m_model = component;
+		model = component;
 	}
 	else if (dynamic_cast<Material*>(&component))
 	{
-		if (m_material)
+		if (material)
 			RemoveComponents<Material>();
-		m_material = component;
+		material = component;
 	}
 	else if (dynamic_cast<Transform*>(&component))
 	{
-		if (m_transform)
+		if (transform)
 			RemoveComponents<Transform>();
-		m_transform = component;
+		transform = component;
 	}
 	else if (dynamic_cast<Rigidbody*>(&component))
 	{
-		if (m_rigidbody)
+		if (rigidbody)
 			RemoveComponents<Rigidbody>();
-		m_rigidbody = component;
+		rigidbody = component;
 	}
 	m_components.push_back(component);
 }
@@ -66,26 +88,60 @@ void Object::AddComponent(rsc<Component> component)
 void Object::RemoveSpecialized(rsc<Component> component)
 {
 	if (dynamic_cast<Shader*>(&component))
-		m_shader = nullptr;
+		shader = nullptr;
 	else if (dynamic_cast<Model*>(&component))
-		m_model = nullptr;
+		model = nullptr;
 	else if (dynamic_cast<Material*>(&component))
-		m_material = nullptr;
+		material = nullptr;
 	else if (dynamic_cast<Transform*>(&component))
-		m_transform = nullptr;
+		transform = nullptr;
 	else if (dynamic_cast<Rigidbody*>(&component))
-		m_rigidbody = nullptr;
+		rigidbody = nullptr;
+}
+
+void Object::RefreshComponents()
+{
+	for (int i = 0; i < m_components.size(); i++)
+	{
+		if (dynamic_cast<Shader*>(&m_components[i]))
+		{
+			shader = m_components[i];
+		}
+		else if (dynamic_cast<Model*>(&m_components[i]))
+		{
+			model = m_components[i];
+		}
+		else if (dynamic_cast<Material*>(&m_components[i]))
+		{
+			material = m_components[i];
+		}
+		else if (dynamic_cast<Transform*>(&m_components[i]))
+		{
+			transform = m_components[i];
+		}
+		else if (dynamic_cast<Rigidbody*>(&m_components[i]))
+		{
+			rigidbody = m_components[i];
+		}
+	}
 }
 
 void Object::Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
 {
 	ResourceManager* rscManager = ResourceManager::Get();
-	m_shader = rscManager->GetShader(shader);
-	m_components.push_back(m_shader);
-	m_model = rscManager->GetModel(model);
-	m_components.push_back(m_model);
-	m_material = rscManager->GetShader(material);
-	m_components.push_back(m_material);
+	this->shader = rscManager->GetShader(shader);
+	m_components.push_back(this->shader);
+	this->model = rscManager->GetModel(model);
+	m_components.push_back(this->model);
+	this->material = rscManager->GetMaterial(material);
+	m_components.push_back(this->material);
 
-	m_transform = new Transform(position, rotation, scale);
+	m_components.insert(m_components.end(), components.begin(), components.end());
+	RefreshComponents();
+
+	if (!transform)
+		this->transform = new Transform(position, rotation, scale);
+
+	this->model = Model::GenerateQuad();
 }
+

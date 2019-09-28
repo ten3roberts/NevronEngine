@@ -57,6 +57,7 @@
     </ClCompile>
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\GUID.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Systemdefs.h" />
@@ -119,6 +120,8 @@
     </ClInclude>
     <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\GUID.h" />
+    <ClInclude Include="src\rsc.h" />
+    <ClInclude Include="src\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="rsc\resource.rc" />

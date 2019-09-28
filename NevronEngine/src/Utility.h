@@ -2,7 +2,6 @@
 #include "Systemdefs.h"
 #include <iostream>
 #include "..\Math\Vector.h"
-#include "Logger.h"
 #include <fstream>
 #include <vector>
 #include <string>
@@ -25,6 +24,7 @@
 #define APPEND_CODE -2
 
 std::string format(std::string format, ...);
+std::string vformat(std::string format, va_list vl);
 
 namespace Utility
 {
@@ -47,6 +47,7 @@ namespace Utility
 
 	//Will divide the string at every keyW(default space)
 	std::vector<std::string> strSplit(const std::string& str, const std::string& keyW);
+	std::vector<std::string> strSplit(const std::string& str, char keyW);
 
 	std::string strClamp(const std::string& str, unsigned int size);
 
@@ -54,6 +55,9 @@ namespace Utility
 	std::string strStop(const std::string& str, std::string keyW);
 
 	std::string strPurge(const std::string& str, const std::string& keyW);
+
+	//Removes all characters from str that exist in pattern
+	std::string strPurgeAll(const std::string& str, const std::string& pattern);
 
 	//Will add $lead to string if it doesn't already end with $lead. Good for trailing slashes
 	inline std::string strLead(const std::string& str, char lead)

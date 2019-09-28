@@ -30,6 +30,13 @@ uniform sampler2D u_texture1;
 uniform sampler2D u_texture2;
 uniform sampler2D u_texture3;
 
+/*layout (std140, row_major) uniform Material
+{
+	sampler2D texture;
+	sampler2D normalMap;
+	sampler2D specularMap;
+} material;*/
+
 void main()
 {
 	if(!gl_FrontFacing)

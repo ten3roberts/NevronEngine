@@ -6,7 +6,8 @@ using namespace Utility;
 void GLAPIENTRY ErrorCallBack(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
 {
 	{
-
+		if (type == 33361)
+			return;
 		std::string msg = "type: " + STR(type) + ", severity: " + STR(severity) + ", message: " + message;
 		LogS("OpenGL Callback", msg);
 		return;
@@ -54,7 +55,7 @@ void Renderer::BindShader(const Shader* shader)
 		return;
 
 	auto rscManager = ResourceManager::Get();
-	LogS("Renderer", "Binding shader %s %d", shader->getName());
+	//LogS("Renderer", "Binding shader %s", shader->getName());
 	glUseProgram(bufferID);
 	m_bound_shader = bufferID;
 }
@@ -64,7 +65,7 @@ void Renderer::BindModel(const Model* model)
 	unsigned int bufferID = model->getBufferID();
 	if (m_bound_shader == bufferID)
 		return;
-	LogS("Renderer", "Binding model %s", model->getName());
+	//LogS("Renderer", "Binding model %s", model->getName());
 
 	model->getVertexArray()->Bind();
 	model->getIndexBuffer()->Bind();
@@ -82,7 +83,7 @@ void Renderer::BindTexture(const Texture* texture)
 	if (m_bound_textures[slot] == bufferID)
 		return;
 		
-	LogS("Renderer", "Binding texture %s", texture->getName());
+	//LogS("Renderer", "Binding texture %s", texture->getName());
 	glActiveTexture(GL_TEXTURE0 + slot);
 	glBindTexture(GL_TEXTURE_2D, bufferID);
 	m_bound_textures[slot] = bufferID;
@@ -112,7 +113,7 @@ void Renderer::Clear(Vector4 color) const
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Renderer::Draw(rsc<Model, false> model, rsc<Shader, false> shader) const
+void Renderer::Draw(rsc_weak<Model> model, rsc_weak<Shader> shader) const
 {
 	shader->Bind();
 
@@ -124,10 +125,17 @@ void Renderer::Draw(rsc<Model, false> model, rsc<Shader, false> shader) const
 	GLCall(glDrawElements(GL_TRIANGLES, ib->getCount(), GL_UNSIGNED_INT, nullptr));
 
 	//Unbinding for debug; otherwise 
-
 }
 
-void Renderer::Draw(rsc<Shader, false> shader, rsc<Model, false> model, rsc<Material, false> material)
+void Renderer::Draw(rsc_weak<Shader> shader, rsc_weak<Model> model, rsc_weak<Material> material)
 {
+	shader->Bind();
+	model->Bind();
+	material->Bind();
+	shader->setMaterial(material);
 
+	VertexArray* va = model->getVertexArray();
+	IndexBuffer* ib = model->getIndexBuffer();
+
+	GLCall(glDrawElements(GL_TRIANGLES, ib->getCount(), GL_UNSIGNED_INT, nullptr));
 }

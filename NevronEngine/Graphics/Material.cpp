@@ -9,12 +9,18 @@ using namespace Utility;
 
 Material::Material(const std::string& name) : m_slot(0), m_texture(nullptr), m_normalMap(nullptr), m_specularMap(nullptr)
 {
-	m_name = getFilename(name, false);
+	m_name = getFilename(name, true);
 
-	std::ifstream file(FindFile(strLead(m_name, ".mat")));
+	m_filepath = FindFile(m_name);
+	std::ifstream file(m_filepath);
 
-	if (!file.is_open())
+	if (!m_filepath.size())
+	{
+		LogS("Shader : " + m_name, "Couldn't find shader with name: ");
+		m_valid = false;
 		return;
+	}
+
 
 	std::string line;
 	while (file.good())
@@ -24,7 +30,7 @@ Material::Material(const std::string& name) : m_slot(0), m_texture(nullptr), m_n
 		//Texture
 		if (line.find("texture: ") == 0)
 		{
-			m_texture = ResourceManager::Get()->GetTexture(line.substr(strlen("texture: ")));
+			m_texture = new Texture(line.substr(strlen("texture: "))); // ResourceManager::Get()->GetTexture(line.substr(strlen("texture: ")));
 			if (m_texture)
 				m_texture->setSlot(m_slot * 3);
 		}
@@ -32,7 +38,7 @@ Material::Material(const std::string& name) : m_slot(0), m_texture(nullptr), m_n
 		//normalMap
 		else if (line.find("normalMap: ") == 0)
 		{
-			m_normalMap = ResourceManager::Get()->GetTexture(line.substr(strlen("normalMap: ")));
+			m_normalMap = new Texture(line.substr(strlen("normalMap: ")));// ResourceManager::Get()->GetTexture(line.substr(strlen("normalMap: ")));
 			if (m_normalMap)
 				m_normalMap->setSlot(m_slot * 3 + 1);
 		}
@@ -40,7 +46,7 @@ Material::Material(const std::string& name) : m_slot(0), m_texture(nullptr), m_n
 		//specularMap
 		else if (line.find("specularMap: ") == 0)
 		{
-			m_specularMap = ResourceManager::Get()->GetTexture(line.substr(strlen("specularMap: ")));
+			m_specularMap = new Texture(line.substr(strlen("specularMap: ")));// ResourceManager::Get()->GetTexture(line.substr(strlen("specularMap: ")));
 			if (m_specularMap)
 				m_specularMap->setSlot(m_slot * 3 + 2);
 		}
@@ -74,7 +80,7 @@ Material::~Material()
 {
 }
 
-void Material::Bind() const
+void Material::Bind()
 {
 	if (m_texture)
 		m_texture->Bind();
@@ -95,6 +101,21 @@ void Material::setSlot(unsigned int slot)
 	m_texture->setSlot(m_slot * 3);
 	m_normalMap->setSlot(m_slot * 3 + 1);
 	m_specularMap->setSlot(m_slot * 3 + 2);
+}
+
+MaterialType Material::generateBuffer()
+{
+	unsigned int tex = 0;
+	unsigned int norm = 0;
+	unsigned int spec = 0;
+	if (m_texture)
+		tex = m_texture->getSlot();
+	if (m_normalMap)
+		norm = m_normalMap->getSlot();
+	if (m_specularMap)
+		spec = m_specularMap->getSlot();
+
+	return MaterialType(tex, norm, spec);
 }
 
 

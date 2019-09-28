@@ -1,6 +1,7 @@
 #include "Timer.h"
 #include "..\Math\Math.h"
 #include "Utility.h"
+#include "Logger.h"
 #include <iostream>
 #include <string>
 

@@ -1,6 +1,6 @@
 #include "Settings.h"
 #include "Utility.h"
-
+#include "Logger.h"
 #include <fstream>
 #include <iostream>
 
@@ -10,7 +10,7 @@ Settings* Settings::m_instance = nullptr;
 
 Settings::Settings()
 	: m_screenWidth(640), m_screenHeight(480), m_useNativeResoultion(false), m_screenNear(0.01f), m_screenFar(1000.0f),
-	m_displayMode(WINDOWED), m_VSync(false), m_MSAA(false), m_MSAASamples(1), m_FOV(1/*radians*/), m_mouseSensitivity(1)
+	m_displayMode(WINDOWED), m_VSync(false), m_AAEnabled(false), m_AASamples(1), m_FOV(1/*radians*/), m_mouseSensitivity(1)
 {
 }
 
@@ -68,15 +68,14 @@ bool Settings::Load(const std::string& filename)
 				m_VSync = parseBool(value);
 				LogS("Settings", ("Vsync: " + FormatBool(m_VSync)));
 			}
-			else if (keyWord == "MSAA")
+			else if (keyWord == "AASamples")
 			{
-				m_MSAA = parseBool(value);
-				LogS("Settings", ("MSAA: " + FormatBool(m_MSAA)));
-			}
-			else if (keyWord == "MSAASamples")
-			{
-				m_MSAASamples = num<unsigned int>(value);
-				LogS("Settings", "MSAASamples: %u", m_MSAASamples);
+				m_AASamples = num<unsigned int>(value);
+				if (m_AASamples > 1)
+					m_AAEnabled = true;
+				else
+					m_AAEnabled = false;
+				LogS("Settings", "AASamples: %u", m_AASamples);
 			}
 			else if (keyWord == "FOV")
 			{
@@ -118,8 +117,7 @@ bool Settings::Save(const std::string& filepath)
 		std::string displayModeOut = WINDOWED ? "WINDOWED" : m_displayMode == FULLSCREEN ? "FULLSCREEN" : m_displayMode == BORDERLESS ? "BORDERLESS" : "WINDOWED";
 		SettingsFile << "displayMode " << displayModeOut << std::endl;
 		SettingsFile << "VSync " << m_VSync << std::endl;
-		SettingsFile << "MSAA " << m_MSAA << std::endl;
-		SettingsFile << "MSAASamples " << m_MSAASamples << std::endl;
+		SettingsFile << "AASamples " << m_AASamples << std::endl;
 		SettingsFile << "FOV " << m_FOV << std::endl;
 		SettingsFile << "sensitivity " << m_mouseSensitivity << std::endl;
 
@@ -166,15 +164,16 @@ void Settings::EnableVSync(bool enable)
 	m_VSync = enable;
 }
 
-void Settings::EnableMSAA(bool enable)
+void Settings::EnableAA(bool enable)
 {
-	m_MSAA = enable;
+	m_AAEnabled = enable;
 }
 
-void Settings::setMSAASample(int sampleQuantity)
+void Settings::setAASamples(unsigned int samples)
 {
-	m_MSAASamples = sampleQuantity;
+	m_AASamples = samples;
 }
+
 
 void Settings::setFOV(float FOV)
 {

@@ -13,6 +13,7 @@
 #include <Graphics/Shader.h>
 #include <Graphics/UniformBuffer.h>
 #include <GLFW/glfw3.h>
+#include <src/Camera.h>
 
 #include <iostream>
 #include <string>
@@ -28,8 +29,8 @@ using namespace Math;
 
 int main(int argc, char** argv)
 {
-	system("color a");
-
+	//system("color a");
+	Time::Init();
 
 	setWorkingDir(DirectoryUp(argv[0]));
 
@@ -47,6 +48,9 @@ int main(int argc, char** argv)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_SAMPLES, Settings::get()->getAASamples());
+
+	glfwSwapInterval(0);
 
 	//Create a windowed mode window and its OpenGL context
 	GLFWwindow* window = glfwCreateWindow(settings->getScreenWidth(), settings->getScreenHeight(), APPNAME, NULL, NULL);
@@ -67,7 +71,7 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
-	Texture iconTex("NevronLogo.a", 0, false);
+	Texture iconTex("NevronLogo.a.png", 0, false);
 	Texture cursorTex("Arrow", 0, false);
 
 	GLFWimage icon;
@@ -87,28 +91,32 @@ int main(int argc, char** argv)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	glEnable(GL_DEPTH_TEST);
-	glCullFace(GL_BACK);
+	//glCullFace(GL_BACK);
 	glEnable(GL_CULL_FACE);
+	glDisable(GL_CULL_FACE);
+	if (Settings::get()->getAAEnabled())
+		glEnable(GL_MULTISAMPLE);
 
 	delete timer;
 
-
-
 	ResourceManager* rscManager = ResourceManager::Get();
 	//Model model(vertices, 4, indices, 6);
-	Model model = Model::GenerateQuad();
+	/*Model model = *Model::GenerateQuad();
 
 	//Shaders
 	rsc<Shader> shader = rscManager->GetShader("Basic");
-	//Shader shader("Basic");
+
 	rsc<Shader> multiMapShader = rscManager->GetShader("MultiMap");
+
 	shader->Bind();
 	shader->setUniform4f("u_color", Vector4::white);
 
-	Material material1("Logo");
+	Material* material1 = &rscManager->GetMaterial("Logo.mc");
+	Material* material2 = &rscManager->GetMaterial("Wood");
+
 	rsc<Material> ground = rscManager->GetMaterial("Ground");
 	shader->setUniform1i("u_texture", 0); //0 is slot
-	shader->Bind();
+	shader->Bind();*/
 	//Uniform buffer objects
 
 	struct EnvironmentType
@@ -121,105 +129,59 @@ int main(int argc, char** argv)
 	environment.color = vec3::red;
 	environment.viewDistance = 10;
 
-	UniformBuffer ubo("Environment", nullptr, sizeof(EnvironmentType));
-	ubo.setData(&shader, &environment, sizeof(EnvironmentType));
-
-	shader->Unbind();
+	//shader->setUniformBuffer("Environment", &environment, sizeof(EnvironmentType));
+	//shader->Unbind();
 
 	Renderer* renderer = Renderer::Get();
-
+	Camera camera;
 	//Matrix4 projectionMat = Matrix4::OrthoAspect(2, settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
-	Matrix4 projectionMat = Matrix4::Perspective(settings->getFOV(), settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
-	Transform transform1({ -0.445, 0, -5 }, Quaternion::identity, { 3 });
-	Transform transform2;
-	Transform transform3;
-	Rigidbody rb1;
-	Rigidbody rb2;
+	//Matrix4 projectionMat = Matrix4::Perspective(settings->getFOV(), settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
+
 	LogS("Main", "----------Entering game loop----------\n");
 
+	Object object("Basic.glsl", "Quad", "Wood.mat", { new Transform({0,0,5}, Quaternion::identity, 1) });
+	Object object2("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-1}, Quaternion::identity, 1), new Rigidbody(0, {0,0,0.5}, 1) });
+	Object object3("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-2}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.1f, {0,1,-0.5}, 1) });
+	object.AddComponent(new Rigidbody());
+	object.AddComponent<Shader>("Basic.gls");
 
+	object.rigidbody->velocity = Vector3(0, 0, -1);
+	object.rigidbody->angularVelocity = Vector3(0, 1, 0);
 
-
-	rsc<Material> material2 = rscManager->GetResource<Material>("Mario");
-
-	Object object;
-
-	object.AddComponent<Shader>("Basic");
 	while (!glfwWindowShouldClose(window))
 	{
 		Time::Update();
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
-		object.AddComponent<Shader>("Basic");
-		object.RemoveComponent<Shader>();
-		//object.AddComponent<Shader>("Basic2");
-		//rscManager->GetShader("Basic2");
-		//LogS("Basic shader references", "references: %d", object.GetComponent<Shader>().getReferenceCount());
 
-		renderer->Clear();
+		renderer->Clear(Vector4::black);
+		//camera.transform.rotation *= Quaternion({ 0, 1, 0.5 }, Time::deltaTime);
+
+		
+
+		//camera.transform.position = { 0,Math::SineWave(-0.5, 0.5, 1, Time::elapsedTime) ,0 };
+		camera.Update();
 
 		//Binding
+		//object.material->color = vec3::HSV(Time::elapsedTime / 10.0f, 1, 1);
+		object.Update();
+		object.Render(&camera);
 
-		material1.color = vec3::HSV(Time::elapsedTime / 10.0f, 1, 1);
-		shader->Bind();
+		object3.Update();
+		object3.Render(&camera);
 
-		material1.Bind();
-		shader->setMaterial(&material1);
+		object2.Update();
+		object2.Render(&camera);
+		
 
-		Quaternion rot = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
-		//transform1.rotation = Quaternion({ 0,0,1 }, Time::elapsedTime * 2) * Quaternion({ 0, 1, 0 }, Time::elapsedTime * 0.5);
-		rb1.velocity = Vector3(0.5, 0, -1);
-		rb1.angularVelocity = Vector3(1, 2.35, 0);
-		rb1.Update(&transform1);
-		Vector list = Random::Array(5);
-		//LogS("", "Entity 1 pos %vn", list);
-		transform1.Update();
-
-		Matrix4 camTranslation = Matrix4::Translate({ 0,Math::SineWave(-5, 5, 1, Time::elapsedTime) * 0 ,0 });
-		Quaternion camRotation = Quaternion({ 0, 1, 0 }, 0);
-		Matrix4 u_MVP = /*(rot.toMatrix() * scale * translation)*/ transform1.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
-
-		shader->setUniformMat4f("u_MVP", u_MVP);
-
-		//renderer.Draw(va, ib, shader);
-		renderer->Draw(&model, shader);
-
-		//Object2
-		transform2.position = { -2, 0, Math::CosineWave(-25, 25, 1, Time::elapsedTime) };
-		transform2.rotation = Quaternion({ 1, 0, 0 }, Time::elapsedTime * 2.8);
-
-		transform2.Update();
-
-		Matrix4 u_MVP2 = transform2.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
-		shader->setUniformMat4f("u_MVP", u_MVP2);
-		material2->Bind();
-		shader->setMaterial(&material2);
-		renderer->Draw(&model, shader);
-
-		//Object3
-
-		multiMapShader->Bind();
-		transform3.position = { 0, 0, Math::CosineWave(-1, -2, 5, Time::elapsedTime) };
-		transform3.rotation = Quaternion({ 0, 1, 0 }, Time::elapsedTime);
-
-		transform3.Update();
-		//rscManager->GetMaterial("Ground")->color = vec3::HSV(Time::elapsedTime / 5.0f, 1, 1);
-
-		Matrix4 u_MVP3 = transform3.getWorldMatrix() * (camRotation.Inverse().toMatrix() * camTranslation) * projectionMat;
-		multiMapShader->setUniformMat4f("u_MVP", u_MVP3);
-		ground->Bind();
-		multiMapShader->setMaterial(&ground);
-		renderer->Draw(&model, &multiMapShader);
 
 		//Swap front and back buffers
 		glfwSwapBuffers(window);
 
 		//Poll for and process events
 		glfwPollEvents();
-
-		//Unbinding
-		//shader->Unbind();
 	}
+
 
 	LogS("Main", "Closing Window");
 

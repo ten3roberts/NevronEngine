@@ -11,8 +11,16 @@ using namespace Utility;
 Texture::Texture(const std::string& name, unsigned int slot, bool flip)
 	: m_slot(slot), m_localBuffer(nullptr), m_width(0), m_height(0), m_BPP(0)
 {
-	m_name = strLead(getFilename(name, true), ".png");
+	m_name = getFilename(name, true);
 	m_filepath = FindFile(m_name);
+
+	if (!m_filepath.size())
+	{
+		LogS("Texture : " + m_name, "Couldn't find texture with name: ");
+		m_valid = false;
+		return;
+	}
+
 	LogS("Texture: " + m_name, "Loading texture: %s", ShortenPath(m_filepath));
 
 	stbi_set_flip_vertically_on_load(flip);

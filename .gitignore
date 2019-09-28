@@ -20,7 +20,7 @@
 bin/intermediates
 
 #Log files
-.log
+*.log
 
 # Visual Studio 2015 cache/options directory
 .vs/

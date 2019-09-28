@@ -271,7 +271,7 @@ float& Matrix4::operator()(int row, int col)
 	return m_data[row][col];
 }
 
-Matrix4 Matrix4::operator*(const Matrix4 matrix) const
+Matrix4 Matrix4::operator*(const Matrix4& matrix) const
 {
 	Matrix4 result;
 	for (unsigned int i = 0; i < 4; i++) //row
@@ -284,6 +284,21 @@ Matrix4 Matrix4::operator*(const Matrix4 matrix) const
 		}
 	}
 	return result;
+}
+
+void Matrix4::operator*=(const Matrix4& matrix)
+{
+	Matrix4 result;
+	for (unsigned int i = 0; i < 4; i++) //row
+	{
+		for (unsigned int j = 0; j < 4; j++)//col
+		{
+			//Loops through second matrix column and puts in result col
+			for (unsigned int d = 0; d < 4; d++)
+				result(i, d) += get(i, j) * matrix.get(j, d);
+		}
+	}
+	*this = result;
 }
 
 Matrix Matrix::Parse(const std::string& str)

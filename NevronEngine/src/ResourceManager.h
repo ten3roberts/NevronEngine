@@ -16,23 +16,22 @@ class ResourceManager
 private:
 
 	//Object resources; A.K.A components
-	std::vector<rsc<Shader, false>> m_shaders;
+	std::vector<rsc_weak<Shader>> m_shaders;
 
-	std::vector<rsc<Model, false>> m_models;
+	std::vector<rsc_weak<Model>> m_models;
 
-	std::vector<rsc<Material, false>> m_materials;
+	std::vector<rsc_weak<Material>> m_materials;
 
-	std::vector<rsc<Texture, false>> m_textures;
+	std::vector<rsc_weak<Texture>> m_textures;
 
 	//Graphical resources
 
-	std::vector<rsc<UniformBuffer, false>> m_uniformBuffers;
+	std::vector<rsc_weak<UniformBuffer>> m_uniformBuffers;
 
 	//Keeps track of the availabale uniform buffer slots. The last element in the array indicates that all above those are free
 	std::vector<unsigned int> m_UBOSlots;
 
 	ResourceManager();
-	~ResourceManager();
 
 public:
 	static ResourceManager* Get();
@@ -65,6 +64,7 @@ public:
 
 	//Will return a uniformBuffer by name. If it doesn't exist it will attempt to load it from file
 	rsc<UniformBuffer> GetUBO(const std::string& name);
+
 	//Will return a uniformBuffer by ID. Returns nullptr if it doesn't exist
 	rsc<UniformBuffer> GetUBO(GUID ID);
 

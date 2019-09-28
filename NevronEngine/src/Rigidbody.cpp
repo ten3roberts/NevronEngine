@@ -18,7 +18,7 @@ Rigidbody::Rigidbody(Vector3 velocity, Quaternion angularVelocity, float mass) :
 	this->angularVelocity = angularVelocity.toEuler();
 }
 
-void Rigidbody::Update(Transform* transform)
+void Rigidbody::Update(rsc_weak<Transform>transform)
 {
 	transform->position += velocity * Time::deltaTime;
 	transform->rotation *= Quaternion(angularVelocity * Time::deltaTime);

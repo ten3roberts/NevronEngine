@@ -11,12 +11,12 @@ Transform::Transform(Vector3 position, Quaternion rotation, Vector3 scale) : pos
 void Transform::Update()
 {
 	m_worldMatrix = Matrix4::Rotate(rotation) * Matrix4::Scale(scale) * Matrix4::Translate(position);
+	forward = m_worldMatrix * Vector3::forward;
 }
 
 void Transform::Update(Vector3 position, Quaternion rotation, Vector3 scale)
 {
 	m_worldMatrix = Matrix4::Rotate(rotation) * Matrix4::Scale(scale) * Matrix4::Translate(position);
+	forward = m_worldMatrix * Vector3::forward;
 }
-
-
 

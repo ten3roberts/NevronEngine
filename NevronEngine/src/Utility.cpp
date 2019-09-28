@@ -1,8 +1,7 @@
 #include "Utility.h"
-
+#include "Logger.h"
 
 #include <fstream>
-#include <iostream>
 #include <filesystem>
 #include <Windows.h>
 
@@ -107,6 +106,27 @@ std::vector<std::string> Utility::strSplit(const std::string& str, const std::st
 	return results;
 }
 
+std::vector<std::string> Utility::strSplit(const std::string& str, char keyW)
+{
+	//Terminating string with keyW
+	std::string text = str;
+	if (!(text.back() == keyW))
+		text += keyW;
+
+	std::vector<std::string> results;
+	for (unsigned int i = 0; i < text.size(); i++)
+	{
+		if (text[i] == keyW) //Cursor att keyword
+		{
+			results.push_back(text.substr(0, i)); //Push left bit to results
+			text = text.substr((__int64)i + 1); //And remove it from string and reset cursor
+			i = 0;
+		}
+	}
+
+	return results;
+}
+
 std::string Utility::strClamp(const std::string& str, unsigned int size)
 {
 	return str.substr(0, size);
@@ -121,21 +141,41 @@ std::string Utility::strPurge(const std::string& str, const std::string& keyW)
 {
 	std::string result;
 	//Left part iterator
-	unsigned int c = 0;
-	for (unsigned int i = 0; i < str.size(); i++)
+	size_t c = 0;
+	for (size_t i = 0; i < str.size(); i++)
 	{
 		if (str.substr(i, keyW.size()) == keyW) //Adding left part of string
 		{
 			result += str.substr(c, i - c);
 
 			//Skipping past $keyW
-			i += (unsigned int)keyW.size();
+			i += keyW.size();
 
 			//Cathing up with left iterator
 			c = i;
 		}
 	}
 	return result + str.substr(c);
+}
+
+std::string Utility::strPurgeAll(const std::string& str, const std::string& pattern)
+{
+	std::string result;
+	//Left part iterator
+	bool ok = true;
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		for (size_t j = 0; j < pattern.size(); j++)
+			if (str[i] == pattern[j])
+			{
+				ok = false;
+				continue;
+			}
+		if(ok)
+		result += str[i];
+		ok = true;
+	}
+	return result;
 }
 
 std::string Utility::ListTostring(float* list, int size)
@@ -238,11 +278,11 @@ std::string Utility::FormatTime(int seconds)
 
 std::string Utility::FormatSeconds(float seconds)
 {
-	if(seconds > 0.1)
+	if (seconds > 0.1)
 		return std::to_string(seconds) + "s";
 	else if (seconds > 0.0001)
 		return std::to_string(seconds * 1000) + "ms";
-	else if(seconds > 0.0000001)
+	else if (seconds > 0.0000001)
 		return std::to_string(seconds * 1000000) + "us";
 	else
 		return std::to_string(seconds * 1000000000) + "ns";
@@ -659,99 +699,39 @@ void Utility::SaveErrorDef()
 	GenerateFile(WORKDIR + "Assets\\Errordef.txt", ListTostring(s_errorDef), false);
 }
 
-/*void Utility::Log(const std::string& msg, const std::string& msgOrigin)
-{
-	//Make sure the logs folder exists
-	GeneratePath(WORKDIR + "Logs");
-
-	if (!s_LogSile.is_open())
-		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
-	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + msg;
-
-	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
-
-	if (ENABLE_CONSOLE)
-		std::cout.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
-	s_LogSile.close();
-}
-/*void Utility::Log(std::initializer_list<std::string> msg, const std::string& msgOrigin)
-{
-	//Make sure the logs folder exists
-	GeneratePath(WORKDIR + "Logs");
-
-	if (!s_LogSile.is_open())
-		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
-	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): ";
-	for (int i = 0; i < msg.size(); i++)
-		fullMsg += *(msg.begin() + i);
-
-	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
-
-	if (ENABLE_CONSOLE)
-		std::cout.write((fullMsg + "\n").c_str(), fullMsg.size() + 1);
-	s_LogSile.close();
-}
-
-void Utility::Log_s(const std::string& msg, const std::string& msgOrigin)
-{
-	//Make sure the logs folder exists
-	GeneratePath(WORKDIR + "Logs");
-
-	if (!s_LogSile.is_open())
-		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
-	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + msg;
-
-	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
-	s_LogSile.close();
-}*/
-
-/*void Utility::Log_s(std::initializer_list<std::string> msg, const std::string& msgOrigin)
-{
-	//Make sure the logs folder exists
-	GeneratePath(WORKDIR + "Logs");
-
-	if (!s_LogSile.is_open())
-		//fopen((WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt").c_str());
-		s_LogSile.open(WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt", std::ios::app);
-	std::string fullMsg = "(" + msgOrigin + " @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): ";
-	for (int i = 0; i < msg.size(); i++)
-		fullMsg += *(msg.begin() + i);
-
-	s_LogSile.write((fullMsg + "\n"), fullMsg.size() + 1);
-	s_LogSile.close();
-}*/
-
 #include <Math/Math.h>
 
-std::string format(std::string format, ...)
+std::string vformat(std::string format, va_list vl)
 {
-	va_list vl;
-	va_start(vl, format);
-
+	enum Flag
+	{
+		None, Long
+	};
 	std::string result;
-	for (unsigned int i = 0; i < format.size(); i += 2)
+	Flag flag = None;
+	for (size_t i = 0; i < format.size(); i += 2)
 	{
 		std::string a;
 		//Is a two wide substr of fmt
-		if (format[i] == '%' && !(i > 0 && format[i - 1] == '\\')) //Format expected
-			switch (format[(__int64)i + 1]) //checks next
+		if (format[i] == '%' && !(i > 0 && format[i - 1] == '\\') || flag) //Format expected
+			switch (format[i + 1]) //Checks next
 			{
 			case 'd': //Signed decimal integer
-				result += std::to_string(va_arg(vl, signed int));
+				result += std::to_string(flag == None ? va_arg(vl, long int) : va_arg(vl, int));
 				break;
 
 			case 'i': //Signed decimal integer
-				result += std::to_string(va_arg(vl, signed int));
+				result += std::to_string(flag == None ? va_arg(vl, long int) : va_arg(vl, int));
 				break;
 
 			case 'u': //Unsigned decimal integer
-				result += std::to_string(va_arg(vl, unsigned int));
+				result += std::to_string(flag == None ? va_arg(vl, unsigned long int) : va_arg(vl, unsigned int));
+				break;
+			case 't': //size_t
+				result += std::to_string(va_arg(vl, size_t));
 				break;
 			case 'v':
-				switch (format[(__int64)i + 2])
+				switch (format[i + 2])
 				{
 				case '2':
 					result += va_arg(vl, Vector2).str();
@@ -782,15 +762,13 @@ std::string format(std::string format, ...)
 				case '4':
 					result += va_arg(vl, Vector4).str_d();
 					break;
-				case 'n':
-					result += va_arg(vl, Vector).str_d();
-					break;
 				default:
+					result += va_arg(vl, Vector).str_d();
 					break;
 				}
 				break;
 			case 'm':
-				switch (format[(__int64)i + 2])
+				switch (format[i + 2])
 				{
 				case 4:
 					result += va_arg(vl, Matrix4).str();
@@ -800,7 +778,7 @@ std::string format(std::string format, ...)
 				}
 				break;
 			case 'M':
-				switch (format[(__int64)i + 2])
+				switch (format[i + 2])
 				{
 				case 4:
 					result += va_arg(vl, Matrix4).str();
@@ -809,27 +787,27 @@ std::string format(std::string format, ...)
 					break;
 				}
 			case 'o': //Unsigned octal
-				result += Math::ToOctal(va_arg(vl, signed int));
+				result += Math::ToOctal(flag == None ? va_arg(vl, unsigned long int) : va_arg(vl, unsigned int));
 				break;
 
 			case 'x': //Unsigned hexadecimal integer (lowercase)
-				result += Math::ToHex(va_arg(vl, unsigned int), false);
+				result += Math::ToHex(flag == None ? va_arg(vl, unsigned long int) : va_arg(vl, unsigned int), false);
 				break;
 			case 'X': //Unsigned hexadecimal integer (uppercase)
-				result += Math::ToHex(va_arg(vl, unsigned int), true);
+				result += Math::ToHex(flag == None ? va_arg(vl, unsigned long int) : va_arg(vl, unsigned int), true);
 				break;
-			case 'f': //Decimal floating point (lowercase)
+			case 'f': //Decimal double (lowercase)
 				result += std::to_string(va_arg(vl, double));
 				break;
-			case 'F': //Decimal floating point (uppercase)
+			case 'F': //Decimal double (uppercase)
 				result += std::to_string(va_arg(vl, double));
 				break;
-			case 'e':
+			case 'e': //Scientific notation lowercase
 			{char buffer[max_loglenght];
 			snprintf(buffer, max_loglenght, "%e", va_arg(vl, double));
 			result.append(buffer);
 			break; }
-			case 'E':
+			case 'E': //Scientific notation uppercase
 			{char buffer[max_loglenght];
 			snprintf(buffer, max_loglenght, "%E", va_arg(vl, double));
 			result.append(buffer);
@@ -880,4 +858,13 @@ std::string format(std::string format, ...)
 		}
 	}
 	return result;
+}
+
+
+std::string format(std::string format, ...)
+{
+	va_list vl;
+	va_start(vl, format);
+
+	return vformat(format, vl);
 }

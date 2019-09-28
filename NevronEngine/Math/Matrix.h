@@ -6,7 +6,9 @@ struct Quaternion;
 
 struct Matrix4
 {
-	Matrix4() : m_data{ 0 } {}
+	Matrix4() : m_data{
+		0
+	} {}
 	Matrix4(std::initializer_list<float> list) : m_data{ 0 }
 	{
 		memcpy(m_data, list.begin(), (16 < list.size() ? 16 : list.size()) * sizeof(float));
@@ -77,7 +79,8 @@ struct Matrix4
 
 	Vector4 operator*(const Vector4& colVec) const;
 
-	Matrix4 operator*(Matrix4 matrix) const;
+	Matrix4 operator*(const Matrix4& matrix) const;
+	void operator*=(const Matrix4& matrix);
 
 	void operator=(const Matrix4& matrix);
 

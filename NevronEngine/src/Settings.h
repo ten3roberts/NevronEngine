@@ -24,8 +24,8 @@ public:
 	void setScreenNear(float distance);
 	void setDisplayMode(DisplayMode displayMode);
 	void EnableVSync(bool enable);
-	void EnableMSAA(bool enable);
-	void setMSAASample(int sampleQuantity);
+	void EnableAA(bool enable);
+	void setAASamples(unsigned int samples);
 	void setFOV(float FOV);
 	void setMouseSensitivity(float sensitivity);
 
@@ -39,7 +39,8 @@ public:
 	float getScreenNear() { return m_screenNear; };
 	DisplayMode getDisplayMode() { return m_displayMode; };
 	bool getVSyncEnabled() { return m_VSync; };
-	bool getMSAAEnabled() { return m_MSAA; };
+	bool getAAEnabled() { return m_AAEnabled; };
+	unsigned int getAASamples() { return m_AASamples; }
 
 	float getFOV() { return m_FOV; };
 	float getMouseSensitivity() { return m_mouseSensitivity; };
@@ -59,8 +60,8 @@ private: //SettingsVariables
 	float m_screenFar;
 	DisplayMode m_displayMode;
 	bool m_VSync;
-	bool m_MSAA;
-	unsigned int m_MSAASamples;
+	bool m_AAEnabled;
+	unsigned int m_AASamples;
 
 	float m_FOV; //Field of view in radians.
 	float m_mouseSensitivity;

@@ -2,6 +2,8 @@
 #include "..\src\Utility.h"
 #include "Vector3.h"
 #include <string>
+#include <stdarg.h>     /* va_list, va_start, va_arg, va_end */
+
 
 //Vector math
 	//Will return a vector to a random point on a sphere

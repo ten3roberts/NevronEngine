@@ -11,7 +11,7 @@ struct ShaderSource
 {
 	ShaderSource(std::stringstream ss[2]) : vertexSource(ss[0].str()), fragmentSource(ss[1].str()) {};
 	std::string vertexSource, fragmentSource;
-	std::string operator[](unsigned int index) { return *(&vertexSource + index); };
+	const std::string operator[](unsigned int index) const { return *(&vertexSource + index); };
 };
 
 class Shader : public Component
@@ -20,6 +20,7 @@ private:
 	std::string m_filepath;
 	//Uniform caching
 	std::unordered_map<std::string, int> m_uniformCache;
+	std::unordered_map<std::string, rsc<UniformBuffer>> m_uniformBuffers;
 public:
 	//Compilation from file
 	Shader(const std::string& name);
@@ -49,9 +50,15 @@ public:
 	void setUniform1f(const std::string& name, float value);
 
 	//sets an integer value
-	void setUniform1i(const std::string name, int value);
+	void setUniform1i(const std::string& name, int value);
 
-	void setMaterial(Material* material);
+	//Sets a shader specific uniform buffer by name with the data provided
+	bool setUniformBuffer(const std::string& name, void* data, size_t size, size_t offset = 0);
+
+	//Returns a shader specific uniform buffer by name
+	rsc<UniformBuffer> getUniformBuffer(const std::string name);
+
+	void setMaterial(rsc_weak<Material> material);
 
 
 	std::string getName() const { return m_name; }
@@ -61,8 +68,9 @@ private:
 
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 	unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
-	unsigned int CreateShader(ShaderSource source);
+	unsigned int CreateShader(const ShaderSource& source);
 	ShaderSource ParseShader(const std::string& path);
+	void ProcessShader(const ShaderSource& source);
 };
 
 

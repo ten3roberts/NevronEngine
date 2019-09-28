@@ -2,7 +2,7 @@
 #include <src/Systemdefs.h>
 #include <Graphics/Model.h>
 #include <Graphics/Shader.h>
-
+#include <src/Transform.h>
 #include <GL/glew.h>
 #include <string>
 
@@ -47,6 +47,6 @@ public:
 	void UnbindMaterial();
 
 	void Clear(Vector4 color = Vector4::black) const;
-	void Draw(rsc<Model, false> model, rsc<Shader, false> shader) const;
-	void Draw(rsc<Shader, false> shader, rsc<Model, false> model, rsc<Material, false> material);
+	void Draw(rsc_weak<Model> model, rsc_weak<Shader> shader) const;
+	void Draw(rsc_weak<Shader> shader, rsc_weak<Model> model, rsc_weak<Material> material);
 };

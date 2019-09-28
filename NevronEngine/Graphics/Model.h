@@ -22,6 +22,7 @@ class Model : public Component
 private:
 	//std::vector<Vertex> m_vertices;
 	//std::vector<unsigned int> m_indices;
+	std::string m_filepath;
 
 	VertexBuffer *m_vertexBuffer;
 	IndexBuffer *m_indexBuffer;
@@ -33,7 +34,7 @@ public:
 
 	~Model();
 
-	static Model GenerateQuad(Vector2 size = Vector2::one);
+	static Model* GenerateQuad(Vector2 size = Vector2::one);
 
 	VertexBuffer* getVertexBuffer() const { return m_vertexBuffer; }
 	IndexBuffer* getIndexBuffer() const { return m_indexBuffer; }

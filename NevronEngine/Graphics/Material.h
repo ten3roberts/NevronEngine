@@ -3,9 +3,17 @@
 #include <Graphics/Texture.h>
 #include <Math\Vector4.h>
 
+//Matches the shader representation of Material
+struct MaterialType
+{
+	MaterialType(unsigned int texture, unsigned int normalMap, unsigned int specularMap) : texture(texture), normalMap(normalMap), specularMap(specularMap) {}
+	unsigned int texture, normalMap, specularMap;
+};
+
 class Material : public Component
 {
 	unsigned int m_slot;
+	std::string m_filepath;
 
 	rsc<Texture> m_texture;
 	rsc<Texture> m_normalMap;
@@ -22,24 +30,26 @@ public:
 	Material(const std::string& textureName, Vector4 color, float reflectivity, float smoothness);
 	~Material();
 
-	rsc<Texture, false> getTexture() { return m_texture; }
+	rsc_weak<Texture> getTexture() const { return m_texture; }
 	//Also assigns the correct slot
-	void setTexture(rsc<Texture, false> texture) { m_texture = texture; m_texture->setSlot(m_slot * 3); }
+	void setTexture(rsc_weak<Texture> texture) { m_texture = texture; m_texture->setSlot(m_slot * 3); }
 
-	rsc<Texture, false> getNormalMap() { return m_normalMap; }
+	rsc_weak<Texture> getNormalMap() { return m_normalMap; }
 	//Also assigns the correct slot
-	void setNormalMap(rsc<Texture, false> normalMap) { m_normalMap = normalMap; m_normalMap->setSlot(m_slot * 3 + 1); }
+	void setNormalMap(rsc_weak<Texture> normalMap) { m_normalMap = normalMap; m_normalMap->setSlot(m_slot * 3 + 1); }
 
-	rsc<Texture, false> getSpecularMap() { return m_specularMap; }
+	rsc_weak<Texture> getSpecularMap() { return m_specularMap; }
 	//Also assigns the correct slot
-	void setSpecularMap(rsc<Texture, false> specularMap) { m_specularMap = specularMap; m_specularMap->setSlot(m_slot * 3 + 2); }
+	void setSpecularMap(rsc_weak<Texture> specularMap) { m_specularMap = specularMap; m_specularMap->setSlot(m_slot * 3 + 2); }
 
 
-	void Bind() const;
+	void Bind();
 	void Unbind();
 
 	unsigned int getSlot() { return m_slot; }
 	void setSlot(unsigned int slot);
+
+	MaterialType generateBuffer();
 
 	//Returns a texture by index; 0 : texture, 1 : normalMap, 2 : specularMap
 	rsc<Texture> operator[](int index)

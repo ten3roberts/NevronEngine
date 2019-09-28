@@ -15,11 +15,11 @@ public:
 public:
 	Rigidbody(float mass = 1);
 	Rigidbody(Vector3 velocity, float mass = 1);
-	Rigidbody(Vector3 velocity, Vector3 angularVelocity, float mass = 1);
-	Rigidbody(Vector3 velocity, Quaternion angularVelocity, float mass = 1);
+	Rigidbody(Vector3 velocity, Vector3 angularVelocity, float mass = 1.0f);
+	Rigidbody(Vector3 velocity, Quaternion angularVelocity, float mass = 1.0f);
 
 	//Updates the transform with deltaTime. Do this before calling Transform::Update()
-	void Update(Transform* transform);
+	void Update(rsc_weak<Transform> transform);
 
 	//Updates the transform with fixedDeltaTime. Do this before calling Transform::Update()
 	void FixedUpdate(Transform* transform);

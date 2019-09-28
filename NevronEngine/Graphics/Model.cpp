@@ -18,7 +18,7 @@ Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 
 Model::Model(const std::string& name)
 {
-	//TODO: load model from obj file
+	//TODO: load model from collada file
 }
 
 Model::Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount)
@@ -42,7 +42,7 @@ Model::~Model()
 	delete m_vertexArray;
 }
 
-Model Model::GenerateQuad(Vector2 size)
+Model* Model::GenerateQuad(Vector2 size)
 {
 	//Simple square
 	Vertex vertices[4];
@@ -57,7 +57,7 @@ Model Model::GenerateQuad(Vector2 size)
 	};
 
 
-	return Model(vertices, 4, indices, 6);
+	return new Model(vertices, 4, indices, 6);
 }
 
 void Model::setVertices(std::vector<Vertex> vertices)

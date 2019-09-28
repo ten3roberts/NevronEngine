@@ -5,23 +5,24 @@
 #include <Graphics/Model.h>
 #include <Graphics/Material.h>
 #include <src/Transform.h>
+#include <src/Camera.h>
 #include <src/Rigidbody.h>
 #include <vector>
 
-//Object is a base class of 
 class Object
 {
 private:
 	void RemoveSpecialized(rsc<Component> component);
+	void RefreshComponents();
 	void Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components);
 	std::vector<rsc<Component>> m_components;
-
+public:
 	//Fast access
-	rsc<Shader, false> m_shader;
-	rsc<Model, false> m_model;
-	rsc<Material, false> m_material;
-	rsc<Transform, false> m_transform;
-	rsc<Rigidbody, false> m_rigidbody;
+	rsc_weak<Shader>		shader;
+	rsc_weak<Model>			model;
+	rsc_weak<Material>		material;
+	rsc_weak<Transform>		transform;
+	rsc_weak<Rigidbody>		rigidbody;
 public:
 	Object();
 	Object(const std::string& shader, const std::string model, const std::string material, std::vector<rsc<Component>> components);
@@ -29,7 +30,7 @@ public:
 
 	void Update();
 	void FixedUpdate();
-	void Render();
+	void Render(rsc_weak<Camera> camera);
 
 
 #pragma region AddComponent
@@ -40,8 +41,8 @@ public:
 	template <typename A>
 	bool AddComponent(const std::string& name)
 	{
-		rsc<A, false> tmp = ResourceManager::Get()->GetResource<A>(name);
-		if (!tmp)
+		rsc_weak<A> tmp = ResourceManager::Get()->GetResource<A>(name);
+		if (!tmp || !tmp->getValid())
 		{
 			return false;
 		}
@@ -148,31 +149,31 @@ public:
 	template<>
 	rsc<Shader> GetComponent()
 	{
-		return m_shader;
+		return shader;
 	}
 
 	template<>
 	rsc<Model> GetComponent()
 	{
-		return m_model;
+		return model;
 	}
 
 	template<>
 	rsc<Material> GetComponent()
 	{
-		return m_material;
+		return material;
 	}
 
 	template<>
 	rsc<Transform> GetComponent()
 	{
-		return m_transform;
+		return transform;
 	}
 
 	template<>
 	rsc<Rigidbody> GetComponent()
 	{
-		return m_rigidbody;
+		return rigidbody;
 	}
 #pragma endregion
 #pragma region GetComponents
