@@ -5,6 +5,6 @@ screenNear 0.01
 displayMode WINDOWED
 VSync 0
 MSAA 0
-MSAASamples 1
+MSAASamples 16
 FOV 1
 sensitivity 1
