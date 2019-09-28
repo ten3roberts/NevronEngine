@@ -23,7 +23,7 @@ void LogS(const std::string& author, std::string format, ...)
 
 	if (!logFile.is_open())
 	{
-		std::string logfile_name = WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt";
+		std::string logfile_name = WORKDIR + "Logs\\" + Time::startDateAndTime + ".log";
 		Utility::GenerateFile(logfile_name, "");
 		logFile.open(logfile_name);
 		LogS("Logger", "Creating new logfile %s", logfile_name);
@@ -51,7 +51,7 @@ void LogF(std::string format, ...)
 
 	if (!logFile.is_open())
 	{
-		std::string logfile_name = WORKDIR + "Logs\\" + Time::startDateAndTime + ".txt";
+		std::string logfile_name = WORKDIR + "Logs\\" + Time::startDateAndTime + ".log";
 		Utility::GenerateFile(logfile_name, "");
 		logFile.open(logfile_name);
 		LogS("Logger", "Creating new logfile %s", logfile_name);
@@ -69,4 +69,39 @@ void LogF(std::string format, ...)
 	printf(fullMsg.c_str());
 	logFile.write(fullMsg.c_str(), fullMsg.size());
 	va_end(vl);
+}
+
+void LogE(const std::string& author, float pause, std::string format, ...)
+{
+	enum Flag
+	{
+		None, Long
+	};
+
+	va_list vl;
+	va_start(vl, format);
+
+	std::string fullMsg = '(' + (author == "" ? "Log" : author) + " @ " +
+		Time::getDateAndTime(Time::ONLY_TIME) + "): " + vformat(format, vl);
+
+	if (!logFile.is_open())
+	{
+		std::string logfile_name = WORKDIR + "Logs\\" + Time::startDateAndTime + ".log";
+		Utility::GenerateFile(logfile_name, "");
+		logFile.open(logfile_name);
+		LogS("Logger", "Creating new logfile %s", logfile_name);
+	}
+
+	if (frame != Time::frameCount)
+	{
+		frame = Time::frameCount;
+		std::string divider(fullMsg.size(), '-');
+		divider += "\n";
+		fullMsg.insert(fullMsg.begin(), divider.begin(), divider.end());
+	}
+	fullMsg += '\n';
+	printf(fullMsg.c_str());
+	logFile.write(fullMsg.c_str(), fullMsg.size());
+	va_end(vl);
+	SLEEPFOR(pause);
 }

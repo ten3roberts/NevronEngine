@@ -2,10 +2,13 @@
 #include <chrono>
 #include <string>
 #include "..\\Math\Math.h"
+#include <chrono>
+#include <thread>
 
+using namespace std::chrono_literals;
 
-
-#define SLEEP std::this_thread::sleep_for
+#define SLEEP(t) std::this_thread::sleep_for(t)
+#define SLEEPFOR(s) std::this_thread::sleep_for(std::chrono::seconds((long long)s))
 
 class Time
 {

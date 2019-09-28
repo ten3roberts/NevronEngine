@@ -143,7 +143,7 @@ int main(int argc, char** argv)
 	Object object2("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-1}, Quaternion::identity, 1), new Rigidbody(0, {0,0,0.5}, 1) });
 	Object object3("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-2}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.1f, {0,1,-0.5}, 1) });
 	object.AddComponent(new Rigidbody());
-	object.AddComponent<Shader>("Basic.gls");
+	object.AddComponent<Shader>("Basic.glsl");
 
 	object.rigidbody->velocity = Vector3(0, 0, -1);
 	object.rigidbody->angularVelocity = Vector3(0, 1, 0);
