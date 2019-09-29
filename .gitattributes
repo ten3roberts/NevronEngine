@@ -5,7 +5,7 @@
 
 #Prevent Dependencies from counting to code statistics
 * text=auto
-Dependencies/* linguist-vendored=false
+Dependencies/ linguist-vendored=false
 
 ###############################################################################
 # Set default behavior for command prompt diff.
