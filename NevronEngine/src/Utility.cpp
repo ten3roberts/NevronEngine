@@ -802,33 +802,33 @@ std::string vformat(std::string format, va_list vl)
 				result += std::to_string(va_arg(vl, double));
 				break;
 			case 'e': //Scientific notation lowercase
-			{char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%e", va_arg(vl, double));
+			{char buffer[max_loglength];
+			snprintf(buffer, max_loglength, "%e", va_arg(vl, double));
 			result.append(buffer);
 			break; }
 			case 'E': //Scientific notation uppercase
-			{char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%E", va_arg(vl, double));
+			{char buffer[max_loglength];
+			snprintf(buffer, max_loglength, "%E", va_arg(vl, double));
 			result.append(buffer);
 			break; }
 			case 'g':
-			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%g", va_arg(vl, double));
+			{	char buffer[max_loglength];
+			snprintf(buffer, max_loglength, "%g", va_arg(vl, double));
 			result.append(buffer);
 			break; }
 			case 'G':
-			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%G", va_arg(vl, double));
+			{	char buffer[max_loglength];
+			snprintf(buffer, max_loglength, "%G", va_arg(vl, double));
 			result.append(buffer);
 			break; }
 			case 'a':
-			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%a", va_arg(vl, double));
+			{	char buffer[max_loglength];
+			snprintf(buffer, max_loglength, "%a", va_arg(vl, double));
 			result.append(buffer);
 			break; }
 			case 'A':
-			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%A", va_arg(vl, double));
+			{	char buffer[max_loglength];
+			snprintf(buffer, max_loglength, "%A", va_arg(vl, double));
 			result.append(buffer);
 			break; }
 			case 'c': //Character
@@ -838,8 +838,8 @@ std::string vformat(std::string format, va_list vl)
 				result += va_arg(vl, std::string);
 				break;
 			case 'p':
-			{	char buffer[max_loglenght];
-			snprintf(buffer, max_loglenght, "%p", va_arg(vl, void*));
+			{	char buffer[max_loglength];
+			snprintf(buffer, max_loglength, "%p", va_arg(vl, void*));
 			result.append(buffer);
 			break; }
 			case '%': //String

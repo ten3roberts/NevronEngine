@@ -54,8 +54,6 @@ void Renderer::BindShader(const Shader* shader)
 	unsigned int bufferID = shader->getBufferID();
 	if (m_bound_shader == bufferID)
 		return;
-
-	auto rscManager = ResourceManager::Get();
 	//LogS("Renderer", "Binding shader %s", shader->getName());
 	glUseProgram(bufferID);
 	m_bound_shader = bufferID;
@@ -64,13 +62,13 @@ void Renderer::BindShader(const Shader* shader)
 void Renderer::BindModel(const Model* model)
 {
 	unsigned int bufferID = model->getBufferID();
-	if (m_bound_shader == bufferID)
+	if (m_bound_model == bufferID)
 		return;
 	//LogS("Renderer", "Binding model %s", model->getName());
 
 	model->getVertexArray()->Bind();
 	model->getIndexBuffer()->Bind();
-	m_bound_shader = bufferID;
+	m_bound_model = bufferID;
 }
 
 void Renderer::BindMaterial(const Material* material)

@@ -72,7 +72,7 @@ void LogF(std::string format, ...)
 	va_end(vl);
 }
 
-void LogE(const std::string& author, float pause, std::string format, ...)
+void LogE(const std::string& author, std::string format, ...)
 {
 	enum Flag
 	{
@@ -104,5 +104,5 @@ void LogE(const std::string& author, float pause, std::string format, ...)
 	printf(fullMsg.c_str());
 	logFile.write(fullMsg.c_str(), fullMsg.size());
 	va_end(vl);
-	SLEEPFOR(pause);
+	//SLEEPFOR(error_delay);
 }

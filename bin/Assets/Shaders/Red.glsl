@@ -14,22 +14,18 @@ uniform mat4 u_MVP;
 layout (std140, column_major) uniform Transform
 {
 	mat4 mvp; 
-	vec4 position;
+	vec3 position;
 	vec4 rotation;
 	vec3 scale;
-	float padding;
 	vec3 camPos;
-	float padding2[5];
-	//vec3 camForward;
-
-	//float padding;
+	vec3 camForward;
 } transform;
 
 void main()
 {
 	//gl_Position = position + transform.position;
-	gl_Position = transform.mvp * position;
-	//gl_Position = u_MVP * position;// + vec4(transform.position, 0);
+	//gl_Position = transform.mvp * position;
+	gl_Position = u_MVP * position;
 	v_texCoord = texCoord;
 	toCamera = u_MVP * position;
 };
@@ -70,9 +66,9 @@ void main()
 {
 	vec4 texColor = texture(u_texture, v_texCoord);
 	//color = mix(texColor, u_color, 0.5);
-	color = mix(texColor * u_color, vec4(environment.skyColor, 1), 0.5);
-	color = texColor * u_color;
-	
+	//color = mix(texColor * u_color, vec4(environment.skyColor, 1), 0.5) * -1;
+	//color = vec4(vec3(1,1,1) - (texColor * u_color).rgb, texColor.a);
+	color = texColor * vec4(1,0,1,0.25);
 	if(!gl_FrontFacing)	
 	{	
 		float gs = length(color.rgb);

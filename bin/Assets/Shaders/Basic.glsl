@@ -14,22 +14,18 @@ uniform mat4 u_MVP;
 layout (std140, column_major) uniform Transform
 {
 	mat4 mvp; 
-	vec4 position;
+	vec3 position;
 	vec4 rotation;
 	vec3 scale;
-	float padding;
 	vec3 camPos;
-	float padding2[5];
-	//vec3 camForward;
-
-	//float padding;
+	vec3 camForward;
 } transform;
 
 void main()
 {
 	//gl_Position = position + transform.position;
-	gl_Position = transform.mvp * position;
-	//gl_Position = u_MVP * position;// + vec4(transform.position, 0);
+	//gl_Position = transform.mvp * position;
+	gl_Position = u_MVP * position;
 	v_texCoord = texCoord;
 	toCamera = u_MVP * position;
 };

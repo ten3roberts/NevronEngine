@@ -33,7 +33,6 @@ void Object::FixedUpdate()
 void Object::Render(rsc_weak<Camera> camera)
 {
 	TransformType t;
-	Update();
 	t.mvp = transform->getWorldMatrix() * camera->getViewMatrix() * camera->getProjectionMatrix();
 
 	t.position = transform->position;
@@ -44,9 +43,25 @@ void Object::Render(rsc_weak<Camera> camera)
 
 	shader->Bind();
 
-	shader->setUniformBuffer("Transform", &t, sizeof(TransformType));
+	//shader->setUniformBuffer("Transform", &t, sizeof(TransformType));
+	shader->setUniformMat4f("u_MVP", t.mvp);
 	//shader->setUniformMat4f("u_MVP", t.mvp);
-
+	if (!shader || !shader->isValid())
+	{
+		LogE(m_signature, "Invalid shader");
+		return;
+	}
+	if (!model || !model->isValid())
+	{
+		LogE(m_signature, "Invalid model");
+		return;
+	}
+	if (!material || !material->isValid())
+	{
+		LogE(m_signature, "Invalid material, using default");
+		material = ResourceManager::Get()->GetMaterial("Default.mat");
+		return;
+	}
 	Renderer::Get()->Draw(shader, model, material);
 }
 
@@ -137,8 +152,9 @@ void Object::Init(const std::string& shader, const std::string& model, const std
 	m_components.push_back(this->shader);
 	this->model = rscManager->GetModel(model);
 	m_components.push_back(this->model);
-	this->material = rscManager->GetMaterial(material);
-	m_components.push_back(this->material);
+	AddComponent<Material>(material);
+	//this->material = rscManager->GetMaterial(material);
+	//m_components.push_back(this->material);
 
 	m_components.insert(m_components.end(), components.begin(), components.end());
 	RefreshComponents();
@@ -147,5 +163,7 @@ void Object::Init(const std::string& shader, const std::string& model, const std
 		this->transform = new Transform(position, rotation, scale);
 
 	this->model = Model::GenerateQuad();
+
+	m_signature = "Object : " + m_name + ";" + m_GUID.getString();
 }
 

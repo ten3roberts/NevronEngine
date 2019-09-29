@@ -139,7 +139,7 @@ int main(int argc, char** argv)
 
 	Object object("Basic.glsl", "Quad", "Wood.mat", { new Transform({0,0,5}, Quaternion::identity, 1) });
 	Object object2("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-1}, Quaternion::identity, 1), new Rigidbody(0, {0,0,0.5}, 1) });
-	Object object3("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-2}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.1f, {0,1,-0.5}, 1) });
+	Object object3("Red.glsl", "Quad", "Logo.a.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.2f + Vector3::up*0.1, {0,1,-0.5}, 1) });
 	object.AddComponent(new Rigidbody());
 
 	object.rigidbody->velocity = Vector3(0, 0, -1);
@@ -156,25 +156,22 @@ int main(int argc, char** argv)
 
 		
 
-		//camera.transform.position = { 0,Math::SineWave(-0.5, 0.5, 1, Time::elapsedTime) ,0 };
+		camera.transform.position = { 0,Math::SineWave(-0.5, 0.5, 1, Time::elapsedTime) ,0 };
 		camera.Update();
 		auto rscMan = ResourceManager::Get();
-		object.AddComponent<Shader>("Basic3.glsl");
 
 		//Binding
-		//object.material->color = vec3::HSV(Time::elapsedTime / 10.0f, 1, 1);
 		object.Update();
+
+		
+
+		object2.Update();
 		object.Render(&camera);
 
 		object3.Update();
-		object3.Render(&camera);
-
-		object2.Update();
+		object3.Render(&camera); //drifter
 		object2.Render(&camera);
-		
-		object.AddComponent<Shader>("Basic2.glsl");
-		object.AddComponent(new Rigidbody());
-
+		Renderer::Get()->UnbindShader();
 		//Swap front and back buffers
 		glfwSwapBuffers(window);
 

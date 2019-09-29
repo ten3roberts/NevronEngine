@@ -15,6 +15,9 @@ class Object
 private:
 	std::string m_name;
 	GUID m_GUID;
+
+	//A string formatting the name and GUID
+	std::string m_signature;
 	std::vector<rsc<Component>> m_components;
 public:
 	//Fast access
@@ -37,7 +40,8 @@ public:
 	void Render(rsc_weak<Camera> camera);
 
 	std::string getName() { return m_name; }
-	void setName(const std::string& name) { m_name = name; }
+	void setName(const std::string& name) { m_name = name; m_signature = "Object : " + m_name + ";" + m_GUID.getString(); }
+	std::string getSignature() { return m_signature; }
 #pragma region AddComponent
 	//If added component is shader, model, material, transform or rigibody it will replace the current one
 	void AddComponent(rsc<Component> component);
@@ -47,9 +51,9 @@ public:
 	bool AddComponent(const std::string& name)
 	{
 		rsc<A> tmp = ResourceManager::Get()->GetResource<A>(name);
-		if (!tmp || !tmp->getValid())
+		if (!tmp || !tmp->isValid())
 		{
-			LogS("Object : " + m_name + ";" + m_GUID.getString(), "Trying to add invalid %c; nothing changed", typeid(A).name());
+			LogE(m_signature, "Trying to add invalid %c; nothing changed", typeid(A).name());
 			return false;
 		}
 		AddComponent(tmp);
@@ -90,7 +94,7 @@ public:
 				return;
 			}
 		}
-	}	
+	}
 #pragma endregion
 #pragma region RemoveComponents
 	template <typename R>
@@ -111,7 +115,7 @@ public:
 
 	template <typename R = Component>
 	//Removes all components of R or derived from R type
-	void RemoveComponents(const std::string& name)
+	void RemoveComponents(const std::string & name)
 	{
 		for (int i = 0; i < m_components.size(); i++)
 		{
@@ -200,14 +204,14 @@ public:
 	}
 
 	template<typename S = Component>
-	std::vector<rsc<S>> GetComponents(const std::string& name)
+	std::vector<rsc<S>> GetComponents(const std::string & name)
 	{
 		std::vector<rsc<S>> result;
 		for (int i = 0; i < m_components.size(); i++)
 		{
 			S* cast = dynamic_cast<S*>(&m_components[i]);
 			//If conversion was successful and name is correct
-			if (cast != nullptr && m_components[i]->getName() == name) 
+			if (cast != nullptr && m_components[i]->getName() == name)
 			{
 				result.push_back(m_components[i]);
 			}

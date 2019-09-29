@@ -39,7 +39,7 @@ public:
 
 	//Will return what base type the component is if it has children classes. Scripts will be derived so it's used to keep track of what it is.
 	virtual Type getType() const { return Type::Component; }
-	bool getValid() { return m_valid; }
+	bool isValid() { return m_valid; }
 	/*//Override this function to change if the component in question should be managed
 	virtual bool Managed() { return false; }*/
 

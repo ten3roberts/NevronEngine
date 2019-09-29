@@ -9,7 +9,7 @@
 using namespace std::chrono_literals;
 
 #define SLEEP(t) std::this_thread::sleep_for(t)
-#define SLEEPFOR(s) std::this_thread::sleep_for(std::chrono::seconds((long long)s))
+#define SLEEPFOR(s) std::this_thread::sleep_for(std::chrono::milliseconds((long long)(s*1000)))
 
 class Time
 {

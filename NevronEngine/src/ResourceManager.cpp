@@ -91,7 +91,7 @@ rsc<Shader> ResourceManager::GetShader(const std::string& name)
 	}
 	LogS("ResourceManager", "No shader exists with name %s, creating", name);
 	Shader* shader = new Shader(name);
-	if (!shader->getValid())
+	if (!shader->isValid())
 	{
 		delete shader;
 		return nullptr;
@@ -118,7 +118,7 @@ rsc<Model> ResourceManager::GetModel(const std::string& name)
 	}
 	LogS("ResourceManager", "No model exists with name %s, creating", name);
 	Model* model = new Model(name);
-	if (!model->getValid())
+	if (!model->isValid())
 	{
 		delete model;
 		return nullptr;
@@ -145,7 +145,7 @@ rsc<Material> ResourceManager::GetMaterial(const std::string& name)
 	}
 	LogS("ResourceManager", "No material exists with name %s, creating", name);
 	Material* material = new Material(name);
-	if (!material->getValid())
+	if (!material->isValid())
 	{
 		delete material;
 		return nullptr;
@@ -172,7 +172,7 @@ rsc<Texture> ResourceManager::GetTexture(const std::string& name)
 	}
 	LogS("ResourceManager", "No texture exists with name %s, creating", name);
 	Texture* texture = new Texture(name);
-	if (!texture->getValid())
+	if (!texture->isValid())
 	{
 		delete texture;
 		return nullptr;
