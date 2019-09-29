@@ -14,15 +14,11 @@ uniform mat4 u_MVP;
 layout (std140, column_major) uniform Transform
 {
 	mat4 mvp; 
-	vec4 position;
+	vec3 position;
 	vec4 rotation;
 	vec3 scale;
-	float padding;
 	vec3 camPos;
-	float padding2[5];
-	//vec3 camForward;
-
-	//float padding;
+	vec3 camForward;
 } transform;
 
 void main()

@@ -24,8 +24,8 @@ layout (std140, column_major) uniform Transform
 void main()
 {
 	//gl_Position = position + transform.position;
-	//gl_Position = transform.mvp * position;
-	gl_Position = u_MVP * position;
+	gl_Position = transform.mvp * position;
+	//gl_Position = u_MVP * position;
 	v_texCoord = texCoord;
 	toCamera = u_MVP * position;
 };

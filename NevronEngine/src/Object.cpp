@@ -43,8 +43,8 @@ void Object::Render(rsc_weak<Camera> camera)
 
 	shader->Bind();
 
-	//shader->setUniformBuffer("Transform", &t, sizeof(TransformType));
-	shader->setUniformMat4f("u_MVP", t.mvp);
+	shader->setUniformBuffer("Transform", &t, sizeof(TransformType));
+	//shader->setUniformMat4f("u_MVP", t.mvp);
 	//shader->setUniformMat4f("u_MVP", t.mvp);
 	if (!shader || !shader->isValid())
 	{

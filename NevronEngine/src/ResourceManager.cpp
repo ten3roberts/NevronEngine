@@ -57,7 +57,7 @@ void ResourceManager::Refresh()
 
 unsigned int ResourceManager::GetUBOSlot()
 {
-	return m_UBOSlots[0];
+	unsigned int slot = m_UBOSlots[0];
 
 	//If there were more than one available remove the first one which was used
 	if (m_UBOSlots.size() > 1)
@@ -67,6 +67,7 @@ unsigned int ResourceManager::GetUBOSlot()
 	{
 		m_UBOSlots[0] += 1;
 	}
+	return slot;
 }
 
 void ResourceManager::FreeUBOSlot(unsigned int slot)
@@ -78,8 +79,8 @@ void ResourceManager::FreeUBOSlot(unsigned int slot)
 			LogS("ResourceManager", "Slot %d has already been freed", slot);
 			return;
 		}
-		m_UBOSlots.insert(m_UBOSlots.begin(), slot);
 	}
+	m_UBOSlots.insert(m_UBOSlots.begin(), slot);
 }
 
 rsc<Shader> ResourceManager::GetShader(const std::string& name)
@@ -190,6 +191,27 @@ rsc<Texture> ResourceManager::GetTexture(GUID ID)
 	return nullptr;
 }
 
+rsc<UniformBuffer> ResourceManager::CreateUBO(const std::string& name, const void* data, size_t size)
+{
+	rsc<UniformBuffer> UBO = GetUBO(name);
+	if (UBO && UBO->isValid())
+	{
+		if (UBO->getSize() != size)
+		{
+			LogE("ResourceManager", "Uniform buffer %s already defined with a differerent size; older size : %t, newer %t", name, UBO->getSize(), size);
+			return nullptr;
+		}
+		return UBO;
+	}
+	UBO = new UniformBuffer(name, data, size, GetUBOSlot());
+	if (!UBO || !UBO->isValid())
+	{
+		return nullptr;
+	}
+	m_uniformBuffers.push_back(UBO);
+	return UBO;
+}
+
 rsc<UniformBuffer> ResourceManager::GetUBO(const std::string& name)
 {
 	for (unsigned int i = 0; i < m_uniformBuffers.size(); i++)
@@ -198,8 +220,9 @@ rsc<UniformBuffer> ResourceManager::GetUBO(const std::string& name)
 			return m_uniformBuffers[i];
 	}
 	LogS("ResourceManager", "No uniform buffer exists with name %s, creating", name);
-	UniformBuffer* uBuffer = new UniformBuffer(name);
-	return m_uniformBuffers.emplace_back(rsc<UniformBuffer>(uBuffer));
+	return nullptr;
+	/*UniformBuffer* uBuffer = new UniformBuffer(name);
+	return m_uniformBuffers.emplace_back(rsc<UniformBuffer>(uBuffer));*/
 }
 
 rsc<UniformBuffer> ResourceManager::GetUBO(GUID ID)

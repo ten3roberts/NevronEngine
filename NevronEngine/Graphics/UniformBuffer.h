@@ -28,5 +28,6 @@ public:
 	std::string getName() const { return m_name; }
 
 	unsigned int getSlot() { return m_slot; }
+	size_t getSize() { return m_size; }
 };
 

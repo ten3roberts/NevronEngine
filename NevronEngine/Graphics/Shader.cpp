@@ -29,7 +29,6 @@ Shader::Shader(const std::string& name)
 Shader::~Shader()
 {
 	glDeleteProgram(m_bufferID);
-	LogS("Shader : " + m_name, "Destructor called");
 }
 
 void Shader::Bind() const
@@ -385,7 +384,13 @@ void Shader::ProcessShader(const ShaderSource& source)
 		}
 
 		if (m_uniformBuffers.find(name) == m_uniformBuffers.end())
-			m_uniformBuffers[name] = new UniformBuffer(name, nullptr, buffer_size, m_uniformBuffers.size());
+		{
+			rsc<UniformBuffer> tmpUBO = ResourceManager::Get()->CreateUBO(name, nullptr, buffer_size);;
+			if (!tmpUBO || !tmpUBO->isValid())
+				return;
+			m_uniformBuffers[name] = tmpUBO;
+		}
+		//m_uniformBuffers[name] = new UniformBuffer(name, nullptr, buffer_size, m_uniformBuffers.size());
 		else
 		{
 			LogS("Shader : " + m_name, "Multiple definition of buffer %s", name);

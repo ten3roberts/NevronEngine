@@ -67,7 +67,10 @@ public:
 	//Will return a texture by ID. Returns nullptr if it doesn't exist
 	rsc<Texture> GetTexture(GUID ID);
 
-	//Will return a uniformBuffer by name. If it doesn't exist it will attempt to load it from file
+	rsc<UniformBuffer> CreateUBO(const std::string& name, const void* data, size_t size);
+	inline rsc<UniformBuffer> CreateUBO(const std::string& name, size_t size) { return CreateUBO(name, nullptr, size); }
+
+	//Will return a uniformBuffer by name. Returns nullptr if it doesn't exist since size needs to be known
 	rsc<UniformBuffer> GetUBO(const std::string& name);
 
 	//Will return a uniformBuffer by ID. Returns nullptr if it doesn't exist

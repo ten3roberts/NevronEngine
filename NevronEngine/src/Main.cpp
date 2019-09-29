@@ -137,9 +137,9 @@ int main(int argc, char** argv)
 
 	LogS("Main", "----------Entering game loop----------\n");
 
-	Object object("Basic.glsl", "Quad", "Wood.mat", { new Transform({0,0,5}, Quaternion::identity, 1) });
+	Object object("Basic.glsl", "Quad", "Wood.mat", { new Transform({0,0,0}, Quaternion::identity, 1) });
 	Object object2("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-1}, Quaternion::identity, 1), new Rigidbody(0, {0,0,0.5}, 1) });
-	Object object3("Red.glsl", "Quad", "Logo.a.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.2f + Vector3::up*0.1, {0,1,-0.5}, 1) });
+	Object object3("Basic2.glsl", "Quad", "Logo.a.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.2f + Vector3::up*0.1, {0,1,-0.5}, 1) });
 	object.AddComponent(new Rigidbody());
 
 	object.rigidbody->velocity = Vector3(0, 0, -1);
@@ -170,6 +170,7 @@ int main(int argc, char** argv)
 
 		object3.Update();
 		object3.Render(&camera); //drifter
+
 		object2.Render(&camera);
 		Renderer::Get()->UnbindShader();
 		//Swap front and back buffers

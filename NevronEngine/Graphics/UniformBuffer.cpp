@@ -31,6 +31,7 @@ UniformBuffer::UniformBuffer(const std::string& name)
 UniformBuffer::~UniformBuffer()
 {
 	glDeleteBuffers(1, &m_bufferID);
+	ResourceManager::Get()->FreeUBOSlot(m_slot);
 }
 
 void UniformBuffer::setData(Shader* shader, const void* data, size_t size, size_t offset)

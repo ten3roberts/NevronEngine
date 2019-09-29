@@ -20,7 +20,6 @@ private:
 	//Uniform caching
 	std::unordered_map<std::string, int> m_uniformCache;
 	std::unordered_map<std::string, rsc<UniformBuffer>> m_uniformBuffers;
-	//float padding[10000000];
 public:
 	//Compilation from file
 	Shader(const std::string& name);
