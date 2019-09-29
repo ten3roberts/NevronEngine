@@ -1,4 +1,3 @@
-#include <src/pch.h>
 #include "Rigidbody.h"
 #include "Transform.h"
 
@@ -17,10 +16,6 @@ Rigidbody::Rigidbody(Vector3 velocity, Vector3 angularVelocity, float mass) : ve
 Rigidbody::Rigidbody(Vector3 velocity, Quaternion angularVelocity, float mass) : velocity(velocity), mass(mass)
 {
 	this->angularVelocity = angularVelocity.toEuler();
-}
-
-Rigidbody::~Rigidbody()
-{
 }
 
 void Rigidbody::Update(rsc_weak<Transform>transform)

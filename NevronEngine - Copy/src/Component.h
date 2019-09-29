@@ -1,7 +1,8 @@
 #pragma once
-#include <src/pch.h>
+#include <string>
+#include <src/Logger.h>
 #include <src/GUID.h>
-
+#include <src/rsc.h>
 
 class Shader;
 class Model;
@@ -16,7 +17,7 @@ class Component
 public:
 	Component();
 	Component(const std::string& name);
-	virtual ~Component();
+	~Component();
 	//Used to differentiate the type of object if it has several inheritors; like scripts
 	enum class Type
 	{

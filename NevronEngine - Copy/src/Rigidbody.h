@@ -1,5 +1,4 @@
 #pragma once
-#include <src/pch.h>
 #include "..\Math\Vector.h"
 #include "..\Math\Quaternion.h"
 #include "Time.h"
@@ -18,7 +17,6 @@ public:
 	Rigidbody(Vector3 velocity, float mass = 1);
 	Rigidbody(Vector3 velocity, Vector3 angularVelocity, float mass = 1.0f);
 	Rigidbody(Vector3 velocity, Quaternion angularVelocity, float mass = 1.0f);
-	~Rigidbody();
 
 	//Updates the transform with deltaTime. Do this before calling Transform::Update()
 	void Update(rsc_weak<Transform> transform);
