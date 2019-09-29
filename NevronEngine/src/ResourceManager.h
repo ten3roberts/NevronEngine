@@ -4,11 +4,15 @@
 #include "Component.h"
 #include <src\Logger.h>
 
+#include <Graphics/Model.h>
+#include <Graphics/Shader.h>
+#include <Graphics/Material.h>
+#include <Graphics/UniformBuffer.h>
 
-class Model;
-class Shader;
-class Material;
-class UniformBuffer;
+//class Model;
+//class Shader;
+//class Material;
+//class UniformBuffer;
 
 //#define RSCMAN ResourceManager::Get();
 

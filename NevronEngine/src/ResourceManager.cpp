@@ -172,7 +172,7 @@ rsc<Texture> ResourceManager::GetTexture(const std::string& name)
 	}
 	LogS("ResourceManager", "No texture exists with name %s, creating", name);
 	Texture* texture = new Texture(name);
-	if (!texture)
+	if (!texture->getValid())
 	{
 		delete texture;
 		return nullptr;

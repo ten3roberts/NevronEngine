@@ -141,7 +141,6 @@ int main(int argc, char** argv)
 	Object object2("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-1}, Quaternion::identity, 1), new Rigidbody(0, {0,0,0.5}, 1) });
 	Object object3("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-2}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.1f, {0,1,-0.5}, 1) });
 	object.AddComponent(new Rigidbody());
-	object.AddComponent<Shader>("Basic.glsl");
 
 	object.rigidbody->velocity = Vector3(0, 0, -1);
 	object.rigidbody->angularVelocity = Vector3(0, 1, 0);
@@ -159,6 +158,8 @@ int main(int argc, char** argv)
 
 		//camera.transform.position = { 0,Math::SineWave(-0.5, 0.5, 1, Time::elapsedTime) ,0 };
 		camera.Update();
+		auto rscMan = ResourceManager::Get();
+		object.AddComponent<Shader>("Basic3.glsl");
 
 		//Binding
 		//object.material->color = vec3::HSV(Time::elapsedTime / 10.0f, 1, 1);
@@ -171,7 +172,8 @@ int main(int argc, char** argv)
 		object2.Update();
 		object2.Render(&camera);
 		
-
+		object.AddComponent<Shader>("Basic2.glsl");
+		object.AddComponent(new Rigidbody());
 
 		//Swap front and back buffers
 		glfwSwapBuffers(window);

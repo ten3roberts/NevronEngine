@@ -18,11 +18,11 @@ private:
 	std::vector<rsc<Component>> m_components;
 public:
 	//Fast access
-	rsc_weak<Shader>		shader;
-	rsc_weak<Model>			model;
-	rsc_weak<Material>		material;
-	rsc_weak<Transform>		transform;
-	rsc_weak<Rigidbody>		rigidbody;
+	rsc<Shader>		shader;
+	rsc<Model>			model;
+	rsc<Material>		material;
+	rsc<Transform>		transform;
+	rsc<Rigidbody>		rigidbody;
 private:
 	void RemoveSpecialized(rsc<Component> component);
 	void RefreshComponents();
@@ -46,7 +46,7 @@ public:
 	template <typename A>
 	bool AddComponent(const std::string& name)
 	{
-		rsc_weak<A> tmp = ResourceManager::Get()->GetResource<A>(name);
+		rsc<A> tmp = ResourceManager::Get()->GetResource<A>(name);
 		if (!tmp || !tmp->getValid())
 		{
 			LogS("Object : " + m_name + ";" + m_GUID.getString(), "Trying to add invalid %c; nothing changed", typeid(A).name());

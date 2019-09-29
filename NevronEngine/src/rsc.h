@@ -8,6 +8,7 @@ template <typename R>
 class rsc
 {
 	template<typename U> friend class rsc_weak;
+	template<typename U> friend class rsc;
 protected:
 	R* m_pData;
 	unsigned int* m_refCount;
@@ -20,15 +21,25 @@ private:
 
 		(*m_refCount)--;
 		//No references left
-		if (*m_refCount == 0 && *m_weakRefCount == 0)
+
+		if (*m_refCount <= 0 && *m_weakRefCount <= 0)
 		{
 			delete m_refCount;
 			m_refCount = nullptr;
+
 			delete m_weakRefCount;
 			m_weakRefCount = nullptr;
 			delete m_pData;
 			m_pData = nullptr;
+			return;
 		}
+
+		if (*m_refCount == 0)// && * m_weakRefCount == 0)
+		{
+			delete m_pData;
+			m_pData = nullptr;
+		}
+		
 	}
 public:
 	operator bool() const { if (m_pData && m_refCount && m_weakRefCount) return true; return false; }
@@ -119,7 +130,7 @@ public:
 		m_pData = dynamic_cast<R*>(resource.m_pData);
 		if (!m_pData && resource.m_pData)
 		{
-			LogS("rsc", "Couldn't convert from type %c to %c", typeid(resource.m_pData).name(), typeid(R*).name().name());
+			LogS("rsc", "Couldn't convert from type %c to %c", typeid(resource.m_pData).name(), typeid(R*).name());
 			m_refCount = nullptr;
 			m_weakRefCount = nullptr;
 			return;
@@ -184,7 +195,7 @@ public:
 
 		if (!m_pData && resource.m_pData)
 		{
-			LogS("rsc", "Couldn't convert from type %c to %c", typeid(resource.m_pData).name(), typeid(R*).name().name());
+			LogS("rsc", "Couldn't convert from type %c to %c", typeid(resource.m_pData).name(), typeid(R*).name());
 			m_refCount = nullptr;
 			m_weakRefCount = nullptr;
 			return;
@@ -239,6 +250,7 @@ public:
 template <typename W>
 class rsc_weak
 {
+	template<typename U> friend class rsc_weak;
 	template<typename U> friend class rsc;
 protected:
 	W* m_pData;
@@ -252,7 +264,7 @@ private:
 
 		(*m_weakRefCount)--;
 		//No references left
-		if (*m_refCount == 0 && *m_weakRefCount == 0)
+		if (*m_refCount <= 0 && *m_weakRefCount <= 0)
 		{
 			delete m_refCount;
 			m_refCount = nullptr;
@@ -413,7 +425,7 @@ public:
 		m_pData = dynamic_cast<W*>(resource.m_pData);
 		if (!m_pData && resource.m_pData)
 		{
-			LogS("rsc", "Couldn't convert from type %c to %c", typeid(resource.m_pData).name(), typeid(W*).name() );
+			LogS("rsc", "Couldn't convert from type %c to %c", typeid(resource.m_pData).name(), typeid(W*).name());
 			m_refCount = nullptr;
 			m_weakRefCount = nullptr;
 			return;

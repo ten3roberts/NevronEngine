@@ -29,6 +29,7 @@ Shader::Shader(const std::string& name)
 Shader::~Shader()
 {
 	glDeleteProgram(m_bufferID);
+	LogS("Shader : " + m_name, "Destructor called");
 }
 
 void Shader::Bind() const
@@ -340,7 +341,7 @@ void Shader::ProcessShader(const ShaderSource& source)
 		//Adding all members
 		tmp = tmp.substr(tmp.find_first_not_of("\n\t "));
 		members.push_back(strPurgeAll(tmp.substr(0, tmp.find(' ')), "\n\t "));
-		buffer_size += types[strPurgeAll(tmp.substr(0, tmp.find(' ')), "\n\	")];
+		buffer_size += types[strPurgeAll(tmp.substr(0, tmp.find(' ')), "\n\t ")];
 		for (size_t j = i + 1; j < lines.size(); j++)
 		{
 			//The uniform buffer declaration has ended

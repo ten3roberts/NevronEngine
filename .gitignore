@@ -23,6 +23,7 @@ x86/
 bld/
 [Oo]bj/
 [Ll]ogs/
+[Ii]ntermediates
 
 *.log
 
