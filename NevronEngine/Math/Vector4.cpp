@@ -40,7 +40,7 @@ Vector4::~Vector4()
 Vector4::Vector4(const std::string& str)
 {
 	//Removing spaces vector size if neccesary and splits into all the elements
-	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	std::vector<std::string> parts = strSplit(strSplit(str, ";")[0], " ");
 	for (unsigned int i = 0; i < min(4, parts.size()); i++)
 		(*this)[i] = num(parts[i]);
 }
@@ -48,7 +48,7 @@ Vector4::Vector4(const std::string& str)
 Vector4 Vector4::Parse(const std::string& str)
 {
 	//Removing spaces vector size if neccesary and splits into all the elements
-	std::vector<std::string> parts = strSplit(strSplit(strPurge(str, " "), ";")[0], ",");
+	std::vector<std::string> parts = strSplit(strSplit(str, ";")[0], " ");
 	Vector4 result;
 	for (unsigned int i = 0; i < min(4, parts.size()); i++)
 		result[i] = num(parts[i]);

@@ -40,8 +40,8 @@ namespace Utility
 	std::vector<unsigned int> strFind(const std::string& str, const std::string& keyW);
 
 	//Will divide the string at every keyW(default space)
-	std::vector<std::string> strSplit(const std::string& str, const std::string& keyW);
-	std::vector<std::string> strSplit(const std::string& str, char keyW);
+	std::vector<std::string> strSplit(const std::string& str, const std::string& keyW,  bool ignore_quotes = false);
+	std::vector<std::string> strSplit(const std::string& str, char keyW, bool ignore_quotes = false);
 
 	std::string strClamp(const std::string& str, unsigned int size);
 
@@ -49,6 +49,7 @@ namespace Utility
 	std::string strStop(const std::string& str, std::string keyW);
 
 	std::string strPurge(const std::string& str, const std::string& keyW);
+	std::string strPurge(const std::string& str, char chr);
 
 	//Removes all characters from str that exist in pattern
 	std::string strPurgeAll(const std::string& str, const std::string& pattern);

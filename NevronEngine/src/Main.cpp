@@ -131,6 +131,7 @@ int main(int argc, char** argv)
 	//shader->Unbind();
 
 	Renderer* renderer = Renderer::Get();
+	
 	Camera camera;
 	//Matrix4 projectionMat = Matrix4::OrthoAspect(2, settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
 	//Matrix4 projectionMat = Matrix4::Perspective(settings->getFOV(), settings->getAspect(), settings->getScreenNear(), settings->getScreenFar());
@@ -141,7 +142,7 @@ int main(int argc, char** argv)
 	Object object2("Basic.glsl", "Quad", "Logo.mat", { new Transform({0,0,-1}, Quaternion::identity, 1), new Rigidbody(0, {0,0,0.5}, 1) });
 	Object object3("Basic2.glsl", "Quad", "Logo.a.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.2f + Vector3::up*0.1, {0,1,-0.5}, 1) });
 	object.AddComponent(new Rigidbody());
-
+	
 	object.rigidbody->velocity = Vector3(0, 0, -1);
 	object.rigidbody->angularVelocity = Vector3(0, 1, 0);
 

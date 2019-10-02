@@ -86,7 +86,7 @@ std::vector<unsigned int> Utility::strFind(const std::string& str, const std::st
 	return results;
 }
 
-std::vector<std::string> Utility::strSplit(const std::string& str, const std::string& keyW)
+std::vector<std::string> Utility::strSplit(const std::string& str, const std::string& keyW, bool ignore_quotes)
 {
 	//Terminating string with keyW
 	std::string text = str;
@@ -94,12 +94,16 @@ std::vector<std::string> Utility::strSplit(const std::string& str, const std::st
 		text += keyW;
 
 	std::vector<std::string> results;
-	for (unsigned int i = 0; i < text.size(); i++)
+	bool in_quote = false;
+	for (size_t i = 0; i < text.size(); i++)
 	{
-		if (text.substr(i, keyW.size()) == keyW) //Cursor att keyword
+		if (text[i] == '"' && !(i > 0 && text[i - 1] == '\\'))
+			in_quote = !in_quote;
+
+		if (text.substr(i, keyW.size()) == keyW && !(in_quote && ignore_quotes)) //Cursor att keyword
 		{
 			results.push_back(text.substr(0, i)); //Push left bit to results
-			text = text.substr((__int64)i + 1); //And remove it from string and reset cursor
+			text = text.substr(i + 1); //And remove it from string and reset cursor
 			i = 0;
 		}
 	}
@@ -107,7 +111,7 @@ std::vector<std::string> Utility::strSplit(const std::string& str, const std::st
 	return results;
 }
 
-std::vector<std::string> Utility::strSplit(const std::string& str, char keyW)
+std::vector<std::string> Utility::strSplit(const std::string& str, char keyW, bool ignore_quotes)
 {
 	//Terminating string with keyW
 	std::string text = str;
@@ -115,12 +119,16 @@ std::vector<std::string> Utility::strSplit(const std::string& str, char keyW)
 		text += keyW;
 
 	std::vector<std::string> results;
-	for (unsigned int i = 0; i < text.size(); i++)
+	bool in_quote = false;
+	for (size_t i = 0; i < text.size(); i++)
 	{
-		if (text[i] == keyW) //Cursor att keyword
+		if (text[i] == '"' && !(i > 0 && text[i - 1] == '\\'))
+			in_quote = !in_quote;
+		
+		if (text[i] == keyW && !(in_quote && ignore_quotes)) //Cursor att keyword
 		{
 			results.push_back(text.substr(0, i)); //Push left bit to results
-			text = text.substr((__int64)i + 1); //And remove it from string and reset cursor
+			text = text.substr(i + 1); //And remove it from string and reset cursor
 			i = 0;
 		}
 	}
@@ -149,8 +157,29 @@ std::string Utility::strPurge(const std::string& str, const std::string& keyW)
 		{
 			result += str.substr(c, i - c);
 
-			//Skipping past $keyW
+			//Skipping past keyW
 			i += keyW.size();
+
+			//Cathing up with left iterator
+			c = i;
+		}
+	}
+	return result + str.substr(c);
+}
+
+std::string Utility::strPurge(const std::string& str, char chr)
+{
+	std::string result;
+	//Left part iterator
+	size_t c = 0;
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if (str[i] == chr) //Adding left part of string
+		{
+			result += str.substr(c, i - c);
+
+			//Skipping past chr
+			i++;
 
 			//Cathing up with left iterator
 			c = i;
