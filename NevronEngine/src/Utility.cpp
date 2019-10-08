@@ -501,14 +501,14 @@ std::string Utility::FindFile(const std::string& filename, bool useExtension, co
 	return "";
 }
 
-std::vector<std::string> Utility::ReadFile(const std::string& filepath, bool create)
+std::string Utility::ReadFile(const std::string& filepath, bool create)
 {
 	if (create)
 		GenerateFile(filepath, "");
 
 	std::ifstream file(filepath);
 	std::string line;
-	std::vector<std::string> fileCont; //File content
+	std::string fileCont; //File content
 
 	if (file.is_open())
 	{
@@ -516,7 +516,7 @@ std::vector<std::string> Utility::ReadFile(const std::string& filepath, bool cre
 		while (file.good())
 		{
 			getline(file, line);
-			fileCont.push_back(line);
+			fileCont += line;
 
 			i++;
 		}
@@ -528,6 +528,11 @@ std::vector<std::string> Utility::ReadFile(const std::string& filepath, bool cre
 	file.close();
 	return fileCont;
 
+}
+
+std::vector<std::string> Utility::ReadFileLines(const std::string& filePath, bool create)
+{
+	return std::vector<std::string>();
 }
 
 void Utility::GeneratePath(const std::string& path)
@@ -696,7 +701,7 @@ void Utility::Error(unsigned int code)
 
 void Utility::LoadErrorDef()
 {
-	s_errorDef = ReadFile(WORKDIR + "Assets\\Errordef.txt");
+	s_errorDef = ReadFileLines(WORKDIR + "Assets\\Errordef.txt");
 }
 
 unsigned int Utility::AddError(const std::string& definition, unsigned int code)
