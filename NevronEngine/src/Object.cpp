@@ -162,7 +162,7 @@ void Object::Init(const std::string& shader, const std::string& model, const std
 	if (!transform)
 		this->transform = new Transform(position, rotation, scale);
 
-	this->model = Model::GenerateQuad();
+	//this->model = Model::GenerateQuad();
 
 	m_signature = "Object : " + m_name + ";" + m_GUID.getString();
 }

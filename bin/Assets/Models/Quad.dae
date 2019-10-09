@@ -47,9 +47,9 @@
           <input semantic="POSITION" source="#Plane-mesh-positions"/>
         </vertices>
         <triangles count="2">
-          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
-          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
-          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"></input>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"></input>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"></input>
           <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
         </triangles>
       </mesh>
