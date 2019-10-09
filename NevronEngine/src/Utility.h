@@ -124,8 +124,11 @@ namespace Utility
 	std::string FindFile(const std::string& filename, bool useExtension, const std::string& directory = ASSETS);
 
 
+	//Will return the file as a string
+	std::string ReadFile(const std::string& filePath, bool create = false);
+
 	//Will return the file as a string vector with each element being a separate line
-	std::vector<std::string> ReadFile(const std::string& filePath, bool create = false);
+	std::vector<std::string> ReadFileLines(const std::string& filePath, bool create = false);
 
 
 	//Will create the specified path
@@ -215,6 +218,10 @@ static std::string FormatBool(bool boolean)
 {
 	return boolean ? "true" : "false";
 }
+
+
+inline float numi(const std::string& str) { return atoi(str.c_str()); }
+inline float numf(const std::string& str) { return atof(str.c_str()); }
 
 //Will attempt to convert a string to float or integer. Does nothing if failed
 template <typename T = float>

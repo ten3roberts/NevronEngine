@@ -58,6 +58,7 @@
     <ClCompile Include="src\Transform.cpp" />
     <ClCompile Include="Graphics\UniformBuffer.cpp" />
     <ClCompile Include="src\GUID.cpp" />
+    <ClCompile Include="src\XMLParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\Material.h" />
@@ -95,6 +96,7 @@
     <ClInclude Include="Graphics\Texture.h" />
     <ClInclude Include="src\Transform.h" />
     <ClInclude Include="Graphics\UniformBuffer.h" />
+    <ClInclude Include="src\XMLParser.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="rsc\resource.rc" />

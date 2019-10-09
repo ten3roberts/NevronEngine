@@ -2,6 +2,8 @@
 #include "Model.h"
 #include "Renderer.h"
 
+using namespace Utility;
+
 Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 {
 	m_vertexBuffer = new VertexBuffer(&(*vertices)[0], sizeof(Vertex) * vertices->size());
@@ -20,6 +22,7 @@ Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 Model::Model(const std::string& name)
 {
 	//TODO: load model from collada file
+	LoadDAE(name);
 }
 
 Model::Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount)
@@ -41,6 +44,118 @@ Model::~Model()
 	delete m_vertexBuffer;
 	delete m_indexBuffer;
 	delete m_vertexArray;
+}
+
+void Model::LoadDAE(const std::string& filename)
+{
+	m_name = filename;
+
+	XMLNode dae(filename);
+	if (!dae.isValid())
+	{
+		LogS("Model : " + m_name, "Couldn't load file");
+		return;
+	}
+	m_filepath = dae.getFilepath();
+	XMLNode* mesh = dae.Find("mesh");
+
+
+
+	std::string mesh_id = mesh->getParent()->getAttribute("id");
+	std::vector<XMLNode*>& sources = *mesh->getChildren("source");
+
+	size_t position_count = 0;
+	Vector3* positions = nullptr;
+
+	size_t index_count = 0;
+	unsigned int* indices = nullptr;
+
+	size_t normal_count = 0;
+	Vector3* normals = nullptr;
+
+	for (int i = 0; i < sources.size(); i++)
+	{
+		std::string source_id = sources[i]->getAttribute("id");
+		XMLNode& source = *sources[i];
+		if (source_id == mesh_id + "-positions")
+		{
+
+			position_count = numi(source["float_array"].getAttribute("count")) / 3;
+			positions = new Vector3[position_count];
+			std::vector<std::string> arr = strSplit(source["float_array"].getContent(), ' ');
+
+			for (size_t j = 0; j < arr.size() - 2; j += 3)
+			{
+				positions[j / 3] = Vector3(numf(arr[j]), numf(arr[j + 1]), numf(arr[j + 2]));
+				LogF("%v3", Vector3(numf(arr[j]), numf(arr[j + 1]), numf(arr[j + 2])));
+			}
+
+
+
+		}
+		else if (source_id == mesh_id + "-map-0")
+		{
+			index_count = numi(source["float_array"].getAttribute("count"));
+			indices = new unsigned int[index_count];
+			std::vector<std::string> arr = strSplit(source["float_array"].getContent(), ' ');
+
+			for (size_t j = 0; j < arr.size(); j++)
+				positions[j] = numi(arr[j]);
+		}
+		else if (source_id == mesh_id + "-normals")
+		{
+			normal_count = numi(source["float_array"].getAttribute("count"))/3;
+			normals = new Vector3[normal_count];
+			std::vector<std::string> arr = strSplit(source["float_array"].getContent(), ' ');
+
+			for (size_t j = 0; j < arr.size() - 2; j += 3)
+				normals[j / 3] = Vector3(numf(arr[j]), numf(arr[j + 1]), numf(arr[j + 2]));
+		}
+	}
+
+	if (!positions)
+	{
+		LogS("Model : " + m_name, "Couldn't load positions from DAE");
+		return;
+	}
+	if (!indices)
+	{
+		LogS("Model : " + m_name, "Couldn't load indices from DAE");
+		return;
+	}
+	if (!normals)
+	{
+		LogS("Model : " + m_name, "Couldn't load normals from DAE");
+		return;
+	}
+
+	XMLNode& triangles = (*mesh)["triangles"];
+	std::vector<XMLNode*>& inputs = *triangles.getChildren("input");
+
+	size_t vertex_offset = 0;
+	size_t normal_offset = 0;
+	size_t uv_offset = 0;
+
+	for (int i = 0; inputs.size(); i++)
+	{
+		std::string semantic = inputs[i]->getAttribute("semantic");
+		if (semantic == "VERTEX")
+		{
+			vertex_offset = numi(inputs[i]->getAttribute("offset"));
+		}
+		else if (semantic == "NORMAL")
+		{
+			normal_offset = numi(inputs[i]->getAttribute("offset"));
+		}
+		else if (semantic == "TEXCOORD")
+		{
+			uv_offset = numi(inputs[i]->getAttribute("offset"));
+		}
+	}
+
+	delete[] positions;
+	delete[] indices;
+	delete[] normals;
 }
 
 Model* Model::GenerateQuad(Vector2 size)

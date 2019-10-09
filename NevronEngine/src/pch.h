@@ -19,9 +19,10 @@
 
 #include <src/Utility.h>
 #include <src/Logger.h>
-
+#include <src/XMLParser.h>
 #include <src/Time.h>
 
 #include <src/Timer.h>
+
 
 #include "Systemdefs.h"

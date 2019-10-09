@@ -32,7 +32,7 @@ public:
 	Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount);
 
 	~Model();
-
+	void LoadDAE(const std::string& filename);
 	static Model* GenerateQuad(Vector2 size = Vector2::one);
 
 	VertexBuffer* getVertexBuffer() const { return m_vertexBuffer; }
