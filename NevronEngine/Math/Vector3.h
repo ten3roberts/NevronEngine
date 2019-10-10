@@ -89,10 +89,13 @@ struct Vector3
 	void operator/=(float scalar);
 
 #pragma endregion
+	void swapXZ() { std::swap(x, z); }
+	void swapYZ() { std::swap(y, z); }
+	void swapXY() { std::swap(x, y); }
 
 	float SqrMagnitude() const;
 	float Magnitude() const;
-	inline float Volume() const { return x * y* z; } //Multiplies the components together
+	inline float Volume() const { return x * y * z; } //Multiplies the components together
 
 	//Returns the Normalized version of the vector; does not modify the vector
 	Vector3 Normalize() const;
@@ -179,3 +182,6 @@ static Vector3 operator/(float scalar, const Vector3& vec)
 #pragma endregion
 typedef Vector3 vec3;
 
+static void swapXZ(Vector3& vec) { std::swap(vec.x, vec.z); std::swap(vec.y, vec.z); }
+static void swapYZ(Vector3& vec) { std::swap(vec.y, vec.z); std::swap(vec.z, vec.x); }
+static void swapXY(Vector3& vec) { std::swap(vec.x, vec.y); std::swap(vec.z, vec.y); }
