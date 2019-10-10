@@ -19,10 +19,13 @@ Model::Model(std::vector<Vertex>* vertices, std::vector<unsigned int>* indices)
 	m_bufferID = m_vertexArray->getBufferID();
 }
 
-Model::Model(const std::string& name)
+Model::Model(const std::string& name) : m_filepath(""), m_vertexBuffer(nullptr), m_indexBuffer(nullptr), m_vertexArray(nullptr)
 {
 	//TODO: load model from collada file
 	LoadDAE(name);
+	if (m_vertexArray)
+		m_bufferID = m_vertexArray->getBufferID();
+
 }
 
 Model::Model(Vertex* vertices, unsigned int vertexCount, unsigned int* indices, unsigned int indexCount)
@@ -51,6 +54,7 @@ void Model::LoadDAE(const std::string& filename)
 	m_name = filename;
 
 	XMLNode dae(filename);
+	m_filepath = dae.getFilepath();
 	if (!dae.isValid())
 	{
 		LogS("Model : " + m_name, "Couldn't load file");
@@ -58,8 +62,6 @@ void Model::LoadDAE(const std::string& filename)
 	}
 	m_filepath = dae.getFilepath();
 	XMLNode* mesh = dae.Find("mesh");
-
-
 
 	std::string mesh_id = mesh->getParent()->getAttribute("id");
 	std::vector<XMLNode*>& sources = *mesh->getChildren("source");
@@ -72,7 +74,15 @@ void Model::LoadDAE(const std::string& filename)
 
 	size_t normal_count = 0;
 	Vector3* normals = nullptr;
+	//Correcting up axis
+	void (*swap)(Vector3&) = [](Vector3& vec) {};
+	std::string up_axis = dae.Find("up_axis")->getContent();
 
+	
+	if (up_axis == "Z_UP")
+		swap = swapYZ;
+	if (up_axis == "X_UP")
+		swap = swapXY;
 	for (int i = 0; i < sources.size(); i++)
 	{
 		std::string source_id = sources[i]->getAttribute("id");
@@ -85,20 +95,23 @@ void Model::LoadDAE(const std::string& filename)
 			std::vector<std::string> arr = strSplit(source["float_array"].getContent(), ' ');
 
 			for (size_t j = 0; j < arr.size() - 2; j += 3)
+			{
 				positions[j / 3] = Vector3(numf(arr[j]), numf(arr[j + 1]), numf(arr[j + 2]));
-			
+				swap(positions[j / 3]);
+			}
+
 
 
 
 		}
 		else if (source_id == mesh_id + "-map-0")
 		{
-			uv_count = numi(source["float_array"].getAttribute("count"))/2;
+			uv_count = numi(source["float_array"].getAttribute("count")) / 2;
 			uvs = new Vector2[uv_count];
 			std::vector<std::string> arr = strSplit(source["float_array"].getContent(), ' ');
 
-			for (size_t j = 0; j < arr.size(); j+=2)
-				uvs[j/2] = Vector2(numf(arr[j]), numf(arr[j + 1]));
+			for (size_t j = 0; j < arr.size(); j += 2)
+				uvs[j / 2] = Vector2(numf(arr[j]), numf(arr[j + 1]));
 		}
 		else if (source_id == mesh_id + "-normals")
 		{
@@ -107,7 +120,10 @@ void Model::LoadDAE(const std::string& filename)
 			std::vector<std::string> arr = strSplit(source["float_array"].getContent(), ' ');
 
 			for (size_t j = 0; j < arr.size() - 2; j += 3)
+			{
 				normals[j / 3] = Vector3(numf(arr[j]), numf(arr[j + 1]), numf(arr[j + 2]));
+				swap(normals[j / 3]);
+			}
 		}
 	}
 
@@ -161,7 +177,7 @@ void Model::LoadDAE(const std::string& filename)
 		vert_triple(const vert_triple& other) : posi(other.posi), normi(other.normi), uvi(other.uvi) {}
 		unsigned int posi, normi, uvi;
 		bool operator==(const vert_triple& other) const { return posi == other.posi && normi == other.normi && uvi == other.uvi; }
-		
+
 	};
 	struct vert_triple_hash
 	{
@@ -178,16 +194,16 @@ void Model::LoadDAE(const std::string& filename)
 	};
 	//A map linking position and uv data to the vertex array
 	std::unordered_map<vert_triple, size_t, vert_triple_hash> vertex_map;
-	
+
 	std::vector<Vertex> vertices;
 	std::vector<unsigned int> indices;
 
 	std::vector<std::string> index_data = strSplit(triangles["p"].getContent(), ' ');
-	for (size_t i = 0; i < index_data.size(); i+=3)
+	for (size_t i = 0; i < index_data.size(); i += 3)
 	{
 		index[0] = numi(index_data[i]);
-		index[1] = numi(index_data[i+1]);
-		index[2] = numi(index_data[i+2]);
+		index[1] = numi(index_data[i + 1]);
+		index[2] = numi(index_data[i + 2]);
 
 		curr_pos = index[pos_offset];
 		curr_normal = index[normal_offset];

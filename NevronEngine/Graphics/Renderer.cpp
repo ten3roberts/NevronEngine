@@ -81,7 +81,7 @@ void Renderer::BindTexture(const Texture* texture)
 	unsigned int slot = texture->getSlot();
 	if (m_bound_textures[slot] == bufferID)
 		return;
-		
+
 	//LogS("Renderer", "Binding texture %s", texture->getName());
 	glActiveTexture(GL_TEXTURE0 + slot);
 	glBindTexture(GL_TEXTURE_2D, bufferID);
