@@ -3,7 +3,7 @@
 #include <src/Entity.h>
 
 //Virtual class describing a script that can be used to maniulate and induce behaviours on entitys
-class Script
+class Script : public Component
 {
 private:
 	Entity* m_entity;

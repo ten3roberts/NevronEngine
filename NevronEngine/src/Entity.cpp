@@ -131,32 +131,37 @@ void Entity::RemoveSpecialized(rsc<Component> component)
 		transform = nullptr;
 	else if (dynamic_cast<Rigidbody*>(&component))
 		rigidbody = nullptr;
+	else if (dynamic_cast<Script*>(&component))
+	{
+		for (int i = 0; i < m_scripts.size(); i++)
+			if ((void*)&m_scripts[i] == (void*)&component)
+				m_scripts.erase(m_scripts.begin() + i);
+	}
 }
 
 void Entity::RefreshComponents()
 {
+	m_scripts.erase(m_scripts.begin(), m_scripts.end());
 	for (int i = 0; i < m_components.size(); i++)
 	{
 		if (dynamic_cast<Shader*>(&m_components[i]))
-		{
 			shader = m_components[i];
-		}
+
 		else if (dynamic_cast<Model*>(&m_components[i]))
-		{
 			model = m_components[i];
-		}
+
 		else if (dynamic_cast<Material*>(&m_components[i]))
-		{
 			material = m_components[i];
-		}
+
 		else if (dynamic_cast<Transform*>(&m_components[i]))
-		{
 			transform = m_components[i];
-		}
+
 		else if (dynamic_cast<Rigidbody*>(&m_components[i]))
-		{
 			rigidbody = m_components[i];
-		}
+
+		else if (dynamic_cast<Script*> (&m_components[i]))
+			m_scripts.push_back(m_components[i]);
+
 	}
 }
 
