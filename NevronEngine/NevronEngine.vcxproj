@@ -21,7 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Graphics\Material.cpp" />
     <ClCompile Include="src\Camera.cpp" />
-    <ClCompile Include="src\Object.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -63,7 +63,7 @@
   <ItemGroup>
     <ClInclude Include="Graphics\Material.h" />
     <ClInclude Include="src\Camera.h" />
-    <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\ResourceManager.h" />
     <ClInclude Include="src\Component.h" />
@@ -74,6 +74,7 @@
     <ClInclude Include="Math\Matrix.h" />
     <ClInclude Include="Math\Quaternion.h" />
     <ClInclude Include="src\rsc.h" />
+    <ClInclude Include="src\Script.h" />
     <ClInclude Include="src\Settings.h" />
     <ClInclude Include="Graphics\Shader.h" />
     <ClInclude Include="Graphics\IndexBuffer.h" />

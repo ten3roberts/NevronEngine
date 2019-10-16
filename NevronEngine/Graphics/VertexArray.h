@@ -7,7 +7,7 @@
 class VertexArray
 {
 private:
-	//Vertex attrib object; vao
+	//Vertex attrib Entity; vao
 	unsigned int m_bufferID;
 public:
 	VertexArray();

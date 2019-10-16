@@ -20,7 +20,7 @@ class ResourceManager
 {
 private:
 
-	//Object resources; A.K.A components
+	//Entity resources; A.K.A components
 	std::vector<rsc_weak<Shader>> m_shaders;
 
 	std::vector<rsc_weak<Model>> m_models;

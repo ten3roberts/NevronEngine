@@ -7,7 +7,7 @@
 #include "Logger.h"
 #include <Graphics/Model.h>
 #include "Transform.h"
-#include "Object.h"
+#include "Entity.h"
 #include <Graphics/Shader.h>
 #include <Graphics/UniformBuffer.h>
 #include <GLFW/glfw3.h>
@@ -98,24 +98,6 @@ int main(int argc, char** argv)
 	delete timer;
 
 	ResourceManager* rscManager = ResourceManager::Get();
-	//Model model(vertices, 4, indices, 6);
-	/*Model model = *Model::GenerateQuad();
-
-	//Shaders
-	rsc<Shader> shader = rscManager->GetShader("Basic");
-
-	rsc<Shader> multiMapShader = rscManager->GetShader("MultiMap");
-
-	shader->Bind();
-	shader->setUniform4f("u_color", Vector4::white);
-
-	Material* material1 = &rscManager->GetMaterial("Logo.mc");
-	Material* material2 = &rscManager->GetMaterial("Wood");
-
-	rsc<Material> ground = rscManager->GetMaterial("Ground");
-	shader->setUniform1i("u_texture", 0); //0 is slot
-	shader->Bind();*/
-	//Uniform buffer objects
 
 	struct EnvironmentType
 	{
@@ -138,13 +120,13 @@ int main(int argc, char** argv)
 
 	LogS("Main", "----------Entering game loop----------\n");
 
-	Object object("Basic.glsl", "Cube.dae", "Wood.mat", { new Transform({0,0,0}, Quaternion::identity, 1) });
-	Object object2("Basic.glsl", "Orb.dae", "Default.mat", { new Transform({0,0,-1}, Quaternion({1,0,0}, 1), 0.1f), new Rigidbody(0, {0, 2, 0}, 1) });
-	Object object3("Basic2.glsl", "Orb.dae", "Default.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.55f + Vector3::back * 1, {0,1,-0.5}, 1) });
-	object.AddComponent(new Rigidbody());
+	Entity entity("Basic.glsl", "Cube.dae", "Wood.mat", { new Transform({0,0,0}, Quaternion::identity, 1) });
+	Entity entity2("Basic.glsl", "Orb.dae", "Default.mat", { new Transform({0,0,-1}, Quaternion({1,0,0}, 1), 0.1f), new Rigidbody(0, {0, 2, 0}, 1) });
+	Entity entity3("Basic2.glsl", "Orb.dae", "Default.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.55f + Vector3::back * 1, {0,1,-0.5}, 1) });
+	entity.AddComponent(new Rigidbody());
 
-	object.rigidbody->velocity = Vector3(0, 0, -1);
-	object.rigidbody->angularVelocity = Vector3(0, 1, 0);
+	entity.rigidbody->velocity = Vector3(0, 0, -1);
+	entity.rigidbody->angularVelocity = Vector3(0, 1, 0);
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -156,23 +138,22 @@ int main(int argc, char** argv)
 		//camera.transform.rotation *= Quaternion({ 0, 1, 0.5 }, Time::deltaTime);
 
 
-
 		//camera.transform.position = { 0,Math::SineWave(-0.5, 0.5, 1, Time::elapsedTime) ,0 };
 		camera.Update();
 		auto rscMan = ResourceManager::Get();
 
 		//Binding
-		object.Update();
+		entity.Update();
 
-		//object2.transform->position = { 0, Math::SineWave(-0.5, 0.5, 1, Time::elapsedTime), -1 };
+		//Entity2.transform->position = { 0, Math::SineWave(-0.5, 0.5, 1, Time::elapsedTime), -1 };
 
-		object2.Update();
-		object.Render(&camera);
+		entity2.Update();
+		entity.Render(&camera);
 
-		object3.Update();
-		object3.Render(&camera); //drifter
+		entity3.Update();
+		entity3.Render(&camera); //drifter
 
-		object2.Render(&camera);
+		entity2.Render(&camera);
 		Renderer::Get()->UnbindShader();
 		//Swap front and back buffers
 		glfwSwapBuffers(window);

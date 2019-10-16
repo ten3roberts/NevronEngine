@@ -46,7 +46,7 @@ public:
 
 	R* operator->() { return m_pData; }
 	R* operator&() { return m_pData; }
-	R operator*() { return *m_pData; }
+	//R operator*() { return *m_pData; }
 
 
 	int getRefCount() { return *m_refCount; }
@@ -277,7 +277,7 @@ public:
 
 	W* operator->() { return m_pData; }
 	W* operator&() { return m_pData; }
-	W operator*() { return *m_pData; }
+//	W operator*() { return *m_pData; }
 
 	int getRefCount() { return *m_refCount; }
 	int getWeakRefCount() { return *m_weakRefCount; }

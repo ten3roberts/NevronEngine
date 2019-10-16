@@ -4,9 +4,9 @@
 #include <src/Component.h>
 class Shader;
 
-//Creates and manages a uniform buffer object. You can either create structs holding a few variables that it should set if it's matched up in the GPU
+//Creates and manages a uniform buffer Entity. You can either create structs holding a few variables that it should set if it's matched up in the GPU
 //You can also take part of a class or struct if only a limited number of members are to be set. You do this by changing size and making sure the variables wanted are inline
-//After creation the UniformBuffer is only locked by size and not by object. This means that you can pass different objects to it as long as they have the same size and layout
+//After creation the UniformBuffer is only locked by size and not by Entity. This means that you can pass different Entitys to it as long as they have the same size and layout
 
 class UniformBuffer : public Component
 {

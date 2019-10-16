@@ -10,14 +10,14 @@ class Texture;
 class UniformBuffer;
 
 
-//This is a base class and is used as a common parent for all Shaders, Textures, Transforms, Scripts and so on that a Object might use. The class itself shall not be used
+//This is a base class and is used as a common parent for all Shaders, Textures, Transforms, Scripts and so on that a Entity might use. The class itself shall not be used
 class Component
 {
 public:
 	Component();
 	Component(const std::string& name);
 	virtual ~Component();
-	//Used to differentiate the type of object if it has several inheritors; like scripts
+	//Used to differentiate the type of Entity if it has several inheritors; like scripts
 	enum class Type
 	{
 		Component, Script
