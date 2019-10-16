@@ -10,11 +10,13 @@ private:
 public:
 	void Init(Entity* entity) { m_entity = entity; }
 
-	virtual void Start() = 0;
-	virtual void Update() = 0;
-	virtual void FixedUpdate() = 0;
-	virtual void EarlyUpdate() = 0;
-private:
+	virtual void Start() {}
+	virtual void Update() {}
+	virtual void FixedUpdate() {}
+	virtual void EarlyUpdate() {}
+
+	virtual ~Script() {};
+protected:
 	template <typename R>
 	inline void RemoveComponent() { m_entity->RemoveComponent<R>(); };
 

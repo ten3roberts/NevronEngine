@@ -59,6 +59,7 @@
     <ClCompile Include="Graphics\UniformBuffer.cpp" />
     <ClCompile Include="src\GUID.cpp" />
     <ClCompile Include="src\XMLParser.cpp" />
+    <ClCompile Include="Scripts\Wave.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\Material.h" />
@@ -98,6 +99,7 @@
     <ClInclude Include="src\Transform.h" />
     <ClInclude Include="Graphics\UniformBuffer.h" />
     <ClInclude Include="src\XMLParser.h" />
+    <ClInclude Include="Scripts\Wave.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="rsc\resource.rc" />

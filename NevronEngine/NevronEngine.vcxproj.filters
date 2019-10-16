@@ -60,6 +60,7 @@
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\XMLParser.cpp" />
     <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="Scripts\Wave.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Systemdefs.h" />
@@ -127,6 +128,7 @@
     <ClInclude Include="src\XMLParser.h" />
     <ClInclude Include="src\Script.h" />
     <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="Scripts\Wave.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="rsc\resource.rc" />
