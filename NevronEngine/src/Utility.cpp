@@ -35,11 +35,17 @@ std::string Utility::getWorkingDir()
 
 std::string Utility::getAppdata()
 {
+	//Automatically use Windows appdata or Linux home directory accordingly
+#ifdef CSIDL_APPDATA
 	TCHAR szPath[MAX_PATH];
 
 	SUCCEEDED(SHGetFolderPath(NULL, CSIDL_APPDATA | CSIDL_FLAG_CREATE, NULL, 0, szPath));
 
 	return std::string(szPath) + "\\" + "APPNAME + \\";
+#else
+	GeneratePath("~/." + APPNAME)
+		return "~/." + APPNAME;
+#endif;
 }
 
 
