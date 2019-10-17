@@ -12,16 +12,19 @@ float Time::timeScale = 1;
 float Time::elapsedTime = 0.0;
 float Time::unscaledElapsedTime = 0.0;
 std::string Time::startDateAndTime = "";
+time_t Time::startPoint = 0;
 int Time::frameCount = 0;
 
 std::chrono::high_resolution_clock::time_point Time::startTime = std::chrono::high_resolution_clock::now();
 std::chrono::high_resolution_clock::time_point Time::prevTime = std::chrono::high_resolution_clock::now();
 std::chrono::high_resolution_clock::time_point Time::currentTime = std::chrono::high_resolution_clock::now();
 
+
 using namespace Utility;
 
 void Time::Init()
 {
+	startPoint = time(0);
 	startDateAndTime = getDateAndTime();
 }
 
