@@ -24,20 +24,7 @@ public:
 
 	union
 	{
-		struct
-		{
-			float x, y, z, w;
-		};
-		struct
-		{
-			Vector3 vector;
-			float w;
-		};
-		struct
-		{
-			Vector3 xyz;
-			float w;
-		};
+		float x, y, z, w;
 	};
 
 	operator std::string()
