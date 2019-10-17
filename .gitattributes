@@ -5,7 +5,7 @@
 
 #Prevent Dependencies from counting to code statistics
 * text=auto
-Dependencies/ linguist-vendored=true
+Dependencies/ linguist-vendored
 deps/* linguist-vendored
 
 ###############################################################################
