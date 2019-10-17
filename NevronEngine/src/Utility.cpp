@@ -516,8 +516,6 @@ void Utility::GenerateFile(const std::string& path, const std::string& contents,
 	std::ofstream fstream(path, append ? std::ios::app : std::ios::trunc);
 	fstream.write(contents.c_str(), contents.size());
 	fstream.close();
-
-	return;
 }
 
 bool Utility::Copy(const std::string& oldPath, const std::string& newPath)

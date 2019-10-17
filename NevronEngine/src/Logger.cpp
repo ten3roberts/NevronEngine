@@ -27,7 +27,7 @@ void LogS(const std::string& author, std::string format, ...)
 		std::string logfile_name = WORKDIR + "Logs\\" + Time::startDateAndTime + ".log";
 		Utility::GenerateFile(logfile_name, "");
 		logFile.open(logfile_name);
-		LogS("Logger", "Creating new logfile %s", logfile_name);
+		//LogS("Logger", "Creating new logfile %s", logfile_name);
 	}
 
 	if (frame != Time::frameCount)
