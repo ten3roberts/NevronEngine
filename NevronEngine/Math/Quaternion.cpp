@@ -152,8 +152,8 @@ Quaternion Quaternion::operator-(const Quaternion& q) const
 
 Vector3 Quaternion::operator*(const Vector3& vec) const
 {
-	Vector3 t = Vector3::Cross(vector, vec) * 2.0f;
-	return vec + t * w + Vector3::Cross(vector, t);
+	Vector3 t = Vector3::Cross(Vector3(x,y,z), vec) * 2.0f;
+	return vec + t * w + Vector3::Cross(Vector3(x,y,z), t);
 }
 
 void Quaternion::operator*=(float scalar)

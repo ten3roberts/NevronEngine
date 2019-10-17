@@ -22,10 +22,8 @@ public:
 	//Will create a new quaternion to rotate from its current position to %direction%
 	static Quaternion PointTo(const Vector3& sourcePoint, const Vector3& destinationPoint);
 
-	union
-	{
+	
 		float x, y, z, w;
-	};
 
 	operator std::string()
 	{

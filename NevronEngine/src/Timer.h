@@ -14,15 +14,14 @@ public:
 	Timer(double* result, const std::string& name, unsigned long itemCount);
 	~Timer();
 private:
-	std::chrono::time_point<std::chrono::steady_clock> start;
-	std::chrono::time_point<std::chrono::steady_clock> end;
+	std::chrono::high_resolution_clock::time_point start;
+	std::chrono::high_resolution_clock::time_point end;
 	std::chrono::duration<float> duration;
 	double* result;
 	std::string name;
 	
 	//If you time several similar events it can calculate an average time per event. E.g; when calculating collisions it can use the amount of entities to calculate time per entity
 	unsigned long itemCount;
-
 };
 
 

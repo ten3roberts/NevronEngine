@@ -1,4 +1,5 @@
 #pragma once
+
 #include <src/pch.h>
 #include <chrono>
 
@@ -23,8 +24,8 @@ public:
 
 	static void Update();
 
-	static std::string getDateAndTime(TimePrecision precision = PREC_SECOND);
-	static std::string getDateAndTime(unsigned int time, TimePrecision precision = PREC_SECOND);
+	static std::string getDateAndTime(const std::string& format = "%Y-%m-%d.%X");
+	static std::string getDateAndTime(unsigned int timepoint, const std::string& format = "%Y-%m-%d.%X");
 
 public:
 	static float frameRate;
@@ -40,9 +41,9 @@ public:
 	static int frameCount;
 
 
-	static std::chrono::time_point<std::chrono::steady_clock> startTime;
-	static std::chrono::time_point<std::chrono::steady_clock> prevTime;
-	static std::chrono::time_point<std::chrono::steady_clock> currentTime;
+	static std::chrono::high_resolution_clock::time_point startTime;
+	static std::chrono::high_resolution_clock::time_point prevTime;
+	static std::chrono::high_resolution_clock::time_point currentTime;
 };
 
 
