@@ -142,7 +142,7 @@ void Entity::RemoveSpecialized(rsc<Component> component)
 void Entity::RefreshComponents()
 {
 	m_scripts.erase(m_scripts.begin(), m_scripts.end());
-	for (int i = 0; i < m_components.size(); i++)
+	for (size_t i = 0; i < m_components.size(); i++)
 	{
 		if (dynamic_cast<Shader*>(&m_components[i]))
 			shader = m_components[i];
@@ -158,11 +158,16 @@ void Entity::RefreshComponents()
 
 		else if (dynamic_cast<Rigidbody*>(&m_components[i]))
 			rigidbody = m_components[i];
-
-		else if (dynamic_cast<Script*> (&m_components[i]))
-			m_scripts.push_back(m_components[i]);
-
 	}
+
+
+	//Initializing scripts after all else so the script gets the component pointers correctly
+	for(size_t i = 0; i < m_components.size(); i++)
+		if (dynamic_cast<Script*> (&m_components[i]))
+		{
+			m_scripts.push_back(m_components[i]);
+			m_scripts.back()->Init(this);
+		}
 }
 
 void Entity::Init(const std::string& shader, const std::string& model, const std::string& material, Vector3 position, Quaternion rotation, Vector3 scale, std::vector<rsc<Component>> components)
@@ -176,14 +181,10 @@ void Entity::Init(const std::string& shader, const std::string& model, const std
 	AddComponent<Material>(material);
 	//this->material = rscManager->GetMaterial(material);
 	//m_components.push_back(this->material);
-
-	m_components.insert(m_components.end(), components.begin(), components.end());
-	RefreshComponents();
-
 	if (!transform)
 		this->transform = new Transform(position, rotation, scale);
-
-	//this->model = Model::GenerateQuad();
+	m_components.insert(m_components.end(), components.begin(), components.end());
+	RefreshComponents();
 
 	m_signature = "Entity : " + m_name + ";" + m_GUID.getString();
 }

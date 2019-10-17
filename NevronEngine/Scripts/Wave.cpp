@@ -3,5 +3,6 @@
 
 void Wave::Update()
 {
-	GetComponent<Transform>()->position = Math::SineWave(-1, 1, 1, Time::elapsedTime);
+	GetComponent<Transform>();
+	transform->position.x = Math::SineWave(-1, 1, 1, Time::elapsedTime);
 }

@@ -5,10 +5,13 @@
 //Virtual class describing a script that can be used to maniulate and induce behaviours on entitys
 class Script : public Component
 {
-private:
+protected:
 	Entity* m_entity;
+	rsc<Transform> transform;
+	rsc<Rigidbody> rigidbody;
 public:
-	void Init(Entity* entity) { m_entity = entity; }
+	//Sets the parent Entity of the script. Can be used several times
+	void Init(Entity* entity) { m_entity = entity; transform = m_entity->transform; rigidbody = m_entity->rigidbody; }
 
 	virtual void Start() {}
 	virtual void Update() {}
