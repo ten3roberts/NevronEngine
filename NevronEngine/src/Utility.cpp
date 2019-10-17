@@ -4,11 +4,12 @@
 
 #include <fstream>
 #include <filesystem>
-#include <Windows.h>
 
-#include <shlobj_core.h>
-#include <sys/types.h>
-#include <stdio.h>
+//#include <Windows.h>
+
+//#include <shlobj_core.h>
+//#include <sys/types.h>
+//#include <stdio.h>
 
 
 #include "..\src\Time.h"
@@ -43,11 +44,10 @@ std::string Utility::getAppdata()
 
 	return std::string(szPath) + "\\" + "APPNAME + \\";
 #else
-	GeneratePath("~/." + APPNAME)
-		return "~/." + APPNAME;
+	GeneratePath("~/." + std::string(APPNAME));
+		return "~/." + std::string(APPNAME);
 #endif;
 }
-
 
 std::string Utility::Capitalize(const std::string& str)
 {
@@ -75,8 +75,6 @@ std::string Utility::Title(const std::string& str)
 	result[0] = toupper(str[0]);
 	return result;
 }
-
-
 
 std::vector<unsigned int> Utility::strFind(const std::string& str, const std::string& keyW)
 {
@@ -238,7 +236,6 @@ std::string Utility::ListTostring(std::vector<std::string> list, const std::stri
 	return result;
 }
 
-
 int Utility::ParseTime(const std::string& str)
 {
 	int seconds = 0;
@@ -347,71 +344,6 @@ std::string Utility::digits(int value, size_t nDigits)
 		result = result.substr(0, nDigits);
 	}
 	return result;
-}
-
-bool Utility::IsFile(std::string path)
-{
-	if (path.back() == '\\')
-		return false;
-
-	struct stat s;
-	if (stat(path.c_str(), &s) == 0)
-	{
-		if (s.st_mode & S_IFDIR)
-		{
-			//it's a directory
-			return false;
-		}
-		else if (s.st_mode & S_IFREG)
-		{
-			//it's a file
-			return true;
-		}
-		else
-		{
-			//something else
-			return false;
-		}
-	}
-	else
-	{
-		//error
-		return false;
-	}
-	return false;
-}
-
-bool Utility::IsDir(std::string path)
-{
-
-	if (path.back() == '\\')
-		return true;
-
-	struct stat s;
-	if (stat(path.c_str(), &s) == 0)
-	{
-		if (s.st_mode & S_IFDIR)
-		{
-			//it's a directory
-			return true;
-		}
-		else if (s.st_mode & S_IFREG)
-		{
-			//it's a file
-			return false;
-		}
-		else
-		{
-			//something else
-			return false;
-		}
-	}
-	else
-	{
-		//error
-		return false;
-	}
-	return false;
 }
 
 std::vector<std::string> Utility::ListDir(const std::string& directory)
@@ -546,7 +478,7 @@ void Utility::GeneratePath(const std::string& path)
 	//path is to long
 	if (path.size() >= 248)
 	{
-		Error(1);
+		LogE("Utility", "Couldn't generate directory; path is too long");
 		return;
 	}
 
@@ -567,7 +499,7 @@ void Utility::GenerateFile(const std::string& path, const std::string& contents,
 	//Path is to long
 	if (path.size() >= 248)
 	{
-		Error(1);
+		LogE("Utility", "Couldn't generate file; path is too long");
 		return;
 	}
 
@@ -678,66 +610,6 @@ std::string Utility::DirectoryUp(const std::string& path, unsigned int steps)
 	std::vector<unsigned int> folders = strFind(text, "\\");
 	unsigned int lastFolder = *(folders.end() - steps - 1);
 	return text.substr(0, lastFolder);
-}
-
-void Utility::Error(unsigned int code)
-{
-	//Load errordef if its not loaded
-	if (s_errorDef.size() == NULL)
-		LoadErrorDef();
-
-	std::string explanation = "Undefined Error";
-
-	for (int i = 0; i < s_errorDef.size(); i++)
-	{
-		if (s_errorDef[i].substr(0, 3) == std::to_string(code) + ": ")
-		{
-			explanation = s_errorDef[i].substr(3);
-			break;
-		}
-	}
-
-
-	//Print and prompt the user
-	MessageBox(NULL, explanation.c_str(), "Error", MB_ICONWARNING | MB_OK);
-	std::cout << "(Error): " << code << "; " << explanation << std::endl;
-
-	return;
-}
-
-void Utility::LoadErrorDef()
-{
-	s_errorDef = ReadFileLines(WORKDIR + "Assets\\Errordef.txt");
-}
-
-unsigned int Utility::AddError(const std::string& definition, unsigned int code)
-{
-	if (s_errorDef.size() == NULL)
-		LoadErrorDef();
-
-	if (code == APPEND_CODE)
-		code = (unsigned int)s_errorDef.size();
-
-
-	//Check if proposed error already exists, if so return
-	if (s_errorDef[0].size() > 0)
-		for (auto err : s_errorDef)
-		{
-			//Check to see if error code already exists
-			if (err.substr(0, 3) == code + ": ")
-				return code;
-			//Check to see if error definition already exists
-			if (err.substr(3) == definition)
-				return stoi(err.substr(0, 1));
-		}
-
-	s_errorDef.push_back(std::to_string(code) + ": " + definition);
-	return code;
-}
-
-void Utility::SaveErrorDef()
-{
-	GenerateFile(WORKDIR + "Assets\\Errordef.txt", ListTostring(s_errorDef), false);
 }
 
 std::string vformat(std::string format, va_list vl)
@@ -898,7 +770,6 @@ std::string vformat(std::string format, va_list vl)
 	}
 	return result;
 }
-
 
 std::string format(std::string format, ...)
 {

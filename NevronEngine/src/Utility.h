@@ -40,7 +40,7 @@ namespace Utility
 	std::vector<unsigned int> strFind(const std::string& str, const std::string& keyW);
 
 	//Will divide the string at every keyW(default space)
-	std::vector<std::string> strSplit(const std::string& str, const std::string& keyW,  bool ignore_quotes = false);
+	std::vector<std::string> strSplit(const std::string& str, const std::string& keyW, bool ignore_quotes = false);
 	std::vector<std::string> strSplit(const std::string& str, char keyW, bool ignore_quotes = false);
 
 	std::string strClamp(const std::string& str, unsigned int size);
@@ -95,9 +95,9 @@ namespace Utility
 #pragma endregion
 #pragma region "File Utilities"
 	//Will return true if the given path is a file and return false if the given path is a directory
-	bool IsFile(std::string path);
+	inline bool IsFile(const std::string& path) { return std::filesystem::is_directory(path); }
 	//Will return false if the given path is a file and return true if the given path is a directory
-	bool IsDir(std::string path);
+	inline bool IsDir(const std::string& path) { return std::filesystem::is_regular_file(path); }
 
 	//Will list all files with full path and sub-directories in specified directory
 	std::vector<std::string> ListDir(const std::string& directory = ASSETS);
@@ -154,27 +154,6 @@ namespace Utility
 
 	//Will return the file path moved up one directory
 	std::string DirectoryUp(const std::string& path, unsigned int steps = 1);
-
-#pragma endregion
-
-#pragma region "Errors and logging"
-	void Error(unsigned int code);
-
-	void LoadErrorDef();
-
-	//Will append a new error definition to the errorDef. Be sure to save it afterwards for permanens. If error code is -1 it will choose a new err code 
-	unsigned int AddError(const std::string& definition, unsigned int code = APPEND_CODE);
-
-	void SaveErrorDef();
-	//Will compose a message complete with time message origin and the original message and write it both to the console and a instance specific LogSile
-	/*void Log(const std::string& msg, const std::string& msgOrigin = "Log");
-
-	//void Log(std::initializer_list<std::string> msg, const std::string& msgOrigin = "Log");
-
-	//Will compose a message complete with time message origin and the original message and write it to the log file but no the console
-	void Log_s(const std::string& msg, const std::string& msgOrigin = "Log");*/
-	//void Log_s(std::initializer_list<std::string> msg, const std::string& msgOrigin = "Log");
-
 };
 
 /*std::ostream& operator<<(std::ostream& os, std::vector<std::string> in)
@@ -225,7 +204,7 @@ inline float numf(const std::string& str) { return atof(str.c_str()); }
 
 //Will attempt to convert a string to float or integer. Does nothing if failed
 template <typename T = float>
-static T num(const std::string & str) = delete;
+static T num(const std::string& str) = delete;
 static float num(const std::string& str)
 {
 	return atof(str.c_str());
@@ -245,11 +224,11 @@ static unsigned int num(const std::string& str)
 
 //Will attempt to convert a string to float or integer. If it fails it will return 0 and if $failed is passed set it to true
 template <typename N = float>
-static N num(const std::string & in, bool* str) = delete;
+static N num(const std::string& in, bool* str) = delete;
 static float num(const std::string& str, bool* failed)
 {
 	if (failed != nullptr)
-		* failed = false;
+		*failed = false;
 	try
 	{
 		return std::stof(str);
@@ -257,7 +236,7 @@ static float num(const std::string& str, bool* failed)
 	catch (...)
 	{
 		if (failed != nullptr)
-			* failed = true;
+			*failed = true;
 		return 0;
 	}
 }
@@ -265,7 +244,7 @@ template<>
 static int num(const std::string& in, bool* failed)
 {
 	if (failed != nullptr)
-		* failed = false;
+		*failed = false;
 	try
 	{
 		return std::stoi(in);
@@ -273,7 +252,7 @@ static int num(const std::string& in, bool* failed)
 	catch (...)
 	{
 		if (failed != nullptr)
-			* failed = true;
+			*failed = true;
 		return 0;
 	}
 }
@@ -281,7 +260,7 @@ template<>
 static unsigned int num(const std::string& in, bool* failed)
 {
 	if (failed != nullptr)
-		* failed = false;
+		*failed = false;
 	try
 	{
 		return std::stoi(in);
@@ -289,7 +268,7 @@ static unsigned int num(const std::string& in, bool* failed)
 	catch (...)
 	{
 		if (failed != nullptr)
-			* failed = true;
+			*failed = true;
 		return 0;
 	}
 }
@@ -302,5 +281,3 @@ inline int min(int a, int b) { return a < b ? a : b; };
 inline float max(float a, float b) { return a > b ? a : b; };
 inline int max(int a, int b) { return a > b ? a : b; };
 //inline unsigned int max(unsigned int a, unsigned int b) { return a > b ? a : b; };
-
-
