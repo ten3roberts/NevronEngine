@@ -1,1 +1,0 @@
-The name of a resource always includes the associated filename. E.g; A texture retains the name ".png" or ".tiff" to differentiate them
