@@ -126,7 +126,7 @@ int main(int argc, char** argv)
 
 	Entity entity("Basic.glsl", "Cube.dae", "Wood.mat", { new Wave(), new Transform({0,0,0}, Quaternion::identity, 1) });
 	Entity entity2("Basic.glsl", "Cube.dae", "Default.mat", { new Transform({0,0,-1}, Quaternion({1,0,0}, 1), 0.1f), new Rigidbody(0, {0, 2, 0}, 1) });
-	Entity entity3("Basic2.glsl", "Cube.dae", "Default.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.55f + Vector3::back * 1, {0,1,-0.5}, 1) });
+	Entity entity3("Basic2.glsl", "Orb.dae", "Default.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.55f + Vector3::back * 1, {0,1,-0.5}, 1) });
 	entity.AddComponent(new Rigidbody());
 
 	entity.rigidbody->velocity = Vector3(0, 0, -1);
