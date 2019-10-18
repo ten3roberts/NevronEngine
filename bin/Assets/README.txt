@@ -1,1 +1,0 @@
-The GUI and sprite coordinates (1, 0, 0) does not mean left edge of screen. but rather the imaginary edge if you make a square from the viewports height.

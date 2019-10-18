@@ -5,12 +5,13 @@
 #include <fstream>
 #include <filesystem>
 
-//#include <Windows.h>
+#ifdef WIN
+#include <Windows.h>
 
-//#include <shlobj_core.h>
-//#include <sys/types.h>
-//#include <stdio.h>
-
+#include <shlobj_core.h>
+#include <sys/types.h>
+#include <stdio.h>
+#endif
 
 #include <src/Time.h>
 
