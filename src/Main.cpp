@@ -138,7 +138,7 @@ int main(int argc, char** argv)
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
 
-		renderer->Clear(Vector4(0,0,1,0));
+		renderer->Clear(Vector4(0,0,0.5,0));
 		//camera.transform.rotation *= Quaternion({ 0, 1, 0.5 }, Time::deltaTime);
 
 
