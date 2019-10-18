@@ -30,7 +30,6 @@ void Utility::setWorkingDir(const std::string& dir)
 
 	s_workingDir = getPath(dir);
 	LogS("Utility", "Working directory changed from \"%s %c %s %c", oldDir, "\" to \"", s_workingDir, "\"");
-	printf("\nhere2\n\n");
 }
 
 std::string Utility::getWorkingDir()
@@ -604,7 +603,7 @@ std::string Utility::DirectoryUp(const std::string& path, unsigned int steps)
 	std::string text = getPath(path);
 	std::vector<unsigned int> folders = strFind(text, "/");
 	unsigned int lastFolder = *(folders.end() - steps - 1);
-	return text.substr(0, lastFolder);
+	return strLead(text.substr(0, lastFolder), '/');
 }
 
 std::string vformat(std::string format, va_list vl)

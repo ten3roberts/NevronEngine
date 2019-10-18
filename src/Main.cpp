@@ -30,7 +30,7 @@ int main(int argc, char** argv)
 {
 	//system("color a");
 	Time::Init();
-	setWorkingDir(getPath(argv[0]));
+	setWorkingDir(DirectoryUp(argv[0]));
 	
 
 	Settings* settings = Settings::get();

@@ -9,6 +9,8 @@ add_subdirectory(deps/glew/build/cmake)
 include_directories(NevronEngine deps/glfw/include)
 include_directories(NevronEngine deos/glew/include)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 set (CMAKE_CXX_STANDARD 17)
 
 
