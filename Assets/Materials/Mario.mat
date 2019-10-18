@@ -1,0 +1,4 @@
+texture: MarioSprite.png
+color: 0, 1, 1, 0.5
+ref: 1
+smo: 10
