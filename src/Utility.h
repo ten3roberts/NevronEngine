@@ -153,7 +153,7 @@ namespace Utility
 	std::string ShortenString(const std::string& str, unsigned int size, bool omitIndicator = false);
 
 	//Will return the file path moved up one directory
-	std::string DirectoryUp(const std::string& path, unsigned int steps = 1);
+	std::string DirUp(const std::string& path, unsigned int steps = 1);
 };
 
 /*std::ostream& operator<<(std::ostream& os, std::vector<std::string> in)

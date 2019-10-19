@@ -27,8 +27,8 @@ void Utility::setWorkingDir(const std::string& dir)
 {
 	std::string oldDir = s_workingDir;
 	
-
 	s_workingDir = getPath(dir);
+
 	LogS("Utility", "Working directory changed from \"%s %c %s %c", oldDir, "\" to \"", s_workingDir, "\"");
 }
 
@@ -486,17 +486,6 @@ void Utility::GeneratePath(const std::string& path)
 	}
 
 	std::filesystem::create_directories(path);
-
-	/*//Creates all directories leading the last directory
-	std::vector<unsigned int> folderAt = strFind(path, "/");
-	for (unsigned int i = 1; i < folderAt.size(); i++)
-	{
-		std::string tmpPath = path.substr(0, folderAt[i]);
-		std::filesystem::create_directory(tmpPath);
-	}
-
-	//Creates the last directory
-	std::filesystem::create_directory(path);*/
 }
 
 void Utility::GenerateFile(const std::string& path, const std::string& contents, bool append)
@@ -508,9 +497,6 @@ void Utility::GenerateFile(const std::string& path, const std::string& contents,
 		return;
 	}
 
-	printf(path.substr(0, path.find_last_of('/')).c_str());
-
-printf("\nhere\n\n");
 	std::filesystem::create_directories(path.substr(0, path.find_last_of('/')));
 	/*//Creates all directories leading up to the file
 	std::vector<unsigned int> folders = strFind(path, "/");
@@ -598,11 +584,18 @@ std::string Utility::ShortenString(const std::string& str, unsigned int size, bo
 	return str;
 }
 
-std::string Utility::DirectoryUp(const std::string& path, unsigned int steps)
+std::string Utility::DirUp(const std::string& path, unsigned int steps)
 {
 	std::string text = getPath(path);
 	std::vector<unsigned int> folders = strFind(text, "/");
 	unsigned int lastFolder = *(folders.end() - steps - 1);
+
+	//Edge case for relative path
+	if(text == "./") return "../";
+
+	//There are no folder names; only ../../
+	if(text.find_first_of("abcdefghijklmnopqrstuvwxyz") == std::string::npos) return "../" + text;
+
 	return strLead(text.substr(0, lastFolder), '/');
 }
 

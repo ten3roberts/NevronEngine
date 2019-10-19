@@ -29,8 +29,9 @@ using namespace Math;
 int main(int argc, char** argv)
 {
 	//system("color a");
+	
 	Time::Init();
-	setWorkingDir(DirectoryUp(argv[0]));
+	setWorkingDir(DirUp(argv[0]));
 	
 
 	Settings* settings = Settings::get();
