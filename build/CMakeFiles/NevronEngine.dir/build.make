@@ -575,12 +575,9 @@ NevronEngine: CMakeFiles/NevronEngine.dir/src/Settings.cpp.o
 NevronEngine: CMakeFiles/NevronEngine.dir/src/pch.cpp.o
 NevronEngine: CMakeFiles/NevronEngine.dir/build.make
 NevronEngine: deps/glfw/src/libglfw3.a
-NevronEngine: lib/libGLEW.so.2.1.0
 NevronEngine: /usr/lib/librt.so
 NevronEngine: /usr/lib/libm.so
 NevronEngine: /usr/lib/libX11.so
-NevronEngine: /usr/lib/libGL.so
-NevronEngine: /usr/lib/libGLU.so
 NevronEngine: CMakeFiles/NevronEngine.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ten3roberts/NevronEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX executable NevronEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NevronEngine.dir/link.txt --verbose=$(VERBOSE)

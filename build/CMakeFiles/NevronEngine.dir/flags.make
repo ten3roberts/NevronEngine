@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ten3roberts/NevronEngine/NevronEngine -I/home/ten3roberts/NevronEngine/deps/glfw/include -I/home/ten3roberts/NevronEngine/deos/glew/include -I/home/ten3roberts/NevronEngine/. 
+CXX_INCLUDES = -I/home/ten3roberts/NevronEngine/NevronEngine -I/home/ten3roberts/NevronEngine/deps/glfw/include -I/home/ten3roberts/NevronEngine/. 
 

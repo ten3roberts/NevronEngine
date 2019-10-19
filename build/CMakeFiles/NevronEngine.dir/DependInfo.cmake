@@ -45,14 +45,12 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../NevronEngine"
   "../deps/glfw/include"
-  "../deos/glew/include"
   "../."
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/ten3roberts/NevronEngine/build/deps/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
-  "/home/ten3roberts/NevronEngine/build/deps/glew/build/cmake/CMakeFiles/glew.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

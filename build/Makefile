@@ -195,58 +195,6 @@ glfw/fast:
 	$(MAKE) -f deps/glfw/src/CMakeFiles/glfw.dir/build.make deps/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
-#=============================================================================
-# Target rules for targets named glew_s
-
-# Build rule for target.
-glew_s: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 glew_s
-.PHONY : glew_s
-
-# fast build rule for target.
-glew_s/fast:
-	$(MAKE) -f deps/glew/build/cmake/CMakeFiles/glew_s.dir/build.make deps/glew/build/cmake/CMakeFiles/glew_s.dir/build
-.PHONY : glew_s/fast
-
-#=============================================================================
-# Target rules for targets named visualinfo
-
-# Build rule for target.
-visualinfo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 visualinfo
-.PHONY : visualinfo
-
-# fast build rule for target.
-visualinfo/fast:
-	$(MAKE) -f deps/glew/build/cmake/CMakeFiles/visualinfo.dir/build.make deps/glew/build/cmake/CMakeFiles/visualinfo.dir/build
-.PHONY : visualinfo/fast
-
-#=============================================================================
-# Target rules for targets named glew
-
-# Build rule for target.
-glew: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 glew
-.PHONY : glew
-
-# fast build rule for target.
-glew/fast:
-	$(MAKE) -f deps/glew/build/cmake/CMakeFiles/glew.dir/build.make deps/glew/build/cmake/CMakeFiles/glew.dir/build
-.PHONY : glew/fast
-
-#=============================================================================
-# Target rules for targets named glewinfo
-
-# Build rule for target.
-glewinfo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 glewinfo
-.PHONY : glewinfo
-
-# fast build rule for target.
-glewinfo/fast:
-	$(MAKE) -f deps/glew/build/cmake/CMakeFiles/glewinfo.dir/build.make deps/glew/build/cmake/CMakeFiles/glewinfo.dir/build
-.PHONY : glewinfo/fast
-
 Graphics/IndexBuffer.o: Graphics/IndexBuffer.cpp.o
 
 .PHONY : Graphics/IndexBuffer.o
@@ -1180,10 +1128,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... uninstall"
 	@echo "... glfw"
-	@echo "... glew_s"
-	@echo "... visualinfo"
-	@echo "... glew"
-	@echo "... glewinfo"
 	@echo "... Graphics/IndexBuffer.o"
 	@echo "... Graphics/IndexBuffer.i"
 	@echo "... Graphics/IndexBuffer.s"
