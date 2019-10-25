@@ -20,7 +20,7 @@ void LogS(const std::string& author, std::string format, ...)
 	va_start(vl, format);
 
 	std::string fullMsg = '(' + (author == "" ? "Log" : author) + " @ " +
-		Time::getDateAndTime("%H.%M.%S") + "): " + vformat(format, vl);
+		std::to_string(Time::frameCount) + "): " + vformat(format, vl);
 
 	if (!logFile.is_open())
 	{
@@ -51,7 +51,7 @@ void LogF(std::string format, ...)
 	va_list vl;
 	va_start(vl, format);
 
-	std::string fullMsg = "(Log @ " + Time::getDateAndTime(Time::ONLY_TIME) + "): " + vformat(format, vl);
+	std::string fullMsg = "(Log @ " + std::to_string(Time::frameCount) + "): " + vformat(format, vl);
 
 	if (!logFile.is_open())
 	{
@@ -86,7 +86,7 @@ void LogE(const std::string& author, std::string format, ...)
 	va_start(vl, format);
 
 	std::string fullMsg = '(' + (author == "" ? "Log" : author) + " @ " +
-		Time::getDateAndTime(Time::ONLY_TIME) + "): " + vformat(format, vl);
+		std::to_string(Time::frameCount) + "): " + vformat(format, vl);
 
 	if (!logFile.is_open())
 	{

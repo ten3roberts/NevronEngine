@@ -6,8 +6,8 @@ find_package( OpenGL REQUIRED )
 add_subdirectory(deps/glfw)
 add_subdirectory(deps/glew/build/cmake)
 
-include_directories(NevronEngine deps/glfw/include)
-include_directories(NevronEngine deps/glew/include)
+include_directories(${PROJECT_NAME} deps/glfw/include)
+include_directories(${PROJECT_NAME} deps/glew/include)
 
 set(CMAKE_BUILD_TYPE Debug)
 
