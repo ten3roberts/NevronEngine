@@ -1,9 +1,9 @@
-resolution 878,834
+resolution 1806,620
 useNativeResoultion 0
-screenFar 100
+screenFar 1000
 screenNear 0.01
 displayMode WINDOWED
 VSync 0
-AASamples 16
+AASamples 1
 FOV 1
 sensitivity 1

@@ -99,10 +99,6 @@ void Model::LoadDAE(const std::string& filename)
 				positions[j / 3] = Vector3(numf(arr[j]), numf(arr[j + 1]), numf(arr[j + 2]));
 				swap(positions[j / 3]);
 			}
-
-
-
-
 		}
 		else if (source_id == mesh_id + "-map-0")
 		{

@@ -14,7 +14,7 @@ Shader::Shader(const std::string& name)
 
 	if (!m_filepath.size())
 	{
-		LogS("Shader : " + m_name, "Couldn't find shader with name: ");
+		LogS("Shader : " + m_name, "Couldn't find shader with name: %s", name);
 		m_valid = false;
 		return;
 	}

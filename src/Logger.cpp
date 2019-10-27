@@ -25,7 +25,7 @@ void LogS(const std::string& author, std::string format, ...)
 	if (!logFile.is_open())
 	{
 		//Creates one logfile for each minute
-		std::string logfile_name = WORKDIR + "Logs/" + Time::getDateAndTime(Time::startPoint, "%F_%H.%M") + ".log";
+		std::string logfile_name = WORKDIR + "Logs" + SLASH + Time::getDateAndTime(Time::startPoint, "%F_%H.%M") + ".log";
 		
 		Utility::GenerateFile(logfile_name, "");
 		

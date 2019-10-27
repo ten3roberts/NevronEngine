@@ -93,6 +93,20 @@ std::vector<unsigned int> Utility::strFind(const std::string& str, const std::st
 	return results;
 }
 
+std::vector<unsigned int> Utility::strFind(const std::string& str, char c)
+{
+	std::vector<unsigned int> results;
+
+	for (unsigned int i = 0; i < str.size(); i++)
+	{
+		if (str[i] == c)
+		{
+			results.push_back(i);
+		}
+	}
+	return results;
+}
+
 std::vector<std::string> Utility::strSplit(const std::string& str, const std::string& keyW, bool ignore_quotes)
 {
 	//Terminating string with keyW
@@ -104,7 +118,7 @@ std::vector<std::string> Utility::strSplit(const std::string& str, const std::st
 	bool in_quote = false;
 	for (size_t i = 0; i < text.size(); i++)
 	{
-		if (text[i] == '"' && !(i > 0 && text[i - 1] == '/'))
+		if (text[i] == '"' && !(i > 0 && text[i - 1] == SLASH))
 			in_quote = !in_quote;
 
 		if (text.substr(i, keyW.size()) == keyW && !(in_quote && ignore_quotes)) //Cursor att keyword
@@ -129,7 +143,7 @@ std::vector<std::string> Utility::strSplit(const std::string& str, char keyW, bo
 	bool in_quote = false;
 	for (size_t i = 0; i < text.size(); i++)
 	{
-		if (text[i] == '"' && !(i > 0 && text[i - 1] == '/'))
+		if (text[i] == '"' && !(i > 0 && text[i - 1] == SLASH))
 			in_quote = !in_quote;
 		
 		if (text[i] == keyW && !(in_quote && ignore_quotes)) //Cursor att keyword
@@ -497,7 +511,7 @@ void Utility::GenerateFile(const std::string& path, const std::string& contents,
 		return;
 	}
 
-	std::filesystem::create_directories(path.substr(0, path.find_last_of('/')));
+	std::filesystem::create_directories(path.substr(0, path.find_last_of(SLASH)));
 	/*//Creates all directories leading up to the file
 	std::vector<unsigned int> folders = strFind(path, "/");
 	for (unsigned int i = 1; i < folders.size(); i++)
@@ -537,10 +551,10 @@ bool Utility::Copy(const std::string& oldPath, const std::string& newPath)
 		//Copies the directory structure
 		for (std::string& dir : dirs)
 			//Cuts off parent path and adds new parent path
-			GeneratePath(strLead(newPath, '/') + dir.substr(oldPath.size()));
+			GeneratePath(strLead(newPath, SLASH) + dir.substr(oldPath.size()));
 
 		for (std::string& file : files)
-			Copy(file, strLead(newPath, '/') + file.substr(oldPath.size()));
+			Copy(file, strLead(newPath, SLASH) + file.substr(oldPath.size()));
 	}
 	return true;
 }
@@ -558,13 +572,13 @@ std::string Utility::getExtension(const std::string& path)
 
 std::string Utility::getFilename(const std::string& path, bool keepExtension)
 {
-	size_t slashIndex = path.find_last_of("/");
+	size_t slashIndex = path.find_last_of(SLASH);
 	return path.substr(slashIndex == std::string::npos ? 0 : slashIndex + 1, keepExtension ? path.size() : path.find_last_of(".") - slashIndex - 1);
 }
 
 std::string Utility::getPath(const std::string& path)
 {
-	return path.substr(0, path.find_last_of('/')+1);
+	return path.substr(0, path.find_last_of(SLASH)+1);
 }
 
 std::string Utility::ShortenPath(const std::string& path, int depth, bool omitIndicator)
@@ -587,7 +601,8 @@ std::string Utility::ShortenString(const std::string& str, unsigned int size, bo
 std::string Utility::DirUp(const std::string& path, unsigned int steps)
 {
 	std::string text = getPath(path);
-	std::vector<unsigned int> folders = strFind(text, "/");
+	std::vector<unsigned int> folders = strFind(text, SLASH);
+	
 	unsigned int lastFolder = *(folders.end() - steps - 1);
 
 	//Edge case for relative path
@@ -596,7 +611,7 @@ std::string Utility::DirUp(const std::string& path, unsigned int steps)
 	//There are no folder names; only ../../
 	if(text.find_first_of("abcdefghijklmnopqrstuvwxyz") == std::string::npos) return "../" + text;
 
-	return strLead(text.substr(0, lastFolder), '/');
+	return strLead(text.substr(0, lastFolder), SLASH);
 }
 
 std::string vformat(std::string format, va_list vl)
@@ -611,7 +626,7 @@ std::string vformat(std::string format, va_list vl)
 	{
 		std::string a;
 		//Is a two wide substr of fmt
-		if (format[i] == '%' && !(i > 0 && format[i - 1] == '/') || flag) //Format expected
+		if (format[i] == '%' && !(i > 0 && format[i - 1] == SLASH) || flag) //Format expected
 			switch (format[i + 1]) //Checks next
 			{
 			case 'd': //Signed decimal integer

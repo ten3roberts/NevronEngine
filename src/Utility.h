@@ -8,7 +8,7 @@
 //The current working directory not proceeded with '\\'
 #define WORKDIR Utility::getWorkingDir()
 #define WORKINGDIR Utility::getWorkingDir()
-#define ASSETS WORKDIR + "Assets/"
+#define ASSETS WORKDIR + "Assets" + SLASH
 
 #define APPDATA getAppdata()
 
@@ -38,6 +38,9 @@ namespace Utility
 
 	//Will return a list of all indices of keyW in str
 	std::vector<unsigned int> strFind(const std::string& str, const std::string& keyW);
+
+	//Will return a list of all indices of c
+	std::vector<unsigned int> strFind(const std::string& str, char c);
 
 	//Will divide the string at every keyW(default space)
 	std::vector<std::string> strSplit(const std::string& str, const std::string& keyW, bool ignore_quotes = false);
