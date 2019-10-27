@@ -37,6 +37,7 @@ int main(int argc, char** argv)
 	Time::Init();
 	setWorkingDir(DirUp(argv[0]));
 	
+	LogS("Application", "%c version %c %c", APPNAME, VERSION, BUILD_TYPE);
 
 	Settings* settings = Settings::get();
 	settings->Load();
