@@ -10,7 +10,8 @@
 *.userosscache
 *.sln.docstates
 
-*build/
+build/
+
 Win32Debug/
 Win32Release/
 *.exe
