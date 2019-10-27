@@ -10,7 +10,7 @@
 *.userosscache
 *.sln.docstates
 
-./build/
+/build/
 
 Win32Debug/
 Win32Release/
@@ -34,3 +34,7 @@ Makefile
 //CMake files
 CMakeFiles/
 lib/
+
+# deps
+
+deps/glfw
