@@ -28,8 +28,8 @@ using namespace Math;
 
 void window_size_callback(GLFWwindow* window, int width, int height)
 {
-	LogS("Window", "Size : %d, %d", width, height);
 	Settings::get()->setResolution(width, height);
+	glViewport(0, 0, width, height);
 }
 
 int main(int argc, char** argv)
