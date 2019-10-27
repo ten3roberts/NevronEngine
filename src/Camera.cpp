@@ -19,5 +19,6 @@ void Camera::Update()
 {
 	transform.Update();
 	m_viewMatrix = transform.rotation.Inverse().toMatrix() * Matrix4::Translate(transform.position*-1);
-	m_projectionMatrix = Matrix4::Perspective(fov, aspect, near, far);
+	m_projectionMatrix = Matrix4::Perspective(Settings::get()->getFOV(), Math::SineWave(0.5, 2, 1, Time::elapsedTime), near, far);
+	LogF("%f", Settings::get()->getAspect());
 }

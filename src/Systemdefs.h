@@ -8,3 +8,4 @@
 #define ASSERT(x) if (!(x)) abort();
 
 
+#define BIT(x) (1 << x)

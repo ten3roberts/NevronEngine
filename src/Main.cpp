@@ -26,10 +26,14 @@ using namespace std::chrono_literals;
 using namespace Utility;
 using namespace Math;
 
+void window_size_callback(GLFWwindow* window, int width, int height)
+{
+	LogS("Window", "Size : %d, %d", width, height);
+	Settings::get()->setResolution(width, height);
+}
+
 int main(int argc, char** argv)
 {
-	//system("color a");
-	
 	Time::Init();
 	setWorkingDir(DirUp(argv[0]));
 	
@@ -54,7 +58,7 @@ int main(int argc, char** argv)
 
 	//Create a windowed mode window and its OpenGL context
 	GLFWwindow* window = glfwCreateWindow(settings->getScreenWidth(), settings->getScreenHeight(), APPNAME, NULL, NULL);
-
+	glfwSetWindowSizeCallback(window, window_size_callback);
 	if (!window)
 	{
 		glfwTerminate();
@@ -127,7 +131,8 @@ int main(int argc, char** argv)
 
 	Entity entity("Basic.glsl", "Cube.dae", "Wood.mat", { new Wave(), new Transform({0,0,0}, Quaternion::identity, 1) });
 	Entity entity2("Basic.glsl", "Cube.dae", "Default.mat", { new Transform({0,0,-1}, Quaternion({1,0,0}, 1), 0.1f), new Rigidbody(0, {0, 2, 0}, 1) });
-	Entity entity3("Basic2.glsl", "Orb.dae", "Default.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.55f + Vector3::back * 1, {0,1,-0.5}, 1) });
+	Entity entity3("Basic2.glsl", "Lamp.dae", "Default.mat", { new Transform({0,0,-5}, Quaternion::identity, 1), new Rigidbody(Vector3::right * 0.55f + Vector3::back * 1, {0,1,-0.5}, 1) });
+	Entity entity4("Basic2.glsl", "Quad.dae", "Default.mat", { new Transform({0,0,-5}, Quaternion({DEG_90,DEG_180,0}), 1)});
 	entity.AddComponent(new Rigidbody());
 
 	entity.rigidbody->velocity = Vector3(0, 0, -1);
@@ -138,7 +143,7 @@ int main(int argc, char** argv)
 		Time::Update();
 		if (Time::frameCount % 10 == 0)
 			glfwSetWindowTitle(window, format("%c fps: %d", APPNAME, (int)Time::frameRate).c_str());
-		renderer->Clear(Vector4(0,0,0,1));
+		renderer->Clear(Vector4(0,0,0.3f,1));
 		//camera.transform.rotation *= Quaternion({ 0, 1, 0.5 }, Time::deltaTime);
 
 
@@ -158,6 +163,9 @@ int main(int argc, char** argv)
 		entity3.Render(&camera); //drifter
 
 		entity2.Render(&camera);
+
+		entity4.Update();
+		entity4.Render(&camera);
 		Renderer::Get()->UnbindShader();
 		//Swap front and back buffers
 		glfwSwapBuffers(window);

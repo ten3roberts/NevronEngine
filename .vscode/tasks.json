@@ -10,12 +10,14 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "run",
             "type": "shell",
-            "command": "./${workspaceFolder}/build/NevronEngine"
+            "command": "./${workspaceFolder}/build/NevronEngine",
+            "problemMatcher": []
         }
     ]
 }

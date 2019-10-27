@@ -1,0 +1,58 @@
+<Scene>
+<Entity name="Entity1">
+        <Entity name="Entity1">
+        <Transform>
+            <Position>1 2 3</Position>
+       </Transform>
+       <Rigidbody>
+           <Mass>50</Mass>
+           <Velocity>1 0 0.5</Velocity>
+       </Rigidbody>
+       <PlayerController>
+           <WalkingScript>
+    
+           </WalkingScript>
+       </PlayerController>
+    </Entity>
+    <Transform>
+        <Position>1 2 3</Position>
+   </Transform>
+   <Rigidbody>
+       <Mass>50</Mass>
+       <Velocity>1 0 0.5</Velocity>
+   </Rigidbody>
+   <PlayerController>
+       <WalkingScript>
+
+       </WalkingScript>
+   </PlayerController>
+</Entity>
+<Entity name="Entity2">
+    <Transform>
+        <Position>1 2 3</Position>
+   </Transform>
+   <Rigidbody>
+       <Mass>50</Mass>
+       <Velocity>1 0 0.5</Velocity>
+   </Rigidbody>
+   <PlayerController>
+       <WalkingScript>
+
+       </WalkingScript>
+   </PlayerController>
+</Entity>
+<Entity name="Entity3">
+    <Transform>
+        <Position>1 2 3</Position>
+   </Transform>
+   <Rigidbody>
+       <Mass>50</Mass>
+       <Velocity>1 0 0.5</Velocity>
+   </Rigidbody>
+   <PlayerController>
+       <WalkingScript>
+
+       </WalkingScript>
+   </PlayerController>
+</Entity>
+</Scene>
